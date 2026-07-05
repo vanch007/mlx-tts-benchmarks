@@ -1,0 +1,10 @@
+{
+  "output_dir": "/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2",
+  "manifest_path": "/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/manifest.csv",
+  "combined_path": "/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/combined.wav",
+  "items": 8,
+  "elapsed_s": 10.591,
+  "generation_elapsed_s": 10.173,
+  "generated_duration_s": 21.789,
+  "rtf": 0.4669
+}

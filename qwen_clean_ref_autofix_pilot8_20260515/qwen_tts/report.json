@@ -1,0 +1,10 @@
+{
+  "output_dir": "/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts",
+  "manifest_path": "/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/manifest.csv",
+  "combined_path": "/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/combined.wav",
+  "items": 8,
+  "elapsed_s": 13.5404,
+  "generation_elapsed_s": 13.5293,
+  "generated_duration_s": 21.68,
+  "rtf": 0.624
+}

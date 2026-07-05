@@ -1,0 +1,10 @@
+{
+  "output_dir": "/Users/vanch/tts_benchmarks/omnivoice_ref_context_trim_pilot8_20260516/omnivoice",
+  "manifest_path": "/Users/vanch/tts_benchmarks/omnivoice_ref_context_trim_pilot8_20260516/omnivoice/manifest.csv",
+  "combined_path": "/Users/vanch/tts_benchmarks/omnivoice_ref_context_trim_pilot8_20260516/omnivoice/combined.wav",
+  "items": 8,
+  "elapsed_s": 18.368,
+  "generation_elapsed_s": 17.92,
+  "generated_duration_s": 23.76,
+  "rtf": 0.7542
+}

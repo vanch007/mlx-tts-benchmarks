@@ -1,0 +1,13 @@
+[
+  {
+    "id": "vi_07_numbers_spelled",
+    "category": "numbers_spelled_probe",
+    "speaker": "ban_khoe_ref",
+    "language": "vi",
+    "text": "Cuộc họp bắt đầu lúc chín giờ mười lăm phút ngày mười sáu tháng năm năm hai nghìn không trăm hai mươi sáu, chi phí dự kiến là một triệu hai trăm năm mươi nghìn đồng.",
+    "expected_text": "Cuộc họp bắt đầu lúc chín giờ mười lăm phút ngày mười sáu tháng năm năm hai nghìn không trăm hai mươi sáu, chi phí dự kiến là một triệu hai trăm năm mươi nghìn đồng.",
+    "ref_audio": "/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/ref/ban_khoe_khong_ref_24k.wav",
+    "reference_audio": "/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/ref/ban_khoe_khong_ref_24k.wav",
+    "ref_text": "Bạn khỏe không?"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "old_combined": "/Users/vanch/tts_benchmarks/omnivoice_content_match_fixed_pilot8_20260515/omnivoice/combined.wav",
+  "new_combined": "/Users/vanch/tts_benchmarks/omnivoice_leading_prefix_fixed_pilot8_20260515/omnivoice/combined.wav",
+  "old_duration_s": 25.88,
+  "new_duration_s": 27.0,
+  "sum_segment_duration_s": 26.44,
+  "expected_true_silence_duration_s": 27.0,
+  "old_crossfade_overlap_loss_s": 0.56,
+  "new_silence_gap_added_s": 0.56,
+  "old_probe": "/Users/vanch/tts_benchmarks/omnivoice_leading_prefix_fixed_pilot8_20260515/boundary_probe_before_crossfade_overlap.wav",
+  "new_probe": "/Users/vanch/tts_benchmarks/omnivoice_leading_prefix_fixed_pilot8_20260515/boundary_probe_after_true_silence.wav",
+  "ab_probe": "/Users/vanch/tts_benchmarks/omnivoice_leading_prefix_fixed_pilot8_20260515/boundary_probe_ab_before_then_after.wav"
+}

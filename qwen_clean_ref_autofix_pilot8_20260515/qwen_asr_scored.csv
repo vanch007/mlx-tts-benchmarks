@@ -1,0 +1,9 @@
+backend,id,output_wav,expected_text,ref_text,asr_text,content_score,leakage_score,content_pass,leakage_pass
+qwen_tts,0001_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0001_0001_speaker.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,您再解释解释，也是咱俩的事儿。,"各位观众,欢迎收听今日AI修仙群虾BB报告。",0.8500,0.0000,True,True
+qwen_tts,0002_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0002_0002_speaker.wav,今天这群不叫聊天群。,老太太连翻身都翻不了了。,今天这群不叫聊天群,1.0000,0.1000,True,True
+qwen_tts,0003_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0003_0003_speaker.wav,那叫什么？,您再解释解释，也是咱俩的事儿。,那叫什么,1.0000,0.0000,True,True
+qwen_tts,0004_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0004_0004_speaker.wav,叫羊毛批发市场，顺便卖点人生苦难。,老太太连翻身都翻不了了。,叫羊毛批发市场顺便卖点人生苦难,1.0000,0.0000,True,True
+qwen_tts,0005_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0005_0005_speaker.wav,先说第一案，薅羊毛大战。,您再解释解释，也是咱俩的事儿。,先说第一案薅羊毛大战,1.0000,0.0000,True,True
+qwen_tts,0006_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0006_0006_speaker.wav,这个我熟，日抛号，周抛号，共享额度，反重力废了改 Codex。,老太太连翻身都翻不了了。,这个我熟日抛号周抛号共享额度反重力废了改Codex,1.0000,0.0556,True,True
+qwen_tts,0007_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0007_0007_speaker.wav,还有人双开 Codex。,您再解释解释，也是咱俩的事儿。,还有人双开Codex,1.0000,0.0000,True,True
+qwen_tts,0008_speaker,/Users/vanch/tts_benchmarks/qwen_clean_ref_autofix_pilot8_20260515/qwen_tts/segments/0008_0008_speaker.wav,好家伙，别人双开游戏，他双开牛马。,老太太连翻身都翻不了了。,好家伙别人双开游戏他双开牛马,1.0000,0.0000,True,True

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/vanch/mlx-omnivoice/mlx_omnivoice/cli.py", line 219, in <module>
+    main()
+    ~~~~^^
+  File "/Users/vanch/mlx-omnivoice/mlx_omnivoice/cli.py", line 198, in main
+    result = runtime.batch(
+        rows,
+    ...<7 lines>...
+        combine_silence_ms=args.combine_silence_ms,
+    )
+  File "/Users/vanch/mlx-omnivoice/mlx_omnivoice/runtime.py", line 1016, in batch
+    raise ValueError(f"Row {index} missing text.")
+ValueError: Row 1 missing text.

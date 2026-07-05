@@ -1,0 +1,22 @@
+[
+  {
+    "name": "h_keep_ascii_space",
+    "path": "/Users/vanch/tts_benchmarks/omnivoice_segment_prefix_investigation_20260515/text_boundary_variants/h_keep_ascii_space.wav",
+    "duration_s": 4.16
+  },
+  {
+    "name": "i_newline_boundary",
+    "path": "/Users/vanch/tts_benchmarks/omnivoice_segment_prefix_investigation_20260515/text_boundary_variants/i_newline_boundary.wav",
+    "duration_s": 4.16
+  },
+  {
+    "name": "j_fullwidth_space",
+    "path": "/Users/vanch/tts_benchmarks/omnivoice_segment_prefix_investigation_20260515/text_boundary_variants/j_fullwidth_space.wav",
+    "duration_s": 4.16
+  },
+  {
+    "name": "k_double_period_boundary",
+    "path": "/Users/vanch/tts_benchmarks/omnivoice_segment_prefix_investigation_20260515/text_boundary_variants/k_double_period_boundary.wav",
+    "duration_s": 4.16
+  }
+]

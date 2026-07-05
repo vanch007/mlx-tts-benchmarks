@@ -1,0 +1,47 @@
+[
+  {
+    "backend": "qwen_tts",
+    "returncode": 0,
+    "elapsed_s": 12.6758,
+    "output_dir": "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts",
+    "log": "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts/run.log",
+    "command": [
+      "/Users/vanch/mlx-qwen3-tts/.venv/bin/python",
+      "-m",
+      "mlx_qwen_tts.cli",
+      "batch",
+      "--model",
+      "qwen3_tts_8bit",
+      "--input",
+      "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/input_manifest.csv",
+      "--output-dir",
+      "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts",
+      "--max-tokens",
+      "1024",
+      "--tokens-per-char",
+      "4.0",
+      "--min-max-tokens",
+      "48",
+      "--temperature",
+      "0.9",
+      "--combine",
+      "--crossfade-ms",
+      "35.0",
+      "--require-official"
+    ],
+    "metrics": {
+      "output_dir": "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts",
+      "manifest_path": "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts/manifest.csv",
+      "combined_path": "/Users/vanch/tts_benchmarks/mlx_qwen_dynamic_pilot8_20260512/qwen_tts/combined.wav",
+      "items": 8,
+      "elapsed_s": 12.4151,
+      "generation_elapsed_s": 12.4058,
+      "generated_duration_s": 35.6,
+      "rtf": 0.3485,
+      "rows": 8,
+      "audio_duration_s": 35.6,
+      "generation_rtf": 0.3485,
+      "avg_row_rtf": 0.3424
+    }
+  }
+]

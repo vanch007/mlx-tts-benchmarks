@@ -1,0 +1,23 @@
+Using default vietnamese 8bit model: models/mlx-indexTTS2-vietnamese-8bit
+Using IndexTTS 2.0
+Loading IndexTTS 2.0...
+  Config: models/mlx-indexTTS2-vietnamese-8bit/config.yaml
+  MLX weights: models/mlx-indexTTS2-vietnamese-8bit
+  vq2emb (MLX) loaded from models/mlx-indexTTS2-vietnamese-8bit/vq2emb.safetensors
+Loading GPT v2 (MLX)...
+  Model pre-quantized to 8-bit
+GPT v2 (MLX) loaded from models/mlx-indexTTS2-vietnamese-8bit/gpt.safetensors
+Loading S2Mel (MLX)...
+S2Mel (MLX) loaded from models/mlx-indexTTS2-vietnamese-8bit/s2mel.safetensors
+Loading BigVGAN v2 (MLX)...
+BigVGAN v2 (MLX) loaded from models/mlx-indexTTS2-vietnamese-8bit/bigvgan.safetensors
+Compiled S2Mel/BigVGAN hotpaths
+>> Loaded WeTextProcessing normalizers
+Tokenizer loaded from models/mlx-indexTTS2-vietnamese-8bit/tokenizer.model
+IndexTTS 2.0 ready!
+Loading Semantic Codec...
+  semantic_codec weights restored from: /Users/vanch/.cache/huggingface/hub/models--amphion--MaskGCT/snapshots/265c6cef07625665d0c28d2faafb1415562379dc/semantic_codec/model.safetensors
+Loading W2V-BERT...
+Loading CAMPPlus...
+  CAMPPlus weights restored from: /Users/vanch/.cache/huggingface/hub/models--funasr--campplus/snapshots/fb71fe990cbf6031ae6987a2d76fe64f94377b7e/campplus_cn_common.bin
+Audio saved to /Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/indextts2_vi/indextts2_vi_ref_long.wav

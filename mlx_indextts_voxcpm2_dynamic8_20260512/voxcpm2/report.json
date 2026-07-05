@@ -1,0 +1,18 @@
+{
+  "output_dir": "/Users/vanch/tts_benchmarks/mlx_indextts_voxcpm2_dynamic8_20260512/voxcpm2",
+  "manifest": "/Users/vanch/tts_benchmarks/mlx_indextts_voxcpm2_dynamic8_20260512/voxcpm2/manifest.csv",
+  "combined": "/Users/vanch/tts_benchmarks/mlx_indextts_voxcpm2_dynamic8_20260512/voxcpm2/combined.wav",
+  "rows": 8,
+  "elapsed_s": 5.9583,
+  "audio_duration_s": 24.32,
+  "rtf": 0.245,
+  "model_dir": "models/VoxCPM2-official-mlx-int8-components",
+  "backend": "native",
+  "quantization": "mlx-int8-linear",
+  "memory": {
+    "active_mb": 4763.88,
+    "cache_mb": 8212.616,
+    "peak_mb": 6924.66
+  },
+  "profile": null
+}

@@ -1,0 +1,11 @@
+{
+  "audio": "[0. 0. 0. ... 0. 0. 0.]",
+  "sample_rate": 24000,
+  "output_path": "/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/omnivoice/omnivoice_vi_ref_long.wav",
+  "elapsed_s": 0.0,
+  "duration_s": 110.221,
+  "rtf": null,
+  "segments": 7,
+  "tokens": [],
+  "ref_text_source": "explicit"
+}

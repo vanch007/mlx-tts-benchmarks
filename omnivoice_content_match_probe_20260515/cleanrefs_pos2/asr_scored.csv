@@ -1,0 +1,15 @@
+index,id,text,ref_audio,ref_text,ref_text_source,instruct,output_path,elapsed_s,duration_s,rtf,asr_text,content_score,leakage_score,content_pass,leakage_pass
+1,0001_speaker,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0526_crosstalk_1868611-1871268_demucs_vocals.wav,您再解释解释，也是咱俩的事儿。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0001_0001_speaker.wav,1.401,3.96,0.3539,各位观众欢迎收听今日AI修仙群虾BB报告,0.8500,0.0000,True,True
+2,0002_speaker,今天这群不叫聊天群。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0289_crosstalk_1020549-1022581_demucs_vocals.wav,老太太连翻身都翻不了了。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0002_0002_speaker.wav,0.873,1.88,0.4643,今天这群不叫聊天群,1.0000,0.1000,True,True
+3,0003_speaker,那叫什么？,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0526_crosstalk_1868611-1871268_demucs_vocals.wav,您再解释解释，也是咱俩的事儿。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0003_0003_speaker.wav,0.982,1.8,0.5458,谢谢观看,0.0000,0.0000,False,True
+4,0004_speaker,叫羊毛批发市场，顺便卖点人生苦难。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0289_crosstalk_1020549-1022581_demucs_vocals.wav,老太太连翻身都翻不了了。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0004_0004_speaker.wav,1.124,3.12,0.3602,"羊毛批发市场
+顺便卖点人生苦难",0.9655,0.0000,True,True
+5,0005_speaker,先说第一案，薅羊毛大战。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0526_crosstalk_1868611-1871268_demucs_vocals.wav,您再解释解释，也是咱俩的事儿。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0005_0005_speaker.wav,1.141,2.28,0.5003,"先说第一案
+薅羊毛大战",1.0000,0.0000,True,True
+6,0006_speaker,这个我熟，日抛号，周抛号，共享额度，反重力废了改 Codex。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0289_crosstalk_1020549-1022581_demucs_vocals.wav,老太太连翻身都翻不了了。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0006_0006_speaker.wav,1.877,4.12,0.4556,"我熟日拋号周拋号
+共享额度反中立废了
+改codex",0.7917,0.0588,False,True
+7,0007_speaker,还有人双开 Codex。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0526_crosstalk_1868611-1871268_demucs_vocals.wav,您再解释解释，也是咱俩的事儿。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0007_0007_speaker.wav,1.297,1.669,0.7771,还有人双开CodeS,0.9000,0.0000,True,True
+8,0008_speaker,好家伙，别人双开游戏，他双开牛马。,/Users/vanch/mlx-indextts2/outputs/groupchat_crosstalk_20260509_duo_auto_cleanrefs/clean_refs/0289_crosstalk_1020549-1022581_demucs_vocals.wav,老太太连翻身都翻不了了。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/cleanrefs_pos2/0008_0008_speaker.wav,1.478,2.96,0.4992,"好家伙
+别人双开游戏
+他双开牛马",1.0000,0.0000,True,True

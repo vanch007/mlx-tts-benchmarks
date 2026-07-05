@@ -1,0 +1,10 @@
+{
+  "backend": "mlx-indextts2",
+  "profile": "vietnamese",
+  "reference_audio_used": true,
+  "ref_audio": "/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/ref/ban_khoe_khong_ref_24k.wav",
+  "output": "/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/indextts2_vi/indextts2_vi_ref_long.wav",
+  "duration_s": 80.132,
+  "elapsed_s": 58.807,
+  "rtf": 0.7339
+}

@@ -1,0 +1,16 @@
+index,id,text,ref_audio,ref_text,ref_text_source,instruct,output_path,elapsed_s,duration_s,rtf,asr_text
+1,0001_speaker,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,对门又开了一家金海岸啊，咱们怎么办？,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0001_0001_speaker.wav,2.946,4.16,0.7083,"各位观众欢迎收听今日AI修仙群
+虾BB报告"
+2,0002_speaker,今天这群不叫聊天群。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0071_crosstalk_0215374-0217032.wav,我跟于谦是初恋。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0002_0002_speaker.wav,1.664,2.48,0.671,今天这群不叫聊天群
+3,0003_speaker,那叫什么？,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,对门又开了一家金海岸啊，咱们怎么办？,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0003_0003_speaker.wav,2.032,2.24,0.9072,那叫什么
+4,0004_speaker,叫羊毛批发市场，顺便卖点人生苦难。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0071_crosstalk_0215374-0217032.wav,我跟于谦是初恋。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0004_0004_speaker.wav,1.929,4.08,0.4728,"叫羊毛批发市场
+顺便卖点人生苦难"
+5,0005_speaker,先说第一案，薅羊毛大战。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,对门又开了一家金海岸啊，咱们怎么办？,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0005_0005_speaker.wav,1.98,2.32,0.8534,第一案 薅羊毛大战
+6,0006_speaker,这个我熟，日抛号，周抛号，共享额度，反重力废了改 Codex。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0071_crosstalk_0215374-0217032.wav,我跟于谦是初恋。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0006_0006_speaker.wav,2.563,5.04,0.5086,"这个我熟日抛号
+周抛号
+共享额度反中立
+废了改codex"
+7,0007_speaker,还有人双开 Codex。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,对门又开了一家金海岸啊，咱们怎么办？,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0007_0007_speaker.wav,1.859,2.24,0.8298,还有人双开Codex
+8,0008_speaker,好家伙，别人双开游戏，他双开牛马。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0071_crosstalk_0215374-0217032.wav,我跟于谦是初恋。,explicit,,/Users/vanch/tts_benchmarks/omnivoice_content_match_probe_20260515/sharedrefs_pos0_step32/0008_0008_speaker.wav,1.994,3.88,0.514,"好家伙
+别人双开游戏
+他双开牛马"

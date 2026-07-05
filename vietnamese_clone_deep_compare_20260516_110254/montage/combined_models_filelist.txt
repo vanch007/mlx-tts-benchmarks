@@ -1,0 +1,7 @@
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/ref_ban_khoe_khong_24k.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/silence_2s.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/indextts2_vi_combined_24k.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/silence_2s.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/qwen3_tts_combined_24k.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/silence_2s.wav'
+file '/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/montage/omnivoice_combined_24k.wav'

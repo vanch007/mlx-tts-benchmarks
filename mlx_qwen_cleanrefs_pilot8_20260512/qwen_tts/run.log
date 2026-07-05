@@ -1,0 +1,13 @@
+[transformers] You are using a model of type `qwen3_tts` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+  Initialized encoder codebooks
+Loaded speech tokenizer from models/Qwen3-TTS-official-mlx-int8/speech_tokenizer
+{
+  "output_dir": "/Users/vanch/tts_benchmarks/mlx_qwen_cleanrefs_pilot8_20260512/qwen_tts",
+  "manifest_path": "/Users/vanch/tts_benchmarks/mlx_qwen_cleanrefs_pilot8_20260512/qwen_tts/manifest.csv",
+  "combined_path": "/Users/vanch/tts_benchmarks/mlx_qwen_cleanrefs_pilot8_20260512/qwen_tts/combined.wav",
+  "items": 8,
+  "elapsed_s": 8.198,
+  "generation_elapsed_s": 8.1926,
+  "generated_duration_s": 21.68,
+  "rtf": 0.3779
+}

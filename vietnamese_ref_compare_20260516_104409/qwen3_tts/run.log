@@ -1,0 +1,4 @@
+  Initialized encoder codebooks
+Loaded speech tokenizer from models/Qwen3-TTS-official-mlx-int8/speech_tokenizer
+{'model_path': 'models/Qwen3-TTS-official-mlx-int8', 'status': 'weights_converted', 'source_kind': 'official_mlx_candidate', 'variant': 'int8', 'weight_source': 'Qwen/Qwen3-TTS-12Hz-1.7B-Base', 'tokenizer_source': 'Qwen/Qwen3-TTS-12Hz-1.7B-Base', 'manifest_path': 'models/Qwen3-TTS-official-mlx-int8/qwen3_tts_official_mlx_manifest.json', 'broken_weight_links': [], 'warnings': []}
+/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/qwen3_tts/qwen3_tts_vi_ref_long.wav

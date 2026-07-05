@@ -1,0 +1,4 @@
+backend,model,rows,avg_cer,avg_wer,avg_similarity,max_cer,ref_phrase_leaks,avg_repeat_rate,total_audio_duration_s,combined_duration_s,wall_elapsed_s,rtf_items,combined
+indextts2_vi,IndexTTS2 Vietnamese 8bit,6,0.0667,0.123,0.961,0.3143,0,0.0121,94.886,98.487,71.06,0.7489,/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/indextts2_vi/combined.wav
+qwen3_tts,Qwen3-TTS Base official int8,6,0.1357,0.125,0.9294,0.8143,0,0.0,67.04,67.04,21.212,0.3164,/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/qwen3_tts/combined.wav
+omnivoice,OmniVoice 8bit,6,0.2045,0.202,0.9231,1.0185,0,0.0,125.446,128.445,50.624,0.4036,/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/omnivoice/combined.wav

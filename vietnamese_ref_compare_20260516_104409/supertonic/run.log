@@ -1,0 +1,11 @@
+=== TTS Inference with ONNX Runtime (Python) ===
+
+Using CPU for inference
+Loaded 1 voice styles
+
+[1/1] Starting synthesis...
+Generating speech from text...
+  -> Generating speech from text completed in 15.40 sec
+Saved: /Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/supertonic/Sáng_nay__tôi_thức_d_1.wav
+
+=== Synthesis completed successfully! ===

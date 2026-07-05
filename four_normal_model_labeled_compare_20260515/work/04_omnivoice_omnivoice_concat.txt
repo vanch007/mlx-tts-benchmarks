@@ -1,0 +1,3 @@
+file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/04_omnivoice_omnivoice_label.wav'
+file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/silence_0_75.wav'
+file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/04_omnivoice_omnivoice_audio_std.wav'
