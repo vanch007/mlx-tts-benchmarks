@@ -22,7 +22,31 @@
 ## Combined listening file
 
 - Montage order: reference clip → Supertonic → IndexTTS2 → Qwen3-TTS → OmniVoice
-- File: `/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/vietnamese_tts_comparison_montage.wav`
+- File: [vietnamese_tts_comparison_montage.wav](vietnamese_tts_comparison_montage.wav)
+
+<audio controls src="vietnamese_tts_comparison_montage.wav"></audio>
+
+### Individual listening files
+
+Reference:
+
+<audio controls src="ref/ban_khoe_khong_ref_24k.wav"></audio>
+
+Supertonic 3 preset F1:
+
+<audio controls src="supertonic/supertonic_F1_vi_long.wav"></audio>
+
+IndexTTS2 Vietnamese 8bit:
+
+<audio controls src="indextts2_vi/indextts2_vi_ref_long.wav"></audio>
+
+Qwen3-TTS Base int8:
+
+<audio controls src="qwen3_tts/qwen3_tts_vi_ref_long.wav"></audio>
+
+OmniVoice 8bit:
+
+<audio controls src="omnivoice/omnivoice_vi_ref_long.wav"></audio>
 
 ## Quick ASR previews
 

@@ -4,11 +4,25 @@ This comparison combines the three valid outputs from the M3 Max 8-row pilot (`i
 
 ## Listen
 
-- Master labeled comparison: `/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/00_four_models_labeled_compare.wav` (116.25s)
-- IndexTTS2: `/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/01_indextts_indextts2_labeled.wav` (32.10s)
-- VoxCPM2: `/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/02_voxcpm2_voxcpm2_labeled.wav` (29.75s)
-- Qwen3-TTS CleanRefs: `/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/03_qwen_tts_qwen3-tts_cleanrefs_labeled.wav` (24.66s)
-- OmniVoice: `/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/04_omnivoice_omnivoice_labeled.wav` (27.49s)
+- Master labeled comparison: [00_four_models_labeled_compare.wav](00_four_models_labeled_compare.wav) (116.25s)
+
+<audio controls src="00_four_models_labeled_compare.wav"></audio>
+
+- IndexTTS2: [01_indextts_indextts2_labeled.wav](01_indextts_indextts2_labeled.wav) (32.10s)
+
+<audio controls src="01_indextts_indextts2_labeled.wav"></audio>
+
+- VoxCPM2: [02_voxcpm2_voxcpm2_labeled.wav](02_voxcpm2_voxcpm2_labeled.wav) (29.75s)
+
+<audio controls src="02_voxcpm2_voxcpm2_labeled.wav"></audio>
+
+- Qwen3-TTS CleanRefs: [03_qwen_tts_qwen3-tts_cleanrefs_labeled.wav](03_qwen_tts_qwen3-tts_cleanrefs_labeled.wav) (24.66s)
+
+<audio controls src="03_qwen_tts_qwen3-tts_cleanrefs_labeled.wav"></audio>
+
+- OmniVoice: [04_omnivoice_omnivoice_labeled.wav](04_omnivoice_omnivoice_labeled.wav) (27.49s)
+
+<audio controls src="04_omnivoice_omnivoice_labeled.wav"></audio>
 
 ## Metrics
 

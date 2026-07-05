@@ -64,14 +64,27 @@ Interpretation: Qwen3 benefits most from number pre-normalization; the previous 
 ## Listening files
 
 - Three-model combined montage order: reference → IndexTTS2 → Qwen3-TTS → OmniVoice
-  - `/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/vietnamese_clone_three_model_montage.wav`
+  - [vietnamese_clone_three_model_montage.wav](vietnamese_clone_three_model_montage.wav)
+
+<audio controls src="vietnamese_clone_three_model_montage.wav"></audio>
+
 - Casewise montage order per row: IndexTTS2 → Qwen3-TTS → OmniVoice
-  - `/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/vietnamese_clone_casewise_montage.wav`
+  - [vietnamese_clone_casewise_montage.wav](vietnamese_clone_casewise_montage.wav)
+
+<audio controls src="vietnamese_clone_casewise_montage.wav"></audio>
 
 Individual combined files:
-- IndexTTS2 Vietnamese 8bit: `/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/indextts2_vi/combined.wav`
-- Qwen3-TTS Base official int8: `/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/qwen3_tts/combined.wav`
-- OmniVoice 8bit: `/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/omnivoice/combined.wav`
+- IndexTTS2 Vietnamese 8bit: [combined.wav](indextts2_vi/combined.wav)
+
+<audio controls src="indextts2_vi/combined.wav"></audio>
+
+- Qwen3-TTS Base official int8: [combined.wav](qwen3_tts/combined.wav)
+
+<audio controls src="qwen3_tts/combined.wav"></audio>
+
+- OmniVoice 8bit: [combined.wav](omnivoice/combined.wav)
+
+<audio controls src="omnivoice/combined.wav"></audio>
 
 ## Recommendation
 
