@@ -17,3 +17,10 @@ env/
 
 tmp/
 temp/
+
+# Local benchmark archives are kept on disk but not published to GitHub.
+.ai_*.md
+202605*/
+*_202605*/
+mlx_m3max_smoke_inputs/
+groupchat_crosstalk_*.csv

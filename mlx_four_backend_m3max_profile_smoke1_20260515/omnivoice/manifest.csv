@@ -1,2 +1,0 @@
-index,id,text,ref_audio,ref_text,ref_text_source,instruct,output_path,elapsed_s,duration_s,rtf
-1,0001_speaker,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,对门又开了一家金海岸啊，咱们怎么办？,explicit,,/Users/vanch/tts_benchmarks/mlx_four_backend_m3max_profile_smoke1_20260515/omnivoice/0001_0001_speaker.wav,2.409,4.16,0.579

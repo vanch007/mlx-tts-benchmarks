@@ -1,5 +1,0 @@
-backend,output_wav,expected_text,ref_text,asr_text,content_score,leakage_score,content_pass,leakage_pass
-indextts,/Users/vanch/tts_benchmarks/mlx_four_backend_m3max_profile_smoke1_20260515/indextts/0001_0001_speaker.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,对门又开了一家金海岸啊，咱们怎么办？,各位观众欢迎收听近日AI修宪群下BB报告,0.7500,0.0000,False,True
-voxcpm2,/Users/vanch/tts_benchmarks/mlx_four_backend_m3max_profile_smoke1_20260515/voxcpm2/segments/0001_0001_speaker.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,对门又开了一家金海岸啊，咱们怎么办？,各位观众欢迎收听近日AI修仙群瞎BB报告,0.8500,0.0000,True,True
-qwen_tts,/Users/vanch/tts_benchmarks/mlx_four_backend_m3max_profile_smoke1_20260515/qwen_tts/segments/0001_0001_speaker.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,对门又开了一家金海岸啊，咱们怎么办？,对门又开了对开了对门就给对门又快了对门,0.0000,0.2857,False,True
-omnivoice,/Users/vanch/tts_benchmarks/mlx_four_backend_m3max_profile_smoke1_20260515/omnivoice/0001_0001_speaker.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,对门又开了一家金海岸啊，咱们怎么办？,多听今日AI修仙群虾BB报告,0.5882,0.0000,False,True

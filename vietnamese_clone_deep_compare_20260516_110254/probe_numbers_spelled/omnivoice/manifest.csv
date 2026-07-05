@@ -1,2 +1,0 @@
-index,id,text,ref_audio,ref_text,ref_text_source,instruct,output_path,elapsed_s,duration_s,rtf
-1,vi_07_numbers_spelled,"Cuộc họp bắt đầu lúc chín giờ mười lăm phút ngày mười sáu tháng năm năm hai nghìn không trăm hai mươi sáu, chi phí dự kiến là một triệu hai trăm năm mươi nghìn đồng.",/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/ref/ban_khoe_khong_ref_24k.wav,Bạn khỏe không?,explicit,,/Users/vanch/tts_benchmarks/vietnamese_clone_deep_compare_20260516_110254/probe_numbers_spelled/omnivoice/0001_vi_07_numbers_spelled.wav,0.0,22.285,

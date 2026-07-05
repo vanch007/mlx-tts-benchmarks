@@ -1,13 +1,21 @@
 # mlx-tts-benchmarks
 
-Benchmark artifacts and comparison reports for MLX-oriented TTS model experiments.
+Published listening reports and final audio samples for MLX-oriented TTS model comparisons.
 
-This repository currently contains historical benchmark run directories with generated audio, manifests, ASR outputs, summaries, and reports.
+Only the audio versions used by the final listening report are tracked here.
 
 ## Reports
 
-- 试听报告: [Vietnamese long-form comparison](https://vanch007.github.io/mlx-tts-benchmarks/vietnamese_ref_compare_20260516_104409/report.html)
-- 能力报告: [Vietnamese voice-cloning deep comparison](https://vanch007.github.io/mlx-tts-benchmarks/vietnamese_clone_deep_compare_20260516_110254/report_deep.html)
-- 四模型标注试听报告: [Four normal MLX TTS model comparison](https://vanch007.github.io/mlx-tts-benchmarks/four_normal_model_labeled_compare_20260515/four_normal_comparison_report.html)
+- 试听报告: [Vietnamese long-form comparison](https://vanch007.github.io/mlx-tts-benchmarks/reports/listening-report.html)
+- 能力报告: [Vietnamese voice-cloning deep comparison](https://vanch007.github.io/mlx-tts-benchmarks/reports/capability-report.html)
 
-The reports above are rendered by GitHub Pages from the existing Markdown reports. Their listening sections include browser-native audio controls for the published WAV files.
+## Audio Layout
+
+- `audio/reference/`
+- `audio/supertonic/`
+- `audio/indextts2/`
+- `audio/qwen3-tts/`
+- `audio/omnivoice/`
+- `audio/montage/`
+
+The reports are rendered by GitHub Pages from Markdown and use browser-native audio controls for the published WAV files.

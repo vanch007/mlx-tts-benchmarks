@@ -1,2 +1,0 @@
-index,id,speaker,text,ref_audio,ref_text,voice,instruct,output_path,clone_mode,segments,sample_rate,duration_s,elapsed_s,rtf,max_tokens
-1,0001_speaker,逗哏,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,,,/Users/vanch/tts_benchmarks/mlx_four_backend_smoke2_20260512/qwen_tts/segments/0001_0001_speaker.wav,icl_ref_audio_ref_text,1,24000,3.2,2.1869,0.6834,512

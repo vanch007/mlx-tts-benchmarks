@@ -1,7 +1,0 @@
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/01_indextts_indextts2_labeled.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/silence_0_75.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/02_voxcpm2_voxcpm2_labeled.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/silence_0_75.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/03_qwen_tts_qwen3-tts_cleanrefs_labeled.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/work/silence_0_75.wav'
-file '/Users/vanch/tts_benchmarks/four_normal_model_labeled_compare_20260515/04_omnivoice_omnivoice_labeled.wav'

@@ -1,8 +1,0 @@
-{
-  "rows": 8,
-  "avg_content_score": 0.9271,
-  "content_failures": 2,
-  "max_leakage_score": 0.1,
-  "leakage_failures": 0,
-  "report": "/Users/vanch/tts_benchmarks/omnivoice_ref_context_trim_pilot8_20260516/asr_report.csv"
-}

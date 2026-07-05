@@ -1,2 +1,0 @@
-index,id,text,ref_audio,ref_text,instruct,output_path,elapsed_s,duration_s,rtf
-1,0001_speaker,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,/Users/vanch/mlx-indextts2/outputs/fjymb_library_final/work/clips/0222_crosstalk_0783190-0786560.wav,各位观众，欢迎收听今日 AI 修仙群瞎哔哔报告。,,/Users/vanch/tts_benchmarks/mlx_four_backend_smoke2_20260512/omnivoice/0001_0001_speaker.wav,0.744,3.68,0.2022
