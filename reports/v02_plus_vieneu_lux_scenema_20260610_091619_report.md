@@ -10,15 +10,15 @@
 
 | 排名 | 项目 | 评分样本数 | 能力总分 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 长文本稳定性 | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_moss_tts` | 28 | 83.927 | 100.0 | 94.518 | 74.134 | 91.73 | 86.886 | 81.237 | 76.561 | 95.808 | 89.542 | 51.871 | yes |
+| 1 | `mlx_moss_tts` | 28 | 84.924 | 100.0 | 94.518 | 74.792 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.291 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.596 | 100.0 | 92.553 | 64.237 | 91.678 | 87.882 | 80.824 | 90.78 | 74.349 | 88.349 | 40.742 | yes |
 | 3 | `mlx_higgs_audio` | 32 | 79.371 | 88.889 | 83.453 | 75.242 | 88.564 | 0.0 | 82.15 | 89.956 | 91.68 | 89.025 | 38.798 | yes |
 | 4 | `mlx_qwen3_tts` | 23 | 78.27 | 84.722 | 85.89 | 74.24 | 55.235 | 88.04 | 88.919 | 91.148 | 0.0 | 91.673 | 79.338 | yes |
 | 5 | `mlx_omnivoice` | 30 | 78.128 | 98.611 | 90.807 | 64.877 | 79.742 | 87.686 | 80.044 | 82.665 | 93.791 | 59.027 | 43.808 | yes |
-| 6 | `mlx_zonos2` | 26 | 76.09 | 77.778 | 93.569 | 63.692 | 86.72 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 40.683 | no |
-| 7 | `mlx_dots_tts` | 27 | 72.38 | 88.889 | 86.231 | 59.201 | 85.671 | 69.764 | 80.68 | 88.913 | 0.0 | 33.99 | 37.268 | yes |
+| 6 | `mlx_dots_tts` | 27 | 76.457 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 40.943 | yes |
+| 7 | `mlx_zonos2` | 26 | 76.09 | 77.778 | 93.569 | 63.692 | 86.72 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 40.683 | no |
 | 8 | `mlx_scenema_audio` | 28 | 67.51 | 86.111 | 78.697 | 61.818 | 58.548 | 0.0 | 78.437 | 76.102 | 81.078 | 70.641 | 10.049 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 61.933 | 88.889 | 82.93 | 47.484 | 0.0 | 88.494 | 73.268 | 87.872 | 83.255 | 75.763 | 19.015 | yes |
+| 9 | `mlx_ming_omni_tts` | 19 | 63.174 | 88.889 | 82.93 | 48.497 | 0.0 | 88.494 | 79.261 | 87.872 | 83.255 | 75.763 | 19.015 | yes |
 | 10 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 | 11 | `mlx_indextts2` | 20 | 59.654 | 68.056 | 78.38 | 55.472 | 11.381 | 0.0 | 84.266 | 80.433 | 0.0 | 77.774 | 7.746 | no |
 
@@ -182,7 +182,7 @@
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 2.5551 | 1.9362 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.582 | 1.9816 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8156 | 1.6346 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.2949 | 0.8823 | 2.1855 | 2.3914 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8656 | 3.0117 | 2.163 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8558 | 1.3927 | 1.4856 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6534 | 3.9474 | 1.9926 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0922 | 1.5781 |  |
@@ -290,11 +290,11 @@
 | `mlx_dots_tts_full_int8_g64` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.298 | 1.1337 |  |
 | `mlx_dots_tts_full_int8_g64` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8861 | 1.198 |  |
 | `mlx_dots_tts_full_int8_g64` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.46 | 1.1869 |  |
-| `mlx_dots_tts_full_int8_g64` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.1522 |  | 3.0042 | 1.1576 |  |
+| `mlx_dots_tts_full_int8_g64` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  | 3.4973 | 1.1741 |  |
 | `mlx_dots_tts_full_int8_g64` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.1364 |  | 2.9699 | 1.1115 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 1.9406 |  | 1.2903 | 2.1538 |  |
+| `mlx_dots_tts_full_int8_g64` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8351 | 1.1665 |  |
 | `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8927 | 1.9456 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 4.4403 |  | 1.2607 | 2.8863 |  |
+| `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3042 | 1.0802 |  |
 | `mlx_indextts2_standard_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0857 | 0.9159 | 2.6993 | 4.0051 |  |
 | `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9199 | 3.4264 | 3.2251 |  |
 | `mlx_indextts2_standard_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0857 | 0.9049 | 2.8119 | 3.7087 |  |
@@ -304,7 +304,7 @@
 | `mlx_indextts2_vietnamese_8bit` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7454 | 3.2102 | 3.5241 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8544 | 0.5445 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8535 | 1.1568 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 1.1 |  | 3.6783 | 1.1545 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8618 | 0.4586 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | MOSS 中文显式停顿标记 (moss_pause_markup_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3293 | 1.8043 |  |
 | `mlx_omnivoice_8bit_trim60` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8905 | 3.2205 | 2.8447 |  |
 | `mlx_omnivoice_8bit_trim60` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8548 | 3.035 | 0.7988 |  |
