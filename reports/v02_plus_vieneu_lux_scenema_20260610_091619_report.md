@@ -13,7 +13,7 @@
 | 1 | `mlx_moss_tts` | 28 | 84.916 | 100.0 | 94.518 | 74.735 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.418 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.596 | 100.0 | 92.553 | 64.237 | 91.678 | 87.882 | 80.824 | 90.78 | 74.349 | 88.349 | 40.742 | yes |
 | 3 | `mlx_omnivoice` | 30 | 79.497 | 98.611 | 90.807 | 65.476 | 79.742 | 87.686 | 80.044 | 82.665 | 93.791 | 83.905 | 43.589 | yes |
-| 4 | `mlx_higgs_audio` | 32 | 79.405 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 39.881 | yes |
+| 4 | `mlx_higgs_audio` | 32 | 79.432 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 40.784 | yes |
 | 5 | `mlx_qwen3_tts` | 23 | 78.27 | 84.722 | 85.89 | 74.24 | 55.235 | 88.04 | 88.919 | 91.148 | 0.0 | 91.673 | 79.338 | yes |
 | 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
@@ -90,8 +90,8 @@
 | `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8023 | 2.3157 | 4.2335 |  |
 | `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8978 | 2.7261 | 2.4584 |  |
 | `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8297 | 2.3848 | 3.1994 |  |
-| `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8538 | 4.3712 | 2.2155 |  |
-| `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 | 0.7581 | 1.3938 | 2.2394 |  |
+| `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3712 | 1.6251 |  |
+| `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 |  | 1.3938 | 1.8694 |  |
 | `mlx_higgs_audio_v3_4b` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8592 | 3.0746 | 1.4345 |  |
 | `mlx_higgs_audio_v3_4b` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8305 | 1.4249 |  |
 | `mlx_indextts2_standard_8bit` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8634 | 3.3813 | 2.9611 |  |
