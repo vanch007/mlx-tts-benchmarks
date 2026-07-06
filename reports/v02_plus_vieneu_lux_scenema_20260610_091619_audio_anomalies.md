@@ -2,7 +2,7 @@
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
 - 音频异常样本数：`17`
-- 性能提示样本数：`52`
+- 性能提示样本数：`53`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
@@ -15,7 +15,7 @@
 | `mlx_indextts2_vietnamese_8bit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 1 | 3 | 生成过慢=3；内容错误偏高=1 |
 | `mlx_moss_tts_local_transformer_v1_5` | 0 | 1 | 2 | 1 | 内容错误偏高=2；内容严重错误=1；生成过慢=1 |
-| `mlx_omnivoice_8bit_trim60` | 0 | 0 | 1 | 1 | 内容错误偏高=1；生成过慢=1 |
+| `mlx_omnivoice_8bit_trim60` | 0 | 0 | 1 | 2 | 生成过慢=2；内容错误偏高=1 |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 3 | 23 | 生成过慢=23；内容错误偏高=3 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 | `mlx_zonos2_bf16` | 0 | 0 | 3 | 1 | 疑似底噪/杂音=2；内容错误偏高=1；生成过慢=1 |
@@ -90,6 +90,7 @@
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
 | medium | 内容错误偏高 | 英文长文本角色连续性 (`scenema_longform_en`) | CER=0.3465，WER=0.2895。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| low | 生成过慢 | 中文三秒目标时长控制 (`control_duration_3s`) | RTF=2.8447，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 四川话日常沟通方言能力 (`core_sichuan_dialect`) | RTF=2.0198，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_scenema_audio_int8_mlx_mps_service
