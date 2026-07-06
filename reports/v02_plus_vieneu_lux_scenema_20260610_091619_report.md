@@ -19,8 +19,8 @@
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
 | 9 | `mlx_ming_omni_tts` | 19 | 63.267 | 88.889 | 83.197 | 48.708 | 0.0 | 88.494 | 79.261 | 87.872 | 83.255 | 75.763 | 18.339 | yes |
-| 10 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
-| 11 | `mlx_indextts2` | 20 | 60.128 | 68.056 | 78.38 | 57.125 | 11.381 | 0.0 | 84.266 | 81.535 | 0.0 | 77.774 | 7.746 | no |
+| 10 | `mlx_indextts2` | 20 | 60.497 | 68.056 | 78.38 | 57.984 | 11.381 | 0.0 | 84.266 | 82.884 | 0.0 | 77.774 | 9.258 | no |
+| 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
 
@@ -94,8 +94,8 @@
 | `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 | 0.7581 | 1.3938 | 2.2394 |  |
 | `mlx_higgs_audio_v3_4b` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8592 | 3.0746 | 1.4345 |  |
 | `mlx_higgs_audio_v3_4b` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8305 | 1.4249 |  |
-| `mlx_indextts2_standard_8bit` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.1 | 0.8855 | 2.7883 | 4.6316 |  |
-| `mlx_indextts2_standard_8bit` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8473 | 1.548 | 1.4566 |  |
+| `mlx_indextts2_standard_8bit` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8634 | 3.3813 | 2.9611 |  |
+| `mlx_indextts2_standard_8bit` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8575 | 1.8714 | 0.9274 |  |
 | `mlx_indextts2_standard_8bit` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8065 | 1.4246 | 0.8604 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.1429 |  | 3.2072 | 2.211 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.851 | 2.4717 |  |
