@@ -18,7 +18,7 @@
 | 6 | `mlx_dots_tts` | 27 | 76.457 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 40.943 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 63.174 | 88.889 | 82.93 | 48.497 | 0.0 | 88.494 | 79.261 | 87.872 | 83.255 | 75.763 | 19.015 | yes |
+| 9 | `mlx_ming_omni_tts` | 19 | 63.267 | 88.889 | 83.197 | 48.708 | 0.0 | 88.494 | 79.261 | 87.872 | 83.255 | 75.763 | 18.339 | yes |
 | 10 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 | 11 | `mlx_indextts2` | 20 | 59.654 | 68.056 | 78.38 | 55.472 | 11.381 | 0.0 | 84.266 | 80.433 | 0.0 | 77.774 | 7.746 | no |
 
@@ -177,7 +177,7 @@
 | `mlx_omnivoice_8bit_trim60` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1637 | 2.0198 |  |
 | `mlx_qwen3_tts_official_int8` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9018 | 2.4102 | 1.1235 |  |
 | `mlx_qwen3_tts_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7942 | 2.8059 | 0.6192 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 1.4023 | 1.5554 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 1.6159 | 1.78 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0781 | 1.8285 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 2.5551 | 1.9362 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.582 | 1.9816 |  |
