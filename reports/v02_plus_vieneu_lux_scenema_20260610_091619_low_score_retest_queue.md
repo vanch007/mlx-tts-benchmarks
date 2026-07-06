@@ -1,25 +1,25 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T01:54:31`
-- Queue rows: `71`
+- Generated: `2026-07-07T02:16:29`
+- Queue rows: `69`
 
 ## Summary
 
 | Bucket | Count |
 |---|---:|
-| `P0` | 5 |
-| `P1` | 50 |
+| `P0` | 4 |
+| `P1` | 49 |
 | `P2` | 9 |
 | `P3` | 7 |
 
 | Issue type | Count |
 |---|---:|
-| `performance_slow` | 51 |
+| `performance_slow` | 50 |
 | `axis_quality_low` | 11 |
 | `coverage_gap_boundary` | 4 |
-| `case_quality_low` | 3 |
 | `content_or_audio_anomaly` | 2 |
+| `case_quality_low` | 2 |
 
 ## Project queues
 
@@ -94,10 +94,9 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P0 | `content_or_audio_anomaly` | 音色克隆与鲁棒性 | `xling_en_to_ja` 英文参考音色说日语克隆 |  | medium/high_content_error: CER=0.4286，WER=0.4286。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| P0 | `case_quality_low` | 音色克隆与鲁棒性 | `xling_en_to_ja` 英文参考音色说日语克隆 | 57.858 | chosen_model=mlx_scenema_audio_int8_mlx_mps_service; cer=0.4286; wer=0.4286; rtf=2.3332; fail_flags=ok | inspect adapter parameters/stdout/stderr and retest this case |
-| P0 | `content_or_audio_anomaly` | 多语种能力 | `core_ja_reading` 日语汇率新闻朗读 |  | medium/high_content_error: CER=0.3125，WER=0.3125。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| P0 | `case_quality_low` | 多语种能力 | `core_ja_reading` 日语汇率新闻朗读 | 51.212 | chosen_model=mlx_scenema_audio_int8_mlx_mps_service; cer=0.3125; wer=0.3125; rtf=1.0729; fail_flags=ok | inspect adapter parameters/stdout/stderr and retest this case |
+| P0 | `content_or_audio_anomaly` | 音色克隆与鲁棒性 | `xling_en_to_ja` 英文参考音色说日语克隆 |  | medium/high_content_error: CER=0.3714，WER=0.3714。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| P0 | `content_or_audio_anomaly` | 多语种能力 | `core_ja_reading` 日语汇率新闻朗读 |  | medium/high_content_error: CER=0.2812，WER=0.2812。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| P0 | `case_quality_low` | 多语种能力 | `core_ja_reading` 日语汇率新闻朗读 | 52.915 | chosen_model=mlx_scenema_audio_int8_mlx_mps_service; cer=0.2812; wer=0.2812; rtf=1.2672; fail_flags=ok | inspect adapter parameters/stdout/stderr and retest this case |
 | P0 | `case_quality_low` | 长文本稳定性 | `stress_long_zh` 中文长文本连续稳定性 | 44.02 | chosen_model=mlx_scenema_audio_int8_mlx_mps_service; cer=0.2024; wer=0.2024; rtf=0.758; fail_flags=ok | inspect adapter parameters/stdout/stderr and retest this case |
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_en_numbers` 英文数字、时间与价格朗读 |  | low/slow_generation: RTF=2.4717，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_zh_en_codeswitch` 中英混读品牌与订单号朗读 |  | low/slow_generation: RTF=2.6187，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
@@ -106,6 +105,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_en_same` 英文参考音色克隆 |  | low/slow_generation: RTF=2.3196，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_zh_same` 中文参考音色克隆 |  | low/slow_generation: RTF=3.8007，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `scenema_clone_tarkin_en` 英文表演式参考音色克隆 |  | low/slow_generation: RTF=5.517，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| P1 | `performance_slow` | 音色克隆与鲁棒性 | `scenema_polyglot_obama_es` 英文参考音色说西语克隆 |  | low/slow_generation: RTF=5.0499，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ### mlx_voxcpm2
 
