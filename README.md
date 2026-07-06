@@ -15,3 +15,5 @@ Only the audio files referenced by the complete audio review report are tracked 
 Audio files are grouped by model under `audio/<model>/`.
 
 The reports are rendered by GitHub Pages from static HTML and use browser-native audio controls for the published WAV files.
+
+Each published page includes a Chinese / English language switcher.
