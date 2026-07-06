@@ -10,6 +10,10 @@ Only the audio files referenced by the complete audio review report are tracked 
 - 综合测试矩阵: [Comprehensive test matrix](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html)
 - 能力六边形报告: [Capability hexagon](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon.html)
 
+## 综合评分权重
+
+综合分采用基础能力优先的 8 轴加权：内容准确 25%、自然音质 22%、多语方言 17%、音色克隆 15%、长文稳定 8%、表达控制 7%、复杂副语 3%、RTF 效率 3%。表达控制、复杂副语言和 RTF 只作为轻量加分/参考项，避免特殊能力或生成速度过度影响整体排名。
+
 ## Model Capability Notes
 
 The capability notes below are summarized from each model's upstream GitHub
