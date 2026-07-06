@@ -10,7 +10,7 @@
 
 | 排名 | 项目 | 评分样本数 | 能力总分 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 长文本稳定性 | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_moss_tts` | 28 | 84.924 | 100.0 | 94.518 | 74.792 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.291 | yes |
+| 1 | `mlx_moss_tts` | 28 | 84.916 | 100.0 | 94.518 | 74.735 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.418 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.596 | 100.0 | 92.553 | 64.237 | 91.678 | 87.882 | 80.824 | 90.78 | 74.349 | 88.349 | 40.742 | yes |
 | 3 | `mlx_omnivoice` | 30 | 79.486 | 98.611 | 90.807 | 65.476 | 79.742 | 87.686 | 80.044 | 82.665 | 93.791 | 83.905 | 43.241 | yes |
 | 4 | `mlx_higgs_audio` | 32 | 79.371 | 88.889 | 83.453 | 75.242 | 88.564 | 0.0 | 82.15 | 89.956 | 91.68 | 89.025 | 38.798 | yes |
@@ -241,7 +241,7 @@
 | `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.2 | 0.8635 | 4.3414 | 1.1014 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0286 | 0.6697 | 3.7065 | 1.1325 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0833 | 0.8222 | 4.011 | 0.9639 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8746 | 4.0196 | 2.1954 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8746 | 4.0196 | 1.9375 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7381 | 3.8772 | 0.88 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4005 | 1.0861 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8487 | 0.9855 |  |
