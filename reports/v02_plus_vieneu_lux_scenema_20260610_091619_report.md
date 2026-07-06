@@ -20,7 +20,7 @@
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
 | 9 | `mlx_ming_omni_tts` | 19 | 63.267 | 88.889 | 83.197 | 48.708 | 0.0 | 88.494 | 79.261 | 87.872 | 83.255 | 75.763 | 18.339 | yes |
 | 10 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
-| 11 | `mlx_indextts2` | 20 | 59.654 | 68.056 | 78.38 | 55.472 | 11.381 | 0.0 | 84.266 | 80.433 | 0.0 | 77.774 | 7.746 | no |
+| 11 | `mlx_indextts2` | 20 | 60.128 | 68.056 | 78.38 | 57.125 | 11.381 | 0.0 | 84.266 | 81.535 | 0.0 | 77.774 | 7.746 | no |
 
 ## 样本摘要
 
@@ -88,8 +88,8 @@
 | `mlx_omnivoice_8bit_trim60` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3311 | 0.7061 |  |
 | `mlx_omnivoice_8bit_trim60` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4286 | 0.52 |  |
 | `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8023 | 2.3157 | 4.2335 |  |
-| `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7895 | 1.7286 | 2.6985 |  |
-| `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8079 | 1.6187 | 3.0593 |  |
+| `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8978 | 2.7261 | 2.4584 |  |
+| `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8297 | 2.3848 | 3.1994 |  |
 | `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8538 | 4.3712 | 2.2155 |  |
 | `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 | 0.7581 | 1.3938 | 2.2394 |  |
 | `mlx_higgs_audio_v3_4b` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8592 | 3.0746 | 1.4345 |  |
