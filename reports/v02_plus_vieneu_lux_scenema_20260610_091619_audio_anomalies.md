@@ -2,14 +2,13 @@
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
 - 音频异常样本数：`2`
-- 性能提示样本数：`50`
+- 性能提示样本数：`49`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
 
 | 模型 | 严重 | 高 | 中 | 低 | 分类计数 |
 |---|---:|---:|---:|---:|---|
-| `mlx_dots_tts_full_int8_g64` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_higgs_audio_v3_4b` | 0 | 0 | 0 | 3 | 生成过慢=3 |
 | `mlx_indextts2_standard_8bit` | 0 | 0 | 0 | 13 | 生成过慢=13 |
 | `mlx_indextts2_vietnamese_8bit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
@@ -19,12 +18,6 @@
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 2 | 22 | 生成过慢=22；内容错误偏高=2 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 | `mlx_zonos2_bf16` | 0 | 0 | 0 | 1 | 生成过慢=1 |
-
-## mlx_dots_tts_full_int8_g64
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| low | 生成过慢 | 中文数字、时间与订单号朗读 (`core_zh_numbers`) | RTF=2.2535，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_higgs_audio_v3_4b
 

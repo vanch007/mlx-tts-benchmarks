@@ -1,21 +1,21 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T03:48:20`
-- Queue rows: `69`
+- Generated: `2026-07-07T03:56:01`
+- Queue rows: `68`
 
 ## Summary
 
 | Bucket | Count |
 |---|---:|
 | `P0` | 4 |
-| `P1` | 49 |
+| `P1` | 48 |
 | `P2` | 9 |
 | `P3` | 7 |
 
 | Issue type | Count |
 |---|---:|
-| `performance_slow` | 50 |
+| `performance_slow` | 49 |
 | `axis_quality_low` | 11 |
 | `coverage_gap_boundary` | 4 |
 | `content_or_audio_anomaly` | 2 |
@@ -29,8 +29,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P1 | `performance_slow` | 内容准确与可懂度 | `core_zh_numbers` 中文数字、时间与订单号朗读 |  | low/slow_generation: RTF=2.2535，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| P2 | `axis_quality_low` | RTF 生成效率 |  | 40.943 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P2 | `axis_quality_low` | RTF 生成效率 |  | 43.41 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
 ### mlx_higgs_audio
 
