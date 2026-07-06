@@ -1,5 +1,0 @@
-display,backend,model,profile,voice_style,reference_audio_used,duration_s,elapsed_s,rtf,asr_tiny_similarity,output,note
-Supertonic 3 preset F1,supertonic,,,F1,False,100.177,15.801,0.1577,0.8142,/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/supertonic/supertonic_F1_vi_long.wav,固定音色；不使用参考音频克隆
-IndexTTS2 Vietnamese 8bit,mlx-indextts2,,vietnamese,,True,80.132,58.807,0.7339,0.7859,/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/indextts2_vi/indextts2_vi_ref_long.wav,使用参考音频克隆；越南语专用模型
-Qwen3-TTS Base int8,mlx-qwen3-tts,qwen3_tts_8bit,,,True,54.56,19.19,0.3517,0.7202,/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/qwen3_tts/qwen3_tts_vi_ref_long.wav,使用参考音频+ref_text ICL；lang-code=vi
-OmniVoice 8bit,mlx-omnivoice,omnivoice_8bit,,,True,110.221,40.508,0.3675,0.7548,/Users/vanch/tts_benchmarks/vietnamese_ref_compare_20260516_104409/omnivoice/omnivoice_vi_ref_long.wav,使用参考音频+ref_text；实验性越南语对比
