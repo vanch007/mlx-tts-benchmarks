@@ -1,21 +1,21 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T04:16:08`
-- Queue rows: `66`
+- Generated: `2026-07-07T04:34:30`
+- Queue rows: `65`
 
 ## Summary
 
 | Bucket | Count |
 |---|---:|
 | `P0` | 4 |
-| `P1` | 46 |
+| `P1` | 45 |
 | `P2` | 9 |
 | `P3` | 7 |
 
 | Issue type | Count |
 |---|---:|
-| `performance_slow` | 47 |
+| `performance_slow` | 46 |
 | `axis_quality_low` | 11 |
 | `coverage_gap_boundary` | 4 |
 | `content_or_audio_anomaly` | 2 |
@@ -35,10 +35,9 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_happy` 中文开心情绪标签控制 |  | low/slow_generation: RTF=2.2974，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_prompt_en` 英文疑惑情绪参考迁移 |  | low/slow_generation: RTF=2.2155，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_whisper_style` 中文耳语参考风格迁移 |  | low/slow_generation: RTF=2.2394，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| P2 | `axis_quality_low` | RTF 生成效率 |  | 38.798 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P2 | `axis_quality_low` | RTF 生成效率 |  | 39.881 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
 ### mlx_indextts2
 

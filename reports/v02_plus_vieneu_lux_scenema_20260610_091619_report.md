@@ -13,7 +13,7 @@
 | 1 | `mlx_moss_tts` | 28 | 84.916 | 100.0 | 94.518 | 74.735 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.418 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.596 | 100.0 | 92.553 | 64.237 | 91.678 | 87.882 | 80.824 | 90.78 | 74.349 | 88.349 | 40.742 | yes |
 | 3 | `mlx_omnivoice` | 30 | 79.497 | 98.611 | 90.807 | 65.476 | 79.742 | 87.686 | 80.044 | 82.665 | 93.791 | 83.905 | 43.589 | yes |
-| 4 | `mlx_higgs_audio` | 32 | 79.371 | 88.889 | 83.453 | 75.242 | 88.564 | 0.0 | 82.15 | 89.956 | 91.68 | 89.025 | 38.798 | yes |
+| 4 | `mlx_higgs_audio` | 32 | 79.405 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 39.881 | yes |
 | 5 | `mlx_qwen3_tts` | 23 | 78.27 | 84.722 | 85.89 | 74.24 | 55.235 | 88.04 | 88.919 | 91.148 | 0.0 | 91.673 | 79.338 | yes |
 | 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
@@ -167,7 +167,7 @@
 | `mlx_qwen3_tts_custom_voice_official_int8` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5353 | 1.04 |  |
 | `mlx_qwen3_tts_custom_voice_official_int8` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4513 | 0.427 |  |
 | `mlx_qwen3_tts_custom_voice_official_int8` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8338 | 0.601 |  |
-| `mlx_higgs_audio_v3_4b` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9447 | 2.2974 |  |
+| `mlx_higgs_audio_v3_4b` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9518 | 1.3935 |  |
 | `mlx_higgs_audio_v3_4b` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6746 | 1.2438 |  |
 | `mlx_higgs_audio_v3_4b` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7501 | 1.1877 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7553 | 3.6614 |  |
