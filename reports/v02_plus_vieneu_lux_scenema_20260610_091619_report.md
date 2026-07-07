@@ -18,8 +18,8 @@
 | 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 63.465 | 88.889 | 83.197 | 49.31 | 0.0 | 88.494 | 79.261 | 88.997 | 83.255 | 75.763 | 16.752 | yes |
-| 10 | `mlx_indextts2` | 20 | 63.427 | 68.056 | 90.033 | 57.7 | 11.381 | 0.0 | 84.603 | 82.913 | 0.0 | 77.774 | 9.88 | no |
+| 9 | `mlx_indextts2` | 20 | 63.473 | 68.056 | 90.033 | 57.772 | 11.381 | 0.0 | 84.681 | 82.913 | 0.0 | 77.774 | 10.459 | no |
+| 10 | `mlx_ming_omni_tts` | 19 | 63.465 | 88.889 | 83.197 | 49.31 | 0.0 | 88.494 | 79.261 | 88.997 | 83.255 | 75.763 | 16.752 | yes |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
@@ -65,7 +65,7 @@
 | `mlx_higgs_audio_v3_4b` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0476 |  | 3.3913 | 0.8107 |  |
 | `mlx_higgs_audio_v3_4b` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.552 | 0.9758 |  |
 | `mlx_indextts2_standard_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9218 | 3.8616 | 2.8211 |  |
-| `mlx_indextts2_standard_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9026 | 2.5934 | 2.128 |  |
+| `mlx_indextts2_standard_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9063 | 2.6699 | 1.7976 |  |
 | `mlx_indextts2_standard_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8141 | 4.3319 | 2.0326 |  |
 | `mlx_indextts2_standard_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8165 | 3.4407 | 2.1944 |  |
 | `mlx_indextts2_standard_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8401 | 3.6941 | 2.0884 |  |
