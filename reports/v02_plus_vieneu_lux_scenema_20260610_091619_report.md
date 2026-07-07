@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 汇总报表
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`。
-- 指标 CSV：`results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
+- 指标 CSV：`../results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
 - 已从主评分隐藏 33 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
@@ -18,7 +18,7 @@
 | 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 63.328 | 88.889 | 83.197 | 48.738 | 0.0 | 88.494 | 79.261 | 88.311 | 83.255 | 75.763 | 18.666 | yes |
+| 9 | `mlx_ming_omni_tts` | 19 | 63.465 | 88.889 | 83.197 | 49.31 | 0.0 | 88.494 | 79.261 | 88.997 | 83.255 | 75.763 | 16.752 | yes |
 | 10 | `mlx_indextts2` | 20 | 60.497 | 68.056 | 78.38 | 57.984 | 11.381 | 0.0 | 84.266 | 82.884 | 0.0 | 77.774 | 9.258 | no |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
@@ -186,7 +186,7 @@
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8558 | 1.3927 | 1.4856 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6534 | 3.9474 | 1.9926 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0922 | 1.5781 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4648 | 1.3634 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0445 | 2.2803 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.771 | 3.2449 | 1.3979 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0198 |  | 1.3392 | 1.2337 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9836 | 3.1698 |  |
@@ -313,7 +313,7 @@
 
 ## 本地 TTS 覆盖状态
 
-- Inventory CSV：`reports/local_open_tts_inventory.csv`
+- Inventory CSV：`../reports/local_open_tts_inventory.csv`
 
 | 模型 | 状态 | 路径 |
 |---|---|---|
