@@ -18,7 +18,7 @@
 | 6 | `mlx_dots_tts` | 27 | 76.75 | 88.889 | 86.231 | 64.242 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 86.383 | 43.976 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.364 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 40.86 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 64.023 | 88.889 | 83.197 | 51.234 | 0.0 | 90.337 | 79.261 | 89.906 | 83.255 | 75.763 | 16.386 | yes |
+| 9 | `mlx_ming_omni_tts` | 19 | 64.116 | 88.889 | 83.197 | 51.493 | 0.0 | 90.337 | 79.261 | 89.906 | 84.075 | 75.763 | 16.77 | yes |
 | 10 | `mlx_indextts2` | 20 | 63.473 | 68.056 | 90.033 | 57.772 | 11.381 | 0.0 | 84.681 | 82.913 | 0.0 | 77.774 | 10.459 | no |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
@@ -192,7 +192,7 @@
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9836 | 3.1698 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5931 | 1.7675 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7119 | 2.6566 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4536 | 1.4819 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7161 | 1.3542 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0375 | 1.7995 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0238 |  | 1.3438 | 1.1213 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.1368 | 1.3737 |  |
