@@ -19,7 +19,7 @@
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
 | 9 | `mlx_ming_omni_tts` | 19 | 63.465 | 88.889 | 83.197 | 49.31 | 0.0 | 88.494 | 79.261 | 88.997 | 83.255 | 75.763 | 16.752 | yes |
-| 10 | `mlx_indextts2` | 20 | 61.613 | 68.056 | 82.809 | 58.022 | 11.381 | 0.0 | 84.266 | 82.884 | 0.0 | 77.774 | 9.258 | no |
+| 10 | `mlx_indextts2` | 20 | 61.625 | 68.056 | 82.809 | 58.066 | 11.381 | 0.0 | 84.266 | 82.913 | 0.0 | 77.774 | 9.258 | no |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
@@ -87,7 +87,7 @@
 | `mlx_omnivoice_8bit_trim60` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0538 | 1.2133 |  |
 | `mlx_omnivoice_8bit_trim60` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3311 | 0.7061 |  |
 | `mlx_omnivoice_8bit_trim60` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4286 | 0.52 |  |
-| `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8023 | 2.3157 | 4.2335 |  |
+| `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8566 | 2.3625 | 3.0269 |  |
 | `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8978 | 2.7261 | 2.4584 |  |
 | `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8297 | 2.3848 | 3.1994 |  |
 | `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3712 | 1.6251 |  |
