@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 汇总报表
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`。
-- 指标 CSV：`./results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
+- 指标 CSV：`results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
 - 已从主评分隐藏 33 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
@@ -18,7 +18,7 @@
 | 6 | `mlx_dots_tts` | 27 | 76.75 | 88.889 | 86.231 | 64.242 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 86.383 | 43.976 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.364 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 40.86 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 63.666 | 88.889 | 83.197 | 50.038 | 0.0 | 90.337 | 79.261 | 88.997 | 83.255 | 75.763 | 16.274 | yes |
+| 9 | `mlx_ming_omni_tts` | 19 | 64.023 | 88.889 | 83.197 | 51.234 | 0.0 | 90.337 | 79.261 | 89.906 | 83.255 | 75.763 | 16.386 | yes |
 | 10 | `mlx_indextts2` | 20 | 63.473 | 68.056 | 90.033 | 57.772 | 11.381 | 0.0 | 84.681 | 82.913 | 0.0 | 77.774 | 10.459 | no |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
@@ -190,7 +190,7 @@
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.771 | 3.2449 | 1.3979 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0198 |  | 1.3392 | 1.2337 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9836 | 3.1698 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.3811 | 1.8048 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5931 | 1.7675 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7119 | 2.6566 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4536 | 1.4819 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0375 | 1.7995 |  |
@@ -313,27 +313,27 @@
 
 ## 本地 TTS 覆盖状态
 
-- Inventory CSV：`./reports/local_open_tts_inventory.csv`
+- Inventory CSV：`reports/local_open_tts_inventory.csv`
 
 | 模型 | 状态 | 路径 |
 |---|---|---|
-| `mlx_indextts2_standard_8bit` | scored | `~/mlx-indextts2` |
-| `mlx_indextts2_vietnamese_8bit` | scored | `~/mlx-indextts2` |
-| `mlx_voxcpm2_bf16_dit` | scored | `~/mlx-voxcpm2` |
-| `mlx_qwen3_tts_official_int8` | scored | `~/mlx-qwen3-tts` |
-| `mlx_qwen3_tts_voice_design_official_int8` | scored | `~/mlx-qwen3-tts` |
-| `mlx_qwen3_tts_custom_voice_official_int8` | scored | `~/mlx-qwen3-tts` |
-| `mlx_omnivoice_8bit_trim60` | scored | `~/mlx-omnivoice` |
-| `mlx_dots_tts_full_int8_g64` | scored | `~/mlx-dots.tts` |
-| `mlx_higgs_audio_v3_4b` | scored | `~/mlx-higgs-audio` |
-| `mlx_scenema_audio_int8_mlx_mps_service` | scored | `~/mlx-scenema-audio` |
-| `mlx_supertonic3_mlx` | scored | `~/mlx-supertonic` |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `~/mlx-Ming-omni-tts` |
-| `mlx_zonos2_bf16` | scored | `~/mlx-ZONOS2` |
-| `mlx_moss_tts_local_transformer_v1_5` | scored | `~/mlx-MOSS-TTS-Local-Transformer-v1.5` |
-| `mlx_audio_multi_model` | toolkit_not_single_model | `~/mlx-audio` |
-| `cloudflare_edge_tts` | excluded_not_open_source_model | `~/cloudflare-edge-tts` |
-| `speech_to_speech` | excluded_pipeline_wrapper | `~/speech-to-speech` |
+| `mlx_indextts2_standard_8bit` | scored | `mlx-indextts2` |
+| `mlx_indextts2_vietnamese_8bit` | scored | `mlx-indextts2` |
+| `mlx_voxcpm2_bf16_dit` | scored | `mlx-voxcpm2` |
+| `mlx_qwen3_tts_official_int8` | scored | `mlx-qwen3-tts` |
+| `mlx_qwen3_tts_voice_design_official_int8` | scored | `mlx-qwen3-tts` |
+| `mlx_qwen3_tts_custom_voice_official_int8` | scored | `mlx-qwen3-tts` |
+| `mlx_omnivoice_8bit_trim60` | scored | `mlx-omnivoice` |
+| `mlx_dots_tts_full_int8_g64` | scored | `mlx-dots.tts` |
+| `mlx_higgs_audio_v3_4b` | scored | `mlx-higgs-audio` |
+| `mlx_scenema_audio_int8_mlx_mps_service` | scored | `mlx-scenema-audio` |
+| `mlx_supertonic3_mlx` | scored | `mlx-supertonic` |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `mlx-Ming-omni-tts` |
+| `mlx_zonos2_bf16` | scored | `mlx-ZONOS2` |
+| `mlx_moss_tts_local_transformer_v1_5` | scored | `mlx-MOSS-TTS-Local-Transformer-v1.5` |
+| `mlx_audio_multi_model` | toolkit_not_single_model | `mlx-audio` |
+| `cloudflare_edge_tts` | excluded_not_open_source_model | `cloudflare-edge-tts` |
+| `speech_to_speech` | excluded_pipeline_wrapper | `speech-to-speech` |
 
 ## 结论
 

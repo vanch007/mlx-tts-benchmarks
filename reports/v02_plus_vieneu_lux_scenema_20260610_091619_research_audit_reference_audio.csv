@@ -1,12 +1,12 @@
 reference_id,registered,active_in_test_cases,path,path_exists,source_type,license_status,speaker_count,language,duration_sec,has_transcript,condition_tags,valid_for_capabilities,strict_formal_ready,exclusion_reason
-ban_khoe_khong_vi_ref,yes,yes,../audio/reference_audio/ban_khoe_khong_vi_ref.wav,yes,local_docs,internal_only,1,vi,4.0,yes,clean;vietnamese,voice_clone;vietnamese_clone,yes,
-dots_emotion_male_en_prompt,yes,yes,../audio/reference_audio/dots_emotion_male_en_prompt.wav,yes,official_demo,internal_only,1,en,6.0,yes,clean;emotion_prompt,emotion_transfer;style_transfer,yes,
-dots_seedtts_en_ref,yes,yes,../audio/reference_audio/dots_seedtts_en_ref.wav,yes,official_demo,internal_only,1,en,5.0,yes,clean,voice_clone,yes,
-dots_seedtts_zh_ref,yes,yes,../audio/reference_audio/dots_seedtts_zh_ref.wav,yes,official_demo,internal_only,1,zh,5.0,yes,clean,voice_clone,yes,
-dots_whisper_female_prompt,yes,yes,../audio/reference_audio/dots_whisper_female_prompt.wav,yes,official_demo,internal_only,1,zh,4.0,yes,clean;style_prompt,style_transfer;whisper_style,yes,
-dots_xling_female_en_prompt,yes,yes,../audio/reference_audio/dots_xling_female_en_prompt.wav,yes,official_demo,internal_only,1,en,4.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
+ban_khoe_khong_vi_ref,yes,yes,data/reference_audio/ban_khoe_khong_vi_ref.wav,yes,local_docs,internal_only,1,vi,4.0,yes,clean;vietnamese,voice_clone;vietnamese_clone,yes,
+dots_emotion_male_en_prompt,yes,yes,data/reference_audio/dots_emotion_male_en_prompt.wav,yes,official_demo,internal_only,1,en,6.0,yes,clean;emotion_prompt,emotion_transfer;style_transfer,yes,
+dots_seedtts_en_ref,yes,yes,data/reference_audio/dots_seedtts_en_ref.wav,yes,official_demo,internal_only,1,en,5.0,yes,clean,voice_clone,yes,
+dots_seedtts_zh_ref,yes,yes,data/reference_audio/dots_seedtts_zh_ref.wav,yes,official_demo,internal_only,1,zh,5.0,yes,clean,voice_clone,yes,
+dots_whisper_female_prompt,yes,yes,data/reference_audio/dots_whisper_female_prompt.wav,yes,official_demo,internal_only,1,zh,4.0,yes,clean;style_prompt,style_transfer;whisper_style,yes,
+dots_xling_female_en_prompt,yes,yes,data/reference_audio/dots_xling_female_en_prompt.wav,yes,official_demo,internal_only,1,en,4.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
 higgs_male_voice,yes,no,data/reference_audio/higgs_male_voice.wav,yes,official_demo,internal_only,1,en,6.0,yes,clean,voice_clone,yes,
-higgs_ref_voice,yes,yes,../audio/reference_audio/higgs_ref_voice.wav,yes,official_demo,internal_only,1,en,8.0,yes,clean;style_prompt,voice_clone;style_transfer;control_tokens,yes,
+higgs_ref_voice,yes,yes,data/reference_audio/higgs_ref_voice.wav,yes,official_demo,internal_only,1,en,8.0,yes,clean;style_prompt,voice_clone;style_transfer;control_tokens,yes,
 noisy_single_speaker_zh_ref,yes,no,data/reference_audio/noisy_single_speaker_zh_ref.wav,yes,generated_exploratory,unknown,1,zh,5.0,yes,noisy;simulated,exploratory,no,simulated source; removed from formal scoring
 omnivoice_fleurs_ja_1,yes,no,data/reference_audio/omnivoice_fleurs_ja_1.wav,yes,official_demo,internal_only,1,ja,6.0,no,clean;multilingual_anchor,multilingual_clone,no,missing transcript for strict formal SIM/content audit
 omnivoice_noisy_en_prompt_8463,yes,no,data/reference_audio/omnivoice_noisy_en_prompt_8463.wav,yes,official_demo,internal_only,1,en,6.0,yes,noisy;official_prompt,exploratory_noise_robustness,no,noise robustness only; not formal clone SIM reference
@@ -14,13 +14,13 @@ omnivoice_seedtts_ref_en_1,yes,no,data/reference_audio/omnivoice_seedtts_ref_en_
 omnivoice_seedtts_ref_zh_1,yes,no,data/reference_audio/omnivoice_seedtts_ref_zh_1.wav,yes,official_demo,internal_only,1,zh,5.0,no,clean,cross_lingual_clone;voice_clone,no,missing transcript for strict formal SIM/content audit
 phone_clean_single_speaker_placeholder,yes,no,,no,missing,unknown,0,zh,0.0,no,missing,phone_reference_stress,no,missing source-matched phone Chinese reference
 phone_simulated_single_speaker_zh_ref,yes,no,data/reference_audio/phone_simulated_single_speaker_zh_ref.wav,yes,generated_exploratory,unknown,1,zh,5.0,yes,phone;simulated,exploratory,no,simulated source; removed from formal scoring
-qwen3_clone_3s,yes,yes,../audio/reference_audio/qwen3_clone_3s_trimmed.wav,yes,official_demo,internal_only,1,en,3.0,yes,clean;short_reference,voice_clone;short_reference_clone,yes,
+qwen3_clone_3s,yes,yes,data/reference_audio/qwen3_clone_3s_trimmed.wav,yes,official_demo,internal_only,1,en,3.0,yes,clean;short_reference,voice_clone;short_reference_clone,yes,
 scenema_reference_aussie,yes,no,data/reference_audio/scenema_reference_aussie.wav,yes,official_demo,internal_only,1,en,6.0,no,clean;short_reference,exploratory,no,not used as current formal reference
-scenema_reference_obama,yes,yes,../audio/reference_audio/scenema_reference_obama.wav,yes,official_demo,internal_only,1,en,16.0,yes,clean;10_20s_reference,voice_clone;polyglot_clone,yes,
-scenema_reference_tarkin,yes,yes,../audio/reference_audio/scenema_reference_tarkin.wav,yes,official_demo,internal_only,1,en,16.0,yes,clean;10_20s_reference,voice_clone;expressive_clone,yes,
+scenema_reference_obama,yes,yes,data/reference_audio/scenema_reference_obama.wav,yes,official_demo,internal_only,1,en,16.0,yes,clean;10_20s_reference,voice_clone;polyglot_clone,yes,
+scenema_reference_tarkin,yes,yes,data/reference_audio/scenema_reference_tarkin.wav,yes,official_demo,internal_only,1,en,16.0,yes,clean;10_20s_reference,voice_clone;expressive_clone,yes,
 source_matched_noisy_zh_ref_required,yes,no,,no,missing,unknown,0,zh,0.0,no,missing,noisy_reference_stress,no,missing source-matched noisy Chinese reference
-voxcpm2_cross_ref_en,yes,yes,../audio/reference_audio/voxcpm2_cross_ref_en.wav,yes,official_demo,internal_only,1,en,6.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
-voxcpm2_cross_ref_zh,yes,yes,../audio/reference_audio/voxcpm2_cross_ref_zh.wav,yes,official_demo,internal_only,1,zh,6.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
-voxcpm2_official_sichuan_036,yes,no,../audio/reference_audio/voxcpm2_official_sichuan_036.wav,yes,official_demo,internal_only,1,zh_sichuan,4.03,yes,synthetic;dialect_anchor,dialect_clone;exploratory,no,synthetic official demo output; not a human-recorded formal SIM standard
-voxcpm2_official_yue_032,yes,no,../audio/reference_audio/voxcpm2_official_yue_032.wav,yes,official_demo,internal_only,1,yue,20.66,yes,synthetic;dialect_anchor,dialect_clone;exploratory,no,synthetic official demo output; not a human-recorded formal SIM standard
-voxcpm2_style_prompt1,yes,yes,../audio/reference_audio/voxcpm2_style_prompt1.wav,yes,official_demo,internal_only,1,zh,8.0,yes,clean;style_prompt,style_transfer;prosody_transfer,yes,
+voxcpm2_cross_ref_en,yes,yes,data/reference_audio/voxcpm2_cross_ref_en.wav,yes,official_demo,internal_only,1,en,6.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
+voxcpm2_cross_ref_zh,yes,yes,data/reference_audio/voxcpm2_cross_ref_zh.wav,yes,official_demo,internal_only,1,zh,6.0,yes,clean;cross_lingual_anchor,cross_lingual_clone,yes,
+voxcpm2_official_sichuan_036,yes,no,data/reference_audio/voxcpm2_official_sichuan_036.wav,yes,official_demo,internal_only,1,zh_sichuan,4.03,yes,synthetic;dialect_anchor,dialect_clone;exploratory,no,synthetic official demo output; not a human-recorded formal SIM standard
+voxcpm2_official_yue_032,yes,no,data/reference_audio/voxcpm2_official_yue_032.wav,yes,official_demo,internal_only,1,yue,20.66,yes,synthetic;dialect_anchor,dialect_clone;exploratory,no,synthetic official demo output; not a human-recorded formal SIM standard
+voxcpm2_style_prompt1,yes,yes,data/reference_audio/voxcpm2_style_prompt1.wav,yes,official_demo,internal_only,1,zh,8.0,yes,clean;style_prompt,style_transfer;prosody_transfer,yes,

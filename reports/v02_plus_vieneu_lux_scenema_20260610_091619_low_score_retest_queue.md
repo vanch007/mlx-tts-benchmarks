@@ -1,7 +1,7 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-08T00:04:33`
+- Generated: `2026-07-08T00:12:30`
 - Queue rows: `60`
 
 ## Summary
@@ -58,13 +58,13 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P1 | `axis_quality_low` | 自然度与音频质量 |  | 50.038 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P1 | `axis_quality_low` | 自然度与音频质量 |  | 51.234 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_en_same` 英文参考音色克隆 |  | low/slow_generation: RTF=2.163，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `coverage_gap_boundary` | 多语种能力 |  | 0.0 | missing=core_ja_reading;core_ko_customer;core_es_question;core_fr_long_sentence;core_de_instruction;core_vi_reading;core_hi_amount;core_ar_names | document capability boundary; do not retest unless a new supported adapter/model is added |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_angry` 中文愤怒情绪标签控制 |  | low/slow_generation: RTF=2.6566，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_happy` 中文开心情绪标签控制 |  | low/slow_generation: RTF=3.1698，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_voice_design_asmr` 中文近讲 ASMR 女声音色设计 |  | low/slow_generation: RTF=2.2803，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| P2 | `axis_quality_low` | RTF 生成效率 |  | 16.274 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P2 | `axis_quality_low` | RTF 生成效率 |  | 16.386 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
 ### mlx_moss_tts
 
