@@ -1,7 +1,7 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T22:38:23`
+- Generated: `2026-07-07T22:45:14`
 - Queue rows: `63`
 
 ## Summary
@@ -43,12 +43,12 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 |---|---|---|---|---:|---|---|
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_en_numbers` 英文数字、时间与价格朗读 |  | low/slow_generation: RTF=3.2251，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_zh_numbers` 中文数字、时间与订单号朗读 |  | low/slow_generation: RTF=3.1022，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| P1 | `axis_quality_low` | 自然度与音频质量 |  | 57.757 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P1 | `axis_quality_low` | 自然度与音频质量 |  | 57.623 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_3s_en` 三秒英文短参考音色克隆 |  | low/slow_generation: RTF=3.9071，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_en_same` 英文参考音色克隆 |  | low/slow_generation: RTF=2.8211，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_vi_same` 越南语参考音色克隆 |  | low/slow_generation: RTF=4.0665，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_zh_same` 中文参考音色克隆 |  | low/slow_generation: RTF=2.128，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| P1 | `performance_slow` | 音色克隆与鲁棒性 | `scenema_clone_tarkin_en` 英文表演式参考音色克隆 |  | low/slow_generation: RTF=4.5731，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| P1 | `performance_slow` | 音色克隆与鲁棒性 | `scenema_clone_tarkin_en` 英文表演式参考音色克隆 |  | low/slow_generation: RTF=2.2212，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `xling_en_to_zh` 英文参考音色说中文克隆 |  | low/slow_generation: RTF=2.7283，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `xling_zh_to_en` 中文参考音色说英文克隆 |  | low/slow_generation: RTF=2.9275，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 多语种能力 | `core_vi_reading` 越南语短视频导购朗读 |  | low/slow_generation: RTF=3.5241，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
