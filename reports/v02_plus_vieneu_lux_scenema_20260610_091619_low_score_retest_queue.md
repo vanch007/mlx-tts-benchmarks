@@ -1,7 +1,7 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T04:42:36`
+- Generated: `2026-07-07T10:45:15`
 - Queue rows: `63`
 
 ## Summary
@@ -105,7 +105,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_happy` 中文开心情绪标签控制 |  | low/slow_generation: RTF=3.1342，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_happy` 中文开心情绪标签控制 |  | low/slow_generation: RTF=2.8254，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 情绪、风格与韵律控制 | `control_emotion_prompt_en` 英文疑惑情绪参考迁移 |  | low/slow_generation: RTF=2.1109，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P2 | `axis_quality_low` | RTF 生成效率 |  | 40.742 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
