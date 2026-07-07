@@ -19,7 +19,7 @@
 | 7 | `mlx_zonos2` | 26 | 76.319 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 39.388 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
 | 9 | `mlx_ming_omni_tts` | 19 | 63.465 | 88.889 | 83.197 | 49.31 | 0.0 | 88.494 | 79.261 | 88.997 | 83.255 | 75.763 | 16.752 | yes |
-| 10 | `mlx_indextts2` | 20 | 63.333 | 68.056 | 89.987 | 57.623 | 11.381 | 0.0 | 84.219 | 82.913 | 0.0 | 77.774 | 9.88 | no |
+| 10 | `mlx_indextts2` | 20 | 63.352 | 68.056 | 90.033 | 57.657 | 11.381 | 0.0 | 84.219 | 82.913 | 0.0 | 77.774 | 9.88 | no |
 | 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
@@ -296,7 +296,7 @@
 | `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8927 | 1.9456 |  |
 | `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3042 | 1.0802 |  |
 | `mlx_indextts2_standard_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 | 0.9231 | 2.7618 | 3.1022 |  |
-| `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9199 | 3.4264 | 3.2251 |  |
+| `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9271 | 3.4632 | 2.0833 |  |
 | `mlx_indextts2_standard_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9171 | 2.5448 | 1.7823 |  |
 | `mlx_indextts2_standard_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9349 | 3.3543 | 1.6512 |  |
 | `mlx_indextts2_standard_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9065 | 2.3688 | 1.6706 |  |
