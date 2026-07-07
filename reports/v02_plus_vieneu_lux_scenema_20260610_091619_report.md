@@ -15,7 +15,7 @@
 | 3 | `mlx_omnivoice` | 30 | 79.504 | 98.611 | 90.807 | 65.477 | 79.742 | 87.689 | 80.044 | 82.665 | 93.791 | 83.905 | 43.833 | yes |
 | 4 | `mlx_higgs_audio` | 32 | 79.432 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 40.784 | yes |
 | 5 | `mlx_qwen3_tts` | 23 | 78.27 | 84.722 | 85.89 | 74.24 | 55.235 | 88.04 | 88.919 | 91.148 | 0.0 | 91.673 | 79.338 | yes |
-| 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
+| 6 | `mlx_dots_tts` | 27 | 76.75 | 88.889 | 86.231 | 64.242 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 86.383 | 43.976 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.364 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 80.541 | 89.927 | 0.0 | 87.479 | 40.86 | no |
 | 8 | `mlx_scenema_audio` | 28 | 68.89 | 86.111 | 78.697 | 62.242 | 59.657 | 0.0 | 78.872 | 84.775 | 81.078 | 73.676 | 12.062 | yes |
 | 9 | `mlx_indextts2` | 20 | 63.473 | 68.056 | 90.033 | 57.772 | 11.381 | 0.0 | 84.681 | 82.913 | 0.0 | 77.774 | 10.459 | no |
@@ -293,7 +293,7 @@
 | `mlx_dots_tts_full_int8_g64` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  | 3.4973 | 1.1741 |  |
 | `mlx_dots_tts_full_int8_g64` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.1364 |  | 2.9699 | 1.1115 |  |
 | `mlx_dots_tts_full_int8_g64` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8351 | 1.1665 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8927 | 1.9456 |  |
+| `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7507 | 1.6783 |  |
 | `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3042 | 1.0802 |  |
 | `mlx_indextts2_standard_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 | 0.9231 | 2.7618 | 3.1022 |  |
 | `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9271 | 3.4632 | 2.0833 |  |
