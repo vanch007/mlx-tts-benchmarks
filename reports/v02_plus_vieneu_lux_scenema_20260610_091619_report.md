@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 汇总报表
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`。
-- 指标 CSV：`/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
+- 指标 CSV：`./results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
 - 已从主评分隐藏 33 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
@@ -12,7 +12,7 @@
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
 | 1 | `mlx_moss_tts` | 28 | 84.916 | 100.0 | 94.518 | 74.735 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.418 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.597 | 100.0 | 92.553 | 64.238 | 91.678 | 87.882 | 80.824 | 90.781 | 74.349 | 88.349 | 40.742 | yes |
-| 3 | `mlx_omnivoice` | 30 | 79.497 | 98.611 | 90.807 | 65.476 | 79.742 | 87.686 | 80.044 | 82.665 | 93.791 | 83.905 | 43.589 | yes |
+| 3 | `mlx_omnivoice` | 30 | 79.504 | 98.611 | 90.807 | 65.477 | 79.742 | 87.689 | 80.044 | 82.665 | 93.791 | 83.905 | 43.833 | yes |
 | 4 | `mlx_higgs_audio` | 32 | 79.432 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 40.784 | yes |
 | 5 | `mlx_qwen3_tts` | 23 | 78.27 | 84.722 | 85.89 | 74.24 | 55.235 | 88.04 | 88.919 | 91.148 | 0.0 | 91.673 | 79.338 | yes |
 | 6 | `mlx_dots_tts` | 27 | 76.531 | 88.889 | 86.231 | 63.646 | 89.343 | 69.764 | 80.68 | 88.913 | 0.0 | 84.953 | 43.41 | yes |
@@ -174,7 +174,7 @@
 | `mlx_scenema_audio_int8_mlx_mps_service` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4701 | 2.8548 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2818 | 3.4471 |  |
 | `mlx_qwen3_tts_custom_voice_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4181 | 1.188 |  |
-| `mlx_omnivoice_8bit_trim60` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1637 | 2.0198 |  |
+| `mlx_omnivoice_8bit_trim60` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1652 | 1.8721 |  |
 | `mlx_qwen3_tts_official_int8` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9018 | 2.4102 | 1.1235 |  |
 | `mlx_qwen3_tts_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7942 | 2.8059 | 0.6192 |  |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 1.6159 | 1.78 |  |
@@ -313,27 +313,27 @@
 
 ## 本地 TTS 覆盖状态
 
-- Inventory CSV：`/Users/vanch/tts-test-project/reports/local_open_tts_inventory.csv`
+- Inventory CSV：`./reports/local_open_tts_inventory.csv`
 
 | 模型 | 状态 | 路径 |
 |---|---|---|
-| `mlx_indextts2_standard_8bit` | scored | `/Users/vanch/mlx-indextts2` |
-| `mlx_indextts2_vietnamese_8bit` | scored | `/Users/vanch/mlx-indextts2` |
-| `mlx_voxcpm2_bf16_dit` | scored | `/Users/vanch/mlx-voxcpm2` |
-| `mlx_qwen3_tts_official_int8` | scored | `/Users/vanch/mlx-qwen3-tts` |
-| `mlx_qwen3_tts_voice_design_official_int8` | scored | `/Users/vanch/mlx-qwen3-tts` |
-| `mlx_qwen3_tts_custom_voice_official_int8` | scored | `/Users/vanch/mlx-qwen3-tts` |
-| `mlx_omnivoice_8bit_trim60` | scored | `/Users/vanch/mlx-omnivoice` |
-| `mlx_dots_tts_full_int8_g64` | scored | `/Users/vanch/mlx-dots.tts` |
-| `mlx_higgs_audio_v3_4b` | scored | `/Users/vanch/mlx-higgs-audio` |
-| `mlx_scenema_audio_int8_mlx_mps_service` | scored | `/Users/vanch/mlx-scenema-audio` |
-| `mlx_supertonic3_mlx` | scored | `/Users/vanch/mlx-supertonic` |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `/Users/vanch/mlx-Ming-omni-tts` |
-| `mlx_zonos2_bf16` | scored | `/Users/vanch/mlx-ZONOS2` |
-| `mlx_moss_tts_local_transformer_v1_5` | scored | `/Users/vanch/mlx-MOSS-TTS-Local-Transformer-v1.5` |
-| `mlx_audio_multi_model` | toolkit_not_single_model | `/Users/vanch/mlx-audio` |
-| `cloudflare_edge_tts` | excluded_not_open_source_model | `/Users/vanch/cloudflare-edge-tts` |
-| `speech_to_speech` | excluded_pipeline_wrapper | `/Users/vanch/speech-to-speech` |
+| `mlx_indextts2_standard_8bit` | scored | `~/mlx-indextts2` |
+| `mlx_indextts2_vietnamese_8bit` | scored | `~/mlx-indextts2` |
+| `mlx_voxcpm2_bf16_dit` | scored | `~/mlx-voxcpm2` |
+| `mlx_qwen3_tts_official_int8` | scored | `~/mlx-qwen3-tts` |
+| `mlx_qwen3_tts_voice_design_official_int8` | scored | `~/mlx-qwen3-tts` |
+| `mlx_qwen3_tts_custom_voice_official_int8` | scored | `~/mlx-qwen3-tts` |
+| `mlx_omnivoice_8bit_trim60` | scored | `~/mlx-omnivoice` |
+| `mlx_dots_tts_full_int8_g64` | scored | `~/mlx-dots.tts` |
+| `mlx_higgs_audio_v3_4b` | scored | `~/mlx-higgs-audio` |
+| `mlx_scenema_audio_int8_mlx_mps_service` | scored | `~/mlx-scenema-audio` |
+| `mlx_supertonic3_mlx` | scored | `~/mlx-supertonic` |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `~/mlx-Ming-omni-tts` |
+| `mlx_zonos2_bf16` | scored | `~/mlx-ZONOS2` |
+| `mlx_moss_tts_local_transformer_v1_5` | scored | `~/mlx-MOSS-TTS-Local-Transformer-v1.5` |
+| `mlx_audio_multi_model` | toolkit_not_single_model | `~/mlx-audio` |
+| `cloudflare_edge_tts` | excluded_not_open_source_model | `~/cloudflare-edge-tts` |
+| `speech_to_speech` | excluded_pipeline_wrapper | `~/speech-to-speech` |
 
 ## 结论
 

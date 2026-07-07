@@ -2,7 +2,7 @@
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
 - 音频异常样本数：`2`
-- 性能提示样本数：`42`
+- 性能提示样本数：`41`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
@@ -12,7 +12,6 @@
 | `mlx_indextts2_standard_8bit` | 0 | 0 | 0 | 11 | 生成过慢=11 |
 | `mlx_indextts2_vietnamese_8bit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 4 | 生成过慢=4 |
-| `mlx_omnivoice_8bit_trim60` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 2 | 22 | 生成过慢=22；内容错误偏高=2 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 
@@ -47,12 +46,6 @@
 | low | 生成过慢 | 中文愤怒情绪标签控制 (`control_emotion_angry`) | RTF=2.6566，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 中文开心情绪标签控制 (`control_emotion_happy`) | RTF=3.1698，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 中文近讲 ASMR 女声音色设计 (`control_voice_design_asmr`) | RTF=2.2803，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-
-## mlx_omnivoice_8bit_trim60
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| low | 生成过慢 | 四川话日常沟通方言能力 (`core_sichuan_dialect`) | RTF=2.0198，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_scenema_audio_int8_mlx_mps_service
 

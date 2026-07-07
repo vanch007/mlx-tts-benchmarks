@@ -1,8 +1,8 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T23:35:35`
-- Queue rows: `61`
+- Generated: `2026-07-07T23:46:27`
+- Queue rows: `60`
 
 ## Summary
 
@@ -11,11 +11,11 @@
 | `P0` | 4 |
 | `P1` | 41 |
 | `P2` | 9 |
-| `P3` | 7 |
+| `P3` | 6 |
 
 | Issue type | Count |
 |---|---:|
-| `performance_slow` | 42 |
+| `performance_slow` | 41 |
 | `axis_quality_low` | 11 |
 | `coverage_gap_boundary` | 4 |
 | `content_or_audio_anomaly` | 2 |
@@ -76,8 +76,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P2 | `axis_quality_low` | RTF 生成效率 |  | 43.589 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
-| P3 | `performance_slow` | 方言能力 | `core_sichuan_dialect` 四川话日常沟通方言能力 |  | low/slow_generation: RTF=2.0198，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| P2 | `axis_quality_low` | RTF 生成效率 |  | 43.833 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
 ### mlx_qwen3_tts
 
