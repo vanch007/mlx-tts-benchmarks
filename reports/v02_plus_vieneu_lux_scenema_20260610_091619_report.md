@@ -10,7 +10,7 @@
 
 | 排名 | 项目 | 评分样本数 | 能力总分 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 长文本稳定性 | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_moss_tts` | 28 | 84.916 | 100.0 | 94.518 | 74.735 | 91.73 | 86.886 | 81.237 | 84.661 | 95.808 | 89.542 | 53.418 | yes |
+| 1 | `mlx_moss_tts` | 28 | 85.007 | 100.0 | 94.518 | 74.866 | 91.73 | 87.86 | 81.237 | 84.661 | 95.808 | 89.542 | 54.533 | yes |
 | 2 | `mlx_voxcpm2` | 36 | 81.597 | 100.0 | 92.553 | 64.238 | 91.678 | 87.882 | 80.824 | 90.781 | 74.349 | 88.349 | 40.742 | yes |
 | 3 | `mlx_omnivoice` | 30 | 79.504 | 98.611 | 90.807 | 65.477 | 79.742 | 87.689 | 80.044 | 82.665 | 93.791 | 83.905 | 43.833 | yes |
 | 4 | `mlx_higgs_audio` | 32 | 79.432 | 88.889 | 83.453 | 75.246 | 88.564 | 0.0 | 82.15 | 89.961 | 91.68 | 89.025 | 40.784 | yes |
@@ -234,7 +234,7 @@
 | `mlx_moss_tts_local_transformer_v1_5` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0156 | 0.6665 | 2.8303 | 0.8631 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7235 | 1.0674 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  | 3.5474 | 0.6575 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9263 | 2.3773 | 1.2274 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9263 | 2.572 | 0.6813 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8553 | 4.1416 | 0.8821 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8391 | 3.1723 | 1.1528 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8272 | 4.4981 | 1.0872 |  |

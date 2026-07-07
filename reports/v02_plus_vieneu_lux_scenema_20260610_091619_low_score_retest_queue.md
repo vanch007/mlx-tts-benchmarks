@@ -1,7 +1,7 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-08T00:22:17`
+- Generated: `2026-07-08T00:26:30`
 - Queue rows: `60`
 
 ## Summary
@@ -70,7 +70,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 
 | Priority | Type | Axis | Case | Score | Evidence | Action |
 |---|---|---|---|---:|---|---|
-| P2 | `axis_quality_low` | RTF 生成效率 |  | 53.418 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
+| P2 | `axis_quality_low` | RTF 生成效率 |  | 54.533 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
 
 ### mlx_omnivoice
 
