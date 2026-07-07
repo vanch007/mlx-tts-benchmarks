@@ -1,7 +1,7 @@
 model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_accuracy_score,naturalness_audio_quality_score,multilingual_score,dialect_score,speaker_clone_robustness_score,expressive_control_score,complex_paralinguistic_score,longform_stability_score,rtf_efficiency_score,fail_count,rank_ready
 mlx_moss_tts,project_rollup,28,85.007,85.007,100.0,94.518,74.866,91.73,87.86,81.237,84.661,95.808,89.542,54.533,0,yes
+mlx_higgs_audio,project_rollup,32,81.862,81.862,88.889,91.049,75.631,92.49,0.0,82.15,89.961,91.68,89.025,39.957,0,yes
 mlx_voxcpm2,project_rollup,36,81.597,81.597,100.0,92.553,64.238,91.678,87.882,80.824,90.781,74.349,88.349,40.742,0,yes
-mlx_higgs_audio,project_rollup,32,79.974,79.974,88.889,83.453,75.602,92.49,0.0,82.15,89.961,91.68,89.025,40.552,0,yes
 mlx_omnivoice,project_rollup,30,79.504,79.504,98.611,90.807,65.477,79.742,87.689,80.044,82.665,93.791,83.905,43.833,0,yes
 mlx_qwen3_tts,project_rollup,23,78.27,78.27,84.722,85.89,74.24,55.235,88.04,88.919,91.148,0.0,91.673,79.338,0,yes
 mlx_dots_tts,project_rollup,27,76.75,76.75,88.889,86.231,64.242,89.343,69.764,80.68,88.913,0.0,86.383,43.976,0,yes
