@@ -1,7 +1,7 @@
 # Low-score retest and optimization queue
 
 - Run ID: `v02_plus_vieneu_lux_scenema_20260610_091619`
-- Generated: `2026-07-07T22:50:06`
+- Generated: `2026-07-07T22:56:10`
 - Queue rows: `63`
 
 ## Summary
@@ -44,7 +44,7 @@ Rows marked `coverage_gap_boundary` are not immediate retest work; they document
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_en_numbers` 英文数字、时间与价格朗读 |  | low/slow_generation: RTF=2.0833，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 内容准确与可懂度 | `core_zh_numbers` 中文数字、时间与订单号朗读 |  | low/slow_generation: RTF=3.1022，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `axis_quality_low` | 自然度与音频质量 |  | 57.657 | axis quality score below 70 with sufficient coverage | inspect low-scoring cases inside this axis and retest with parameter/code fixes |
-| P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_3s_en` 三秒英文短参考音色克隆 |  | low/slow_generation: RTF=3.9071，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_3s_en` 三秒英文短参考音色克隆 |  | low/slow_generation: RTF=2.0326，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_en_same` 英文参考音色克隆 |  | low/slow_generation: RTF=2.8211，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_vi_same` 越南语参考音色克隆 |  | low/slow_generation: RTF=4.0665，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | P1 | `performance_slow` | 音色克隆与鲁棒性 | `clone_zh_same` 中文参考音色克隆 |  | low/slow_generation: RTF=2.128，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
