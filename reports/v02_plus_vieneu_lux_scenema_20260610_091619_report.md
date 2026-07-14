@@ -10,308 +10,308 @@
 
 | 排名 | 项目 | 评分样本数 | 能力总分 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 长文本稳定性 | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_moss_tts` | 28 | 85.967 | 100.0 | 96.969 | 75.017 | 91.73 | 87.86 | 82.648 | 84.661 | 95.808 | 89.542 | 56.993 | yes |
-| 2 | `mlx_higgs_audio` | 32 | 83.432 | 88.889 | 93.14 | 75.97 | 95.07 | 0.0 | 86.217 | 89.961 | 91.68 | 89.025 | 39.019 | yes |
-| 3 | `mlx_voxcpm2` | 36 | 82.357 | 100.0 | 92.553 | 64.311 | 91.678 | 87.882 | 84.863 | 90.785 | 74.756 | 88.349 | 42.245 | yes |
-| 4 | `mlx_qwen3_tts` | 23 | 81.853 | 84.722 | 97.106 | 74.319 | 59.151 | 88.04 | 90.843 | 91.148 | 0.0 | 91.673 | 78.161 | yes |
-| 5 | `mlx_omnivoice` | 30 | 80.581 | 98.611 | 93.311 | 67.36 | 80.822 | 88.346 | 78.187 | 84.323 | 93.788 | 83.905 | 45.062 | yes |
-| 6 | `mlx_zonos2` | 26 | 77.233 | 77.778 | 93.569 | 64.52 | 87.437 | 0.0 | 85.507 | 89.927 | 0.0 | 87.479 | 41.707 | no |
-| 7 | `mlx_dots_tts` | 27 | 77.187 | 88.889 | 86.231 | 64.948 | 89.343 | 82.29 | 79.896 | 89.338 | 0.0 | 86.383 | 43.853 | yes |
-| 8 | `mlx_scenema_audio` | 28 | 69.629 | 86.111 | 81.54 | 62.582 | 59.657 | 0.0 | 77.305 | 84.775 | 81.078 | 73.671 | 19.404 | yes |
-| 9 | `mlx_ming_omni_tts` | 19 | 64.594 | 88.889 | 83.765 | 52.25 | 0.0 | 90.337 | 79.765 | 89.911 | 84.075 | 77.796 | 16.14 | yes |
-| 10 | `mlx_indextts2` | 20 | 63.732 | 68.056 | 90.403 | 58.677 | 11.381 | 0.0 | 84.174 | 82.994 | 0.0 | 77.774 | 11.961 | no |
-| 11 | `mlx_supertonic` | 11 | 60.207 | 55.556 | 97.851 | 76.73 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
+| 1 | `mlx_voxcpm2` | 36 | 95.037 | 100.0 | 100.0 | 91.011 | 100.0 | 100.0 | 96.927 | 96.943 | 96.46 | 93.625 | 42.245 | yes |
+| 2 | `mlx_moss_tts` | 28 | 93.38 | 100.0 | 100.0 | 90.63 | 98.52 | 100.0 | 91.339 | 86.998 | 100.0 | 93.625 | 57.024 | yes |
+| 3 | `mlx_omnivoice` | 30 | 91.974 | 98.611 | 100.0 | 91.454 | 87.5 | 95.687 | 92.236 | 88.71 | 99.579 | 91.804 | 45.175 | yes |
+| 4 | `mlx_higgs_audio` | 32 | 90.36 | 88.889 | 97.054 | 91.168 | 100.0 | 0.0 | 92.457 | 96.854 | 96.391 | 91.489 | 39.019 | yes |
+| 5 | `mlx_qwen3_tts` | 23 | 88.928 | 84.722 | 100.0 | 90.716 | 62.5 | 100.0 | 98.214 | 97.477 | 0.0 | 93.625 | 78.161 | yes |
+| 6 | `mlx_zonos2` | 26 | 88.715 | 77.778 | 100.0 | 91.238 | 99.075 | 0.0 | 93.693 | 99.147 | 0.0 | 93.195 | 41.707 | no |
+| 7 | `mlx_dots_tts` | 27 | 88.285 | 88.889 | 89.517 | 89.767 | 96.313 | 91.375 | 95.033 | 97.055 | 0.0 | 93.625 | 43.853 | yes |
+| 8 | `mlx_ming_omni_tts` | 19 | 80.709 | 88.889 | 91.63 | 91.648 | 0.0 | 100.0 | 98.214 | 99.221 | 96.46 | 92.851 | 16.14 | yes |
+| 9 | `mlx_scenema_audio` | 28 | 80.388 | 86.111 | 83.862 | 89.618 | 64.611 | 0.0 | 90.628 | 93.117 | 96.46 | 75.178 | 19.408 | yes |
+| 10 | `mlx_indextts2` | 20 | 75.177 | 68.056 | 97.437 | 86.1 | 12.5 | 0.0 | 97.959 | 91.552 | 0.0 | 84.177 | 11.961 | no |
+| 11 | `mlx_supertonic` | 11 | 65.216 | 55.556 | 100.0 | 92.942 | 100.0 | 0.0 | 0.0 | 0.0 | 0.0 | 95.37 | 100.0 | no |
 
 ## 样本摘要
 
 | 项目/模型 | 测试项 | 状态 | ASR | CER | SIM | UTMOS | RTF | 失败原因 |
 |---|---|---|---|---:|---:|---:|---:|---|
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.1143 |  | 3.5572 | 0.7751 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.851 | 0.7591 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.1034 |  | 3.3624 | 7.4802 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8905 | 0.7669 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0833 |  | 2.7992 | 1.1414 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0556 |  | 1.8041 | 2.4404 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1735 | 5.517 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4367 | 5.0499 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.045 |  | 4.187 | 4.1525 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6171 | 1.0968 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7402 | 1.0834 |  |
-| `mlx_voxcpm2_bf16_dit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.6855 | 1.0109 |  |
-| `mlx_voxcpm2_bf16_dit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3774 | 1.0497 |  |
-| `mlx_voxcpm2_bf16_dit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6971 | 1.2141 |  |
-| `mlx_voxcpm2_bf16_dit` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8458 | 1.3477 |  |
-| `mlx_voxcpm2_bf16_dit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4793 | 1.1269 |  |
-| `mlx_voxcpm2_bf16_dit` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.723 | 1.1498 |  |
-| `mlx_voxcpm2_bf16_dit` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7044 | 1.4049 |  |
-| `mlx_voxcpm2_bf16_dit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2715 | 1.6082 |  |
-| `mlx_voxcpm2_bf16_dit` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4171 | 1.0779 |  |
-| `mlx_voxcpm2_bf16_dit` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4409 | 1.2231 |  |
-| `mlx_voxcpm2_bf16_dit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0828 | 1.2396 |  |
-| `mlx_voxcpm2_bf16_dit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.07 | 1.1599 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8957 | 1.5401 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9185 | 1.1797 |  |
-| `mlx_voxcpm2_bf16_dit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4028 | 1.4187 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4611 | 1.3101 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.5416 | 1.1713 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5473 | 1.5812 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1694 | 1.0214 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4817 | 0.9707 |  |
-| `mlx_voxcpm2_bf16_dit` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3716 | 1.3277 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3257 | 1.2355 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5861 | 1.8097 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2912 | 0.8956 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2839 | 1.6535 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.299 | 1.8714 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5509 | 1.7835 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4652 | 0.9792 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.3064 | 1.1473 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9352 | 0.7784 |  |
-| `mlx_voxcpm2_bf16_dit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8427 | 0.9802 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2623 | 3.335 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5322 | 3.4404 |  |
-| `mlx_dots_tts_full_int8_g64` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0469 |  | 2.5124 | 1.2554 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6741 | 1.1924 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8173 | 1.179 |  |
-| `mlx_dots_tts_full_int8_g64` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1205 | 1.2402 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0855 | 1.3064 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 3.0752 | 1.2213 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4805 | 1.2366 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0174 | 1.4766 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4427 | 1.2252 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2145 | 1.6331 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.346 | 1.5889 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9125 | 1.7563 |  |
-| `mlx_qwen3_tts_official_int8` | qwen base yue dialect clone (qwen_base_yue_dialect_clone) | success | qwen3_asr_1_7b_8bit | 0.05 |  | 2.27 | 0.8973 |  |
-| `mlx_qwen3_tts_official_int8` | qwen base sichuan dialect clone (qwen_base_sichuan_dialect_clone) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2912 | 0.6231 |  |
-| `mlx_omnivoice_8bit_trim60` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  | 3.2938 | 1.6547 |  |
-| `mlx_higgs_audio_v3_4b` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0357 |  | 4.1153 | 1.3635 |  |
-| `mlx_higgs_audio_v3_4b` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3596 | 1.1903 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8409 | 1.5023 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5701 | 1.158 |  |
-| `mlx_voxcpm2_bf16_dit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5529 | 1.277 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5912 | 1.1089 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7249 | 0.5448 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.9778 | 0.6252 |  |
-| `mlx_qwen3_tts_custom_voice_official_int8` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5353 | 1.04 |  |
-| `mlx_qwen3_tts_custom_voice_official_int8` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4513 | 0.427 |  |
-| `mlx_qwen3_tts_custom_voice_official_int8` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8338 | 0.601 |  |
-| `mlx_higgs_audio_v3_4b` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9518 | 1.3935 |  |
-| `mlx_higgs_audio_v3_4b` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6746 | 1.2438 |  |
-| `mlx_higgs_audio_v3_4b` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7501 | 1.1877 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7553 | 3.6614 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4701 | 2.8548 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2818 | 3.4471 |  |
-| `mlx_qwen3_tts_custom_voice_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4181 | 1.188 |  |
-| `mlx_omnivoice_8bit_trim60` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4247 | 1.7522 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0857 |  | 3.4952 | 0.8345 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.467 | 1.1302 |  |
-| `mlx_dots_tts_full_int8_g64` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.1515 | 1.158 |  |
-| `mlx_dots_tts_full_int8_g64` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0938 |  | 3.9261 | 1.0773 |  |
-| `mlx_dots_tts_full_int8_g64` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2174 | 1.0683 |  |
-| `mlx_dots_tts_full_int8_g64` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1678 | 1.1124 |  |
-| `mlx_dots_tts_full_int8_g64` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2156 | 1.12 |  |
-| `mlx_dots_tts_full_int8_g64` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.298 | 1.1337 |  |
-| `mlx_dots_tts_full_int8_g64` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8861 | 1.198 |  |
-| `mlx_dots_tts_full_int8_g64` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.46 | 1.1869 |  |
-| `mlx_dots_tts_full_int8_g64` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  | 3.4973 | 1.1741 |  |
-| `mlx_dots_tts_full_int8_g64` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  | 2.8381 | 1.2739 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8351 | 1.1665 |  |
-| `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7507 | 1.2541 |  |
-| `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3042 | 1.0802 |  |
-| `mlx_indextts2_standard_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 2.6936 | 1.4847 |  |
-| `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8271 | 1.7207 |  |
-| `mlx_indextts2_standard_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5448 | 1.7823 |  |
-| `mlx_indextts2_standard_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3543 | 1.6512 |  |
-| `mlx_indextts2_standard_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.3688 | 1.6706 |  |
-| `mlx_indextts2_standard_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5364 | 1.65 |  |
-| `mlx_indextts2_vietnamese_8bit` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2102 | 3.5241 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8544 | 0.5445 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8535 | 1.1568 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8618 | 0.4586 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | MOSS 中文显式停顿标记 (moss_pause_markup_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3293 | 1.8043 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2205 | 1.8173 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.035 | 0.7988 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.1 |  | 2.6681 | 0.6198 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0566 | 1.3437 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.2812 |  | 3.4024 | 1.2672 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.3714 |  | 3.7888 | 1.2898 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.2024 |  | 2.9331 | 0.758 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.3504 | 1.2949 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0196 | 1.9375 |  |
-| `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3712 | 1.6251 |  |
-| `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 |  | 1.3938 | 1.8694 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7176 | 1.9665 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0445 | 1.8342 |  |
-| `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.3625 | 3.0269 |  |
-| `mlx_indextts2_standard_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7261 | 2.2212 |  |
-| `mlx_indextts2_standard_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3319 | 2.0326 |  |
-| `mlx_indextts2_standard_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6941 | 2.0884 |  |
-| `mlx_indextts2_standard_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4407 | 2.1944 |  |
-| `mlx_indextts2_standard_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6699 | 1.7976 |  |
-| `mlx_zonos2_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4515 | 1.3302 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5529 | 1.7935 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5931 | 1.7675 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7161 | 1.3542 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.6218 | 1.2974 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.572 | 0.6813 |  |
-| `mlx_higgs_audio_v3_4b` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6957 | 1.122 |  |
-| `mlx_higgs_audio_v3_4b` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5532 | 1.459 |  |
-| `mlx_qwen3_tts_official_int8` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2343 | 0.4393 |  |
-| `mlx_qwen3_tts_official_int8` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1484 | 0.4395 |  |
-| `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5139 | 2.3578 |  |
-| `mlx_higgs_audio_v3_4b` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.1143 |  | 3.9128 | 1.517 |  |
-| `mlx_higgs_audio_v3_4b` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8812 | 1.7716 |  |
-| `mlx_higgs_audio_v3_4b` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.1794 | 1.2775 |  |
-| `mlx_omnivoice_8bit_trim60` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.445 | 1.2028 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5045 | 1.1275 |  |
-| `mlx_higgs_audio_v3_4b` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0864 | 1.4709 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7235 | 1.0514 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.2 |  | 4.3414 | 0.9063 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4739 | 0.8306 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.241 | 1.0103 |  |
-| `mlx_zonos2_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1164 | 1.1029 |  |
-| `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7261 | 2.4584 |  |
-| `mlx_qwen3_tts_official_int8` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5416 | 0.4591 |  |
-| `mlx_qwen3_tts_official_int8` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.909 | 1.1436 |  |
-| `mlx_qwen3_tts_official_int8` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1155 | 0.469 |  |
-| `mlx_qwen3_tts_official_int8` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9602 | 0.5369 |  |
-| `mlx_qwen3_tts_official_int8` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2575 | 0.4709 |  |
-| `mlx_qwen3_tts_official_int8` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1599 | 0.4743 |  |
-| `mlx_qwen3_tts_official_int8` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2174 | 0.5847 |  |
-| `mlx_qwen3_tts_official_int8` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6457 | 0.4659 |  |
-| `mlx_qwen3_tts_official_int8` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4241 | 0.7712 |  |
-| `mlx_qwen3_tts_official_int8` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0037 | 0.3289 |  |
-| `mlx_qwen3_tts_official_int8` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5449 | 0.3723 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.733 | 1.7616 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9833 | 0.9219 |  |
-| `mlx_omnivoice_8bit_trim60` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.418 | 0.9296 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.1 |  | 3.1669 | 1.8743 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5959 | 1.3313 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.125 |  | 3.6637 | 1.2762 |  |
-| `mlx_higgs_audio_v3_4b` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7824 | 1.461 |  |
-| `mlx_higgs_audio_v3_4b` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0961 | 1.2171 |  |
-| `mlx_higgs_audio_v3_4b` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8114 | 1.2883 |  |
-| `mlx_higgs_audio_v3_4b` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2957 | 1.4557 |  |
-| `mlx_higgs_audio_v3_4b` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3671 | 1.1962 |  |
-| `mlx_higgs_audio_v3_4b` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8789 | 1.2041 |  |
-| `mlx_higgs_audio_v3_4b` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0959 | 1.3245 |  |
-| `mlx_higgs_audio_v3_4b` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7147 | 1.0862 |  |
-| `mlx_higgs_audio_v3_4b` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4777 | 1.3801 |  |
-| `mlx_higgs_audio_v3_4b` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.1 |  | 4.3368 | 1.1492 |  |
-| `mlx_higgs_audio_v3_4b` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1726 | 1.2133 |  |
-| `mlx_higgs_audio_v3_4b` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0476 |  | 3.3913 | 0.8107 |  |
-| `mlx_higgs_audio_v3_4b` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.552 | 0.9758 |  |
-| `mlx_indextts2_standard_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8616 | 2.8211 |  |
-| `mlx_omnivoice_8bit_trim60` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.5373 | 0.7755 |  |
-| `mlx_higgs_audio_v3_4b` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5143 | 1.6756 |  |
-| `mlx_indextts2_vietnamese_8bit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0898 | 1.7416 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4058 | 0.5211 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.737 | 0.467 |  |
-| `mlx_qwen3_tts_voice_design_official_int8` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0556 |  | 4.305 | 0.5437 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1099 | 1.3335 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5193 | 1.1371 |  |
-| `mlx_omnivoice_8bit_trim60` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0193 | 1.068 |  |
-| `mlx_omnivoice_8bit_trim60` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9926 | 1.1136 |  |
-| `mlx_omnivoice_8bit_trim60` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7207 | 1.2293 |  |
-| `mlx_omnivoice_8bit_trim60` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3783 | 0.9938 |  |
-| `mlx_omnivoice_8bit_trim60` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7177 | 1.2823 |  |
-| `mlx_omnivoice_8bit_trim60` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0077 | 1.4468 |  |
-| `mlx_omnivoice_8bit_trim60` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0538 | 1.2133 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3311 | 0.7061 |  |
-| `mlx_omnivoice_8bit_trim60` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4286 | 0.52 |  |
-| `mlx_higgs_audio_v3_4b` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0746 | 1.4345 |  |
-| `mlx_higgs_audio_v3_4b` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8305 | 1.3409 |  |
-| `mlx_indextts2_standard_8bit` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3813 | 4.6316 |  |
-| `mlx_indextts2_standard_8bit` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8714 | 1.4544 |  |
-| `mlx_indextts2_standard_8bit` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4246 | 0.8604 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4644 | 0.8882 |  |
-| `mlx_qwen3_tts_official_int8` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4102 | 1.1235 |  |
-| `mlx_qwen3_tts_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8059 | 0.6192 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 1.6159 | 1.78 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.533 | 2.9019 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 2.5551 | 1.9362 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.582 | 1.9816 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0117 | 2.163 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.3927 | 1.4856 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9474 | 1.9926 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.0922 | 1.5781 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2449 | 1.3979 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9836 | 3.1698 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0375 | 1.7995 |  |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.1368 | 1.3737 |  |
-| `mlx_zonos2_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3612 | 1.2045 |  |
-| `mlx_zonos2_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.3778 | 1.5775 |  |
-| `mlx_zonos2_bf16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5543 | 1.205 |  |
-| `mlx_zonos2_bf16` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4778 | 1.275 |  |
-| `mlx_zonos2_bf16` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4475 | 1.2188 |  |
-| `mlx_zonos2_bf16` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4587 | 1.1926 |  |
-| `mlx_zonos2_bf16` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7561 | 1.5643 |  |
-| `mlx_zonos2_bf16` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.8469 | 1.2392 |  |
-| `mlx_zonos2_bf16` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1654 | 1.7092 |  |
-| `mlx_zonos2_bf16` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0345 |  | 2.8546 | 1.1967 |  |
-| `mlx_zonos2_bf16` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6867 | 1.5048 |  |
-| `mlx_zonos2_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0385 |  | 3.965 | 1.2297 |  |
-| `mlx_zonos2_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3571 | 1.1907 |  |
-| `mlx_zonos2_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4379 | 1.2014 |  |
-| `mlx_zonos2_bf16` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.05 |  | 4.0645 | 1.3577 |  |
-| `mlx_zonos2_bf16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 3.2357 | 1.1963 |  |
-| `mlx_zonos2_bf16` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3481 | 1.2057 |  |
-| `mlx_zonos2_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1827 | 1.1924 |  |
-| `mlx_zonos2_bf16` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8683 | 1.2105 |  |
-| `mlx_zonos2_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4248 | 1.341 |  |
-| `mlx_zonos2_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.6309 | 1.0597 |  |
-| `mlx_zonos2_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.439 | 1.0052 |  |
-| `mlx_zonos2_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0119 |  | 2.5204 | 1.2341 |  |
-| `mlx_zonos2_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8088 | 1.278 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8599 | 1.0103 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6959 | 1.0267 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2491 | 0.8389 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1651 | 0.8801 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7178 | 1.0199 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.181 | 1.0486 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3826 | 0.9374 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0156 |  | 2.8303 | 0.8631 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  | 3.5474 | 0.6575 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1416 | 0.8821 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1723 | 1.1528 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4981 | 1.0872 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.7065 | 1.1325 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0833 |  | 4.011 | 0.9639 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8772 | 0.88 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4005 | 1.0861 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8487 | 0.9855 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5359 | 1.2391 |  |
-| `mlx_supertonic3_mlx` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.427 | 0.0646 |  |
-| `mlx_supertonic3_mlx` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9808 | 0.0884 |  |
-| `mlx_supertonic3_mlx` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9284 | 0.0875 |  |
-| `mlx_supertonic3_mlx` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4936 | 0.0863 |  |
-| `mlx_supertonic3_mlx` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.264 | 0.064 |  |
-| `mlx_supertonic3_mlx` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2713 | 0.092 |  |
-| `mlx_supertonic3_mlx` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5566 | 0.0699 |  |
-| `mlx_supertonic3_mlx` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.047 | 0.0912 |  |
-| `mlx_supertonic3_mlx` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3716 | 0.0759 |  |
-| `mlx_supertonic3_mlx` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5214 | 0.0366 |  |
-| `mlx_supertonic3_mlx` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5218 | 0.0422 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 3.7973 | 0.8685 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7702 | 5.0327 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6559 | 1.7345 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9666 | 1.3636 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5914 | 1.768 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7264 | 2.3196 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.1 |  | 2.3756 | 3.8007 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2956 | 2.7417 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3033 | 4.4769 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6662 | 3.289 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0189 |  | 3.9967 | 3.3303 |  |
-| `mlx_qwen3_tts_official_int8` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1836 | 1.8944 |  |
-| `mlx_qwen3_tts_official_int8` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5153 | 0.3475 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6006 | 1.6772 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1077 | 1.8948 |  |
-| `mlx_omnivoice_8bit_trim60` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.01 |  | 3.5174 | 0.651 |  |
-| `mlx_higgs_audio_v3_4b` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1495 | 1.4964 |  |
-| `mlx_higgs_audio_v3_4b` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.733 | 1.1845 |  |
-| `mlx_higgs_audio_v3_4b` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5572 | 0.7642 |  |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.1143 |  |  | 0.7751 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7591 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.1034 |  |  | 7.4802 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7669 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0833 |  |  | 1.1414 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0556 |  |  | 2.4404 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 5.517 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 5.0499 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.045 |  |  | 4.1525 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0968 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0834 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0109 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0497 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2141 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3477 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1269 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1498 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4049 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6082 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0779 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2231 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2396 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1599 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5401 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1797 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4187 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3101 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.1713 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5812 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0214 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9707 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3277 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2355 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8097 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8956 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6535 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8714 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7835 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9792 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1473 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7784 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9802 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.335 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.4404 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0469 |  |  | 1.2554 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1924 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.179 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2402 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3064 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0571 |  |  | 1.2213 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2366 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4766 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2252 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6331 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5889 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7563 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | qwen base yue dialect clone (qwen_base_yue_dialect_clone) | success | qwen3_asr_1_7b_8bit | 0.05 |  |  | 0.8973 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | qwen base sichuan dialect clone (qwen_base_sichuan_dialect_clone) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.6231 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  |  | 1.6547 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0357 |  |  | 1.3635 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1903 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5023 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.158 | utmos:No module named 'soundfile' |
+| `mlx_voxcpm2_bf16_dit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.277 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1089 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.5448 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.6252 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_custom_voice_official_int8` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.04 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_custom_voice_official_int8` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.427 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_custom_voice_official_int8` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.601 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3935 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2438 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1877 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.6614 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.8548 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.4471 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_custom_voice_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.188 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7522 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0857 |  |  | 0.8345 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1302 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.158 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0938 |  |  | 1.0773 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0683 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1124 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.12 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1337 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.198 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1869 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  |  | 1.1741 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  |  | 1.2739 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1665 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2541 | utmos:No module named 'soundfile' |
+| `mlx_dots_tts_full_int8_g64` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0802 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.4847 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7207 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7823 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6512 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6706 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.65 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_vietnamese_8bit` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.6706 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.5445 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1568 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4586 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | MOSS 中文显式停顿标记 (moss_pause_markup_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8043 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8173 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7988 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.1 |  |  | 0.6198 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3437 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.2812 |  |  | 1.2672 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.3429 | 0.7757 | 3.3869 | 1.288 |  |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.2024 |  |  | 0.758 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2949 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.9375 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6251 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.1667 |  |  | 1.8694 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.9665 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8342 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.0269 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.2212 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.0326 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.0884 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.1944 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7976 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3302 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7935 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7675 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文女声歌曲风格生成 (voxcpm2_song_zh_female) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3542 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2974 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.6813 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.122 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.459 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4393 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4395 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.3578 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.1143 |  |  | 1.517 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7716 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.2775 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2028 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1275 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4709 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0514 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.2 | 0.8635 | 4.3414 | 0.8911 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8306 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0103 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1029 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.4584 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4591 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1436 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.469 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.5369 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4709 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4743 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.5847 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.4659 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7712 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.3289 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.3723 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7616 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9219 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9296 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.1 |  |  | 1.8743 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3313 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0417 | 0.8242 | 2.7947 | 1.2173 |  |
+| `mlx_higgs_audio_v3_4b` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.461 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2171 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2883 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4557 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1962 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2041 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3245 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0862 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3801 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.1 |  |  | 1.1492 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2133 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0476 |  |  | 0.8107 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9758 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.8211 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7755 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6756 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_vietnamese_8bit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7416 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.5211 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.467 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_voice_design_official_int8` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0556 |  |  | 0.5437 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3335 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1371 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.068 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1136 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2293 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9938 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2823 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4468 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2133 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7061 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.52 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4345 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3409 | utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文三秒目标时长控制 (control_duration_3s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 4.6316 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文十秒目标时长控制 (control_duration_10s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4544 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_indextts2_standard_8bit` | 中文二十秒目标时长控制 (control_duration_20s) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8604 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8882 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1235 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.6192 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.78 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.9019 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  |  | 1.9362 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.9816 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.163 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4856 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.9926 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5781 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3979 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.1698 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文流行歌曲风格生成 (voxcpm2_song_en_pop) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7995 | utmos:No module named 'soundfile' |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3737 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2045 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5775 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.205 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.275 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2188 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1926 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5643 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2392 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7092 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0345 |  |  | 1.1967 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.5048 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0385 |  |  | 1.2297 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1907 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2014 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.05 |  |  | 1.3577 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0571 |  |  | 1.1963 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2057 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1924 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2105 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.341 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0597 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0052 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0119 |  |  | 1.2341 | utmos:No module named 'soundfile' |
+| `mlx_zonos2_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.278 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0103 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0267 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8389 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8801 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0199 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0486 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9374 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0156 |  |  | 0.8631 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0217 |  |  | 0.6575 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.8821 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1528 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0872 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.0286 |  |  | 1.1325 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0833 |  |  | 0.9639 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.88 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.0861 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9855 | utmos:No module named 'soundfile' |
+| `mlx_moss_tts_local_transformer_v1_5` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.2391 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0646 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0884 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0875 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0863 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.064 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.092 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 越南语短视频导购朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0699 | asr_whisper:missing cached whisper model: mlx-community/whisper-large-v3-turbo;utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0912 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0759 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0366 | utmos:No module named 'soundfile' |
+| `mlx_supertonic3_mlx` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.0422 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  |  | 0.8685 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 5.0327 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.7345 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.3636 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.768 | utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.3196 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.1 |  |  | 3.8007 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 2.7417 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 4.4769 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 3.289 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0189 |  |  | 3.3303 | utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8944 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_qwen3_tts_official_int8` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.3475 | utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.6772 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.8948 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_omnivoice_8bit_trim60` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.01 |  |  | 0.651 | utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.4964 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 1.1845 | sim:No module named 'librosa';utmos:No module named 'soundfile' |
+| `mlx_higgs_audio_v3_4b` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.7642 | utmos:No module named 'soundfile' |
 
 ## 本地 TTS 覆盖状态
 
