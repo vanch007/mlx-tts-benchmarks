@@ -9,6 +9,7 @@ Only the audio files referenced by the complete audio review report are tracked 
 - 完整试听报告: [Audio review](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html)
 - 综合测试矩阵: [Comprehensive test matrix](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html)
 - 能力雷达报告: [Capability radar](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon.html)
+- 音色相似度与克隆可用性验证: [Speaker similarity validation](https://github.com/vanch007/mlx-tts-benchmarks/blob/main/reports/speaker_similarity_validation_20260723.md)
 - 低分根因与证据确定性: [Low-score root-cause audit](https://github.com/vanch007/mlx-tts-benchmarks/blob/main/reports/low_score_root_cause_audit_20260718.md)
 
 ## 综合评分权重
