@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`10`
+- 音频异常样本数：`4`
 - 性能提示样本数：`30`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -9,7 +9,7 @@
 
 | 模型 | 严重 | 高 | 中 | 低 | 分类计数 |
 |---|---:|---:|---:|---:|---|
-| `mlx_fireredaudio_8bit` | 0 | 0 | 6 | 8 | 生成过慢=8；语速异常=4；疑似底噪/杂音=2 |
+| `mlx_fireredaudio_8bit` | 0 | 0 | 0 | 8 | 生成过慢=8 |
 | `mlx_indextts2_v25_8bit` | 0 | 0 | 0 | 4 | 生成过慢=4 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 4 | 17 | 生成过慢=17；内容错误偏高=4 |
@@ -18,12 +18,6 @@
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
-| medium | 语速异常 | 中英混读品牌与订单号朗读 (`core_zh_en_codeswitch`) | 语速偏快，约 7.0312 token/s，语速分 38.752。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | 英文长文本角色连续性 (`scenema_longform_en`) | 语速偏快，约 9.1346 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | 中文长文本连续稳定性 (`stress_long_zh`) | 语速偏快，约 15.9091 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | 英文参考音色说中文克隆 (`xling_en_to_zh`) | 语速偏快，约 7.8125 token/s，语速分 7.5。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 疑似底噪/杂音 | 英文参考音色克隆 (`clone_en_same`) | 噪声底约 -33.976 dBFS，语音/底噪差约 17.976 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
-| medium | 疑似底噪/杂音 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | 噪声底约 -33.226 dBFS，语音/底噪差约 16.51 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
 | low | 生成过慢 | 中文近讲 ASMR 女声音色设计 (`control_voice_design_asmr`) | RTF=6.0937，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 英文儿童故事女声音色设计 (`control_voice_design_child`) | RTF=3.1956，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | RTF=22.3818，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
