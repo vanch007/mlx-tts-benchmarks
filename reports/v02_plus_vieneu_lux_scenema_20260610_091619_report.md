@@ -21,7 +21,7 @@
 | 9 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
 | 10 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
 | 11 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
-| 12 | `mlx_fireredaudio` | 14 | 21.159 | 66.667 | 23.9 | 25.859 | 0.0 | 0.0 | 12.967 | 55.574 | 0.0 | 34.659 | 0.0 | no |
+| 12 | `mlx_fireredaudio` | 14 | 23.743 | 66.667 | 24.227 | 25.749 | 0.0 | 0.0 | 14.943 | 71.096 | 0.0 | 31.192 | 27.082 | no |
 
 ## 样本摘要
 
@@ -326,20 +326,20 @@
 | `mlx_omnivoice_8bit_trim60` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 3.5182 | 1.0485 |  |
 | `mlx_omnivoice_8bit_trim60` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_0_6b_8bit | 0.0286 |  | 3.0189 | 0.9606 |  |
 | `mlx_omnivoice_8bit_trim60` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 3.1132 | 1.1089 |  |
-| `mlx_fireredaudio_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | mlx_whisper | 1.0 | 0.0224 | 1.3619 | 3.024 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | mlx_whisper | 0.9811 | 0.0 | 1.2702 | 3.0691 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | mlx_whisper | 1.0 | 0.0 | 1.3938 | 2.8131 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文参考音色克隆 (clone_en_same) | success | mlx_whisper | 0.9487 | 0.0113 | 1.2797 | 2.7151 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 中文参考音色克隆 (clone_zh_same) | success | mlx_whisper | 1.0 | 0.0 | 1.2939 | 3.2236 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | mlx_whisper | 0.9383 | 0.0 | 1.2724 | 2.8123 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | mlx_whisper | 1.0 | 0.0259 | 1.2867 | 3.7072 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | mlx_whisper | 1.0 | 0.0311 | 1.4055 | 3.2321 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | mlx_whisper | 0.9294 | 0.0411 | 1.2969 | 2.8488 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | mlx_whisper | 6.125 | 0.0 | 1.2686 | 2.7207 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | mlx_whisper | 0.9221 | 0.0 | 1.3359 | 3.7425 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | mlx_whisper | 0.975 | 0.0 | 1.2734 | 2.7533 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 1.0 | 0.0 | 1.385 | 2.8893 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
-| `mlx_fireredaudio_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.9497 | 0.0 | 1.2927 | 3.6251 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | mlx_whisper | 1.0 | 0.0 | 1.3507 | 1.5288 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | mlx_whisper | 0.9245 | 0.1284 | 1.3346 | 1.6054 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | mlx_whisper | 1.0 | 0.0 | 1.3186 | 1.5402 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文参考音色克隆 (clone_en_same) | success | mlx_whisper | 0.9359 | 0.0829 | 1.3081 | 1.4666 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中文参考音色克隆 (clone_zh_same) | success | mlx_whisper | 2.3 | 0.0 | 1.3166 | 1.4361 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | mlx_whisper | 0.9506 | 0.0 | 1.327 | 1.4834 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | mlx_whisper | 1.0 | 0.0693 | 1.3521 | 1.8131 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | mlx_whisper | 1.0 | 0.0757 | 1.306 | 1.5195 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | mlx_whisper | 0.9529 | 0.1384 | 1.2811 | 1.4436 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | mlx_whisper | 1.0 | 0.0 | 1.2563 | 1.4558 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | mlx_whisper | 0.961 | 0.1308 | 1.2534 | 1.609 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | mlx_whisper | 0.98 | 0.0 | 1.3151 | 1.5128 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 1.0 | 0.0 | 1.3332 | 1.522 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
+| `mlx_fireredaudio_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.9497 | 0.0489 | 1.2818 | 1.4287 | asr_qwen3:missing complete cached Qwen3-ASR weights: mlx-community/Qwen3-ASR-1.7B-8bit |
 
 ## 本地 TTS 覆盖状态
 
