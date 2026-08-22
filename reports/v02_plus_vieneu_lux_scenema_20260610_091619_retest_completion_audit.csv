@@ -1,0 +1,12 @@
+project_id,project_label,status,candidate_rows,valid_candidate_rows,invalid_candidate_rows,candidate_cases,selected_rows,selected_cases,score_before,score_after,score_delta,remaining_queue_rows,remaining_p0,remaining_p1,remaining_p2,remaining_p3,remaining_issue_types
+mlx_dots_tts,MLX dots.tts,retested_no_safe_improvement,16,16,0,12,0,,77.708,77.708,0.0,27,0,0,27,0,axis_case_quality_low;axis_quality_low
+mlx_higgs_audio,MLX Higgs Audio,optimized_with_guarded_improvements,28,28,0,16,4,clone_3s_en;control_emotion_prompt_en;core_ko_customer;xling_en_to_ja,81.703,81.963,0.26,31,0,0,31,0,axis_case_quality_low;axis_quality_low
+mlx_indextts2,MLX IndexTTS2,optimized_with_guarded_improvements,86,86,0,18,1,clone_zh_same,63.915,63.998,0.083,42,0,22,20,0,axis_case_quality_low;axis_quality_low;coverage_gap_boundary;performance_slow
+mlx_ming_omni_tts,MLX Ming-omni-tts,retested_no_safe_improvement,42,42,0,16,0,,62.855,62.855,0.0,35,0,15,20,0,axis_case_quality_low;axis_quality_low;coverage_gap_boundary;performance_slow
+mlx_moss_tts,MLX MOSS-TTS,retested_no_safe_improvement,2,2,0,2,0,,85.405,85.405,0.0,18,1,0,17,0,axis_case_quality_low;axis_quality_low;content_or_audio_anomaly
+mlx_omnivoice,MLX OmniVoice,optimized_with_guarded_improvements,65,64,1,15,4,core_fr_long_sentence;core_ja_reading;core_ko_customer;core_yue_dialect,79.838,79.997,0.159,21,0,0,21,0,axis_case_quality_low;axis_quality_low
+mlx_qwen3_tts,MLX Qwen3-TTS,capability_boundary_only,0,0,0,0,0,,80.537,80.537,0.0,1,0,1,0,0,coverage_gap_boundary
+mlx_scenema_audio,MLX Scenema Audio,optimized_with_guarded_improvements,97,97,0,15,7,core_hi_amount;core_ja_reading;core_zh_en_codeswitch;scenema_longform_en;scenema_polyglot_obama_es;stress_long_en;stress_long_zh,65.921,67.794,1.873,49,8,13,23,5,axis_case_quality_low;axis_quality_low;case_quality_low;content_or_audio_anomaly;coverage_gap_boundary;performance_slow
+mlx_supertonic,MLX Supertonic,no_remaining_low_score_items,0,0,0,0,0,,59.842,59.842,0.0,0,0,0,0,0,
+mlx_voxcpm2,MLX VoxCPM2,optimized_with_guarded_improvements,67,67,0,33,3,control_style_transfer;control_whisper_style;scenema_clone_tarkin_en,80.23,80.251,0.021,36,1,0,35,0,axis_case_quality_low;axis_quality_low;content_or_audio_anomaly
+mlx_zonos2,MLX ZONOS2,optimized_with_guarded_improvements,16,16,0,9,1,core_de_instruction,75.935,76.077,0.142,27,0,0,27,0,axis_case_quality_low;axis_quality_low
