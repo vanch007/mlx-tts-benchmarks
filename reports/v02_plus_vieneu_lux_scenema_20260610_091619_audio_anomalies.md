@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`11`
+- 音频异常样本数：`10`
 - 性能提示样本数：`30`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -9,7 +9,7 @@
 
 | 模型 | 严重 | 高 | 中 | 低 | 分类计数 |
 |---|---:|---:|---:|---:|---|
-| `mlx_fireredaudio_8bit` | 0 | 0 | 7 | 8 | 生成过慢=8；语速异常=4；疑似底噪/杂音=2；内容错误偏高=1 |
+| `mlx_fireredaudio_8bit` | 0 | 0 | 6 | 8 | 生成过慢=8；语速异常=4；疑似底噪/杂音=2 |
 | `mlx_indextts2_v25_8bit` | 0 | 0 | 0 | 4 | 生成过慢=4 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 4 | 17 | 生成过慢=17；内容错误偏高=4 |
@@ -18,7 +18,6 @@
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
-| medium | 内容错误偏高 | 中文数字、时间与订单号朗读 (`core_zh_numbers`) | CER=0.3429，WER=0.3714。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | 中英混读品牌与订单号朗读 (`core_zh_en_codeswitch`) | 语速偏快，约 7.0312 token/s，语速分 38.752。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | 英文长文本角色连续性 (`scenema_longform_en`) | 语速偏快，约 9.1346 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | 中文长文本连续稳定性 (`stress_long_zh`) | 语速偏快，约 15.9091 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
