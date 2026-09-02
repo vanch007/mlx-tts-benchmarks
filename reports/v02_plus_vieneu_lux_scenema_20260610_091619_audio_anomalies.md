@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`12`
+- 音频异常样本数：`5`
 - 性能提示样本数：`45`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -13,7 +13,6 @@
 | `mlx_fireredaudio_8bit` | 0 | 0 | 0 | 8 | 生成过慢=8 |
 | `mlx_indextts2_v25_8bit` | 0 | 0 | 0 | 4 | 生成过慢=4 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 1 | 生成过慢=1 |
-| `mlx_pocket_tts_8bit` | 2 | 2 | 3 | 0 | 音频过短=2；内容严重错误=2；语速异常=2；疑似底噪/杂音=1 |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 4 | 17 | 生成过慢=17；内容错误偏高=4 |
 
 ## mlx_breeze_tts2_8bit
@@ -64,18 +63,6 @@
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
 | low | 生成过慢 | 中文开心情绪标签控制 (`control_emotion_happy`) | RTF=3.1698，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-
-## mlx_pocket_tts_8bit
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| critical | 音频过短 | 德语清晰友好指令朗读 (`core_de_instruction`) | 时长 0.32s，疑似空输出或提前终止。 | 重跑并检查模型 stderr；必要时提高 max tokens/输出长度。 |
-| critical | 音频过短 | 西语疑问句语调与停顿 (`core_es_question`) | 时长 0.32s，疑似空输出或提前终止。 | 重跑并检查模型 stderr；必要时提高 max tokens/输出长度。 |
-| high | 内容严重错误 | 德语清晰友好指令朗读 (`core_de_instruction`) | CER=0.918，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
-| high | 内容严重错误 | 西语疑问句语调与停顿 (`core_es_question`) | CER=0.9683，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
-| medium | 语速异常 | 德语清晰友好指令朗读 (`core_de_instruction`) | 语速偏快，约 37.5 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | 西语疑问句语调与停顿 (`core_es_question`) | 语速偏快，约 43.75 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 疑似底噪/杂音 | 法语长句呼吸与音色稳定 (`core_fr_long_sentence`) | 噪声底约 -34.186 dBFS，语音/底噪差约 17.737 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
 
 ## mlx_scenema_audio_int8_mlx_mps_service
 

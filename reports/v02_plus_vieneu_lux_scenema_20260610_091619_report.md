@@ -18,9 +18,9 @@
 | 6 | `mlx_dots_tts` | 27 | 77.498 | 88.889 | 88.346 | 64.977 | 86.94 | 82.29 | 78.984 | 89.338 | 0.0 | 85.764 | 52.204 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.085 | 77.778 | 93.569 | 64.924 | 87.356 | 0.0 | 78.019 | 89.927 | 0.0 | 87.823 | 42.64 | no |
 | 8 | `mlx_scenema_audio` | 28 | 67.38 | 86.111 | 73.07 | 63.563 | 58.206 | 0.0 | 76.728 | 83.62 | 81.078 | 72.83 | 22.146 | yes |
-| 9 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
-| 10 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
-| 11 | `mlx_pocket_tts` | 11 | 62.106 | 59.722 | 97.549 | 68.686 | 10.979 | 0.0 | 80.0 | 0.0 | 0.0 | 94.474 | 98.889 | no |
+| 9 | `mlx_pocket_tts` | 11 | 66.224 | 59.722 | 97.549 | 75.185 | 33.497 | 0.0 | 80.0 | 0.0 | 0.0 | 94.474 | 98.432 | no |
+| 10 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
+| 11 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
 | 12 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
 | 13 | `mlx_breeze_tts2` | 15 | 60.489 | 77.778 | 57.605 | 70.765 | 0.0 | 0.0 | 85.95 | 93.103 | 88.676 | 78.747 | 0.0 | no |
 | 14 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
@@ -358,9 +358,9 @@
 | `mlx_breeze_tts2_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 0.0357 | 0.8436 | 2.9349 | 4.0849 |  |
 | `mlx_breeze_tts2_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.0 | 0.9514 | 3.7425 | 4.0167 |  |
 | `mlx_pocket_tts_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3465 | 0.0952 |  |
-| `mlx_pocket_tts_8bit` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.9683 |  | 1.4315 | 0.2789 |  |
-| `mlx_pocket_tts_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0222 |  | 1.5187 | 0.435 |  |
-| `mlx_pocket_tts_8bit` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.918 |  | 1.716 | 0.2462 |  |
+| `mlx_pocket_tts_8bit` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4132 | 0.0847 |  |
+| `mlx_pocket_tts_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7089 | 0.5519 |  |
+| `mlx_pocket_tts_8bit` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4732 | 0.0874 |  |
 | `mlx_pocket_tts_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.5822 | 3.9434 | 0.0927 |  |
 | `mlx_pocket_tts_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.5757 | 4.3883 | 0.0834 |  |
 | `mlx_pocket_tts_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6997 | 4.1255 | 0.0869 |  |
