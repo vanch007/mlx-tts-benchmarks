@@ -17,14 +17,14 @@
 | 5 | `mlx_omnivoice` | 30 | 79.412 | 98.611 | 90.809 | 66.856 | 79.638 | 92.02 | 74.82 | 84.323 | 93.788 | 82.132 | 53.753 | yes |
 | 6 | `mlx_dots_tts` | 27 | 77.498 | 88.889 | 88.346 | 64.977 | 86.94 | 82.29 | 78.984 | 89.338 | 0.0 | 85.764 | 52.204 | yes |
 | 7 | `mlx_zonos2` | 26 | 76.085 | 77.778 | 93.569 | 64.924 | 87.356 | 0.0 | 78.019 | 89.927 | 0.0 | 87.823 | 42.64 | no |
-| 8 | `mlx_breeze_tts2` | 15 | 69.312 | 77.778 | 91.935 | 71.904 | 0.0 | 0.0 | 74.913 | 92.215 | 87.834 | 91.518 | 44.739 | no |
-| 9 | `mlx_scenema_audio` | 28 | 67.38 | 86.111 | 73.07 | 63.563 | 58.206 | 0.0 | 76.728 | 83.62 | 81.078 | 72.83 | 22.146 | yes |
-| 10 | `mlx_pocket_tts` | 11 | 66.224 | 59.722 | 97.549 | 75.185 | 33.497 | 0.0 | 80.0 | 0.0 | 0.0 | 94.474 | 98.432 | no |
-| 11 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
-| 12 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
-| 13 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
-| 14 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
-| 15 | `mlx_audio8_tts` | 20 | 58.683 | 73.611 | 59.728 | 78.289 | 51.368 | 51.105 | 82.276 | 0.0 | 0.0 | 80.777 | 26.814 | no |
+| 8 | `mlx_scenema_audio` | 28 | 69.498 | 86.111 | 81.54 | 63.563 | 58.206 | 0.0 | 76.728 | 83.62 | 81.078 | 72.83 | 22.146 | yes |
+| 9 | `mlx_breeze_tts2` | 15 | 69.312 | 77.778 | 91.935 | 71.904 | 0.0 | 0.0 | 74.913 | 92.215 | 87.834 | 91.518 | 44.739 | no |
+| 10 | `mlx_audio8_tts` | 20 | 66.275 | 73.611 | 87.963 | 78.233 | 55.912 | 51.105 | 82.275 | 0.0 | 0.0 | 80.777 | 26.814 | no |
+| 11 | `mlx_pocket_tts` | 11 | 66.224 | 59.722 | 97.549 | 75.185 | 33.497 | 0.0 | 80.0 | 0.0 | 0.0 | 94.474 | 98.432 | no |
+| 12 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
+| 13 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
+| 14 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
+| 15 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
 
@@ -301,7 +301,7 @@
 | `mlx_supertonic3_mlx` | 阿拉伯语城市名与数字朗读 (core_ar_names) | success | qwen3_asr_0_6b_8bit | 0.1087 |  | 3.3716 | 0.0759 |  |
 | `mlx_supertonic3_mlx` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 4.5214 | 0.0366 |  |
 | `mlx_supertonic3_mlx` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 4.5218 | 0.0422 |  |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_0_6b_8bit | 0.2571 |  | 3.7973 | 0.8685 |  |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 3.7973 | 0.8685 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 2.7702 | 5.0327 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 2.6559 | 1.7345 |  |
 | `mlx_scenema_audio_int8_mlx_mps_service` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_0_6b_8bit | 0.0 |  | 2.9666 | 1.3636 |  |
@@ -369,10 +369,10 @@
 | `mlx_breeze_tts2_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | mlx_whisper | 0.0435 | 0.9059 | 3.5838 | 1.1671 |  |
 | `mlx_breeze_tts2_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 0.0303 | 0.8714 | 3.0601 | 1.101 |  |
 | `mlx_breeze_tts2_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.0 | 0.934 | 3.7464 | 1.1077 |  |
-| `mlx_audio8_tts_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | mlx_whisper | 0.3429 | 0.8205 | 4.2462 | 2.2113 |  |
+| `mlx_audio8_tts_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | mlx_whisper | 0.0303 | 0.8205 | 4.2462 | 2.2113 |  |
 | `mlx_audio8_tts_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | mlx_whisper | 0.0 | 0.8798 | 4.2011 | 2.2349 |  |
-| `mlx_audio8_tts_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | mlx_whisper | 0.1714 | 0.8304 | 4.2175 | 2.2845 |  |
-| `mlx_audio8_tts_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | mlx_whisper | 0.3125 | 0.7109 | 3.7491 | 2.3285 |  |
+| `mlx_audio8_tts_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | mlx_whisper | 0.0 | 0.8304 | 4.2175 | 2.2845 |  |
+| `mlx_audio8_tts_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | mlx_whisper | 0.0312 | 0.8238 | 3.6676 | 2.3285 |  |
 | `mlx_audio8_tts_8bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | mlx_whisper | 0.0 | 0.8372 | 3.5563 | 1.9057 |  |
 | `mlx_audio8_tts_8bit` | 西语疑问句语调与停顿 (core_es_question) | success | mlx_whisper | 0.0 | 0.8761 | 3.7184 | 1.3327 |  |
 | `mlx_audio8_tts_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | mlx_whisper | 0.0444 | 0.85 | 3.961 | 1.3591 |  |
@@ -382,10 +382,10 @@
 | `mlx_audio8_tts_8bit` | 中文参考音色克隆 (clone_zh_same) | success | mlx_whisper | 0.0333 | 0.8615 | 3.9223 | 1.2994 |  |
 | `mlx_audio8_tts_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | mlx_whisper | 0.0 | 0.6697 | 4.4969 | 1.3675 |  |
 | `mlx_audio8_tts_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | mlx_whisper | 0.2 | 0.7361 | 4.1357 | 1.4177 |  |
-| `mlx_audio8_tts_8bit` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | mlx_whisper | 0.0 | 0.6173 | 4.2633 | 1.3091 |  |
+| `mlx_audio8_tts_8bit` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | mlx_whisper | 0.0 | 0.6171 | 4.2633 | 1.3091 |  |
 | `mlx_audio8_tts_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | mlx_whisper | 0.0 | 0.8568 | 4.4512 | 1.3834 |  |
 | `mlx_audio8_tts_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | mlx_whisper | 0.0 | 0.7726 | 4.3088 | 1.4868 |  |
-| `mlx_audio8_tts_8bit` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | mlx_whisper | 0.0 | 0.675 | 3.9792 | 1.5041 |  |
+| `mlx_audio8_tts_8bit` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | mlx_whisper | 0.0 | 0.6751 | 3.9792 | 1.5041 |  |
 | `mlx_audio8_tts_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | mlx_whisper | 0.0 | 0.8849 | 4.1707 | 1.2955 |  |
 | `mlx_audio8_tts_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 0.0476 | 0.7687 | 3.431 | 1.3173 |  |
 | `mlx_audio8_tts_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.0 | 0.9199 | 4.105 | 1.3074 |  |
