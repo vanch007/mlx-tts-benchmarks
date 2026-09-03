@@ -16,6 +16,7 @@ mlx_moss_tts_local_transformer_v1_5,/Users/vanch/mlx-MOSS-TTS-Local-Transformer-
 mlx_fireredaudio_8bit,/Users/vanch/mlx-FireRedAudio,missing_checkpoint_or_project,"adapter=fireredaudio; checkpoint=models/FireRedAudio-8bit; languages=en,zh,zh_en; capabilities=clone,cross_lingual_clone,long_text,multilingual,text_tts,voice_design"
 mlx_breeze_tts2_8bit,/Users/vanch/mlx-breeze-tts2,scored,"adapter=breeze; checkpoint=models/breeze-8bit-sensitive-bf16-v2; languages=en,zh,zh_en; capabilities=clone,control_tokens,cross_lingual_clone,long_text,multilingual,text_tts,voice_design"
 mlx_pocket_tts_8bit,/Users/vanch/mlx-pocket-tts,scored,"adapter=pocket_tts; checkpoint=vanch007/mlx-pocket-tts; languages=cs,de,en,es,fr,it,pt; capabilities=clone,cross_lingual_clone,long_text,multilingual,text_tts"
+mlx_audio8_tts_8bit,/Users/vanch/mlx-audio8-tts,scored,"adapter=audio8; checkpoint=models/Audio8-TTS-Preview-0.6b-8bit; languages=de,en,es,fr,it,ja,ko,nl,pl,yue,zh,zh_en; capabilities=clone,cross_lingual_clone,dialect,long_text,multilingual,text_tts"
 mlx_audio_multi_model,/Users/vanch/mlx-audio,toolkit_not_single_model,Toolkit with many TTS backends; score individual model ids instead of the toolkit.
 cloudflare_edge_tts,/Users/vanch/cloudflare-edge-tts,excluded_not_open_source_model,"Worker/client for Edge voices, not a local open-source TTS model."
 speech_to_speech,/Users/vanch/speech-to-speech,excluded_pipeline_wrapper,"Pipeline wrapper containing TTS options, not one local TTS model."
