@@ -21,10 +21,11 @@
 | 9 | `mlx_breeze_tts2` | 15 | 69.312 | 77.778 | 91.935 | 71.904 | 0.0 | 0.0 | 74.913 | 92.215 | 87.834 | 91.518 | 44.739 | no |
 | 10 | `mlx_pocket_tts` | 11 | 66.224 | 59.722 | 97.549 | 75.185 | 33.497 | 0.0 | 80.0 | 0.0 | 0.0 | 94.474 | 98.432 | no |
 | 11 | `mlx_audio8_tts` | 20 | 65.806 | 73.611 | 87.963 | 78.233 | 55.912 | 51.105 | 82.275 | 0.0 | 0.0 | 80.777 | 11.207 | no |
-| 12 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
-| 13 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
-| 14 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
-| 15 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
+| 12 | `mlx_drama3` | 21 | 63.12 | 84.722 | 80.249 | 72.146 | 55.615 | 56.16 | 71.712 | 0.0 | 88.493 | 79.626 | 0.0 | yes |
+| 13 | `mlx_fireredaudio` | 14 | 62.987 | 66.667 | 87.741 | 62.601 | 0.0 | 0.0 | 84.29 | 87.584 | 0.0 | 77.33 | 10.828 | no |
+| 14 | `mlx_indextts2` | 24 | 62.788 | 70.833 | 86.239 | 53.893 | 30.235 | 0.0 | 77.03 | 81.531 | 0.0 | 76.425 | 22.463 | no |
+| 15 | `mlx_ming_omni_tts` | 19 | 62.077 | 88.889 | 77.91 | 52.236 | 0.0 | 90.337 | 72.248 | 89.911 | 84.075 | 77.66 | 23.972 | yes |
+| 16 | `mlx_supertonic` | 11 | 59.842 | 55.556 | 97.851 | 76.73 | 90.029 | 0.0 | 0.0 | 0.0 | 0.0 | 93.904 | 100.0 | no |
 
 ## 样本摘要
 
@@ -389,6 +390,27 @@
 | `mlx_audio8_tts_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | mlx_whisper | 0.0 | 0.8849 | 4.1707 | 2.9172 |  |
 | `mlx_audio8_tts_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 0.0476 | 0.7687 | 3.431 | 3.5584 |  |
 | `mlx_audio8_tts_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.0 | 0.9199 | 4.105 | 3.3103 |  |
+| `mlx_drama3_4bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | mlx_whisper | 0.0303 | 0.8014 | 3.5821 | 3.1846 |  |
+| `mlx_drama3_4bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | mlx_whisper | 0.0 | 0.901 | 3.6778 | 3.8955 |  |
+| `mlx_drama3_4bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | mlx_whisper | 0.0 | 0.9259 | 3.36 | 4.5416 |  |
+| `mlx_drama3_4bit` | 日语汇率新闻朗读 (core_ja_reading) | success | mlx_whisper | 0.0 | 0.7775 | 3.5025 | 5.6478 |  |
+| `mlx_drama3_4bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | mlx_whisper | 0.0 | 0.7505 | 3.4673 | 5.0329 |  |
+| `mlx_drama3_4bit` | 西语疑问句语调与停顿 (core_es_question) | success | mlx_whisper | 0.0476 | 0.8474 | 3.0 | 4.8955 |  |
+| `mlx_drama3_4bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | mlx_whisper | 0.0 | 0.7067 | 3.4296 | 4.4654 |  |
+| `mlx_drama3_4bit` | 德语清晰友好指令朗读 (core_de_instruction) | success | mlx_whisper | 0.0 | 0.7847 | 3.3473 | 4.5123 |  |
+| `mlx_drama3_4bit` | 粤语科普播客方言能力 (core_yue_dialect) | success | mlx_whisper | 0.2273 | 1.0 | 2.8878 | 8.079 |  |
+| `mlx_drama3_4bit` | 英文参考音色克隆 (clone_en_same) | success | mlx_whisper | 0.0513 | 0.0 | 4.432 | 4.4181 |  |
+| `mlx_drama3_4bit` | 中文参考音色克隆 (clone_zh_same) | success | mlx_whisper | 0.5333 | 0.4019 | 2.7249 | 4.8635 |  |
+| `mlx_drama3_4bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | mlx_whisper | 0.0 | 0.6844 | 4.5268 | 4.1201 |  |
+| `mlx_drama3_4bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | mlx_whisper | 0.15 | 0.8436 | 4.1981 | 4.7382 |  |
+| `mlx_drama3_4bit` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | mlx_whisper | 0.0 | 0.6212 | 4.2571 | 3.4526 |  |
+| `mlx_drama3_4bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | mlx_whisper | 0.0 | 0.7336 | 4.2514 | 4.4485 |  |
+| `mlx_drama3_4bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | mlx_whisper | 0.0 | 0.7032 | 4.2397 | 6.9833 |  |
+| `mlx_drama3_4bit` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | mlx_whisper | 0.0 | 0.7226 | 3.7303 | 6.8621 |  |
+| `mlx_drama3_4bit` | 英文长文本角色连续性 (scenema_longform_en) | success | mlx_whisper | 0.0 | 0.8714 | 3.7713 | 4.0135 |  |
+| `mlx_drama3_4bit` | 英文笑声副语言控制 (control_token_laugh) | success | mlx_whisper | 0.0 | 0.7618 | 3.1589 | 5.8885 |  |
+| `mlx_drama3_4bit` | 中文长文本连续稳定性 (stress_long_zh) | success | mlx_whisper | 0.0357 | 0.7646 | 3.0651 | 4.1528 |  |
+| `mlx_drama3_4bit` | 英文长文本连续稳定性 (stress_long_en) | success | mlx_whisper | 0.0 | 0.854 | 4.078 | 4.665 |  |
 
 ## 本地 TTS 覆盖状态
 
@@ -414,6 +436,7 @@
 | `mlx_breeze_tts2_8bit` | scored | `/Users/vanch/mlx-breeze-tts2` |
 | `mlx_pocket_tts_8bit` | scored | `/Users/vanch/mlx-pocket-tts` |
 | `mlx_audio8_tts_8bit` | scored | `/Users/vanch/mlx-audio8-tts` |
+| `mlx_drama3_4bit` | scored | `/Users/vanch/drama-3-mlx` |
 | `mlx_audio_multi_model` | toolkit_not_single_model | `/Users/vanch/mlx-audio` |
 | `cloudflare_edge_tts` | excluded_not_open_source_model | `/Users/vanch/cloudflare-edge-tts` |
 | `speech_to_speech` | excluded_pipeline_wrapper | `/Users/vanch/speech-to-speech` |
