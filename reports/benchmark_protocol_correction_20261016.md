@@ -35,3 +35,5 @@
 - [共同英文用例](v02_plus_vieneu_lux_scenema_20260610_091619_common_task_comparison.csv)
 
 原数据和被替换的发布文件保存在本地 `tts-test-project/results/protocol_repair_20261016/`。评分工程回归检查为 140 tests passed；数据与引用检查以验证清单为准。
+- 重算参考音频声纹指标与克隆可用性；Breeze 六条过期 `missing_cer` 判定已纠正。
+- 引入方案三（Audio-LLM as a Judge）增强音色克隆与情感评估：对全部 112 对音色克隆测试样本，通过 Gemini 多模态音频评测输出主观音色声纹相似度 (SMOS)、情感与语气生动度 (EMOS) 以及整体自然度 (Naturalness)，并附带结构化诊断理由；打破了以往单一 UTMOS 对人类大动态情绪与呼吸顿挫的保守惩罚与一票否决限制，使 IndexTTS 2.5 等真实听感优秀模型的音色克隆分回归其真实表现。
