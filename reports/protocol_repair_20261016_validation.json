@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "rows": 415,
+  "asr_backends": {
+    "qwen3_asr_1_7b_8bit": 415
+  },
+  "regenerated_rows": 2,
+  "audio_references_checked": 805,
+  "missing_audio_paths": [],
+  "excluded_records": [
+    {
+      "model_id": "mlx_qwen3_tts_official_int8",
+      "test_case_id": "qwen_base_yue_dialect_clone",
+      "evaluation_exclusion": "retired_case_id"
+    },
+    {
+      "model_id": "mlx_qwen3_tts_official_int8",
+      "test_case_id": "qwen_base_sichuan_dialect_clone",
+      "evaluation_exclusion": "retired_case_id"
+    },
+    {
+      "model_id": "mlx_moss_tts_local_transformer_v1_5",
+      "test_case_id": "control_duration_20s",
+      "evaluation_exclusion": "duration_achieved_by_inserted_pause_not_native_speech_duration_control"
+    },
+    {
+      "model_id": "mlx_higgs_audio_v3_4b",
+      "test_case_id": "clone_3s_en",
+      "evaluation_exclusion": "invalid_3s_protocol_reference_is_8.08s;retest_pending_missing_checkpoint"
+    }
+  ],
+  "limitations": [
+    "Higgs exact MLX checkpoint missing: 3-second retest pending",
+    "held-out evaluation, multi-seed trials, blinded listening, minute-scale longform pending",
+    "legacy timing and generation revision evidence incomplete"
+  ],
+  "metrics_sha256": "b169b998f24c6be1031046296e3c5e782badd0013c87c94be13785b20f9c0849"
+}

@@ -4,6 +4,12 @@ Published HTML reports and final audio samples for MLX-oriented TTS model compar
 
 Only the audio files referenced by the complete audio review report are tracked here.
 
+## 评估口径修正（2026-10-16）
+
+当前报告定位为开发集的工程验证与试听比较，综合分为探索性代理，不是正式模型排名。415 条记录已统一使用 MLX Qwen3-ASR 1.7B 8bit 复评；修复了重复样本选择、过期克隆判定和 Drama 3 输入/参考不一致。情绪、副语言、方言缺直接证据时标记待验证；当前长文仅覆盖约 9–28 秒短段落。所有项目正式排名就绪状态均为 no。
+
+详细变更、证据与未完成实验见 [评估修正报告](reports/benchmark_protocol_correction_20261016.md)。Higgs 原 3 秒用例使用了 8.08 秒参考，保留试听但不计能力分；恢复该 MLX 权重后需重测。历史 RTF 仍有计时范围差异。
+
 ## Reports
 
 - 完整试听报告: [Audio review](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html)
