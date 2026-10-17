@@ -28,8 +28,8 @@
     <h1>mlx-tts-benchmark - 综合测试表</h1>
     <div class="meta">
       <span>run_id: <code>v02_plus_vieneu_lux_scenema_20260610_091619</code></span>
-      <span>综合大项: <strong>11</strong></span>
-      <span>子测试: <strong>56</strong></span>
+      <span>综合大项: <strong>12</strong></span>
+      <span>子测试: <strong>63</strong></span>
       <span>CSV: <code>/Users/vanch/tts-test-project/reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.csv</code></span>
     </div>
   </header>
@@ -80,7 +80,13 @@
 <tr><td><code>stress_long_en</code><br>英文长文本连续稳定性</td><td>formal<br><code>capability_standard</code></td><td>en</td><td>短段落连续性（分钟级长文待测）</td><td>long_form</td><td>16</td><td>16</td><td>16</td><td>success=16</td></tr>
 <tr><td><code>scenema_longform_en</code><br>英文长文本角色连续性</td><td>formal<br><code>capability_standard</code></td><td>en</td><td>短段落连续性（分钟级长文待测）</td><td>long_form</td><td>16</td><td>16</td><td>16</td><td>success=16</td></tr></tbody></table></section><section class="suite"><h2>不纳入能力评分 / 部署性能</h2><p>统一记录短句延迟、流式首包、批量生成、RTF 和 p95 延迟。</p><div class="facts"><span>子测试 3</span><span>适用项目 0</span><span>已测项目 7</span><span>单项目子项 0</span><span>not_scored</span><span>deployment_performance</span></div><table><thead><tr><th>子测试</th><th>评分层级</th><th>语言</th><th>能力轴</th><th>能力</th><th>适用项目</th><th>已测</th><th>成功</th><th>状态</th></tr></thead><tbody><tr><td><code>perf_short_tts</code><br>中文短句生成延迟诊断</td><td>diagnostic_or_excluded<br><code>diagnostic</code></td><td>zh</td><td>不纳入能力评分</td><td>basic_tts</td><td></td><td>7</td><td>7</td><td>success=7</td></tr>
 <tr><td><code>perf_streaming_first_audio</code><br>英文流式首包延迟诊断</td><td>diagnostic_or_excluded<br><code>diagnostic</code></td><td>en</td><td>不纳入能力评分</td><td>streaming_tts</td><td></td><td>3</td><td>3</td><td>success=3</td></tr>
-<tr><td><code>perf_batch_10_samples</code><br>中文批量生成性能诊断</td><td>diagnostic_or_excluded<br><code>diagnostic</code></td><td>zh</td><td>不纳入能力评分</td><td>batch_tts</td><td></td><td>7</td><td>7</td><td>success=7</td></tr></tbody></table></section>
+<tr><td><code>perf_batch_10_samples</code><br>中文批量生成性能诊断</td><td>diagnostic_or_excluded<br><code>diagnostic</code></td><td>zh</td><td>不纳入能力评分</td><td>batch_tts</td><td></td><td>7</td><td>7</td><td>success=7</td></tr></tbody></table></section><section class="suite"><h2>未归类 / 扩展代表性场景（电商、情绪对照、分钟级长文）</h2><p>扩展真实长文本、同文异情绪对照、越南语电商直播等垂直场景定义与评估规范。</p><div class="facts"><span>子测试 7</span><span>适用项目 16</span><span>已测项目 0</span><span>单项目子项 0</span><span>unmapped</span><span>scenario_robustness</span></div><table><thead><tr><th>子测试</th><th>评分层级</th><th>语言</th><th>能力轴</th><th>能力</th><th>适用项目</th><th>已测</th><th>成功</th><th>状态</th></tr></thead><tbody><tr><td><code>ecom_vi_livestream</code><br>越南语电商直播引流话术</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>vi</td><td>未归类</td><td>basic_tts</td><td>7</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>ecom_vi_product_pitch</code><br>越南语电商短视频商品介绍</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>vi</td><td>未归类</td><td>basic_tts</td><td>7</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>emotion_contrast_zh_happy</code><br>同文异情绪对照-开心(高唤醒)</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>zh</td><td>未归类</td><td>emotion_label</td><td>7</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>emotion_contrast_zh_sad</code><br>同文异情绪对照-悲伤(低沉低唤醒)</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>zh</td><td>未归类</td><td>emotion_label</td><td>7</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>emotion_contrast_zh_angry</code><br>同文异情绪对照-愤怒(爆发严厉)</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>zh</td><td>未归类</td><td>emotion_label</td><td>7</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>real_longform_story_zh</code><br>真实分钟级中文长叙事(故事有声书)</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>zh</td><td>未归类</td><td>long_form</td><td>14</td><td></td><td></td><td>未测</td></tr>
+<tr><td><code>real_longform_tech_en</code><br>真实分钟级英文科技博客(连续长文本)</td><td>diagnostic_or_excluded<br><code>holdout_extension</code></td><td>en</td><td>未归类</td><td>long_form</td><td>16</td><td></td><td></td><td>未测</td></tr></tbody></table></section>
   </main>
 <script src="../language.js"></script></body>
 </html>
