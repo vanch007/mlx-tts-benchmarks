@@ -26,6 +26,7 @@
 | 14 | `mlx_fireredaudio` | 14 | 64.497 | 66.667 | 85.274 | 70.235 | 0.0 | 0.0 | 86.419 | 82.111 | 0.0 | 89.989 | 10.828 | no |
 | 15 | `mlx_ming_omni_tts` | 19 | 63.458 | 88.889 | 80.167 | 62.505 | 0.0 | 0.0 | 79.444 | 86.937 | 85.709 | 83.515 | 23.972 | no |
 | 16 | `mlx_supertonic` | 11 | 60.781 | 55.556 | 97.851 | 78.495 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 97.608 | 100.0 | no |
+| 17 | `mlx_ming3_tts` | 20 | 58.56 | 81.944 | 57.549 | 70.352 | 30.799 | 0.0 | 63.739 | 86.83 | 0.0 | 91.054 | 30.937 | no |
 
 ## 样本摘要
 
@@ -409,6 +410,46 @@
 | `mlx_drama3_4bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7618 | 3.1589 | 5.8885 |  |
 | `mlx_drama3_4bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7646 | 3.0651 | 4.1528 |  |
 | `mlx_drama3_4bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.854 | 4.078 | 4.665 |  |
+| `mlx_ming3_0_5b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.1143 |  | 3.8853 | 0.4198 |  |
+| `mlx_ming3_0_5b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4626 | 0.3675 |  |
+| `mlx_ming3_0_5b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.9511 | 0.4288 |  |
+| `mlx_ming3_0_5b_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.1562 |  | 3.7411 | 0.4016 |  |
+| `mlx_ming3_0_5b_8bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7244 | 0.4312 |  |
+| `mlx_ming3_0_5b_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.5667 |  | 3.1335 | 0.4403 |  |
+| `mlx_ming3_0_5b_8bit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.2273 |  | 3.743 | 0.3945 |  |
+| `mlx_ming3_0_5b_8bit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8915 | 0.4425 |  |
+| `mlx_ming3_0_5b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8733 | 4.1304 | 0.518 |  |
+| `mlx_ming3_0_5b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7946 | 3.2916 | 0.4991 |  |
+| `mlx_ming3_0_5b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6306 | 4.056 | 0.5024 |  |
+| `mlx_ming3_0_5b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5507 | 0.4666 |  |
+| `mlx_ming3_0_5b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9498 | 0.4194 |  |
+| `mlx_ming3_0_5b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.0 | 4.3619 | 0.5176 |  |
+| `mlx_ming3_0_5b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.08 |  | 3.8501 | 0.4398 |  |
+| `mlx_ming3_0_5b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8363 | 0.4699 |  |
+| `mlx_ming3_0_5b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.225 | 0.4424 |  |
+| `mlx_ming3_0_5b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6526 | 0.4339 |  |
+| `mlx_ming3_0_5b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5469 | 1.0616 |  |
+| `mlx_ming3_0_5b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.1069 |  | 4.4155 | 0.4185 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 1.5429 |  | 3.2198 | 1.0998 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0189 |  | 4.5051 | 1.2402 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0857 |  | 3.7743 | 1.3712 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.125 |  | 3.4954 | 1.376 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0714 | 1.5542 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2116 | 1.2754 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  | 2.6519 | 1.5348 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6631 | 1.3553 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.9744 |  | 1.5494 | 26.5518 | sim:insufficient voiced audio: 0.160s < 0.750s (/Users/vanch/tts-test-project/results/generated/20261021_231459/mlx_ming3_tiny_7_9b_8bit/clone_en_same.wav) |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8564 | 3.0104 | 1.7576 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.963 |  | 2.5861 | 19.8499 | sim:insufficient voiced audio: 0.200s < 0.750s (/Users/vanch/tts-test-project/results/generated/20261021_231459/mlx_ming3_tiny_7_9b_8bit/clone_3s_en.wav) |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2182 | 1.4259 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0898 | 1.3244 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.0128 | 4.1885 | 1.4703 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4155 | 1.2861 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1536 | 1.8012 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0921 | 1.3262 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.16 | 1.4417 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7749 | 1.2452 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4417 | 1.2866 |  |
 
 ## 本地 TTS 覆盖状态
 
@@ -428,6 +469,8 @@
 | `mlx_scenema_audio_int8_mlx_mps_service` | scored | `/Users/vanch/mlx-scenema-audio` |
 | `mlx_supertonic3_mlx` | scored | `/Users/vanch/mlx-supertonic` |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `/Users/vanch/mlx-Ming-omni-tts` |
+| `mlx_ming3_tiny_7_9b_8bit` | scored | `/Users/vanch/mlx-Ming-3.0-tts` |
+| `mlx_ming3_0_5b_8bit` | scored | `/Users/vanch/mlx-Ming-3.0-tts` |
 | `mlx_zonos2_bf16` | scored | `/Users/vanch/mlx-ZONOS2` |
 | `mlx_moss_tts_local_transformer_v1_5` | scored | `/Users/vanch/mlx-MOSS-TTS-Local-Transformer-v1.5` |
 | `mlx_fireredaudio_8bit` | scored | `/Users/vanch/mlx-FireRedAudio` |
