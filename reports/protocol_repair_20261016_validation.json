@@ -5,7 +5,7 @@
     "qwen3_asr_1_7b_8bit": 455
   },
   "regenerated_rows": 2,
-  "audio_references_checked": 865,
+  "audio_references_checked": 885,
   "missing_audio_paths": [],
   "excluded_records": [
     {
