@@ -4,7 +4,7 @@
 - 指标 CSV：`/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
-- 已从主评分隐藏 37 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
+- 已从主评分隐藏 39 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
 
 ## 榜单
 
@@ -28,7 +28,8 @@
 | 16 | `mlx_ming_omni_tts` | 19 | 63.458 | 88.889 | 80.167 | 62.505 | 0.0 | 0.0 | 79.444 | 86.937 | 85.709 | 83.515 | 23.972 | no |
 | 17 | `mlx_supertonic` | 11 | 60.781 | 55.556 | 97.851 | 78.495 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 97.608 | 100.0 | no |
 | 18 | `mlx_ming3_tiny_7.9b` | 20 | 58.56 | 81.944 | 57.549 | 70.352 | 30.799 | 0.0 | 63.739 | 86.83 | 0.0 | 91.054 | 30.937 | no |
-| 19 | `mlx_indextts2` | 1 | 25.975 | 33.333 | 0.0 | 60.842 | 0.0 | 0.0 | 71.453 | 0.0 | 0.0 | 0.0 | 14.766 | no |
+| 19 | `mlx_voxmel` | 12 | 54.295 | 55.556 | 57.221 | 97.917 | 0.0 | 0.0 | 68.058 | 0.0 | 0.0 | 100.0 | 62.593 | no |
+| 20 | `mlx_indextts2` | 1 | 25.975 | 33.333 | 0.0 | 60.842 | 0.0 | 0.0 | 71.453 | 0.0 | 0.0 | 0.0 | 14.766 | no |
 
 ## 样本摘要
 
@@ -452,6 +453,18 @@
 | `mlx_ming3_tiny_7_9b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.16 | 1.4417 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7749 | 1.2452 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4417 | 1.2866 |  |
+| `mlx_voxmel_0_6b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0909 |  |  | 0.8414 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.8402 |  |
+| `mlx_voxmel_0_6b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.2286 |  |  | 0.8291 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.8952 |  |
+| `mlx_voxmel_0_6b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.8941 |  |
+| `mlx_voxmel_0_6b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0494 |  |  | 0.8537 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 1.8000 |  |  | 0.8623 |  |
+| `mlx_voxmel_0_6b_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.9262 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.1429 |  |  | 1.0608 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.9542 |  |
+| `mlx_voxmel_0_6b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.9215 |  |
+| `mlx_voxmel_0_6b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0000 |  |  | 0.9767 |  |
 
 ## 本地 TTS 覆盖状态
 
@@ -480,6 +493,7 @@
 | `mlx_pocket_tts_8bit` | scored | `/Users/vanch/mlx-pocket-tts` |
 | `mlx_audio8_tts_8bit` | scored | `/Users/vanch/mlx-audio8-tts` |
 | `mlx_drama3_4bit` | scored | `/Users/vanch/drama-3-mlx` |
+| `mlx_voxmel_0_6b_8bit` | scored | `/Users/vanch/mlx-voxmel` |
 | `mlx_audio_multi_model` | toolkit_not_single_model | `/Users/vanch/mlx-audio` |
 | `cloudflare_edge_tts` | excluded_not_open_source_model | `/Users/vanch/cloudflare-edge-tts` |
 | `speech_to_speech` | excluded_pipeline_wrapper | `/Users/vanch/speech-to-speech` |
