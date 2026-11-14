@@ -1,0 +1,10 @@
+model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_intelligibility_score,naturalness_quality_score,speaker_clone_consistency_score,control_prosody_emotion_duration_score,multilingual_dialect_coverage_score,voice_design_robustness_score,deployment_performance_score,reference_compliance_score,fail_count,rank_ready
+mlx_indextts2_standard_8bit,2.0,8,82.712,82.712,100.0,98.534,58.718,86.784,100.0,99.519,93.272,0.0,90.0,0,yes
+mlx_qwen3_tts_official_int8,official_int8,21,76.441,87.035,87.81,92.738,72.83,88.62,98.041,97.883,93.749,44.498,96.19,0,yes
+mlx_qwen3_tts_voice_design_official_int8,voice_design_official_int8,3,74.2,88.333,84.0,92.923,70.472,0.0,100.0,97.838,95.15,54.395,100.0,0,yes
+mlx_higgs_audio_v3_4b,v3_4b_mlx,31,74.004,81.132,91.226,85.405,71.327,80.272,94.019,95.604,89.198,20.806,96.613,0,yes
+mlx_dots_tts_mf_bf16,mf_bf16,12,73.854,73.854,100.0,76.907,34.011,84.073,100.0,92.451,89.943,0.736,91.25,0,yes
+mlx_omnivoice_8bit_trim60,8bit_trim60,35,68.916,78.199,88.114,86.394,55.53,83.64,90.618,93.691,87.811,24.186,97.0,0,yes
+mlx_voxcpm2_official_int8,official_mlx_int8,32,66.946,74.209,90.0,83.605,25.31,75.578,94.142,94.761,88.383,34.942,96.719,0,yes
+mlx_indextts2_vietnamese_8bit,2.0_vi_local_extension,1,58.55,58.55,100.0,100.0,29.475,74.33,36.774,100.0,29.112,0.0,75.0,0,yes
+valtec_vietnamese_tts,zeroshot_cpu,1,50.563,50.563,100.0,50.77,47.64,90.77,0.0,84.03,29.15,40.418,100.0,0,yes

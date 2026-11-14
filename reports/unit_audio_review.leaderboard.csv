@@ -1,0 +1,4 @@
+model_id,model_version,sample_count,score_full,coverage_pct,speaker_similarity_score,rank_ready,fail_count
+demo_a,0,1,88,90,90,yes,0
+demo_b,0,1,80,90,80,yes,0
+demo_c,0,1,70,90,70,yes,0

@@ -1,0 +1,8 @@
+model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_intelligibility_score,naturalness_quality_score,speaker_clone_consistency_score,control_prosody_emotion_duration_score,multilingual_dialect_coverage_score,voice_design_robustness_score,deployment_performance_score,reference_compliance_score,fail_count,rank_ready
+mlx_qwen3_tts_official_int8,official_int8,21,62.353,89.076,70.0,91.213,0.0,0.0,98.041,97.33,93.285,42.898,96.19,0,no
+mlx_indextts2_standard_8bit,2.0,8,60.605,86.579,70.0,98.534,0.0,0.0,100.0,99.519,93.272,0.0,90.0,0,no
+mlx_voxcpm2_official_int8,official_mlx_int8,32,58.919,84.171,70.0,83.859,0.0,0.0,94.142,95.224,87.883,34.942,96.719,0,no
+mlx_higgs_audio_v3_4b,v3_4b_mlx,31,58.006,82.865,70.0,84.648,0.0,0.0,94.019,95.208,88.916,20.806,96.613,0,no
+mlx_omnivoice_8bit_trim60,8bit_trim60,9,57.577,82.253,70.0,84.83,0.0,0.0,94.414,95.489,85.949,21.58,88.333,0,no
+mlx_dots_tts_mf_bf16,mf_bf16,12,55.641,79.487,70.0,76.907,0.0,0.0,100.0,92.451,89.943,0.736,91.25,0,no
+valtec_vietnamese_tts,zeroshot_cpu,1,29.371,41.958,70.0,50.77,0.0,0.0,0.0,84.03,29.15,40.418,100.0,0,no

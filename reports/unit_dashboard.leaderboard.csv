@@ -1,0 +1,2 @@
+model_id,model_version,sample_count,score_full,coverage_pct,rank_ready,fail_count
+demo,0,1,88,90,yes,0

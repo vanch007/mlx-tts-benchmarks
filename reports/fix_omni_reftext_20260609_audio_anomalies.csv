@@ -1,0 +1,2 @@
+severity,category,model_id,test_case_id,test_case_name,adapter_status,language,cer,wer,rtf,duration_sec,sample_rate,peak_dbfs,rms_dbfs,clipping_fraction,near_silence_fraction,generated_audio_path,diagnosis,suggested_action
+high,extreme_content_error,mlx_omnivoice_8bit_trim60,xling_en_to_zh,英文参考到中文跨语种克隆,success,,1.7,0.4,1.2444,6.52,192000,-1.5,-20.134,0.0,0.242198,/Users/vanch/tts-test-project/results/generated/fix_omni_reftext_20260609/mlx_omnivoice_8bit_trim60/xling_en_to_zh.wav,CER=1.7，内容几乎不可对齐。,优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。

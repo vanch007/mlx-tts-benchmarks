@@ -1,0 +1,2 @@
+severity,category,model_id,test_case_id,diagnosis
+medium,speech_rate_abnormal,demo_b,zh_basic_reading,语速偏快，约 8.0 token/s。

@@ -62,3 +62,10 @@
 - 逐行变化见 `tts-test-project/results/protocol_repair_20261016/rescore_changes.csv`。
 
 仍未重做：说话人相似度（ECAPA）、UTMOS、Gemini 评委分。它们需要人工标注或新的校准实验，当前分数继续沿用。
+
+## 2026-11-14：克隆分改为本地双声纹模型，评委移出评分
+
+- 原先第 39 行所述的 Gemini SMOS（0.7 权重混合并绕过判定封顶）已**撤销**。依据：209 条真实记录上，Gemini SMOS 与 ECAPA、CAM++ 的相关仅 0.27 / 0.26，而 ECAPA 与 CAM++ 互相相关 0.82；评委的重复性/位置偏差/错误参考校准因 API 额度耗尽未能完成（仅 41 次成功调用）。
+- 新克隆分 = ECAPA 与 CAM++（MLX，本地 `campplus_cn_common`）校准分的平均，再按原规则与可用性分混合；任一模型判不可用/边缘则封顶 35/65。SMOS 列保留供参考。
+- 校准集很小（11 个同人对、220 个异人对，均来自本项目参考音频，同人为同一段切半，比真实克隆更容易），AUC 约 0.987；CAM++ 阈值为按异人均值偏移上移 0.10 的估计值，**不是**独立验证的阈值。
+- 榜单变化：moss_tts 升至第 3（+0.84），qwen3_tts 与 omnivoice 各降一位，breeze_tts2 超过 ming3_0.5b；ming3_tiny −3.20、indextts2 −2.21（仍为 insufficient_coverage）。

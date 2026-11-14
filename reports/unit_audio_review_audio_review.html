@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mlx-tts-benchmark - 试听审核报告</title>
+  <style>
+    :root { color-scheme: light; --ink:#1f2933; --muted:#637083; --line:#d8dee8; --bg:#f6f7f9; --panel:#ffffff; --soft:#edf7f5; --accent:#0f766e; --warn:#9a5b00; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); letter-spacing:0; }
+    header.page { padding:22px 28px 18px; background:var(--panel); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; }
+    h1 { margin:0 0 8px; font-size:24px; letter-spacing:0; }
+    h2 { margin:0 0 6px; font-size:17px; letter-spacing:0; }
+    .case-id { display:block; margin:0 0 8px; color:var(--muted); }
+    .case-tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; }
+    .case-tags span { border:1px solid #d7dde7; border-radius:999px; background:#fff; color:var(--muted); padding:3px 8px; font-size:12px; }
+    p { margin:0; line-height:1.55; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; overflow-wrap:anywhere; }
+    main { padding:20px 28px 40px; }
+    .meta { display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:13px; }
+    .summary { display:grid; grid-template-columns:repeat(5,minmax(120px,1fr)); gap:10px; margin-bottom:18px; }
+    .summary div, .panel, .case-section { border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+    .summary div { padding:13px; }
+    .summary strong { display:block; font-size:22px; margin-bottom:3px; }
+    .summary span { color:var(--muted); font-size:13px; }
+    .panel { overflow:auto; margin-bottom:18px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; font-size:13px; white-space:nowrap; }
+    th { background:var(--soft); font-weight:650; }
+    .toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:0 0 12px; }
+    select, input { height:34px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); padding:0 10px; min-width:180px; }
+    .suite-block { margin-bottom:18px; border:1px solid var(--line); border-radius:8px; background:#eef7f5; overflow:hidden; }
+    .suite-head { padding:14px; border-bottom:1px solid var(--line); }
+    .suite-head h2 { font-size:19px; margin-bottom:6px; }
+    .suite-head p { color:#334155; margin-bottom:8px; }
+    .suite-facts { display:flex; flex-wrap:wrap; gap:6px; color:var(--muted); font-size:12px; }
+    .suite-facts span { border:1px solid #c9d8d5; border-radius:999px; background:#fff; padding:3px 8px; }
+    .case-section { margin-bottom:14px; overflow:hidden; }
+    .suite-block .case-section { margin:12px; }
+    .case-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; padding:14px; border-bottom:1px solid var(--line); background:#fbfcfd; }
+    .case-head p { color:#334155; }
+    .reference { display:grid; gap:5px; color:var(--muted); font-size:12px; min-width:220px; }
+    .card-reference { border:1px solid #e5e9f0; border-radius:6px; padding:7px; display:grid; gap:5px; color:var(--muted); font-size:12px; background:#fbfcfd; }
+    .sample-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px; padding:12px; }
+    .sample-card { border:1px solid var(--line); border-radius:8px; padding:11px; display:grid; gap:9px; min-width:0; background:#fff; }
+    .sample-card header { display:flex; justify-content:space-between; gap:8px; align-items:start; }
+    .sample-card strong { font-size:13px; overflow-wrap:anywhere; }
+    .sample-card header span { color:var(--muted); font-size:12px; }
+    audio { width:100%; height:32px; }
+    dl { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:0; }
+    dl div { border:1px solid #e5e9f0; border-radius:6px; padding:6px; min-width:0; }
+    dt { color:var(--muted); font-size:11px; }
+    dd { margin:2px 0 0; font-size:13px; overflow-wrap:anywhere; }
+    .state { font-size:12px; }
+    .ok { color:var(--accent); }
+    .failures, .missing { color:var(--warn); }
+    .clone-verdict { border:1px solid #d7dde7; border-radius:6px; padding:7px 9px; font-size:12px; font-weight:650; }
+    .verdict-usable { border-color:#9ad8c8; background:#edf9f5; color:#0f6b58; }
+    .verdict-borderline, .verdict-pending { border-color:#f0c36a; background:#fff8e5; color:#8a4b00; }
+    .verdict-not_usable { border-color:#f3b4b4; background:#fff1f1; color:#9f1239; }
+    .verdict-not_scored { background:#f6f8fb; color:#637083; }
+    dl.clone-metrics { grid-template-columns:repeat(5,1fr); }
+    .badges { display:flex; flex-wrap:wrap; gap:5px; }
+    .badge { border:1px solid #d7dde7; border-radius:999px; padding:3px 7px; font-size:11px; background:#f6f8fb; color:#334155; }
+    .severity-critical, .severity-high { border-color:#f3b4b4; background:#fff1f1; color:#9f1239; }
+    .severity-medium { border-color:#f0c36a; background:#fff8e5; color:#8a4b00; }
+    .severity-low { border-color:#bfdbfe; background:#eff6ff; color:#1d4ed8; }
+    .anomaly-list { margin:0; padding-left:18px; color:#7a4b00; font-size:12px; line-height:1.45; }
+    .reference-warning { color:var(--warn); font-weight:650; }
+    .banner { margin-bottom:12px; border:1px solid #f0c36a; background:#fff8e5; color:#624000; border-radius:8px; padding:10px 12px; font-size:13px; }
+    details { color:var(--muted); font-size:12px; }
+    details p { margin-top:6px; }
+    .hidden { display:none; }
+    @media (max-width:760px) {
+      header.page, main { padding-left:14px; padding-right:14px; }
+      header.page { position:static; }
+      .summary { grid-template-columns:repeat(2,minmax(120px,1fr)); }
+      .case-head { grid-template-columns:1fr; }
+      .reference { min-width:0; }
+      select, input { min-width:100%; }
+    }
+    </style>
+</head>
+<body>
+  <header class="page">
+    <h1>mlx-tts-benchmark - 试听审核报告</h1>
+    <div class="meta">
+      <span>run_id: <code>unit_audio_review</code></span>
+      <span>指标: <code>/Users/vanch/tts-test-project/results/unit_audio_review/metrics.csv</code></span>
+      <span>榜单: <code>/Users/vanch/tts-test-project/reports/unit_audio_review.leaderboard.csv</code></span>
+      <span>能力评分: <a href="unit_audio_review_capability_hexagon.html">能力雷达评分</a></span>
+    </div>
+  </header>
+  <main>
+    <section class="summary" aria-label="summary">
+      <div><strong>4</strong><span>项目数</span></div>
+      <div><strong>0</strong><span>综合测试项</span></div>
+      <div><strong>2</strong><span>测试项</span></div>
+      <div><strong>4</strong><span>可试听音频</span></div>
+      <div><strong>3</strong><span>可排名项目</span></div>
+    </section>
+    <div class="banner">已隐藏 2 条能力边界外、诊断或被合并覆盖的记录；这些项目不参与试听和评分。</div>
+    
+    
+    <section class="panel" aria-label="leaderboard">
+      <table>
+        <thead><tr><th>#</th><th>项目</th><th>评分样本数</th><th>能力总分</th><th>能力覆盖率</th><th>音色克隆</th><th>可排名</th></tr></thead>
+        <tbody><tr><td>1</td><td><code>demo_a</code></td><td>1</td><td>88</td><td>90</td><td>90</td><td>yes</td></tr>
+<tr><td>2</td><td><code>demo_b</code></td><td>1</td><td>80</td><td>90</td><td>80</td><td>yes</td></tr>
+<tr><td>3</td><td><code>demo_c</code></td><td>1</td><td>70</td><td>90</td><td>70</td><td>yes</td></tr></tbody>
+      </table>
+    </section>
+    <section class="toolbar" aria-label="filters">
+      <select id="modelFilter" aria-label="Filter by project">
+        <option value="">全部项目</option>
+        <option value="demo_a">demo_a</option>
+<option value="demo_b">demo_b</option>
+<option value="demo_c">demo_c</option>
+<option value="demo_missing_ref">demo_missing_ref</option>
+      </select>
+      <select id="caseFilter" aria-label="Filter by test case">
+        <option value="">全部测试项</option>
+        <optgroup label="其他语言">
+<option value="legacy_missing_ref_clone">legacy missing ref clone (legacy_missing_ref_clone)</option>
+<option value="zh_basic_reading">中文基础朗读 (zh_basic_reading)</option>
+</optgroup>
+      </select>
+      <select id="tierFilter" aria-label="Filter by scoring tier">
+        <option value="">全部层级</option>
+        
+      </select>
+      <input id="queryFilter" type="search" aria-label="搜索测试项" placeholder="搜索测试项、项目、子模型或文本">
+      <span class="meta">当前可见音频：<strong id="visibleCount">4</strong></span>
+    </section>
+    <section class="suite-block" data-suite="unmapped" data-text="未归组测试项"><div class="suite-head"><h2>未归组测试项</h2><p>这些测试项需要归入综合测试项或确认废弃。</p></div><section class="case-section" data-case="legacy_missing_ref_clone" data-tier="" data-text="legacy_missing_ref_clone legacy missing ref clone 缺参考时不应生成。"><div class="case-head"><div><h2>legacy missing ref clone</h2><code class="case-id">legacy_missing_ref_clone</code><div class="case-tags"><span>unknown_tier</span><span>unknown_origin</span><span>人工复核 unknown</span></div><p>缺参考时不应生成。</p></div><div class="reference"><span>参考音频</span><span class="missing">缺少来源匹配参考音频</span><code>source_matched_noisy_zh_ref_required</code><span></span><span>needs_source_reference</span></div></div><div class="sample-grid"><article class="sample-card" data-model="demo_missing_ref" data-case="legacy_missing_ref_clone" data-tier="" data-text="demo_missing_ref legacy_missing_ref_clone legacy missing ref clone 缺参考时不应生成。   "><header><strong>demo_missing_ref</strong><span>blocked</span></header><code>demo_missing_ref</code><span class="missing">无音频</span><dl><div><dt>CER</dt><dd>-</dd></div><div><dt>SIM</dt><dd>-</dd></div><div><dt>UTMOS</dt><dd>-</dd></div><div><dt>RTF</dt><dd>-</dd></div><div><dt>ASR</dt><dd>-</dd></div></dl><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/unit_audio_review/demo_missing_ref/legacy_missing_ref_clone.wav</code></p><p><code></code></p></details></article></div></section><section class="case-section" data-case="zh_basic_reading" data-tier="" data-text="zh_basic_reading 中文基础朗读 测试一句话。"><div class="case-head"><div><h2>中文基础朗读</h2><code class="case-id">zh_basic_reading</code><div class="case-tags"><span>unknown_tier</span><span>unknown_origin</span><span>人工复核 unknown</span></div><p>测试一句话。</p></div><div class="reference"><span>参考音频</span><audio class="reference-audio" controls preload="metadata" src="../data/reference_audio/ref.wav" aria-label="Reference audio "></audio><code>ref.wav</code><span></span><span></span><span class="reference-warning"></span></div></div><div class="sample-grid"><article class="sample-card" data-model="demo_a" data-case="zh_basic_reading" data-tier="" data-text="demo_a zh_basic_reading 中文基础朗读 测试一句话。   "><header><strong>demo_a</strong><span>success</span></header><code>demo_a</code><audio class="generated-audio" controls preload="metadata" src="../results/generated/unit_audio_review/demo_a/zh_basic_reading.wav" aria-label="demo_a zh_basic_reading generated audio"></audio><dl><div><dt>CER</dt><dd>0.01</dd></div><div><dt>SIM</dt><dd>0.9</dd></div><div><dt>UTMOS</dt><dd>-</dd></div><div><dt>RTF</dt><dd>0.4</dd></div><div><dt>ASR</dt><dd>qwen3_asr</dd></div></dl><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/unit_audio_review/demo_a/zh_basic_reading.wav</code></p><p><code></code></p></details></article><article class="sample-card" data-model="demo_b" data-case="zh_basic_reading" data-tier="" data-text="demo_b zh_basic_reading 中文基础朗读 测试一句话。  speech_rate_abnormal medium 语速偏快，约 8.0 token/s。 "><header><strong>demo_b</strong><span>success</span></header><code>demo_b</code><audio class="generated-audio" controls preload="metadata" src="../results/generated/unit_audio_review/demo_b/zh_basic_reading.wav" aria-label="demo_b zh_basic_reading generated audio"></audio><dl><div><dt>CER</dt><dd>0.02</dd></div><div><dt>SIM</dt><dd>0.8</dd></div><div><dt>UTMOS</dt><dd>-</dd></div><div><dt>RTF</dt><dd>0.5</dd></div><div><dt>ASR</dt><dd>qwen3_asr</dd></div></dl><div class="badges"><span class="badge severity-medium" title="语速偏快，约 8.0 token/s。">语速异常 · medium</span></div><ul class="anomaly-list"><li><strong>语速异常</strong>：语速偏快，约 8.0 token/s。</li></ul><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/unit_audio_review/demo_b/zh_basic_reading.wav</code></p><p><code></code></p></details></article><article class="sample-card" data-model="demo_c" data-case="zh_basic_reading" data-tier="" data-text="demo_c zh_basic_reading 中文基础朗读 测试一句话。   "><header><strong>demo_c</strong><span>success</span></header><code>demo_c</code><audio class="generated-audio" controls preload="metadata" src="../results/generated/unit_audio_review/demo_c/zh_basic_reading.wav" aria-label="demo_c zh_basic_reading generated audio"></audio><div class="card-reference"><span>本模型参考音频</span><audio class="reference-audio" controls preload="metadata" src="../data/reference_audio/ref_alt.wav" aria-label="Reference audio "></audio><code>ref_alt.wav</code><span></span><span></span><span class="reference-warning"></span></div><dl><div><dt>CER</dt><dd>0.03</dd></div><div><dt>SIM</dt><dd>0.7</dd></div><div><dt>UTMOS</dt><dd>-</dd></div><div><dt>RTF</dt><dd>0.6</dd></div><div><dt>ASR</dt><dd>qwen3_asr</dd></div></dl><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/unit_audio_review/demo_c/zh_basic_reading.wav</code></p><p><code></code></p></details></article></div></section></section>
+  </main>
+  <script>
+    const modelFilter = document.querySelector("#modelFilter");
+    const caseFilter = document.querySelector("#caseFilter");
+    const tierFilter = document.querySelector("#tierFilter");
+    const queryFilter = document.querySelector("#queryFilter");
+    const visibleCount = document.querySelector("#visibleCount");
+    function applyFilters() {
+      const model = modelFilter.value;
+      const selectedCase = caseFilter.value;
+      const tier = tierFilter.value;
+      const query = queryFilter.value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll(".case-section").forEach((section) => {
+        const caseMatches = !selectedCase || section.dataset.case === selectedCase;
+        const tierMatches = !tier || section.dataset.tier === tier;
+        let any = false;
+        const sectionMatches = !query || section.dataset.text.toLowerCase().includes(query);
+        section.querySelectorAll(".sample-card").forEach((card) => {
+          const cardMatches = caseMatches && tierMatches && (!model || card.dataset.model === model) && (!query || sectionMatches || card.dataset.text.toLowerCase().includes(query));
+          card.classList.toggle("hidden", !cardMatches);
+          if (cardMatches) { any = true; visible += 1; }
+        });
+        section.classList.toggle("hidden", !any);
+      });
+      document.querySelectorAll(".suite-block").forEach((block) => {
+        const anyCase = Array.from(block.querySelectorAll(".case-section")).some((section) => !section.classList.contains("hidden"));
+        block.classList.toggle("hidden", !anyCase);
+      });
+      visibleCount.textContent = String(visible);
+    }
+    document.querySelectorAll("audio.generated-audio").forEach((audio) => {
+      audio.addEventListener("play", () => {
+        document.querySelectorAll("audio.generated-audio").forEach((other) => {
+          if (other !== audio) { other.pause(); }
+        });
+      });
+    });
+    [modelFilter, caseFilter, tierFilter, queryFilter].forEach((el) => el.addEventListener("input", applyFilters));
+    applyFilters();
+    </script>
+</body>
+</html>

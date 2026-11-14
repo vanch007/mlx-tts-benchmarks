@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>本地开源 TTS 统一测试项目 - 试听审核报告</title>
+  <style>
+    :root { color-scheme: light; --ink:#1f2933; --muted:#637083; --line:#d8dee8; --bg:#f6f7f9; --panel:#ffffff; --soft:#edf7f5; --accent:#0f766e; --warn:#9a5b00; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); letter-spacing:0; }
+    header.page { padding:22px 28px 18px; background:var(--panel); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; }
+    h1 { margin:0 0 8px; font-size:24px; letter-spacing:0; }
+    h2 { margin:0 0 6px; font-size:17px; letter-spacing:0; }
+    .case-id { display:block; margin:0 0 8px; color:var(--muted); }
+    p { margin:0; line-height:1.55; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; overflow-wrap:anywhere; }
+    main { padding:20px 28px 40px; }
+    .meta { display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:13px; }
+    .summary { display:grid; grid-template-columns:repeat(5,minmax(120px,1fr)); gap:10px; margin-bottom:18px; }
+    .summary div, .panel, .case-section { border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+    .summary div { padding:13px; }
+    .summary strong { display:block; font-size:22px; margin-bottom:3px; }
+    .summary span { color:var(--muted); font-size:13px; }
+    .panel { overflow:auto; margin-bottom:18px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; font-size:13px; white-space:nowrap; }
+    th { background:var(--soft); font-weight:650; }
+    .toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:0 0 12px; }
+    select, input { height:34px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); padding:0 10px; min-width:180px; }
+    .suite-block { margin-bottom:18px; border:1px solid var(--line); border-radius:8px; background:#eef7f5; overflow:hidden; }
+    .suite-head { padding:14px; border-bottom:1px solid var(--line); }
+    .suite-head h2 { font-size:19px; margin-bottom:6px; }
+    .suite-head p { color:#334155; margin-bottom:8px; }
+    .suite-facts { display:flex; flex-wrap:wrap; gap:6px; color:var(--muted); font-size:12px; }
+    .suite-facts span { border:1px solid #c9d8d5; border-radius:999px; background:#fff; padding:3px 8px; }
+    .case-section { margin-bottom:14px; overflow:hidden; }
+    .suite-block .case-section { margin:12px; }
+    .case-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; padding:14px; border-bottom:1px solid var(--line); background:#fbfcfd; }
+    .case-head p { color:#334155; }
+    .reference { display:grid; gap:5px; color:var(--muted); font-size:12px; min-width:220px; }
+    .card-reference { border:1px solid #e5e9f0; border-radius:6px; padding:7px; display:grid; gap:5px; color:var(--muted); font-size:12px; background:#fbfcfd; }
+    .sample-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px; padding:12px; }
+    .sample-card { border:1px solid var(--line); border-radius:8px; padding:11px; display:grid; gap:9px; min-width:0; background:#fff; }
+    .sample-card header { display:flex; justify-content:space-between; gap:8px; align-items:start; }
+    .sample-card strong { font-size:13px; overflow-wrap:anywhere; }
+    .sample-card header span { color:var(--muted); font-size:12px; }
+    audio { width:100%; height:32px; }
+    dl { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:0; }
+    dl div { border:1px solid #e5e9f0; border-radius:6px; padding:6px; min-width:0; }
+    dt { color:var(--muted); font-size:11px; }
+    dd { margin:2px 0 0; font-size:13px; overflow-wrap:anywhere; }
+    .state { font-size:12px; }
+    .ok { color:var(--accent); }
+    .failures, .missing { color:var(--warn); }
+    .badges { display:flex; flex-wrap:wrap; gap:5px; }
+    .badge { border:1px solid #d7dde7; border-radius:999px; padding:3px 7px; font-size:11px; background:#f6f8fb; color:#334155; }
+    .severity-critical, .severity-high { border-color:#f3b4b4; background:#fff1f1; color:#9f1239; }
+    .severity-medium { border-color:#f0c36a; background:#fff8e5; color:#8a4b00; }
+    .severity-low { border-color:#bfdbfe; background:#eff6ff; color:#1d4ed8; }
+    .anomaly-list { margin:0; padding-left:18px; color:#7a4b00; font-size:12px; line-height:1.45; }
+    .reference-warning { color:var(--warn); font-weight:650; }
+    .banner { margin-bottom:12px; border:1px solid #f0c36a; background:#fff8e5; color:#624000; border-radius:8px; padding:10px 12px; font-size:13px; }
+    details { color:var(--muted); font-size:12px; }
+    details p { margin-top:6px; }
+    .hidden { display:none; }
+    @media (max-width:760px) {
+      header.page, main { padding-left:14px; padding-right:14px; }
+      header.page { position:static; }
+      .summary { grid-template-columns:repeat(2,minmax(120px,1fr)); }
+      .case-head { grid-template-columns:1fr; }
+      .reference { min-width:0; }
+      select, input { min-width:100%; }
+    }
+    </style>
+</head>
+<body>
+  <header class="page">
+    <h1>本地开源 TTS 统一测试项目 - 试听审核报告</h1>
+    <div class="meta">
+      <span>run_id: <code>noise_recheck_vox_20260613_1254</code></span>
+      <span>指标: <code>/Users/vanch/tts-test-project/results/noise_recheck_vox_20260613_1254/metrics.csv</code></span>
+      <span>榜单: <code>/Users/vanch/tts-test-project/reports/local_open_tts.leaderboard.csv</code></span>
+      <span>能力评分: <a href="noise_recheck_vox_20260613_1254_capability_hexagon.html">六边形能力评分</a></span>
+    </div>
+  </header>
+  <main>
+    <section class="summary" aria-label="summary">
+      <div><strong>13</strong><span>模型数</span></div>
+      <div><strong>2</strong><span>综合测试项</span></div>
+      <div><strong>3</strong><span>测试项</span></div>
+      <div><strong>3</strong><span>可试听音频</span></div>
+      <div><strong>3</strong><span>可排名模型</span></div>
+    </section>
+    
+    
+    <section class="panel" aria-label="leaderboard">
+      <table>
+        <thead><tr><th>#</th><th>模型</th><th>评分样本数</th><th>六项总分</th><th>六项覆盖率</th><th>音色克隆</th><th>可排名</th></tr></thead>
+        <tbody><tr><td>1</td><td><code>mlx_voxcpm2_bf16_dit</code></td><td>43</td><td>78.461</td><td>100.0</td><td>80.824</td><td>yes</td></tr>
+<tr><td>2</td><td><code>mlx_higgs_audio_v3_4b</code></td><td>31</td><td>70.04</td><td>89.27</td><td>64.009</td><td>yes</td></tr>
+<tr><td>3</td><td><code>supertonic3_onnx_cpu</code></td><td>11</td><td>69.57</td><td>73.611</td><td>0.0</td><td>no</td></tr>
+<tr><td>4</td><td><code>mlx_omnivoice_8bit_trim60</code></td><td>27</td><td>68.49</td><td>89.074</td><td>61.331</td><td>yes</td></tr>
+<tr><td>5</td><td><code>mlx_qwen3_tts_official_int8</code></td><td>15</td><td>62.859</td><td>71.65</td><td>67.354</td><td>no</td></tr>
+<tr><td>6</td><td><code>mlx_qwen3_tts_custom_voice_official_int8</code></td><td>5</td><td>42.078</td><td>50.0</td><td>0.0</td><td>no</td></tr>
+<tr><td>7</td><td><code>mlx_dots_tts_full_int8_g64</code></td><td>12</td><td>34.843</td><td>50.0</td><td>80.68</td><td>no</td></tr>
+<tr><td>8</td><td><code>mlx_scenema_audio_int8_mlx_mps_service</code></td><td>17</td><td>33.814</td><td>51.402</td><td>19.557</td><td>no</td></tr>
+<tr><td>9</td><td><code>mlx_qwen3_tts_voice_design_official_int8</code></td><td>6</td><td>26.919</td><td>33.333</td><td>0.0</td><td>no</td></tr>
+<tr><td>10</td><td><code>mlx_indextts2_standard_8bit</code></td><td>11</td><td>26.715</td><td>45.833</td><td>71.699</td><td>no</td></tr>
+<tr><td>11</td><td><code>vieneu_tts_0_3b_q8_gguf_cpu</code></td><td>2</td><td>25.298</td><td>50.0</td><td>57.523</td><td>no</td></tr>
+<tr><td>12</td><td><code>valtec_vietnamese_tts</code></td><td>1</td><td>17.855</td><td>33.333</td><td>67.257</td><td>no</td></tr>
+<tr><td>13</td><td><code>mlx_indextts2_vietnamese_8bit</code></td><td>1</td><td>11.974</td><td>33.333</td><td>71.844</td><td>no</td></tr></tbody>
+      </table>
+    </section>
+    <section class="toolbar" aria-label="filters">
+      <select id="modelFilter" aria-label="Filter by model">
+        <option value="">全部模型</option>
+        <option value="mlx_voxcpm2_bf16_dit">mlx_voxcpm2_bf16_dit</option>
+<option value="mlx_higgs_audio_v3_4b">mlx_higgs_audio_v3_4b</option>
+<option value="supertonic3_onnx_cpu">supertonic3_onnx_cpu</option>
+<option value="mlx_omnivoice_8bit_trim60">mlx_omnivoice_8bit_trim60</option>
+<option value="mlx_qwen3_tts_official_int8">mlx_qwen3_tts_official_int8</option>
+<option value="mlx_qwen3_tts_custom_voice_official_int8">mlx_qwen3_tts_custom_voice_official_int8</option>
+<option value="mlx_dots_tts_full_int8_g64">mlx_dots_tts_full_int8_g64</option>
+<option value="mlx_scenema_audio_int8_mlx_mps_service">mlx_scenema_audio_int8_mlx_mps_service</option>
+<option value="mlx_qwen3_tts_voice_design_official_int8">mlx_qwen3_tts_voice_design_official_int8</option>
+<option value="mlx_indextts2_standard_8bit">mlx_indextts2_standard_8bit</option>
+<option value="vieneu_tts_0_3b_q8_gguf_cpu">vieneu_tts_0_3b_q8_gguf_cpu</option>
+<option value="valtec_vietnamese_tts">valtec_vietnamese_tts</option>
+<option value="mlx_indextts2_vietnamese_8bit">mlx_indextts2_vietnamese_8bit</option>
+      </select>
+      <select id="caseFilter" aria-label="Filter by test case">
+        <option value="">全部测试项</option>
+        <optgroup label="中文">
+<option value="voxcpm2_shaanxi_dialect">陕西话方言朗读 (voxcpm2_shaanxi_dialect)</option>
+<option value="voxcpm2_shandong_dialect">山东话方言朗读 (voxcpm2_shandong_dialect)</option>
+</optgroup>
+<optgroup label="其他语言">
+<option value="core_es_question">西语疑问句自然语调 (core_es_question)</option>
+</optgroup>
+      </select>
+      <input id="queryFilter" type="search" aria-label="搜索测试项" placeholder="搜索测试项、模型或文本">
+      <span class="meta">当前可见音频：<strong id="visibleCount">3</strong></span>
+    </section>
+    <section class="suite-block" data-suite="multilingual_reading" data-text="multilingual_reading 多语种基础朗读 用代表语言抽样评估模型多语种文本朗读能力。"><div class="suite-head"><h2>多语种基础朗读</h2><p>用代表语言抽样评估模型多语种文本朗读能力。</p><div class="suite-facts"><span>子测试 1</span><span>音频 1</span><span>multilingual_dialect_coverage</span></div></div><section class="case-section" data-case="core_es_question" data-text="core_es_question 西语疑问句自然语调 ¿Puedes leer esta frase con una entonación natural y una pausa breve al final?"><div class="case-head"><div><h2>西语疑问句自然语调</h2><code class="case-id">core_es_question</code><p>¿Puedes leer esta frase con una entonación natural y una pausa breve al final?</p></div></div><div class="sample-grid"><article class="sample-card" data-model="mlx_voxcpm2_bf16_dit" data-case="core_es_question" data-text="mlx_voxcpm2_bf16_dit core_es_question 西语疑问句自然语调 ¿Puedes leer esta frase con una entonación natural y una pausa breve al final?  suspected_noise_floor medium 噪声底约 -32.018 dBFS，语音/底噪差约 15.139 dB。"><header><strong>mlx_voxcpm2_bf16_dit</strong><span>success</span></header><audio class="generated-audio" controls preload="metadata" src="../results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/core_es_question.wav" aria-label="mlx_voxcpm2_bf16_dit core_es_question generated audio"></audio><dl><div><dt>CER</dt><dd>0.0</dd></div><div><dt>SIM</dt><dd>-</dd></div><div><dt>UTMOS</dt><dd>2.2618</dd></div><div><dt>RTF</dt><dd>1.8594</dd></div><div><dt>ASR</dt><dd>qwen3_asr_1_7b_8bit</dd></div></dl><div class="badges"><span class="badge severity-medium" title="噪声底约 -32.018 dBFS，语音/底噪差约 15.139 dB。">疑似杂音 · medium</span></div><ul class="anomaly-list"><li><strong>疑似杂音</strong>：噪声底约 -32.018 dBFS，语音/底噪差约 15.139 dB。</li></ul><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/core_es_question.wav</code></p><p><code>python -m mlx_voxcpm2.cli generate --model-dir models/VoxCPM2-official-mlx-int8-components --feat-decoder-model-dir models/VoxCPM2-official-mlx-bf16-components --text &#x27;¿Puedes leer esta frase con una entonación natural y una pausa breve al final?&#x27; --output /Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/core_es_question.wav --backend native --compile --max-len 164 --inference-timesteps 10 --cfg-value 2.0 --seed 5 --normalize --retry-badcase --retry-badcase-max-times 2</code></p></details></article></div></section></section>
+<section class="suite-block" data-suite="chinese_dialect_coverage" data-text="chinese_dialect_coverage 中文方言覆盖 统一评估粤语、四川话、东北话、闽南语、上海话、河南话、陕西话、山东话、天津话等中文方言覆盖。"><div class="suite-head"><h2>中文方言覆盖</h2><p>统一评估粤语、四川话、东北话、闽南语、上海话、河南话、陕西话、山东话、天津话等中文方言覆盖。</p><div class="suite-facts"><span>子测试 2</span><span>音频 2</span><span>multilingual_dialect_coverage</span></div></div><section class="case-section" data-case="voxcpm2_shaanxi_dialect" data-text="voxcpm2_shaanxi_dialect 陕西话方言朗读 额今儿个到西安城墙根底下转了一圈，凉皮肉夹馍都香得很。"><div class="case-head"><div><h2>陕西话方言朗读</h2><code class="case-id">voxcpm2_shaanxi_dialect</code><p>额今儿个到西安城墙根底下转了一圈，凉皮肉夹馍都香得很。</p></div></div><div class="sample-grid"><article class="sample-card" data-model="mlx_voxcpm2_bf16_dit" data-case="voxcpm2_shaanxi_dialect" data-text="mlx_voxcpm2_bf16_dit voxcpm2_shaanxi_dialect 陕西话方言朗读 额今儿个到西安城墙根底下转了一圈，凉皮肉夹馍都香得很。  suspected_noise_floor medium 噪声底约 -32.232 dBFS，语音/底噪差约 16.581 dB。"><header><strong>mlx_voxcpm2_bf16_dit</strong><span>success</span></header><audio class="generated-audio" controls preload="metadata" src="../results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shaanxi_dialect.wav" aria-label="mlx_voxcpm2_bf16_dit voxcpm2_shaanxi_dialect generated audio"></audio><dl><div><dt>CER</dt><dd>0.08</dd></div><div><dt>SIM</dt><dd>-</dd></div><div><dt>UTMOS</dt><dd>2.6257</dd></div><div><dt>RTF</dt><dd>1.1931</dd></div><div><dt>ASR</dt><dd>qwen3_asr_1_7b_8bit</dd></div></dl><div class="badges"><span class="badge severity-medium" title="噪声底约 -32.232 dBFS，语音/底噪差约 16.581 dB。">疑似杂音 · medium</span></div><ul class="anomaly-list"><li><strong>疑似杂音</strong>：噪声底约 -32.232 dBFS，语音/底噪差约 16.581 dB。</li></ul><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shaanxi_dialect.wav</code></p><p><code>python -m mlx_voxcpm2.cli generate --model-dir models/VoxCPM2-official-mlx-int8-components --feat-decoder-model-dir models/VoxCPM2-official-mlx-bf16-components --text &#x27;额今儿个到西安城墙根底下转了一圈，凉皮肉夹馍都香得很。&#x27; --output /Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shaanxi_dialect.wav --backend native --compile --max-len 96 --inference-timesteps 10 --cfg-value 2.0 --seed 5 --normalize --retry-badcase --retry-badcase-max-times 2 --control &#x27;陕西话&#x27;</code></p></details></article></div></section><section class="case-section" data-case="voxcpm2_shandong_dialect" data-text="voxcpm2_shandong_dialect 山东话方言朗读 俺们这儿赶海讲究看潮水，时候到了就能捡到不少海货。"><div class="case-head"><div><h2>山东话方言朗读</h2><code class="case-id">voxcpm2_shandong_dialect</code><p>俺们这儿赶海讲究看潮水，时候到了就能捡到不少海货。</p></div></div><div class="sample-grid"><article class="sample-card" data-model="mlx_voxcpm2_bf16_dit" data-case="voxcpm2_shandong_dialect" data-text="mlx_voxcpm2_bf16_dit voxcpm2_shandong_dialect 山东话方言朗读 俺们这儿赶海讲究看潮水，时候到了就能捡到不少海货。  suspected_noise_floor medium 噪声底约 -32.965 dBFS，语音/底噪差约 15.926 dB。"><header><strong>mlx_voxcpm2_bf16_dit</strong><span>success</span></header><audio class="generated-audio" controls preload="metadata" src="../results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shandong_dialect.wav" aria-label="mlx_voxcpm2_bf16_dit voxcpm2_shandong_dialect generated audio"></audio><dl><div><dt>CER</dt><dd>0.0435</dd></div><div><dt>SIM</dt><dd>-</dd></div><div><dt>UTMOS</dt><dd>1.2588</dd></div><div><dt>RTF</dt><dd>1.248</dd></div><div><dt>ASR</dt><dd>qwen3_asr_1_7b_8bit</dd></div></dl><div class="badges"><span class="badge severity-medium" title="噪声底约 -32.965 dBFS，语音/底噪差约 15.926 dB。">疑似杂音 · medium</span></div><ul class="anomaly-list"><li><strong>疑似杂音</strong>：噪声底约 -32.965 dBFS，语音/底噪差约 15.926 dB。</li></ul><div class="state"><span class="ok">ok</span></div><details><summary>路径和命令</summary><p><code>/Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shandong_dialect.wav</code></p><p><code>python -m mlx_voxcpm2.cli generate --model-dir models/VoxCPM2-official-mlx-int8-components --feat-decoder-model-dir models/VoxCPM2-official-mlx-bf16-components --text &#x27;俺们这儿赶海讲究看潮水，时候到了就能捡到不少海货。&#x27; --output /Users/vanch/tts-test-project/results/generated/noise_recheck_vox_20260613_1254/mlx_voxcpm2_bf16_dit/voxcpm2_shandong_dialect.wav --backend native --compile --max-len 96 --inference-timesteps 10 --cfg-value 2.0 --seed 5 --normalize --retry-badcase --retry-badcase-max-times 2 --control &#x27;山东话&#x27;</code></p></details></article></div></section></section>
+  </main>
+  <script>
+    const modelFilter = document.querySelector("#modelFilter");
+    const caseFilter = document.querySelector("#caseFilter");
+    const queryFilter = document.querySelector("#queryFilter");
+    const visibleCount = document.querySelector("#visibleCount");
+    function applyFilters() {
+      const model = modelFilter.value;
+      const selectedCase = caseFilter.value;
+      const query = queryFilter.value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll(".case-section").forEach((section) => {
+        const caseMatches = !selectedCase || section.dataset.case === selectedCase;
+        let any = false;
+        const sectionMatches = !query || section.dataset.text.toLowerCase().includes(query);
+        section.querySelectorAll(".sample-card").forEach((card) => {
+          const cardMatches = caseMatches && (!model || card.dataset.model === model) && (!query || sectionMatches || card.dataset.text.toLowerCase().includes(query));
+          card.classList.toggle("hidden", !cardMatches);
+          if (cardMatches) { any = true; visible += 1; }
+        });
+        section.classList.toggle("hidden", !any);
+      });
+      document.querySelectorAll(".suite-block").forEach((block) => {
+        const anyCase = Array.from(block.querySelectorAll(".case-section")).some((section) => !section.classList.contains("hidden"));
+        block.classList.toggle("hidden", !anyCase);
+      });
+      visibleCount.textContent = String(visible);
+    }
+    document.querySelectorAll("audio.generated-audio").forEach((audio) => {
+      audio.addEventListener("play", () => {
+        document.querySelectorAll("audio.generated-audio").forEach((other) => {
+          if (other !== audio) { other.pause(); }
+        });
+      });
+    });
+    [modelFilter, caseFilter, queryFilter].forEach((el) => el.addEventListener("input", applyFilters));
+    applyFilters();
+    </script>
+</body>
+</html>

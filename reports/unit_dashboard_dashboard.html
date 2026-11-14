@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mlx-tts-benchmark - 结果面板</title>
+  <style>
+    :root { color-scheme: light; --ink:#18202a; --muted:#697386; --line:#d9dee8; --bg:#f7f8fb; --panel:#fff; --accent:#0f766e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+    header { padding: 24px 28px 16px; border-bottom: 1px solid var(--line); background: var(--panel); }
+    h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: 0; }
+    .meta { color: var(--muted); font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap; }
+    main { padding: 20px 28px 36px; }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+    .card strong { display: block; font-size: 24px; margin-bottom: 3px; }
+    .card span { color: var(--muted); font-size: 13px; }
+    .notice { margin: -6px 0 18px; border: 1px solid #f0c36a; background: #fff8e5; color: #624000; border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+    .toolbar { display:flex; gap: 10px; align-items:center; margin: 18px 0 10px; flex-wrap: wrap; }
+    select, input { min-height: 34px; border: 1px solid var(--line); border-radius: 6px; padding: 0 9px; background: #fff; color: var(--ink); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; font-size: 13px; }
+    th { background: #eef3f2; color: #28333f; font-weight: 650; position: sticky; top: 0; z-index: 1; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+    .case-title { display:block; font-weight:650; margin-bottom:2px; }
+    audio { width: 220px; height: 30px; }
+    .section { margin-top: 18px; }
+    .scroll { overflow: auto; max-height: 58vh; border-radius: 8px; }
+    @media (max-width: 860px) { .cards { grid-template-columns: repeat(2, minmax(120px, 1fr)); } audio { width: 170px; } main, header { padding-left: 16px; padding-right: 16px; } }
+    </style>
+</head>
+<body>
+  <header>
+    <h1>mlx-tts-benchmark - 结果面板</h1>
+    <div class="meta">
+      <span>run_id: <code>unit_dashboard</code></span>
+      <span>指标: <code>/Users/vanch/tts-test-project/results/unit_dashboard/metrics.csv</code></span>
+      <span>榜单: <code>/Users/vanch/tts-test-project/reports/unit_dashboard.leaderboard.csv</code></span>
+    </div>
+  </header>
+  <main>
+    <section class="cards">
+      <div class="card"><strong>1</strong><span>项目数</span></div>
+      <div class="card"><strong>1</strong><span>样本数</span></div>
+      <div class="card"><strong>90.0</strong><span>平均覆盖率</span></div>
+      <div class="card"><strong>1</strong><span>可排名模型</span></div>
+    </section>
+    
+    <section class="section">
+      <h2>榜单</h2>
+      <table>
+        <thead><tr><th>#</th><th>项目</th><th>评分样本数</th><th>能力总分</th><th>能力覆盖率</th><th>可排名</th><th>失败数</th></tr></thead>
+        <tbody><tr><td>1</td><td><code>demo</code></td><td>1</td><td>88</td><td>90</td><td>yes</td><td>0</td></tr></tbody>
+      </table>
+    </section>
+    <section class="section">
+      <h2>样本明细</h2>
+      <div class="toolbar">
+        <select id="modelFilter"><option value="">全部项目</option><option value="demo">demo</option></select>
+        <select id="statusFilter"><option value="">全部状态</option><option value="success">success</option></select>
+        <select id="tierFilter"><option value="">全部层级</option></select>
+        <input id="queryFilter" type="search" placeholder="筛选文本、测试项或失败原因">
+        <span class="meta">1 条音频路径</span>
+      </div>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>项目 / 子模型</th><th>测试项</th><th>状态</th><th>评分层级</th><th>ASR</th><th>CER</th><th>SIM</th><th>UTMOS</th><th>RTF</th><th>音频</th><th>失败原因</th></tr></thead>
+          <tbody id="sampleRows"><tr data-model="demo" data-status="success" data-tier="" data-text="demo zh_basic_reading success skipped     ok 中文基础朗读"><td><code>demo</code><br><code>demo</code></td><td><span class="case-title">中文基础朗读</span><code>zh_basic_reading</code></td><td>success</td><td></td><td>skipped</td><td>0.01</td><td>0.9</td><td>4.2</td><td>0.4</td><td><audio controls preload="metadata" src="../results/generated/unit_dashboard/demo/zh_basic_reading.wav"></audio></td><td></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script>
+    const model = document.querySelector("#modelFilter");
+    const status = document.querySelector("#statusFilter");
+    const tier = document.querySelector("#tierFilter");
+    const query = document.querySelector("#queryFilter");
+    function applyFilters() {
+      const m = model.value;
+      const s = status.value;
+      const t = tier.value;
+      const q = query.value.trim().toLowerCase();
+      document.querySelectorAll("#sampleRows tr").forEach((row) => {
+        const matchesModel = !m || row.dataset.model === m;
+        const matchesStatus = !s || row.dataset.status === s;
+        const matchesTier = !t || row.dataset.tier === t;
+        const matchesQuery = !q || row.dataset.text.toLowerCase().includes(q);
+        row.style.display = matchesModel && matchesStatus && matchesTier && matchesQuery ? "" : "none";
+      });
+    }
+    [model, status, tier, query].forEach((el) => el.addEventListener("input", applyFilters));
+    </script>
+</body>
+</html>

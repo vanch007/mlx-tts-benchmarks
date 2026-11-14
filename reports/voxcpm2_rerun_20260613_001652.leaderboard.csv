@@ -1,0 +1,2 @@
+model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_intelligibility_score,naturalness_quality_score,speaker_clone_consistency_score,control_prosody_emotion_duration_score,multilingual_dialect_coverage_score,voice_design_robustness_score,deployment_performance_score,reference_compliance_score,fail_count,rank_ready
+mlx_voxcpm2_bf16_dit,official_mlx_int8_main_bf16_dit,44,67.917,76.577,84.727,94.299,50.133,76.819,95.527,98.175,90.458,21.21,93.75,2,yes

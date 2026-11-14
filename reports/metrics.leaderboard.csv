@@ -1,0 +1,2 @@
+model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_intelligibility_score,naturalness_quality_score,speaker_clone_consistency_score,control_prosody_emotion_duration_score,multilingual_dialect_coverage_score,voice_design_robustness_score,deployment_performance_score,reference_compliance_score,fail_count,rank_ready
+mlx_fireredaudio_8bit,8bit_quantized,14,28.968,28.968,100.0,13.135,7.887,1.008,77.791,1.694,75.614,0.0,89.286,14,yes

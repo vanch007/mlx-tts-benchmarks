@@ -1,0 +1,2 @@
+model_id,model_version,sample_count,score_full,score_available,coverage_pct,content_intelligibility_score,naturalness_quality_score,speaker_clone_consistency_score,control_prosody_emotion_duration_score,multilingual_dialect_coverage_score,voice_design_robustness_score,deployment_performance_score,reference_compliance_score,fail_count,rank_ready
+mlx_dots_tts_full_int8_g64,full_int8_g64,14,69.865,69.865,86.286,97.285,48.843,82.16,97.896,99.118,91.713,19.715,80.357,2,yes
