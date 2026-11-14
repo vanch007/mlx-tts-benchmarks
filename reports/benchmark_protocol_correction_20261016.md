@@ -4,7 +4,7 @@
 
 ## 已修正
 
-- 全部 415 条历史记录保留，统一用 MLX Qwen3-ASR 1.7B 8bit 重转写；保留逐条转写与音频 SHA-256。
+- 全部历史记录保留（清单 469 条；2026-11-14 核对，原文“415”与任何文件都对不上），统一用 MLX Qwen3-ASR 1.7B 8bit 重转写；保留逐条转写与音频 SHA-256。
 - 重算参考音频声纹指标与克隆可用性；Breeze 六条过期 `missing_cer` 判定已纠正。
 - Drama 3 中英文克隆按实际文本与参考重新生成。中文 CER 0，英文 CER 0.0385；分段聚合余弦分别为 0.5820、0.6359，两条客观门禁均为 usable。此判定不是人工音色相似度评分。
 - 重复记录采用持久化记录顺序的最后一个成功修订；取消按 RTF 或质量挑最佳样本。试听与评分采用同一顺序规则。历史开发阶段的挑样偏差仍不可追溯消除。
@@ -37,3 +37,17 @@
 原数据和被替换的发布文件保存在本地 `tts-test-project/results/protocol_repair_20261016/`。评分工程回归检查为 140 tests passed；数据与引用检查以验证清单为准。
 - 重算参考音频声纹指标与克隆可用性；Breeze 六条过期 `missing_cer` 判定已纠正。
 - 引入方案三（Audio-LLM as a Judge）增强音色克隆与情感评估：对全部 112 对音色克隆测试样本，通过 Gemini 多模态音频评测输出主观音色声纹相似度 (SMOS)、情感与语气生动度 (EMOS) 以及整体自然度 (Naturalness)，并附带结构化诊断理由；打破了以往单一 UTMOS 对人类大动态情绪与呼吸顿挫的保守惩罚与一票否决限制，使 IndexTTS 2.5 等真实听感优秀模型的音色克隆分回归其真实表现。
+
+## 2026-11-14 口径与数据修正
+
+审计发现的下列问题已在评分引擎与发布文件中修复，未重新生成任何音频：
+
+- 评分表去重：9 组 (模型, 用例) 重复记录只保留输入顺序最后一条成功记录，被取代的记录写入 `*.superseded_rows.csv`。评分表由 430 行变为 421 行，榜单样本选择与评分表一致。
+- 排除用例不再计分：Moss `control_duration_20s` 与 Higgs `clone_3s_en` 的行级分数留空，样本数、失败数同步扣除（Higgs 32→31，Moss 28→27）。
+- 榜单分组：`coverage_pct < 80` 或评分样本 < 10 的 9 个项目标为 `insufficient_coverage` 并排在最后，其中 `mlx_indextts2`（仅 1 个越南语样本）不再占据正式比较位置。榜单分数本身未变。
+- 新增 `evidence_coverage_pct`、`checkpoint_ids`、`score_basis` 列；榜单与逐条评分表的 `score_full` 口径不同，现已显式标注。
+- CER/WER 超过 1 的两条记录（Ming3 tiny `core_zh_numbers`、Voxmel `xling_en_to_zh`）标记 `asr_runaway_output`。
+- 量纲：`sim`、`sim_o`、`emotion_accuracy`、`language_score` 改为声明的 0–1 分数；修复 `speaker_similarity_score` 为 0 时被误回退到 `sim` 的问题；仍混用量纲的字段中无法判定的值写入 `scale_ambiguous_fields`（当前 1 行）。
+- 九轴权重必须合计 100，否则报告构建报错。
+
+**仍未解决**：Gemini 评委未经人工校准且主导克隆分；情感/副语言/风格轴只有评委一个代理证据；所有语种统一用 CER、单一 ASR、ECAPA 0.25 阈值与 UTMOS 非英语有效性未标定；样本/RTF 计时口径；重复记录无时间戳。Qwen 项目汇总与单 checkpoint 的样本差异需要对照 `checkpoint_ids` 列。
