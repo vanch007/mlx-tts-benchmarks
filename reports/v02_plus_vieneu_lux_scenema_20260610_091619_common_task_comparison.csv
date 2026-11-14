@@ -73,6 +73,6 @@ mlx_ming3_tiny_7_9b_8bit,mlx_ming3_tiny_7.9b,core_en_numbers,0.0189,,,4.5051,1.2
 mlx_ming3_tiny_7_9b_8bit,mlx_ming3_tiny_7.9b,clone_en_same,0.9744,4.6,4.2,1.5494,26.5518,recorded
 mlx_ming3_tiny_7_9b_8bit,mlx_ming3_tiny_7.9b,clone_zh_same,0.0,4.7,4.5,3.0104,1.7576,recorded
 mlx_voxmel_0_6b_8bit,mlx_voxmel,core_zh_numbers,0.0909,,,,0.8414,
-mlx_voxmel_0_6b_8bit,mlx_voxmel,core_en_numbers,0.0000,,,,0.8402,
-mlx_voxmel_0_6b_8bit,mlx_voxmel,clone_en_same,0.0000,,,,0.8952,
-mlx_voxmel_0_6b_8bit,mlx_voxmel,clone_zh_same,0.0000,,,,0.8941,
+mlx_voxmel_0_6b_8bit,mlx_voxmel,core_en_numbers,0.0,,,,0.8402,
+mlx_voxmel_0_6b_8bit,mlx_voxmel,clone_en_same,0.0,,,,0.8952,
+mlx_voxmel_0_6b_8bit,mlx_voxmel,clone_zh_same,0.0,,,,0.8941,

@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`17`
+- 音频异常样本数：`18`
 - 性能提示样本数：`60`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -16,7 +16,7 @@
 | `mlx_ming3_0_5b_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_ming3_tiny_7_9b_8bit` | 2 | 4 | 2 | 2 | 内容严重错误=3；音频过短=2；语速异常=2；生成过慢=2；大段静音=1 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 1 | 生成过慢=1 |
-| `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 3 | 17 | 生成过慢=17；内容错误偏高=3 |
+| `mlx_scenema_audio_int8_mlx_mps_service` | 0 | 0 | 4 | 17 | 生成过慢=17；内容错误偏高=4 |
 | `mlx_voxmel_0_6b_8bit` | 0 | 1 | 3 | 0 | 内容错误偏高=2；内容严重错误=1；语速异常=1 |
 
 ## mlx_audio8_tts_8bit
@@ -111,6 +111,7 @@
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
+| medium | 内容错误偏高 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | CER=0.2708，WER=0.3333。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | 日语汇率新闻朗读 (`core_ja_reading`) | CER=0.3438，WER=0.3438。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | 中文长文本连续稳定性 (`stress_long_zh`) | CER=0.2738，WER=0.2738。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | 英文参考音色说日语克隆 (`xling_en_to_ja`) | CER=0.2857，WER=0.2857。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
@@ -137,6 +138,6 @@
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
 | high | 内容严重错误 | 英文参考音色说中文克隆 (`xling_en_to_zh`) | CER=1.8，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
-| medium | 内容错误偏高 | 真实分钟级中文长叙事(故事有声书) (`real_longform_story_zh`) | CER=0.4229，WER=None。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 内容错误偏高 | 真实分钟级英文科技博客(连续长文本) (`real_longform_tech_en`) | CER=0.2667，WER=None。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 真实分钟级中文长叙事(故事有声书) (`real_longform_story_zh`) | CER=0.4229，WER=0.4229。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 真实分钟级英文科技博客(连续长文本) (`real_longform_tech_en`) | CER=0.2667，WER=0.2927。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | 真实分钟级中文长叙事(故事有声书) (`real_longform_story_zh`) | 语速偏快，约 7.4337 token/s，语速分 22.652。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |

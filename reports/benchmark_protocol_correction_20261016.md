@@ -44,10 +44,21 @@
 
 - 评分表去重：9 组 (模型, 用例) 重复记录只保留输入顺序最后一条成功记录，被取代的记录写入 `*.superseded_rows.csv`。评分表由 430 行变为 421 行，榜单样本选择与评分表一致。
 - 排除用例不再计分：Moss `control_duration_20s` 与 Higgs `clone_3s_en` 的行级分数留空，样本数、失败数同步扣除（Higgs 32→31，Moss 28→27）。
-- 榜单分组：`coverage_pct < 80` 或评分样本 < 10 的 9 个项目标为 `insufficient_coverage` 并排在最后，其中 `mlx_indextts2`（仅 1 个越南语样本）不再占据正式比较位置。榜单分数本身未变。
+- 榜单分组：`coverage_pct < 70` 或评分样本 < 10 的项目（初版阈值为 80，后改为 70）标为 `insufficient_coverage` 并排在最后，其中 `mlx_indextts2`（仅 1 个越南语样本）不再占据正式比较位置。榜单分数本身未变。
 - 新增 `evidence_coverage_pct`、`checkpoint_ids`、`score_basis` 列；榜单与逐条评分表的 `score_full` 口径不同，现已显式标注。
 - CER/WER 超过 1 的两条记录（Ming3 tiny `core_zh_numbers`、Voxmel `xling_en_to_zh`）标记 `asr_runaway_output`。
 - 量纲：`sim`、`sim_o`、`emotion_accuracy`、`language_score` 改为声明的 0–1 分数；修复 `speaker_similarity_score` 为 0 时被误回退到 `sim` 的问题；仍混用量纲的字段中无法判定的值写入 `scale_ambiguous_fields`（当前 1 行）。
 - 九轴权重必须合计 100，否则报告构建报错。
 
 **仍未解决**：Gemini 评委未经人工校准且主导克隆分；情感/副语言/风格轴只有评委一个代理证据；所有语种统一用 CER、单一 ASR、ECAPA 0.25 阈值与 UTMOS 非英语有效性未标定；样本/RTF 计时口径；重复记录无时间戳。Qwen 项目汇总与单 checkpoint 的样本差异需要对照 `checkpoint_ids` 列。
+
+### 2026-11-14 补充：文本指标重算（未重跑 ASR）
+
+用已保存的 ASR 转写，按新规则重算了文本类指标；音频类指标（UTMOS、ECAPA、评委分、RTF）未动，也没有重新生成音频：
+
+- 文本规范化：先 NFKC，保留组合附加符（天城文元音符号不再被当成标点删掉），阿拉伯语去除可选的变音符和 tatweel 并统一 alef/yeh 变体。受影响的主要是印地语：`core_hi_amount` 7 条记录里 6 条的 CER 变化，例如 VoxCPM2 由 0 变为 0.0417、WER 由 0 变为 0.1667，原先被偏宽松地打了满分。越南语、阿拉伯语等其余语种的 CER 没有变化。
+- 内容准确率按语种选指标：中文（含方言）、粤语、日语、韩语、泰语等字符级文字用 CER，其余带空格的语言（英、西、法、德、越、阿、印地）用 WER；新增 `content_metric` 列记录选择。`language_score` 同步改用该指标。英语等语种因此更严：IndexTTS 2.5 内容准确率轴 91.2 → 81.7。
+- 榜单总分变化在 ±0.6 以内，IndexTTS 2.5 为 −2.4，名次由第 10 变为第 13，Moss 与 OmniVoice 互换了第 4、5 位。
+- 逐行变化见 `tts-test-project/results/protocol_repair_20261016/rescore_changes.csv`。
+
+仍未重做：说话人相似度（ECAPA）、UTMOS、Gemini 评委分。它们需要人工标注或新的校准实验，当前分数继续沿用。
