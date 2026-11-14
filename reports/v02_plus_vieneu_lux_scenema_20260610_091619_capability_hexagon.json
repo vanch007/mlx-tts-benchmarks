@@ -1,6 +1,6 @@
 {
   "run_id": "v02_plus_vieneu_lux_scenema_20260610_091619",
-  "metrics_path": "/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv",
+  "metrics_path": "metrics.csv",
   "models": [
     {
       "model_id": "mlx_voxcpm2",
@@ -54,7 +54,7 @@
       "hexagon_score": 80.716,
       "radar_score": 80.716,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_higgs_audio",
@@ -108,7 +108,7 @@
       "hexagon_score": 79.821,
       "radar_score": 79.821,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_moss_tts",
@@ -162,7 +162,7 @@
       "hexagon_score": 79.282,
       "radar_score": 79.282,
       "strongest_axis": "内容准确与可懂度",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_qwen3_tts",
@@ -216,7 +216,7 @@
       "hexagon_score": 78.949,
       "radar_score": 78.949,
       "strongest_axis": "内容准确与可懂度",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "多语种能力"
     },
     {
       "model_id": "mlx_omnivoice",
@@ -270,7 +270,7 @@
       "hexagon_score": 78.851,
       "radar_score": 78.851,
       "strongest_axis": "内容准确与可懂度",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_zonos2",
@@ -324,7 +324,7 @@
       "hexagon_score": 75.515,
       "radar_score": 75.515,
       "strongest_axis": "内容准确与可懂度",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_dots_tts",
@@ -378,7 +378,7 @@
       "hexagon_score": 74.237,
       "radar_score": 74.237,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_scenema_audio",
@@ -432,7 +432,7 @@
       "hexagon_score": 71.092,
       "radar_score": 71.092,
       "strongest_axis": "情绪、风格与韵律控制",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_breeze_tts2",
@@ -486,7 +486,7 @@
       "hexagon_score": 68.382,
       "radar_score": 68.382,
       "strongest_axis": "复杂文本与副语言能力",
-      "weakest_axis": "多语种能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_ming3_0.5b",
@@ -540,7 +540,7 @@
       "hexagon_score": 67.7,
       "radar_score": 67.7,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "多语种能力"
     },
     {
       "model_id": "mlx_pocket_tts",
@@ -594,7 +594,7 @@
       "hexagon_score": 66.519,
       "radar_score": 66.519,
       "strongest_axis": "RTF 生成效率",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "多语种能力"
     },
     {
       "model_id": "mlx_audio8_tts",
@@ -648,7 +648,7 @@
       "hexagon_score": 66.33,
       "radar_score": 66.33,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_drama3",
@@ -702,7 +702,7 @@
       "hexagon_score": 65.661,
       "radar_score": 65.661,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_indextts2.5",
@@ -756,7 +756,7 @@
       "hexagon_score": 64.801,
       "radar_score": 64.801,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_fireredaudio",
@@ -810,7 +810,7 @@
       "hexagon_score": 64.229,
       "radar_score": 64.229,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "多语种能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_ming_omni_tts",
@@ -864,7 +864,7 @@
       "hexagon_score": 62.767,
       "radar_score": 62.767,
       "strongest_axis": "情绪、风格与韵律控制",
-      "weakest_axis": "多语种能力"
+      "weakest_axis": "RTF 生成效率"
     },
     {
       "model_id": "mlx_supertonic",
@@ -918,7 +918,7 @@
       "hexagon_score": 60.687,
       "radar_score": 60.687,
       "strongest_axis": "RTF 生成效率",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "自然度与音频质量"
     },
     {
       "model_id": "mlx_ming3_tiny_7.9b",
@@ -972,7 +972,7 @@
       "hexagon_score": 54.762,
       "radar_score": 54.762,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "方言能力"
+      "weakest_axis": "多语种能力"
     },
     {
       "model_id": "mlx_voxmel",
@@ -1026,7 +1026,7 @@
       "hexagon_score": 54.425,
       "radar_score": 54.425,
       "strongest_axis": "短段落连续性（分钟级长文待测）",
-      "weakest_axis": "多语种能力"
+      "weakest_axis": "内容准确与可懂度"
     },
     {
       "model_id": "mlx_indextts2",
@@ -1080,7 +1080,7 @@
       "hexagon_score": 23.769,
       "radar_score": 23.769,
       "strongest_axis": "自然度与音频质量",
-      "weakest_axis": "内容准确与可懂度"
+      "weakest_axis": "RTF 生成效率"
     }
   ],
   "axes": [

@@ -1,60 +1,61 @@
-# mlx-tts-benchmarks
+# MLX TTS 本地横评
 
-Published HTML reports and final audio samples for MLX-oriented TTS model comparisons.
+在 Apple Silicon 上用 MLX 本地运行开源 TTS 模型，用同一套测试题和同一套自动指标比较它们。
 
-Only the audio files referenced by the complete audio review report are tracked here.
+**入口页（榜单 + 评测方法 + 报告导航）：https://vanch007.github.io/mlx-tts-benchmarks/**
 
-## 评估口径修正（2026-10-16）
+> 状态：开发集上的工程验证，分数是探索性代理，**不是正式排名**。缺少独立测试集、多次采样和完整盲听。
 
-当前报告定位为开发集的工程验证与试听比较，综合分为探索性代理，不是正式模型排名。评测清单共 469 条记录，已统一使用 MLX Qwen3-ASR 1.7B 8bit 复评；去重后评分表 421 行（另有 9 条被后续修订取代的记录单独存放，2 条因协议无效不计分，实际计分 419 行）；修复了重复样本选择、过期克隆判定和 Drama 3 输入/参考不一致。情绪、副语言、方言缺直接证据时标记待验证；当前长文仅覆盖约 9–28 秒短段落。所有项目正式排名就绪状态均为 no；覆盖率低于 70% 或评分样本少于 10 的项目在榜单中单独标为“覆盖不足”，不与其余项目并列比较。
+## 一分钟看懂
 
-详细变更、证据与未完成实验见 [评估修正报告](reports/benchmark_protocol_correction_20261016.md)。Higgs 原 3 秒用例使用了 8.08 秒参考，保留试听但不计能力分；恢复该 MLX 权重后需重测。历史 RTF 仍有计时范围差异。
+| 问题 | 答案 |
+|---|---|
+| 比了什么 | 20 个开源 TTS 项目，41 道测试题，覆盖 9 个能力维度 |
+| 怎么跑的 | 全部在同一台 Mac 上用 MLX 本地推理；每个模型只安排它官方声明支持的题 |
+| 怎么打分 | ASR（Qwen3-ASR 1.7B）转写算错字率；UTMOS 测自然度；ECAPA + CAM++ 两个声纹模型测克隆相似度；记录 RTF |
+| 总分怎么来 | 能力分 = 已测题平均分 × 有效覆盖率；总分 = 9 个能力分按权重相加 |
+| 谁能比较 | 覆盖率 ≥70% 且计分样本 ≥10 的项目进入“可比较”组；其余单独列为“覆盖不足” |
 
-## Reports
+## 9 个能力维度与权重
 
-- 完整试听报告: [Audio review](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html)
-- 综合测试矩阵: [Comprehensive test matrix](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html)
-- 能力雷达报告: [Capability radar](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon.html)
-- 音色相似度与克隆可用性验证: [Speaker similarity validation](https://github.com/vanch007/mlx-tts-benchmarks/blob/main/reports/speaker_similarity_validation_20260723.md)
-- Breeze TTS 2 / Sirocco 8-bit 优化审计: [Breeze 8-bit fast-depth audit](https://github.com/vanch007/mlx-tts-benchmarks/blob/main/reports/breeze_8bit_fast_depth_audit.md)
-- Breeze 23项矩阵独立试听页: [Breeze 8-bit matrix review](https://vanch007.github.io/mlx-tts-benchmarks/reports/breeze_8bit_fast_depth_audio_review.html)
-- 低分根因与证据确定性: [Low-score root-cause audit](https://github.com/vanch007/mlx-tts-benchmarks/blob/main/reports/low_score_root_cause_audit_20260718.md)
+| 能力 | 权重 | 怎么测 |
+|---|---:|---|
+| 内容准确 | 25% | 中日韩泰等按字错误率（CER），其他语言按词错误率（WER） |
+| 自然音质 | 22% | UTMOS 加波形检查（爆音、噪声底、静音、语速） |
+| 多语种 | 12% | 8 种非中英语言朗读，固定按 8 种算覆盖 |
+| 方言 | 3% | 需人工复核通过才计分（目前全部“待验证”） |
+| 音色克隆 | 17% | ECAPA 与 CAM++ 声纹相似度平均；任一判“不可用”即封顶 |
+| 表达控制 | 10% | 声音设计、情绪、风格、时长控制，需直接证据 |
+| 复杂副语 | 3% | 唱歌、笑声、叹气等，需直接证据 |
+| 段落连续性 | 5% | 约 9–28 秒短段落；分钟级长文未测 |
+| RTF 效率 | 3% | 生成耗时 ÷ 音频时长 |
 
-## 综合评分权重
+Gemini 音频评委（SMOS/EMOS）一致性校准未通过，只作为参考列展示，不参与任何计分。
 
-综合分采用基础能力优先的 9 轴加权：内容准确 25%、自然音质 22%、多语 12%、方言 3%、音色克隆 17%、表达控制 10%、复杂副语 3%、长文稳定 5%、RTF 效率 3%。内容、音质、多语和音色克隆保持最高权重，方言单独计入；表达控制作为重要控制能力，复杂副语言、长文本稳定和 RTF 保持较轻权重，避免特殊能力或生成速度过度影响整体排名。
+## 报告
 
-多语种能力轴按固定 8 个语言样本计算覆盖；只支持其中少数语言的项目会按成功样本数除以 8 计入覆盖，避免 `1/1` 的局部高质量被误读成完整多语能力。
+| 报告 | 用途 |
+|---|---|
+| [能力雷达](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon.html) | 每个项目的 9 维分数、雷达图、单项排行 |
+| [试听报告](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html) | 按题逐条试听，附 CER / 声纹 / UTMOS |
+| [结果面板](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_dashboard.html) | 按 checkpoint 拆分的榜单、共同核心任务对比、RTF 排行、样本明细 |
+| [综合测试矩阵](https://vanch007.github.io/mlx-tts-benchmarks/reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html) | 全部测试题与各模型是否应测 |
+| [评估修正记录](reports/benchmark_protocol_correction_20261016.md) | 每次口径修正的原因、证据与影响 |
+| [参评模型说明](docs/models.md) | 各模型上游 README 的能力摘要（非本评测结论） |
 
-## Model Capability Notes
+专项审计：[音色相似度验证](reports/speaker_similarity_validation_20260723.md) · [Breeze 8-bit 审计](reports/breeze_8bit_fast_depth_audit.md)（[试听](https://vanch007.github.io/mlx-tts-benchmarks/reports/breeze_8bit_fast_depth_audio_review.html)） · [低分根因审计](reports/low_score_root_cause_audit_20260718.md)
 
-The capability notes below are summarized from each model's upstream GitHub
-README, not from the benchmark score CSVs. The listening reports above show how
-the published MLX runs behaved on this benchmark set.
+## 数据文件
 
-| Benchmark model | MLX project | Upstream README | Model focus from upstream README | Language / dialect | Voice clone / speaker | Voice design | Emotion / style control | Long-form / duration | Deployment / output notes |
-|---|---|---|---|---|---|---|---|---|---|
-| `mlx_higgs_audio` | [vanch007/mlx-higgs-audio](https://github.com/vanch007/mlx-higgs-audio) | [boson-ai/higgs-audio](https://github.com/boson-ai/higgs-audio) | Conversational TTS for voice AI. | 100+ languages; upstream README does not enumerate them. | Zero-shot voice cloning. | Preset voices plus cloning workflows. | Inline emotion, style, and prosody control. | Streaming recipes are documented. | OpenAI-compatible API path; v3 weights are hosted on Hugging Face. |
-| `mlx_voxcpm2` | [vanch007/mlx-voxcpm2](https://github.com/vanch007/mlx-voxcpm2) | [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) | Tokenizer-free multilingual TTS with creative voice control. | Arabic, Burmese, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Tagalog, Thai, Turkish, Vietnamese; Chinese dialects: Sichuan, Cantonese, Wu, Dongbei, Henan, Shaanxi, Shandong, Tianjin, Minnan. | Reference cloning, controllable cloning, and ultimate cloning with prompt audio plus transcript. | Natural-language voice design without reference audio. | Style guidance can steer emotion, pace, and expression. | Streaming and production serving backends are described. | 48 kHz output; PyTorch, vLLM-Omni, Nano-vLLM, and llama.cpp-omni paths are documented upstream. |
-| `mlx_qwen3_tts` | [vanch007/mlx-qwen3-tts](https://github.com/vanch007/mlx-qwen3-tts) | [QwenLM/Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) | Qwen speech generation series for clone, design, and custom voices. | Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish, Italian; plus dialectal voice profiles. | Base models support rapid voice clone from short reference audio. | VoiceDesign and CustomVoice model variants. | Natural-language instruction control for timbre, emotion, and prosody. | Dual-track streaming and non-streaming generation. | 12 Hz tokenizer; vLLM-Omni and real-time API references are listed upstream. |
-| `mlx_ming_omni_tts` | [vanch007/mlx-Ming-omni-tts](https://github.com/vanch007/mlx-Ming-omni-tts) | [inclusionAI/Ming-omni-tts](https://github.com/inclusionAI/Ming-omni-tts) | Unified generation for speech, environmental sound, and music. | Upstream README does not provide a full supported-language list; it highlights Chinese and English evaluation plus Cantonese dialect control. | Voice design is emphasized more than reference cloning in the README. | 100+ built-in voices and zero-shot voice design from descriptions. | Controls speech rate, pitch, volume, emotion, and dialect by command. | Handles complex text normalization for math and chemistry expressions. | Uses a 12.5 Hz continuous tokenizer and patch-by-patch compression. |
-| `mlx_scenema_audio` | [vanch007/mlx-scenema-audio](https://github.com/vanch007/mlx-scenema-audio) | [ScenemaAI/scenema-audio](https://github.com/ScenemaAI/scenema-audio) | Expressive speech generation for acting, narration, and character delivery. | Upstream README says major world languages, with examples such as English and French; it does not enumerate a complete list. | Zero-shot voice cloning from 10-20 seconds of reference audio. | Voice descriptions drive character, accent, age, timbre, and delivery. | `<action>` tags act as stage directions for emotional shifts and performance. | Sentence chunking keeps voice identity across longer outputs; upstream notes a 15-second chunk cap. | Full-file generation, not streaming; INT8 and bf16 model options are described. |
-| `mlx_omnivoice` | [vanch007/mlx-omnivoice](https://github.com/vanch007/mlx-omnivoice) | [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice) | Massively multilingual zero-shot TTS. | 646 languages in the upstream language list; main examples include Chinese, English, Japanese, Korean, French, German, Spanish, Portuguese, Arabic, Hindi, Vietnamese, Bengali, Russian, Indonesian, Turkish, Thai, and many low-resource languages. | Voice cloning from short reference audio is the most stable upstream mode. | Voice design by attributes such as gender, age, pitch, accent, dialect, and whisper. | Inline non-verbal symbols and pronunciation correction are supported. | Duration and speed controls are available. | CLI, Python API, Web UI, and batch tools are documented upstream. |
-| `mlx_zonos2` | [vanch007/mlx-ZONOS2](https://github.com/vanch007/mlx-ZONOS2) | [Zyphra/ZONOS2](https://github.com/Zyphra/ZONOS2) | High-fidelity multilingual TTS with naturalistic voice cloning. | Tier 1: English, Mandarin Chinese, Japanese. Tier 2: Korean, Russian, Italian, Portuguese, French, Spanish, Vietnamese, German, Hebrew, Dutch. Tier 3: Swedish, Hindi, Tamil, Telugu, Thai, Norwegian, Bengali, Tagalog, Arabic, Danish, Indonesian, Polish, Ukrainian, Romanian, Finnish, Hungarian, Lithuanian, Estonian, Slovak, Croatian, Latvian. | Excels at high-fidelity voice cloning. | Uses default voices / speaker conditioning rather than a broad design table. | Quality-bin conditioning is exposed through the TTS endpoint. | Long prompts are clamped to the remaining context. | Local server with streaming endpoint; upstream targets Linux/NVIDIA for official runtime. |
-| `mlx_moss_tts` | [vanch007/mlx-MOSS-TTS-Local-Transformer-v1.5](https://github.com/vanch007/mlx-MOSS-TTS-Local-Transformer-v1.5) | [OpenMOSS/MOSS-TTS](https://github.com/OpenMOSS/MOSS-TTS) | High-fidelity, expressive, controllable speech and sound generation family. | Chinese, Cantonese, English, Arabic, Czech, Danish, Dutch, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Italian, Japanese, Korean, Macedonian, Malay, Persian/Farsi, Polish, Portuguese, Romanian, Russian, Spanish, Swahili, Swedish, Tagalog, Thai, Turkish, Vietnamese. | Zero-shot voice cloning is a core capability. | Separate MOSS-VoiceGenerator supports prompt-based voice creation. | Style switching, Pinyin/IPA, phoneme, pause markup, and pronunciation controls are described. | Long-speech generation and token-level duration control are documented. | Supports 48 kHz stereo local-transformer models and multiple serving backends. |
-| `mlx_supertonic` | [vanch007/mlx-supertonic](https://github.com/vanch007/mlx-supertonic) | [supertone-inc/supertonic](https://github.com/supertone-inc/supertonic) | Lightweight on-device multilingual TTS. | Arabic, Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Latvian, Lithuanian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Turkish, Ukrainian, Vietnamese; plus language-agnostic `na`. | The open-weight repo does not include an official voice-cloning pipeline. | Fixed voice styles in the open repo; Voice Builder is a separate managed workflow. | Voice style selection and quality step controls, not broad emotion prompting. | Returns generated duration; batch inference is supported. | ONNX Runtime local inference; 44.1 kHz WAV output. |
-| `mlx_dots_tts` | [vanch007/mlx-dots-tts](https://github.com/vanch007/mlx-dots-tts/tree/codex/aggressive-mlx-optim-test) | [rednote-hilab/dots.tts](https://github.com/rednote-hilab/dots.tts) | 2B fully continuous end-to-end autoregressive TTS. | README examples include English, Mandarin/Chinese, and Cantonese language tags; the 24-language MiniMax evaluation lists Arabic, Cantonese, Chinese, Czech, Dutch, English, Finnish, French, German, Greek, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Spanish, Thai, Turkish, Ukrainian, Vietnamese. | Zero-shot voice cloning with short reference audio. | Random voice sampling and fine-tuning paths are documented. | README emphasizes generation stability and emotional expressiveness. | Streaming-oriented 1T1A layout and optimized low-latency paths are described. | 48 kHz AudioVAE pipeline; base, SOAR, and MeanFlow-distilled checkpoints are released. |
-| `mlx_indextts2` | [vanch007/mlx-indextts2](https://github.com/vanch007/mlx-indextts2) | [index-tts/index-tts](https://github.com/index-tts/index-tts) | IndexTTS 2.5 autoregressive zero-shot TTS with emotion and duration control. | The MLX 2.5 artifact is validated for Chinese, English, Japanese, Spanish, and Arabic; Vietnamese remains a separate local IndexTTS 2.0 extension and is scored separately. | Zero-shot timbre reconstruction from prompt audio, including tested English-to-Japanese and English-to-Spanish cloning. | Speaker identity and emotion are disentangled. | Manual, audio-reference, and natural-language emotion controls are documented. | Precise duration control is supported; extreme duration expansion can reduce naturalness and speaker similarity. | The published benchmark uses revision `d0aa86e75bb6f3437f3831e95056fa72842d89ef` converted to GPT INT8 group-size 64. |
-| `mlx_fireredaudio` | [vanch007/mlx-FireRedAudio](https://github.com/vanch007/mlx-FireRedAudio) | [FireRedTeam/FireRedAudio](https://github.com/FireRedTeam/FireRedAudio) | General-purpose audio language model for understanding and generation. | Chinese, English, and Chinese-English code-switching in TTS; multilingual in ASR/understanding. | Zero-shot voice cloning from reference audio and transcript text. | Natural-language voice design from timbre descriptions. | Semantic text rewrite and acoustic speed/pitch/volume editing. | Continuous RedAE VAE + DiT flow matching. | 100% native Apple Silicon MLX Metal inference; 24 kHz audio output; 8-bit quantized weights evaluated. |
-| `mlx_breeze_tts2` | [vanch007/mlx-breeze-tts2](https://github.com/vanch007/mlx-breeze-tts2) | [BreezeBlue/Breeze-TTS-2](https://github.com/BreezeBlue/Breeze-TTS-2) | High-quality Mandarin & English TTS with voice design, cloning, and speech events. | Chinese, English, and Chinese-English code-switching. | Zero-shot voice cloning from single reference WAV and transcript. | Natural-language voice design from instruction prompts. | English `(laugh)` / `(cough)` / `(clears throat)` / `(sigh)` and Chinese `[笑]` / `[咳嗽]` / `[清嗓子]` / `[叹气]` event syntax. | Multi-sentence long-form stability; streaming & non-streaming support. | Standalone Apple Silicon MLX Metal inference; 24 kHz output; 8-bit sensitive-BF16 weights evaluated (`models/breeze-8bit-sensitive-bf16-v2` / `vanch007/Sirocco-MLX-8bit` at commit `51c182d`); fast depth is default path; steady-state RTF ~1.15x (p90 1.16x), CFG=4 RTF ~1.53x, TTFA ~1.30s (-54.5%); max CER 0.0303, corpus CER 0.0013, min clone cosine/P10 0.6415 / 0.6239, max leakage 0.1695; 23/23 matrix pass, 8/8 event review pass, 143 passed. |
-| `mlx_pocket_tts` | [vanch007/mlx-pocket-tts](https://github.com/vanch007/mlx-pocket-tts) | [kyutai-labs/pocket-tts](https://github.com/kyutai-labs/pocket-tts) | Ultra-fast lightweight streaming text-to-speech and voice cloning. | English, German, French, Spanish, Italian, Portuguese, and Czech. | Zero-shot voice cloning from reference audio. | Built-in 26 preset voice embeddings. | Flow-matching timbre conditioning and streaming controls. | Long-form stability and low-latency chunked streaming. | Standalone MLX Metal inference; 8-bit FlowLM + Mimi codec; 24 kHz audio output; RTF ~0.09–0.17x. |
-| `mlx_audio8_tts` | [vanch007/mlx-audio8-tts](https://github.com/vanch007/mlx-audio8-tts) | [Audio8-AI/Audio8_TTS](https://github.com/Audio8-AI/Audio8_TTS) | Compact 0.6B DualAR multilingual zero-shot voice cloning with 44.1 kHz neural codec. | Cantonese (粤语), Chinese, English, French, German, Italian, Japanese, Korean, Polish, Spanish, Dutch, and Chinese-English code-switching. | Zero-shot voice cloning from single reference WAV and transcript. | Prompt-conditioned reference cloning. | DualAR slow-semantic + fast-codebook generation. | Multi-sentence long-form stability; streaming & non-streaming support. | Standalone Apple Silicon MLX Metal inference; 44.1 kHz audio output; 8-bit quantized weights evaluated (`models/Audio8-TTS-Preview-0.6b-8bit` / `vanch007/Audio8-TTS-MLX-8bit`). |
-| `mlx_drama3` | [vanch007/drama-3-mlx](https://github.com/vanch007/drama-3-mlx) | [fishaudio/drama-3](https://huggingface.co/fishaudio/drama-3) | 35B parameter (3B active) MoE conversational TTS with hybrid linear/full attention and 10-codebook Codebook-MTP audio decoder. | Chinese, English, Japanese, Korean, Spanish, French, German, Italian, Russian, Portuguese, Cantonese (粤语), and Chinese-English code-switching. | Zero-shot voice cloning with single reference WAV and transcript. | Prompt-conditioned reference cloning and multi-speaker character assignment (`<|speaker:0|>` to `<|speaker:15|>`). | In-text paralinguistic and emotional point tags: `[sighs]`, `[laughs]`, `[whispers]`, `[giggles]`, `[yawns]`, `[groans]`. | Automatic chunking preserving speaker boundaries; streaming chunk generation. | Standalone Apple Silicon MLX Metal inference; 44.1 kHz 10-codebook Modded DAC neural codec; 4-bit quantized weights evaluated (`models/drama-3-mlx-4bit` / `vanch007/Drama-3-MLX-4bit`). |
+- `reports/v02_plus_vieneu_lux_scenema_20260610_091619.leaderboard.csv`：项目榜单
+- `reports/v02_plus_vieneu_lux_scenema_20260610_091619.scored.csv`：逐条评分
+- `reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon_axes.csv`：项目 × 能力长表
+- `audio/<model>/`：已发布的生成音频；`audio/*.wav`：参考音频
 
-## Audio Layout
+## 目录说明
 
-Audio files are grouped by model under `audio/<model>/`.
+- `index.html`、`reports/`、`audio/`、`docs/`：当前发布内容
+- `archive/`：已归档的旧实验
+- 根目录下以日期结尾的其他文件夹（如 `omnivoice_*_20260516`）是早期单项实验的历史产物，保留以免旧链接失效，不属于当前榜单
 
-The reports are rendered by GitHub Pages from static HTML and use browser-native audio controls for the published WAV files.
-
-Each published page includes a Chinese / English language switcher.
+页面由评测引擎仓库的 `scripts/publish_protocol_repair.py` 统一生成，不要手工修改 `index.html` 和 `reports/` 下的生成文件。
