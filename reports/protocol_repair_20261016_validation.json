@@ -5,7 +5,7 @@
     "qwen3_asr_1_7b_8bit": 469
   },
   "regenerated_rows": 2,
-  "audio_references_checked": 913,
+  "audio_references_checked": 912,
   "missing_audio_paths": [],
   "excluded_records": [
     {
@@ -21,18 +21,13 @@
     {
       "model_id": "mlx_moss_tts_local_transformer_v1_5",
       "test_case_id": "control_duration_20s",
-      "evaluation_exclusion": "duration_achieved_by_inserted_pause_not_native_speech_duration_control"
-    },
-    {
-      "model_id": "mlx_higgs_audio_v3_4b",
-      "test_case_id": "clone_3s_en",
-      "evaluation_exclusion": "invalid_3s_protocol_reference_is_8.08s;retest_pending_missing_checkpoint"
+      "evaluation_exclusion": "not_applicable:duration_achieved_by_inserted_pause_not_native_speech_duration_control"
     }
   ],
   "limitations": [
-    "Higgs exact MLX checkpoint missing: 3-second retest pending",
+    "Dialect axis requires human listening review; no automated dialect verifier passed a positive control",
     "held-out evaluation, multi-seed trials, blinded listening, minute-scale longform pending",
     "legacy timing and generation revision evidence incomplete"
   ],
-  "metrics_sha256": "f8683bcad7ab264e78c264585c4bd5afe827dd8a64061bb1ba126a8f8f96a009"
+  "metrics_sha256": "c9c166654f0b44adce519cfdaf5dae4439388fa08f3ae7e4785282cbfd1490b4"
 }
