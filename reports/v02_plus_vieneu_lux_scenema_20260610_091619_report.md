@@ -10,25 +10,25 @@
 
 | 排名 | 项目 | 评分样本数 | 能力总分 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 短段落连续性（分钟级长文待测） | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_higgs_audio` | 32 | 82.037 | 88.889 | 88.104 | 81.656 | 92.27 | 0.0 | 80.393 | 86.071 | 89.176 | 92.851 | 46.094 | no |
-| 2 | `mlx_voxcpm2` | 36 | 80.716 | 100.0 | 92.553 | 72.584 | 88.774 | 0.0 | 78.678 | 89.247 | 83.237 | 93.449 | 49.579 | no |
-| 3 | `mlx_moss_tts` | 27 | 79.282 | 100.0 | 96.969 | 73.519 | 88.08 | 0.0 | 77.074 | 61.955 | 89.342 | 94.642 | 52.848 | no |
-| 4 | `mlx_qwen3_tts` | 23 | 78.949 | 84.722 | 96.336 | 78.687 | 54.871 | 0.0 | 89.715 | 83.954 | 0.0 | 95.999 | 84.093 | no |
-| 5 | `mlx_omnivoice` | 30 | 78.851 | 98.611 | 93.313 | 70.806 | 80.822 | 0.0 | 75.786 | 86.225 | 91.114 | 87.9 | 53.753 | no |
-| 6 | `mlx_zonos2` | 26 | 75.515 | 77.778 | 93.569 | 69.418 | 84.166 | 0.0 | 77.538 | 76.726 | 0.0 | 92.344 | 42.64 | no |
-| 7 | `mlx_dots_tts` | 27 | 74.237 | 88.889 | 80.855 | 71.149 | 84.882 | 0.0 | 79.766 | 84.837 | 0.0 | 91.483 | 52.204 | no |
-| 8 | `mlx_scenema_audio` | 28 | 71.092 | 86.111 | 73.832 | 74.144 | 56.104 | 0.0 | 78.73 | 86.904 | 86.554 | 85.089 | 22.146 | no |
-| 9 | `mlx_breeze_tts2` | 15 | 68.382 | 77.778 | 87.094 | 73.407 | 0.0 | 0.0 | 85.082 | 72.514 | 92.887 | 92.288 | 44.739 | no |
-| 10 | `mlx_ming3_0.5b` | 20 | 67.7 | 81.944 | 78.761 | 77.824 | 22.923 | 0.0 | 76.043 | 82.143 | 0.0 | 87.657 | 87.099 | no |
-| 11 | `mlx_audio8_tts` | 20 | 66.33 | 73.611 | 89.944 | 80.783 | 58.583 | 0.0 | 82.238 | 0.0 | 0.0 | 94.511 | 11.207 | no |
-| 12 | `mlx_drama3` | 21 | 65.661 | 84.722 | 87.375 | 74.996 | 50.749 | 0.0 | 81.713 | 0.0 | 89.247 | 93.191 | 0.0 | no |
-| 13 | `mlx_indextts2.5` | 23 | 64.801 | 70.833 | 81.702 | 61.236 | 29.117 | 0.0 | 82.44 | 82.879 | 0.0 | 88.467 | 22.797 | no |
-| 14 | `mlx_ming_omni_tts` | 19 | 62.767 | 88.889 | 80.167 | 62.505 | 0.0 | 0.0 | 75.747 | 86.937 | 85.709 | 82.263 | 23.972 | no |
-| 15 | `mlx_ming3_tiny_7.9b` | 20 | 54.762 | 81.944 | 55.147 | 70.352 | 30.799 | 0.0 | 44.928 | 86.83 | 0.0 | 91.054 | 30.937 | no |
-| 16 | `mlx_pocket_tts` | 11 | 66.519 | 59.722 | 97.549 | 75.273 | 33.497 | 0.0 | 80.802 | 0.0 | 0.0 | 97.249 | 98.432 | no |
-| 17 | `mlx_fireredaudio` | 14 | 64.229 | 66.667 | 85.274 | 70.235 | 0.0 | 0.0 | 84.844 | 82.111 | 0.0 | 89.989 | 10.828 | no |
-| 18 | `mlx_supertonic` | 11 | 60.687 | 55.556 | 97.851 | 78.495 | 93.071 | 0.0 | 0.0 | 0.0 | 0.0 | 95.729 | 100.0 | no |
-| 19 | `mlx_voxmel` | 12 | 54.26 | 55.556 | 57.221 | 96.552 | 0.0 | 0.0 | 69.62 | 0.0 | 0.0 | 100.0 | 62.593 | no |
+| 1 | `mlx_voxcpm2` | 53 | 76.121 | 95.833 | 92.553 | 70.297 | 52.859 | 0.0 | 78.678 | 89.247 | 83.237 | 93.449 | 56.832 | no |
+| 2 | `mlx_higgs_audio` | 37 | 74.251 | 81.389 | 88.104 | 80.498 | 28.681 | 0.0 | 80.393 | 86.071 | 89.176 | 92.851 | 49.41 | no |
+| 3 | `mlx_omnivoice` | 39 | 73.432 | 93.333 | 93.313 | 70.949 | 33.01 | 0.0 | 75.786 | 86.225 | 91.114 | 87.9 | 63.323 | no |
+| 4 | `mlx_qwen3_tts` | 23 | 71.393 | 76.603 | 96.336 | 69.608 | 10.974 | 0.0 | 89.715 | 83.954 | 0.0 | 95.999 | 74.39 | no |
+| 5 | `mlx_breeze_tts2` | 15 | 68.382 | 77.778 | 87.094 | 73.407 | 0.0 | 0.0 | 85.082 | 72.514 | 92.887 | 92.288 | 44.739 | no |
+| 6 | `mlx_ming3_0.5b` | 20 | 65.499 | 78.611 | 78.761 | 77.824 | 4.585 | 0.0 | 76.043 | 82.143 | 0.0 | 87.657 | 87.099 | no |
+| 7 | `mlx_moss_tts` | 27 | 63.647 | 82.128 | 96.969 | 43.798 | 17.616 | 0.0 | 77.074 | 61.955 | 89.342 | 94.642 | 31.484 | no |
+| 8 | `mlx_scenema_audio` | 28 | 63.584 | 76.667 | 73.832 | 64.876 | 11.221 | 0.0 | 78.73 | 86.904 | 86.554 | 85.089 | 19.378 | no |
+| 9 | `mlx_ming_omni_tts` | 19 | 62.767 | 88.889 | 80.167 | 62.505 | 0.0 | 0.0 | 75.747 | 86.937 | 85.709 | 82.263 | 23.972 | no |
+| 10 | `mlx_dots_tts` | 27 | 60.492 | 72.778 | 80.855 | 48.025 | 16.976 | 0.0 | 79.766 | 84.837 | 0.0 | 91.483 | 35.238 | no |
+| 11 | `mlx_drama3` | 21 | 58.727 | 76.389 | 87.375 | 65.622 | 10.15 | 0.0 | 81.713 | 0.0 | 89.247 | 93.191 | 0.0 | no |
+| 12 | `mlx_ming3_tiny_7.9b` | 20 | 51.805 | 78.611 | 55.147 | 70.352 | 6.16 | 0.0 | 44.928 | 86.83 | 0.0 | 91.054 | 30.937 | no |
+| 13 | `mlx_fireredaudio` | 14 | 64.229 | 66.667 | 85.274 | 70.235 | 0.0 | 0.0 | 84.844 | 82.111 | 0.0 | 89.989 | 10.828 | no |
+| 14 | `mlx_pocket_tts` | 14 | 63.61 | 57.222 | 97.549 | 74.157 | 11.638 | 0.0 | 80.802 | 0.0 | 0.0 | 97.249 | 97.111 | no |
+| 15 | `mlx_indextts2.5` | 23 | 62.006 | 67.5 | 81.702 | 61.236 | 5.823 | 0.0 | 82.44 | 82.879 | 0.0 | 88.467 | 22.797 | no |
+| 16 | `mlx_audio8_tts` | 23 | 61.493 | 68.889 | 89.944 | 80.357 | 18.365 | 0.0 | 82.238 | 0.0 | 0.0 | 94.511 | 13.954 | no |
+| 17 | `mlx_zonos2` | 26 | 61.379 | 60.759 | 93.569 | 44.021 | 16.833 | 0.0 | 77.538 | 76.726 | 0.0 | 92.344 | 27.04 | no |
+| 18 | `mlx_voxmel` | 12 | 54.26 | 55.556 | 57.221 | 96.552 | 0.0 | 0.0 | 69.62 | 0.0 | 0.0 | 100.0 | 62.593 | no |
+| 19 | `mlx_supertonic` | 11 | 38.239 | 31.852 | 97.851 | 26.165 | 18.614 | 0.0 | 0.0 | 0.0 | 0.0 | 95.729 | 33.333 | no |
 | 20 | `mlx_indextts2` | 1 | 23.769 | 33.333 | 0.0 | 60.842 | 0.0 | 0.0 | 58.475 | 0.0 | 0.0 | 0.0 | 14.766 | no |
 
 ## 样本摘要
@@ -456,6 +456,43 @@
 | `mlx_voxmel_0_6b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9542 |  |
 | `mlx_voxmel_0_6b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9215 |  |
 | `mlx_voxmel_0_6b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  |  | 0.9767 |  |
+| `mlx_higgs_audio_v3_4b` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6236 | 0.8779 |  |
+| `mlx_higgs_audio_v3_4b` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6569 | 0.7418 |  |
+| `mlx_higgs_audio_v3_4b` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.599 | 0.739 |  |
+| `mlx_higgs_audio_v3_4b` | ml id reading (ml_id_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.031 | 0.7204 |  |
+| `mlx_higgs_audio_v3_4b` | ml sw reading (ml_sw_reading) | success | mlx_whisper | 0.1739 |  | 2.9203 | 0.7405 |  |
+| `mlx_pocket_tts_8bit` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2239 | 0.574 |  |
+| `mlx_pocket_tts_8bit` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.1222 |  | 2.5891 | 0.3318 |  |
+| `mlx_pocket_tts_8bit` | ml cs reading (ml_cs_reading) | success | qwen3_asr_1_7b_8bit | 0.2394 |  | 4.3976 | 0.0988 |  |
+| `mlx_audio8_tts_8bit` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9777 | 1.5031 |  |
+| `mlx_audio8_tts_8bit` | ml nl reading (ml_nl_reading) | success | qwen3_asr_1_7b_8bit | 0.0326 |  | 3.7459 | 1.3777 |  |
+| `mlx_audio8_tts_8bit` | ml pl reading (ml_pl_reading) | success | qwen3_asr_1_7b_8bit | 0.012 |  | 3.6792 | 1.4254 |  |
+| `mlx_voxcpm2_bf16_dit` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3121 | 0.9714 |  |
+| `mlx_voxcpm2_bf16_dit` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2795 | 0.7282 |  |
+| `mlx_voxcpm2_bf16_dit` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2827 | 0.726 |  |
+| `mlx_voxcpm2_bf16_dit` | ml id reading (ml_id_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.1373 | 0.7001 |  |
+| `mlx_voxcpm2_bf16_dit` | ml th reading (ml_th_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9704 | 0.7248 |  |
+| `mlx_voxcpm2_bf16_dit` | ml tr reading (ml_tr_reading) | success | qwen3_asr_1_7b_8bit | 0.023 |  | 3.4123 | 0.7459 |  |
+| `mlx_voxcpm2_bf16_dit` | ml nl reading (ml_nl_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8706 | 0.7478 |  |
+| `mlx_voxcpm2_bf16_dit` | ml pl reading (ml_pl_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6092 | 0.7184 |  |
+| `mlx_voxcpm2_bf16_dit` | ml sv reading (ml_sv_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.769 | 0.7069 |  |
+| `mlx_voxcpm2_bf16_dit` | ml da reading (ml_da_reading) | success | qwen3_asr_1_7b_8bit | 0.0133 |  | 3.4786 | 0.7291 |  |
+| `mlx_voxcpm2_bf16_dit` | ml fi reading (ml_fi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.654 | 0.7129 |  |
+| `mlx_voxcpm2_bf16_dit` | ml no reading (ml_no_reading) | success | mlx_whisper | 0.0 |  | 3.1851 | 0.7107 |  |
+| `mlx_voxcpm2_bf16_dit` | ml el reading (ml_el_reading) | success | qwen3_asr_1_7b_8bit | 0.15 |  | 3.6577 | 0.7265 |  |
+| `mlx_voxcpm2_bf16_dit` | ml he reading (ml_he_reading) | success | mlx_whisper | 0.0 |  | 3.0144 | 0.7534 |  |
+| `mlx_voxcpm2_bf16_dit` | ml ms reading (ml_ms_reading) | success | qwen3_asr_1_7b_8bit | 0.0204 |  | 3.3143 | 0.714 |  |
+| `mlx_voxcpm2_bf16_dit` | ml fil reading (ml_fil_reading) | success | qwen3_asr_1_7b_8bit | 0.02 |  | 3.1431 | 0.696 |  |
+| `mlx_voxcpm2_bf16_dit` | ml sw reading (ml_sw_reading) | success | mlx_whisper | 0.0435 |  | 2.5892 | 0.711 |  |
+| `mlx_omnivoice_8bit_trim60` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6989 | 0.4264 |  |
+| `mlx_omnivoice_8bit_trim60` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0111 |  | 3.5718 | 0.3033 |  |
+| `mlx_omnivoice_8bit_trim60` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5799 | 0.3136 |  |
+| `mlx_omnivoice_8bit_trim60` | ml id reading (ml_id_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0171 | 0.321 |  |
+| `mlx_omnivoice_8bit_trim60` | ml th reading (ml_th_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1109 | 0.32 |  |
+| `mlx_omnivoice_8bit_trim60` | ml tr reading (ml_tr_reading) | success | qwen3_asr_1_7b_8bit | 0.023 |  | 3.4927 | 0.3199 |  |
+| `mlx_omnivoice_8bit_trim60` | ml ms reading (ml_ms_reading) | success | qwen3_asr_1_7b_8bit | 0.0306 |  | 3.1856 | 0.3234 |  |
+| `mlx_omnivoice_8bit_trim60` | ml fil reading (ml_fil_reading) | success | qwen3_asr_1_7b_8bit | 0.4 |  | 3.5791 | 0.3436 |  |
+| `mlx_omnivoice_8bit_trim60` | ml sw reading (ml_sw_reading) | success | mlx_whisper | 0.0435 |  | 3.0486 | 0.3314 |  |
 
 ## 本地 TTS 覆盖状态
 
