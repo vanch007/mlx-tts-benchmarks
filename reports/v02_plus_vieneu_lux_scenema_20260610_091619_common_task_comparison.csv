@@ -1,6 +1,4 @@
 checkpoint_model_id,project_id,test_case_id,cer,speaker_similarity_score,speaker_similarity_campplus_score,utmos,rtf,actual_input_status
-mlx_scenema_audio_int8_mlx_mps_service,mlx_scenema_audio,core_zh_numbers,0.1143,,,3.5572,0.7751,legacy_command_only
-mlx_scenema_audio_int8_mlx_mps_service,mlx_scenema_audio,core_en_numbers,0.0,,,3.851,0.7591,legacy_command_only
 mlx_voxcpm2_bf16_dit,mlx_voxcpm2,core_zh_numbers,0.0,,,3.6171,1.0968,legacy_command_only
 mlx_voxcpm2_bf16_dit,mlx_voxcpm2,core_en_numbers,0.0,,,3.7402,1.0834,legacy_command_only
 mlx_voxcpm2_bf16_dit,mlx_voxcpm2,clone_en_same,0.0,0.8783,0.9040,3.8957,1.0465,legacy_command_only
@@ -38,8 +36,6 @@ mlx_zonos2_bf16,mlx_zonos2,clone_zh_same,0.0,0.718,0.6623,3.3571,1.1756,legacy_c
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,clone_en_same,0.0,0.8353,0.9023,4.1416,0.8821,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,clone_zh_same,0.0,0.8643,0.8606,3.1723,1.1528,legacy_command_only
 mlx_supertonic3_mlx,mlx_supertonic,core_en_numbers,0.0,,,4.427,0.0646,legacy_command_only
-mlx_scenema_audio_int8_mlx_mps_service,mlx_scenema_audio,clone_en_same,0.0,0.8672,1.0000,3.7264,2.3196,legacy_command_only
-mlx_scenema_audio_int8_mlx_mps_service,mlx_scenema_audio,clone_zh_same,0.1,0.867,0.9616,2.3756,3.8007,legacy_command_only
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,core_en_numbers,0.0,,,4.5532,1.0808,legacy_command_only
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,core_zh_numbers,0.0286,,,3.4709,1.2213,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,core_en_numbers,0.0,,,4.4739,1.0838,legacy_command_only
