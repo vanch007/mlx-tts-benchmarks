@@ -20,6 +20,21 @@
       "evaluation_exclusion": "retired_case_id"
     },
     {
+      "model_id": "mlx_indextts2_v25_8bit",
+      "test_case_id": "control_duration_3s",
+      "evaluation_exclusion": "not_applicable:official_release_does_not_enable_precise_duration_control;adapter_fit_duration_is_post_processing"
+    },
+    {
+      "model_id": "mlx_indextts2_v25_8bit",
+      "test_case_id": "control_duration_10s",
+      "evaluation_exclusion": "not_applicable:official_release_does_not_enable_precise_duration_control;adapter_fit_duration_is_post_processing"
+    },
+    {
+      "model_id": "mlx_indextts2_v25_8bit",
+      "test_case_id": "control_duration_20s",
+      "evaluation_exclusion": "not_applicable:official_release_does_not_enable_precise_duration_control;adapter_fit_duration_is_post_processing"
+    },
+    {
       "model_id": "mlx_moss_tts_local_transformer_v1_5",
       "test_case_id": "control_duration_20s",
       "evaluation_exclusion": "not_applicable:duration_achieved_by_inserted_pause_not_native_speech_duration_control"
@@ -30,5 +45,5 @@
     "held-out evaluation, multi-seed trials, blinded listening, minute-scale longform pending",
     "legacy timing and generation revision evidence incomplete"
   ],
-  "metrics_sha256": "3b9c95041044e2124456eeb69ec9c55e3a316230726b2d01f1314eef6f9ac783"
+  "metrics_sha256": "4acf78c3da2d4d7d917dc059155dd28efacb82e0764a264cafdbff6d647b8445"
 }
