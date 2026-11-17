@@ -115,7 +115,7 @@ a { color:var(--accent); }
   <div><b>出题</b><p>81 道测试题，每题只归入一个能力维度；每个模型只安排它官方声明支持的题。</p></div>
   <div><b>本地生成</b><p>所有模型都在同一台 Mac 上用 MLX 推理，记录音频和耗时（RTF）。</p></div>
   <div><b>自动打分</b><p>ASR 转写算错字率，UTMOS 测自然度，两个声纹模型测克隆相似度。</p></div>
-  <div><b>加权汇总</b><p>每题打分 → 每个能力取平均并乘以覆盖率 → 9 个能力按权重相加。</p></div>
+  <div><b>加权汇总</b><p>每题打分（采样过的题取 3 次平均）→ 每个能力取平均 → 在模型已测的能力上按权重相加得到质量分，不支持的能力按 0 计入得到全能分。</p></div>
 </div>
 <div class="formula">
 <code>质量分 = Σ(已测能力的平均分 × 已评比例 × 权重) ÷ Σ 已测能力的权重</code><br>
@@ -141,11 +141,11 @@ a { color:var(--accent); }
 <div class="cards"><a class="card" href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon.html"><b>能力雷达 →</b><span>看每个项目在 9 个能力上的分数、雷达图和单项排行。想知道“谁擅长什么”从这里开始。</span></a>
 <a class="card" href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html"><b>试听报告 →</b><span>按测试题逐条播放每个模型的音频，并列出 CER、声纹、UTMOS。想亲耳判断时看这里。</span></a>
 <a class="card" href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_dashboard.html"><b>结果面板 →</b><span>按具体权重（checkpoint）拆分的榜单、共同核心任务对比、RTF 速度排行和可筛选的样本明细。</span></a>
-<a class="card" href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html"><b>综合测试矩阵 →</b><span>全部 41 道测试题的题面、归属能力和各模型是否应测。想知道“到底测了什么”看这里。</span></a>
+<a class="card" href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_comprehensive_test_matrix.html"><b>综合测试矩阵 →</b><span>全部 106 道测试题（含不计分的专项与诊断题）的题面、归属能力和各模型是否应测。想知道“到底测了什么”看这里。</span></a>
 <a class="card" href="reports/benchmark_protocol_correction_20261016.md"><b>评估修正记录 →</b><span>每次口径修正的原因、证据和对分数的影响，以及仍未完成的实验。</span></a></div>
 
 <h2>目前还不能说明什么</h2>
-<ul class="limits"><li>这是开发集上的工程验证，没有独立测试集、多次采样和完整盲听，分数是探索性代理，不是正式排名。</li>
+<ul class="limits"><li>这是开发集上的工程验证，没有独立测试集和完整盲听；只有内容、克隆、长文和 5 种公共语言做了 3 次采样，表达控制和副语言仍是每题一次。分数是探索性代理，不是正式排名。</li>
 <li>方言、情绪、副语言缺少直接证据时记为“待验证”；长文只测了约 9–28 秒的短段落。</li>
 <li>音色克隆的声纹阈值只用本项目的少量参考音频校准过；Gemini 评委因一致性不足，只作参考、不参与计分。</li>
 <li>历史 RTF 的计时范围不完全一致，速度对比只能看量级。</li></ul>
