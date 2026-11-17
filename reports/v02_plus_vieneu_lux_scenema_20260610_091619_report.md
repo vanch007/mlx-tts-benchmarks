@@ -14,7 +14,7 @@
 | 2 | `mlx_higgs_audio` | 72 | 86.418 | 85.247 | 8/8 | 100.0 | 93.228 | 80.651 | 84.719 | 0.0 | 79.338 | 86.071 | 89.176 | 93.577 | 67.482 | no |
 | 3 | `mlx_drama3` | 29 | 83.844 | 71.045 | 7/8 | 93.304 | 94.261 | 80.946 | 55.986 | 0.0 | 79.787 | 0.0 | 89.247 | 91.613 | 0.0 | no |
 | 4 | `mlx_voxcpm2` | 61 | 83.664 | 82.93 | 8/8 | 100.0 | 91.097 | 75.004 | 84.421 | 0.0 | 77.306 | 89.247 | 83.237 | 93.869 | 59.299 | no |
-| 5 | `mlx_moss_tts` | 54 | 83.567 | 81.544 | 8/8 | 100.0 | 96.668 | 82.459 | 75.647 | 0.0 | 75.544 | 61.955 | 89.342 | 95.198 | 41.137 | no |
+| 5 | `mlx_moss_tts` | 54 | 83.545 | 81.821 | 8/8 | 100.0 | 96.657 | 82.4 | 78.063 | 0.0 | 75.544 | 61.955 | 89.342 | 95.198 | 40.962 | no |
 | 6 | `mlx_omnivoice` | 71 | 82.616 | 80.453 | 8/8 | 100.0 | 94.494 | 68.666 | 75.773 | 0.0 | 71.689 | 86.225 | 91.114 | 87.01 | 77.439 | no |
 | 7 | `mlx_breeze_tts2` | 23 | 82.184 | 72.017 | 7/8 | 100.0 | 92.231 | 73.741 | 0.0 | 0.0 | 85.18 | 72.514 | 92.887 | 92.287 | 48.095 | no |
 | 8 | `mlx_ming3_0.5b` | 28 | 81.738 | 79.21 | 7/8 | 100.0 | 90.301 | 79.205 | 71.029 | 0.0 | 76.221 | 82.143 | 0.0 | 89.483 | 88.801 | no |
@@ -288,7 +288,6 @@
 | `mlx_higgs_audio_v3_4b` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.1794 | 1.0785 |  |
 | `mlx_higgs_audio_v3_4b` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 3.4709 | 1.2213 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4739 | 1.0838 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8599 | 1.2768 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.241 | 0.9805 |  |
 | `mlx_omnivoice_8bit_trim60` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5182 | 1.0485 |  |
 | `mlx_omnivoice_8bit_trim60` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0189 | 0.9606 |  |
@@ -582,7 +581,6 @@
 | `mlx_higgs_audio_v3_4b` | ml te reading (ml_te_reading) | success | mlx_whisper | 0.1029 |  | 4.0649 | 0.672 |  |
 | `mlx_higgs_audio_v3_4b` | ml ms reading (ml_ms_reading) | success | qwen3_asr_1_7b_8bit | 0.051 |  | 3.111 | 0.6459 |  |
 | `mlx_higgs_audio_v3_4b` | ml sw reading (ml_sw_reading) | success | mlx_whisper | 0.0652 |  | 3.037 | 0.6474 |  |
-| `mlx_moss_tts_local_transformer_v1_5` | ml th reading (ml_th_reading) | success | qwen3_asr_1_7b_8bit | 1.08 |  | 3.7018 | 1.3249 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | ml fi reading (ml_fi_reading) | success | qwen3_asr_1_7b_8bit | 0.0122 |  | 3.0335 | 1.6213 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | ml el reading (ml_el_reading) | success | qwen3_asr_1_7b_8bit | 0.03 |  | 3.3878 | 1.6081 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | ml he reading (ml_he_reading) | success | mlx_whisper | 0.0 |  | 3.4853 | 1.5864 |  |
@@ -777,6 +775,8 @@
 | `mlx_confucius4_tts_int8` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.1143 | 0.6982 | 2.9522 | 1.0557 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7546 | 3.1881 | 2.3217 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.2 | 0.6746 | 3.6484 | 1.2998 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8599 | 1.4646 |  |
+| `mlx_moss_tts_local_transformer_v1_5` | ml th reading (ml_th_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7488 | 1.4459 |  |
 
 ## 本地 TTS 覆盖状态
 

@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`72`
+- 音频异常样本数：`74`
 - 性能提示样本数：`85`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -20,7 +20,7 @@
 | `mlx_ming3_0_5b_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_ming3_tiny_7_9b_8bit` | 2 | 5 | 2 | 7 | 生成过慢=7；内容严重错误=4；音频过短=2；语速异常=2；大段静音=1 |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 2 | 生成过慢=2 |
-| `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 6 | 0 | 内容错误偏高=3；语速异常=3；内容严重错误=2 |
+| `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 8 | 0 | 内容错误偏高=4；语速异常=4；内容严重错误=2 |
 | `mlx_omnivoice_8bit_trim60` | 1 | 1 | 6 | 1 | 内容错误偏高=4；语速异常=2；音频过短=1；内容严重错误=1；生成过慢=1 |
 | `mlx_pocket_tts_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 3 | 0 | 内容错误偏高=2；语速异常=1 |
@@ -199,9 +199,11 @@
 | medium | 内容错误偏高 | ml fa reading (`ml_fa_reading`) | CER=0.2，WER=0.3684。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | ml fi reading (`ml_fi_reading`) | CER=0.3537，WER=0.5714。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | ml sw reading (`ml_sw_reading`) | CER=0.0761，WER=0.5625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | ml fi reading (`ml_fi_reading`) | 语速偏慢，约 0.8028 token/s，语速分 20.28。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2232 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.1295 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.3378 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 
 ## mlx_omnivoice_8bit_trim60
 
