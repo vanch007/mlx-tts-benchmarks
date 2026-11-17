@@ -20,9 +20,9 @@
 | 8 | `mlx_ming3_0.5b` | 28 | 81.738 | 79.21 | 7/8 | 100.0 | 90.301 | 79.205 | 71.029 | 0.0 | 76.221 | 82.143 | 0.0 | 89.483 | 88.801 | no |
 | 9 | `mlx_zonos2` | 49 | 79.096 | 75.11 | 7/8 | 100.0 | 84.275 | 75.325 | 76.883 | 0.0 | 74.443 | 76.726 | 0.0 | 92.891 | 33.926 | no |
 | 10 | `mlx_dots_tts` | 48 | 78.778 | 76.298 | 7/8 | 100.0 | 87.442 | 66.457 | 85.377 | 0.0 | 72.804 | 84.837 | 0.0 | 90.211 | 63.735 | no |
-| 11 | `mlx_indextts2.5` | 28 | 78.213 | 75.794 | 7/8 | 100.0 | 84.565 | 66.38 | 84.165 | 0.0 | 81.864 | 81.973 | 0.0 | 88.905 | 37.208 | no |
-| 12 | `mlx_cosyvoice3` | 29 | 76.622 | 66.709 | 6/8 | 100.0 | 81.841 | 69.737 | 81.914 | 0.0 | 77.474 | 0.0 | 0.0 | 91.147 | 44.924 | no |
-| 13 | `mlx_confucius4_tts` | 26 | 74.36 | 64.394 | 6/8 | 100.0 | 91.12 | 61.997 | 67.675 | 0.0 | 71.549 | 0.0 | 0.0 | 87.97 | 45.337 | no |
+| 11 | `mlx_cosyvoice3` | 29 | 78.694 | 68.102 | 6/8 | 100.0 | 81.841 | 69.737 | 90.009 | 0.0 | 79.903 | 0.0 | 0.0 | 91.147 | 43.824 | no |
+| 12 | `mlx_indextts2.5` | 28 | 78.213 | 75.794 | 7/8 | 100.0 | 84.565 | 66.38 | 84.165 | 0.0 | 81.864 | 81.973 | 0.0 | 88.905 | 37.208 | no |
+| 13 | `mlx_confucius4_tts` | 26 | 77.588 | 67.19 | 6/8 | 100.0 | 91.12 | 61.997 | 84.013 | 0.0 | 75.833 | 0.0 | 0.0 | 87.97 | 46.096 | no |
 | 14 | `mlx_ming_omni_tts` | 27 | 71.257 | 62.442 | 7/8 | 100.0 | 85.057 | 50.235 | 0.0 | 0.0 | 69.278 | 86.937 | 85.709 | 82.147 | 36.766 | no |
 | 15 | `mlx_ming3_tiny_7.9b` | 28 | 68.68 | 66.555 | 7/8 | 100.0 | 75.239 | 67.802 | 80.398 | 0.0 | 41.185 | 86.83 | 0.0 | 91.659 | 30.582 | no |
 | 16 | `mlx_supertonic` | 37 | 94.388 | 64.851 | 5/8 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 0.0 | 96.348 | 100.0 | no |
@@ -725,7 +725,6 @@
 | `mlx_confucius4_tts_int8` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9577 | 2.4388 | 0.9556 |  |
 | `mlx_confucius4_tts_int8` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 3.0873 | 1.0058 |  |
 | `mlx_confucius4_tts_int8` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9319 | 2.7896 | 0.9692 |  |
-| `mlx_confucius4_tts_int8` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.6562 | 0.9539 | 2.7955 | 1.1175 |  |
 | `mlx_confucius4_tts_int8` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9412 | 2.4313 | 1.2665 |  |
 | `mlx_confucius4_tts_int8` | 越南语无参考文本朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8301 | 2.2451 | 1.0921 |  |
 | `mlx_confucius4_tts_int8` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7948 | 1.9 | 1.0315 |  |
@@ -733,7 +732,6 @@
 | `mlx_confucius4_tts_int8` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8942 | 2.0931 | 1.165 |  |
 | `mlx_confucius4_tts_int8` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7683 | 3.9911 | 1.1622 |  |
 | `mlx_confucius4_tts_int8` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8429 | 2.8647 | 1.4774 |  |
-| `mlx_confucius4_tts_int8` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.7143 | 0.7365 | 3.0149 | 1.5053 |  |
 | `mlx_confucius4_tts_int8` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8954 | 3.7709 | 1.5783 |  |
 | `mlx_confucius4_tts_int8` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9174 | 3.4849 | 2.4902 |  |
 | `mlx_confucius4_tts_int8` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.015 | 0.9462 | 3.1214 | 1.4882 |  |
@@ -751,7 +749,6 @@
 | `mlx_cosyvoice3_0_5b_fp16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0571 | 0.9129 | 2.7533 | 0.8195 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.1132 | 0.9381 | 3.6714 | 1.1182 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.1429 | 0.9157 | 2.9925 | 0.7653 |  |
-| `mlx_cosyvoice3_0_5b_fp16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.4375 | 0.4769 | 3.5655 | 1.3731 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8539 | 2.847 | 1.3091 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8075 | 2.8754 | 1.7665 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7188 | 2.9161 | 1.1433 |  |
@@ -760,7 +757,6 @@
 | `mlx_cosyvoice3_0_5b_fp16` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9142 | 2.8156 | 0.9153 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7674 | 4.476 | 1.3646 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7071 | 3.252 | 2.0399 |  |
-| `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.7714 | 0.6207 | 3.9592 | 1.2029 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8578 | 4.3708 | 1.5524 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.924 | 3.9022 | 1.5744 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.5987 | 3.2776 | 1.9157 |  |
@@ -777,6 +773,10 @@
 | `mlx_cosyvoice3_0_5b_fp16` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9299 | 3.6997 | 1.1211 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9606 | 3.6079 | 1.5088 |  |
 | `mlx_cosyvoice3_0_5b_fp16` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9866 | 3.4658 | 1.0502 |  |
+| `mlx_confucius4_tts_int8` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9486 | 2.8922 | 1.1904 |  |
+| `mlx_confucius4_tts_int8` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.1143 | 0.6982 | 2.9522 | 1.0557 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7546 | 3.1881 | 2.3217 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.2 | 0.6746 | 3.6484 | 1.2998 |  |
 
 ## 本地 TTS 覆盖状态
 
