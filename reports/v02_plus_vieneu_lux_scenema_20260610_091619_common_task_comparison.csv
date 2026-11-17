@@ -80,3 +80,5 @@ mlx_cosyvoice3_0_5b_fp16,mlx_cosyvoice3,core_zh_numbers,0.0571,0.9129,,2.7533,0.
 mlx_cosyvoice3_0_5b_fp16,mlx_cosyvoice3,core_en_numbers,0.1132,0.9381,,3.6714,1.1182,
 mlx_cosyvoice3_0_5b_fp16,mlx_cosyvoice3,clone_en_same,0.0,0.9778,,3.4636,1.551,
 mlx_cosyvoice3_0_5b_fp16,mlx_cosyvoice3,clone_zh_same,0.0,0.9142,,2.8156,0.9153,
+mlx_indextts2_vietnamese_8bit,mlx_indextts2_vietnamese,core_en_numbers,0.2264,0.8935,,3.3467,3.0818,
+mlx_indextts2_vietnamese_8bit,mlx_indextts2_vietnamese,clone_en_same,0.1154,0.8606,,3.4655,3.4297,

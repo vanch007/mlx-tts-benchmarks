@@ -4,33 +4,33 @@
 - 指标 CSV：`/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
-- 已从主评分隐藏 45 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
+- 已从主评分隐藏 47 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
 
 ## 榜单
 
 | 排名 | 项目 | 评分样本数 | 质量分 | 全能分 | 广度 | 能力覆盖率 | 内容准确与可懂度 | 自然度与音频质量 | 多语种能力 | 方言能力 | 音色克隆与鲁棒性 | 情绪、风格与韵律控制 | 复杂文本与副语言能力 | 短段落连续性（分钟级长文待测） | RTF 生成效率 | 可排名 |
 |---:|---|---:|---:|---:|---:|---:|---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---:|---|
-| 1 | `mlx_qwen3_tts` | 34 | 89.096 | 86.607 | 7/8 | 100.0 | 96.754 | 83.778 | 90.31 | 0.0 | 89.319 | 83.954 | 0.0 | 95.392 | 73.413 | no |
-| 2 | `mlx_higgs_audio` | 72 | 86.418 | 85.247 | 8/8 | 100.0 | 93.228 | 80.651 | 84.719 | 0.0 | 79.338 | 86.071 | 89.176 | 93.577 | 67.482 | no |
-| 3 | `mlx_drama3` | 29 | 83.844 | 71.045 | 7/8 | 93.304 | 94.261 | 80.946 | 55.986 | 0.0 | 79.787 | 0.0 | 89.247 | 91.613 | 0.0 | no |
-| 4 | `mlx_voxcpm2` | 61 | 83.664 | 82.93 | 8/8 | 100.0 | 91.097 | 75.004 | 84.421 | 0.0 | 77.306 | 89.247 | 83.237 | 93.869 | 59.299 | no |
-| 5 | `mlx_moss_tts` | 54 | 83.545 | 81.821 | 8/8 | 100.0 | 96.657 | 82.4 | 78.063 | 0.0 | 75.544 | 61.955 | 89.342 | 95.198 | 40.962 | no |
-| 6 | `mlx_omnivoice` | 71 | 82.616 | 80.453 | 8/8 | 100.0 | 94.494 | 68.666 | 75.773 | 0.0 | 71.689 | 86.225 | 91.114 | 87.01 | 77.439 | no |
-| 7 | `mlx_breeze_tts2` | 23 | 82.184 | 72.017 | 7/8 | 100.0 | 92.231 | 73.741 | 0.0 | 0.0 | 85.18 | 72.514 | 92.887 | 92.287 | 48.095 | no |
-| 8 | `mlx_ming3_0.5b` | 28 | 81.738 | 79.21 | 7/8 | 100.0 | 90.301 | 79.205 | 71.029 | 0.0 | 76.221 | 82.143 | 0.0 | 89.483 | 88.801 | no |
-| 9 | `mlx_zonos2` | 49 | 79.096 | 75.11 | 7/8 | 100.0 | 84.275 | 75.325 | 76.883 | 0.0 | 74.443 | 76.726 | 0.0 | 92.891 | 33.926 | no |
-| 10 | `mlx_dots_tts` | 48 | 78.778 | 76.298 | 7/8 | 100.0 | 87.442 | 66.457 | 85.377 | 0.0 | 72.804 | 84.837 | 0.0 | 90.211 | 63.735 | no |
-| 11 | `mlx_cosyvoice3` | 29 | 78.694 | 68.102 | 6/8 | 100.0 | 81.841 | 69.737 | 90.009 | 0.0 | 79.903 | 0.0 | 0.0 | 91.147 | 43.824 | no |
-| 12 | `mlx_indextts2.5` | 28 | 78.213 | 75.794 | 7/8 | 100.0 | 84.565 | 66.38 | 84.165 | 0.0 | 81.864 | 81.973 | 0.0 | 88.905 | 37.208 | no |
-| 13 | `mlx_confucius4_tts` | 26 | 77.588 | 67.19 | 6/8 | 100.0 | 91.12 | 61.997 | 84.013 | 0.0 | 75.833 | 0.0 | 0.0 | 87.97 | 46.096 | no |
-| 14 | `mlx_ming_omni_tts` | 27 | 71.257 | 62.442 | 7/8 | 100.0 | 85.057 | 50.235 | 0.0 | 0.0 | 69.278 | 86.937 | 85.709 | 82.147 | 36.766 | no |
-| 15 | `mlx_ming3_tiny_7.9b` | 28 | 68.68 | 66.555 | 7/8 | 100.0 | 75.239 | 67.802 | 80.398 | 0.0 | 41.185 | 86.83 | 0.0 | 91.659 | 30.582 | no |
-| 16 | `mlx_supertonic` | 37 | 94.388 | 64.851 | 5/8 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 0.0 | 96.348 | 100.0 | no |
-| 17 | `mlx_pocket_tts` | 18 | 90.173 | 76.63 | 6/8 | 100.0 | 97.925 | 86.022 | 77.628 | 0.0 | 81.3 | 0.0 | 0.0 | 97.188 | 97.633 | no |
-| 18 | `mlx_audio8_tts` | 31 | 87.868 | 75.841 | 6/8 | 100.0 | 95.576 | 83.131 | 92.02 | 0.0 | 83.742 | 0.0 | 0.0 | 94.426 | 46.119 | no |
-| 19 | `mlx_fireredaudio` | 22 | 80.126 | 67.735 | 6/8 | 100.0 | 90.32 | 69.007 | 0.0 | 0.0 | 84.153 | 82.111 | 0.0 | 90.213 | 30.455 | no |
-| 20 | `mlx_voxmel` | 20 | 66.414 | 49.297 | 5/8 | 100.0 | 74.689 | 57.982 | 0.0 | 0.0 | 62.167 | 0.0 | 0.0 | 88.674 | 46.259 | no |
-| 21 | `mlx_indextts2` | 1 | 53.354 | 11.001 | 2/8 | 100.0 | 0.0 | 0.0 | 0.0 | 0.0 | 60.041 | 0.0 | 0.0 | 0.0 | 15.457 | no |
+| 1 | `mlx_qwen3_tts` | 34 | 89.947 | 87.431 | 7/8 | 100.0 | 96.754 | 83.778 | 90.31 | 0.0 | 89.319 | 91.954 | 0.0 | 95.392 | 73.413 | no |
+| 2 | `mlx_higgs_audio` | 75 | 86.897 | 85.726 | 8/8 | 100.0 | 93.228 | 80.651 | 84.719 | 0.0 | 79.338 | 90.252 | 90.342 | 93.577 | 67.861 | no |
+| 3 | `mlx_drama3` | 32 | 84.702 | 80.547 | 8/8 | 94.241 | 94.261 | 80.946 | 55.986 | 0.0 | 79.787 | 91.38 | 91.872 | 91.613 | 0.0 | no |
+| 4 | `mlx_breeze_tts2` | 23 | 84.42 | 73.976 | 7/8 | 100.0 | 92.231 | 73.741 | 0.0 | 0.0 | 85.18 | 91.514 | 92.887 | 92.287 | 48.095 | no |
+| 5 | `mlx_voxcpm2` | 64 | 84.097 | 83.363 | 8/8 | 100.0 | 91.097 | 75.004 | 84.421 | 0.0 | 77.306 | 92.811 | 84.549 | 93.869 | 60.115 | no |
+| 6 | `mlx_moss_tts` | 54 | 83.762 | 82.038 | 8/8 | 100.0 | 96.657 | 82.4 | 78.063 | 0.0 | 75.544 | 61.955 | 96.342 | 95.198 | 40.962 | no |
+| 7 | `mlx_ming3_0.5b` | 32 | 83.005 | 83.005 | 8/8 | 100.0 | 90.301 | 79.205 | 71.029 | 0.0 | 76.221 | 92.339 | 88.694 | 89.483 | 88.824 | no |
+| 8 | `mlx_omnivoice` | 71 | 82.746 | 80.583 | 8/8 | 100.0 | 94.494 | 68.666 | 75.773 | 0.0 | 71.689 | 86.7 | 93.739 | 87.01 | 77.439 | no |
+| 9 | `mlx_zonos2` | 52 | 80.713 | 76.677 | 7/8 | 100.0 | 84.275 | 75.325 | 76.883 | 0.0 | 74.443 | 91.626 | 0.0 | 92.891 | 34.937 | no |
+| 10 | `mlx_cosyvoice3` | 35 | 80.067 | 77.545 | 7/8 | 100.0 | 81.841 | 69.737 | 90.009 | 0.0 | 79.903 | 93.044 | 0.0 | 91.147 | 39.011 | no |
+| 11 | `mlx_dots_tts` | 48 | 79.463 | 76.962 | 7/8 | 100.0 | 87.442 | 66.457 | 85.377 | 0.0 | 72.804 | 91.275 | 0.0 | 90.211 | 63.735 | no |
+| 12 | `mlx_confucius4_tts` | 29 | 78.498 | 76.07 | 7/8 | 100.0 | 91.12 | 61.997 | 84.013 | 0.0 | 75.833 | 86.705 | 0.0 | 87.97 | 44.223 | no |
+| 13 | `mlx_indextts2.5` | 31 | 78.448 | 76.022 | 7/8 | 100.0 | 84.565 | 66.38 | 84.165 | 0.0 | 81.864 | 84.262 | 0.0 | 88.905 | 36.934 | no |
+| 14 | `mlx_ming_omni_tts` | 30 | 72.031 | 63.12 | 7/8 | 100.0 | 85.057 | 50.235 | 0.0 | 0.0 | 69.278 | 92.649 | 87.896 | 82.147 | 37.471 | no |
+| 15 | `mlx_ming3_tiny_7.9b` | 32 | 70.09 | 70.089 | 8/8 | 100.0 | 75.239 | 67.802 | 80.398 | 0.0 | 41.185 | 94.66 | 88.986 | 91.659 | 29.761 | no |
+| 16 | `mlx_indextts2_vietnamese` | 16 | 55.626 | 53.905 | 7/8 | 100.0 | 27.924 | 69.086 | 86.175 | 0.0 | 54.981 | 65.839 | 0.0 | 67.802 | 14.877 | no |
+| 17 | `mlx_supertonic` | 38 | 94.387 | 67.769 | 6/8 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 94.353 | 96.348 | 100.0 | no |
+| 18 | `mlx_pocket_tts` | 18 | 90.173 | 76.63 | 6/8 | 100.0 | 97.925 | 86.022 | 77.628 | 0.0 | 81.3 | 0.0 | 0.0 | 97.188 | 97.633 | no |
+| 19 | `mlx_audio8_tts` | 31 | 87.868 | 75.841 | 6/8 | 100.0 | 95.576 | 83.131 | 92.02 | 0.0 | 83.742 | 0.0 | 0.0 | 94.426 | 46.119 | no |
+| 20 | `mlx_fireredaudio` | 22 | 81.406 | 68.817 | 6/8 | 100.0 | 90.32 | 69.007 | 0.0 | 0.0 | 84.153 | 92.611 | 0.0 | 90.213 | 30.455 | no |
+| 21 | `mlx_voxmel` | 20 | 66.414 | 49.297 | 5/8 | 100.0 | 74.689 | 57.982 | 0.0 | 0.0 | 62.167 | 0.0 | 0.0 | 88.674 | 46.259 | no |
 
 ## 样本摘要
 
@@ -195,7 +195,6 @@
 | `mlx_higgs_audio_v3_4b` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.552 | 0.9758 |  |
 | `mlx_omnivoice_8bit_trim60` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6802 | 1.5373 | 0.3234 |  |
 | `mlx_higgs_audio_v3_4b` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7449 | 3.5143 | 1.6756 |  |
-| `mlx_indextts2_vietnamese_8bit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6697 | 2.0898 | 1.7416 |  |
 | `mlx_qwen3_tts_voice_design_official_int8` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4058 | 0.5211 |  |
 | `mlx_qwen3_tts_voice_design_official_int8` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.737 | 0.467 |  |
 | `mlx_qwen3_tts_voice_design_official_int8` | 西语体育解说角色音色设计 (control_voice_design_sports) | success | qwen3_asr_1_7b_8bit | 0.0556 |  | 4.305 | 0.5437 |  |
@@ -777,6 +776,58 @@
 | `mlx_cosyvoice3_0_5b_fp16` | 英文参考音色说日语克隆 (xling_en_to_ja) | success | qwen3_asr_1_7b_8bit | 0.2 | 0.6746 | 3.6484 | 1.2998 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8599 | 1.4646 |  |
 | `mlx_moss_tts_local_transformer_v1_5` | ml th reading (ml_th_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7488 | 1.4459 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.2264 | 0.8935 | 3.3467 | 3.0818 |  |
+| `mlx_indextts2_vietnamese_8bit` | 越南语无参考文本朗读 (core_vi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6984 | 2.2351 | 2.9619 |  |
+| `mlx_indextts2_vietnamese_8bit` | 越南语参考音色克隆 (clone_vi_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6697 | 2.0898 | 2.9096 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.1154 | 0.8606 | 3.4655 | 3.4297 |  |
+| `mlx_indextts2_vietnamese_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.2593 | 0.8036 | 4.0023 | 3.235 |  |
+| `mlx_indextts2_vietnamese_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.2083 | 0.8113 | 3.3167 | 3.6636 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.1169 | 0.57 | 3.6336 | 4.8125 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.055 | 0.8824 | 3.2278 | 2.0694 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.1321 | 0.8312 | 3.3228 | 2.0014 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.25 | 0.8175 | 3.3632 | 1.9638 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.2667 | 0.8912 | 3.4499 | 2.0061 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0462 | 0.875 | 3.2985 | 1.8394 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.1616 | 0.8512 | 3.4844 | 1.5435 |  |
+| `mlx_confucius4_tts_int8` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.914 | 4.0219 | 1.6493 |  |
+| `mlx_confucius4_tts_int8` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6976 | 1.4431 | 1.7031 |  |
+| `mlx_confucius4_tts_int8` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9727 | 2.5323 | 1.1784 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9397 | 3.2493 | 3.8512 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8863 | 3.6517 | 1.2821 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8194 | 3.8718 | 1.7294 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8096 | 4.1964 | 1.7913 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8924 | 3.7742 | 1.6049 |  |
+| `mlx_cosyvoice3_0_5b_fp16` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7569 | 3.877 | 1.939 |  |
+| `mlx_drama3_4bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7789 | 3.7629 | 4.921 |  |
+| `mlx_drama3_4bit` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6619 | 1.3626 | 5.4065 |  |
+| `mlx_drama3_4bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.4524 | 4.3285 | 4.2092 |  |
+| `mlx_higgs_audio_v3_4b` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.2387 | 0.6605 |  |
+| `mlx_higgs_audio_v3_4b` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0785 | 0.6672 |  |
+| `mlx_higgs_audio_v3_4b` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.1248 | 0.6318 |  |
+| `mlx_indextts2_v25_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7949 | 2.9208 | 1.4211 |  |
+| `mlx_indextts2_v25_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.791 | 3.0268 | 1.2961 |  |
+| `mlx_indextts2_v25_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8014 | 3.2432 | 1.4776 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5178 | 1.5838 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.539 | 1.515 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4772 | 1.5836 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4843 | 1.6365 |  |
+| `mlx_ming3_0_5b_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.471 | 0.4158 |  |
+| `mlx_ming3_0_5b_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8882 | 0.3985 |  |
+| `mlx_ming3_0_5b_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5533 | 0.4182 |  |
+| `mlx_ming3_0_5b_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9074 | 0.5387 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2676 | 1.6797 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.287 | 0.983 |  |
+| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3485 | 1.0373 |  |
+| `mlx_supertonic3_mlx` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3765 | 0.1183 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.1042 | 0.7942 | 3.2591 | 1.8308 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.15 | 0.8325 | 3.5293 | 1.6656 |  |
+| `mlx_indextts2_vietnamese_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8324 | 3.4612 | 1.653 |  |
+| `mlx_voxcpm2_bf16_dit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.833 | 0.7225 |  |
+| `mlx_voxcpm2_bf16_dit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.166 | 0.6202 |  |
+| `mlx_voxcpm2_bf16_dit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5539 | 0.6306 |  |
+| `mlx_zonos2_bf16` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5728 | 1.521 |  |
+| `mlx_zonos2_bf16` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6002 | 0.8901 |  |
+| `mlx_zonos2_bf16` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7176 | 0.8875 |  |
 
 ## 本地 TTS 覆盖状态
 
