@@ -130,7 +130,7 @@ a { color:var(--accent); }
 <tbody><tr><td><b>内容准确</b></td><td class="num">25%</td><td>Qwen3-ASR 1.7B 转写后算错误率：中日韩泰等按字（CER），其他语言按词（WER）。</td></tr>
 <tr><td><b>自然音质</b></td><td class="num">22%</td><td>UTMOS 自然度预测，加上爆音、噪声底、静音、语速等波形检查。所有模型只在同一批中英核心题（朗读、长文、同语种克隆）上比较。</td></tr>
 <tr><td><b>多语种</b></td><td class="num">12%</td><td>40 种非中英语言朗读（原 8 种 + 32 种扩充）；每个模型只测它声明支持的语言，分数是这些语言的平均质量；会多少种语言单独列在“语种”一栏。高棉、老挝、缅甸语因 ASR 无法识别暂不计分。</td></tr>
-<tr><td><b>方言</b></td><td class="num">3%</td><td>粤语、四川话等方言朗读，用两个声学模型自动核验说的是不是目标方言：Qwen3-ASR 语种识别和 Voxlect 方言分区分类器（粤语需两者一致）。上线前用 24 条普通话朗读方言文本做对照，Voxlect 只误判 2 条，真人和官方方言样本全部判对。判成普通话的记 0 分，判不准的不计分。东北话、北京话、天津话、上海话、闽南语暂无可靠自动手段，不入分。</td></tr>
+<tr><td><b>方言</b></td><td class="num">3%</td><td>粤语、四川话、上海话等方言朗读，用声学模型自动核验说的是不是目标方言：Qwen3-ASR 语种识别、Voxlect 方言分区分类器（川/豫/陕/鲁）、MMS-LID 语种识别（吴语、闽南语），粤语需前两者一致。上线前用 24 条普通话朗读方言文本做对照，三个模型误判均不超过 2 条，已知方言样本全部判对。判成普通话的记 0 分，判不准的不计分。东北话由人工盲听判定（含普通话对照）；北京话、天津话暂无可靠手段，不入分。</td></tr>
 <tr><td><b>音色克隆</b></td><td class="num">17%</td><td>ECAPA 与 CAM++ 两个声纹模型的相似度平均，再结合可懂度与自然度；任一模型判“不可用”即封顶。</td></tr>
 <tr><td><b>表达控制</b></td><td class="num">10%</td><td>声音设计、情绪、风格迁移、时长控制是否真的生效，需要任务内的直接证据。</td></tr>
 <tr><td><b>复杂副语</b></td><td class="num">3%</td><td>唱歌、笑声、叹气、呼吸等非朗读能力，同样需要直接证据。</td></tr>
@@ -152,7 +152,7 @@ a { color:var(--accent); }
 <li>表达控制和副语言两个轴由 Gemini（gemini-3-flash-preview）判定情绪、笑声等是否出现。它能分清“有情绪”和“没情绪”（抽检 10/10 对 3/10），但分不出高低：有情绪的样本几乎都拿满分，所以这两个轴的分数差距很小，只能参考。原评委 gemini-2.5-flash 已对新 API key 关闭，所有控制样本都已改用这个模型重评。</li>
 <li>历史 RTF 的计时范围不完全一致，速度对比只能看量级。</li></ul>
 
-<footer>数据：<a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619.leaderboard.csv">榜单 CSV</a> · <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619.scored.csv">逐条评分 CSV</a> · <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon_axes.csv">能力长表 CSV</a> · 页面生成于 2026-11-17</footer>
+<footer>数据：<a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619.leaderboard.csv">榜单 CSV</a> · <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619.scored.csv">逐条评分 CSV</a> · <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_capability_hexagon_axes.csv">能力长表 CSV</a> · 页面生成于 2026-11-18</footer>
 </main>
 </body>
 </html>
