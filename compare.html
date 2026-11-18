@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="多维对比 · MLX TTS 本地横评" data-en="Compare · MLX TTS Local Benchmark">Compare · MLX TTS Local Benchmark</title>
+<link rel="stylesheet" href="site.css">
+<script src="i18n.js"></script>
+<style>
+.cmp-top { display:grid; grid-template-columns:minmax(300px,420px) 1fr; gap:16px; align-items:start; }
+td.best { background:var(--soft); font-weight:700; }
+td.cell small { display:block; color:var(--muted); font-weight:400; font-size:11px; }
+td.na { color:var(--na); font-size:12px; }
+.profile h3 { margin:0 0 2px; }
+.lane { display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); }
+@media (max-width:860px) { .cmp-top { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+<nav class="top"><b>MLX TTS Local Benchmark</b>
+  <a href="index.html"><span class="zh">总览与选型</span><span class="en">Overview &amp; picks</span></a>
+  <a class="on" href="compare.html"><span class="zh">多维对比</span><span class="en">Compare</span></a>
+  <a href="listen.html"><span class="zh">试听</span><span class="en">Listen</span></a></nav>
+<h1><span class="zh">多维对比</span><span class="en">Compare models</span></h1>
+<p class="lead"><span class="zh">选 2–4 个模型，看它们在 9 个能力上谁强谁弱、差多少，再听同一道题的音频。分数是 0–100 的自动指标，同组内质量分差 1.8 分以内基本分不出高下。</span><span class="en">Pick 2–4 models to see who is stronger on each of the 9 abilities and by how much, then listen to the same test item. Scores are automatic 0–100 metrics; within a group, quality scores within 1.8 points are effectively tied.</span></p>
+
+<div class="panel">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center">
+    <b id="pick-title"></b>
+    <span class="chips" id="presets"></span>
+  </div>
+  <h3 style="margin:10px 0 4px;font-size:13px" class="muted" id="g-full"></h3><div class="chips" id="chips-full"></div>
+  <h3 style="margin:10px 0 4px;font-size:13px" class="muted" id="g-focused"></h3><div class="chips" id="chips-focused"></div>
+</div>
+
+<div id="empty" class="hint" style="margin-top:16px"></div>
+<div id="body">
+  <h2><span class="zh">能力轮廓</span><span class="en">Ability profile</span></h2>
+  <div class="cmp-top">
+    <div class="panel"><div id="radar"></div><div class="hint" id="legend"></div><div class="hint" id="radar-note"></div></div>
+    <div id="summary"></div>
+  </div>
+
+  <h2><span class="zh">逐项对比</span><span class="en">Ability by ability</span></h2>
+  <p class="hint"><span class="zh">每格是能力分，下面是它在所有可比模型里的名次；底色标出本组最高。“差距”是本组最高与最低之差，越大越说明选谁有区别。</span><span class="en">Each cell is the ability score with its rank among all comparable models; the shaded cell is the best in your selection. “Gap” is highest minus lowest: the larger it is, the more the choice matters.</span></p>
+  <div class="scroll"><table id="axis-table"></table></div>
+
+  <h2><span class="zh">各自的优缺点</span><span class="en">Strengths and weaknesses</span></h2>
+  <p class="hint"><span class="zh">强项 = 该能力排进前 3，或进入前 25% 且 ≥80 分；短板 = 低于 60 分，或落在后 25% 且比前 25% 低 8 分以上。情绪、副语言、方言证据较弱，只认极端值。只看实测过的能力。</span><span class="en">Strength = top 3 on an ability, or top 25% and ≥80. Weakness = below 60, or bottom 25% and 8+ points under the top quarter. Expressive, paralinguistic and dialect evidence is weaker, so only extreme values count. Only measured abilities are considered.</span></p>
+  <div class="lane" id="profiles"></div>
+
+  <h2><span class="zh">同题试听</span><span class="en">Listen to the same item</span></h2>
+  <p class="hint"><span class="zh">只列出所选模型都有音频的题（至少两个）。分数是这一条音频本身的得分。</span><span class="en">Only items where at least two of the selected models have audio. The score is for that single clip.</span></p>
+  <div class="controls"><select id="case-axis"></select><select id="case-pick" style="min-width:260px"></select><a class="btn" id="open-listen" href="listen.html"></a></div>
+  <div id="case-info" class="panel" style="margin-bottom:10px"></div>
+  <div class="grid" id="case-samples"></div>
+</div>
+<footer><span class="zh">数据与首页同源（<a href="index.html">总览</a>）· 自动指标为探索性代理，不是正式排名。</span><span class="en">Same data as the <a href="index.html">overview</a>. Automatic metrics are exploratory proxies, not an official ranking.</span></footer>
+</main>
+<script src="site_data.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  const {S, L, t, byModel, esc, fmt, params, setParams, color, radar, legend, sampleCard,
+    axisShort, caseName, groupName, stateText, rankText, tagTitle, headline} = window.SiteKit;
+  const MAX = 4;
+  let selected = (params().get("m") || "").split(",").filter(id => byModel[id]).slice(0, MAX);
+  if (!selected.length) selected = S.models.filter(m => m.group === "full").slice(0, 3).map(m => m.id);
+
+  const presets = {
+    full: () => S.models.filter(m => m.group === "full").slice(0, 3).map(m => m.id),
+    focused: () => S.models.filter(m => m.group === "focused").slice(0, 3).map(m => m.id),
+    clone: () => (S.scenarios.find(s => s.id === "clone") || {picks: []}).picks.slice(0, 3).map(p => p.m),
+    clear: () => [],
+  };
+  const presetLabel = {full: t("全功能前 3", "Top 3 full-featured"), focused: t("轻量前 3", "Top 3 lightweight"), clone: t("克隆前 3", "Top 3 cloning"), clear: t("清空", "Clear")};
+
+  function chips() {
+    document.getElementById("pick-title").innerHTML = `${t("选择模型", "Choose models")} <span class="muted">${t(`（已选 ${selected.length}/${MAX}）`, `(${selected.length}/${MAX} selected)`)}</span>`;
+    document.getElementById("g-full").textContent = t("全功能组（支持克隆、能力 ≥7 项）", "Full-featured (cloning and ≥7 abilities)");
+    document.getElementById("g-focused").textContent = t("专用与轻量组", "Focused & lightweight");
+    document.getElementById("presets").innerHTML = Object.keys(presets).map(k => `<button class="btn" data-preset="${k}">${presetLabel[k]}</button>`).join("");
+    document.querySelectorAll("[data-preset]").forEach(b => b.onclick = () => { selected = presets[b.dataset.preset](); render(); });
+    ["full", "focused"].forEach(group => {
+      document.getElementById("chips-" + group).innerHTML = S.models.filter(m => m.group === group).map(m => {
+        const k = selected.indexOf(m.id), on = k >= 0;
+        return `<button class="chip" aria-pressed="${on}" data-id="${m.id}" ${!on && selected.length >= MAX ? "disabled" : ""} style="${on ? `background:${color(k)}` : ""}" title="${t("质量分", "Quality")} ${fmt(m.quality, 1)}">${esc(m.label)}</button>`;
+      }).join("");
+    });
+    document.querySelectorAll(".chip[data-id]").forEach(b => b.onclick = () => {
+      const id = b.dataset.id;
+      selected = selected.includes(id) ? selected.filter(x => x !== id) : [...selected, id].slice(0, MAX);
+      render();
+    });
+  }
+
+  function summary(ms) {
+    const best = {};
+    S.axes.forEach(a => {
+      const ok = ms.filter(m => m.cells[a.id].st === "ok");
+      if (ok.length < 2) return;
+      const top = ok.reduce((x, y) => y.cells[a.id].v > x.cells[a.id].v ? y : x);
+      const low = ok.reduce((x, y) => y.cells[a.id].v < x.cells[a.id].v ? y : x);
+      const gap = top.cells[a.id].v - low.cells[a.id].v;
+      if (gap >= 3) (best[top.id] = best[top.id] || []).push({a, gap});
+    });
+    const lines = ms.map((m, k) => {
+      const wins = (best[m.id] || []).sort((x, y) => y.gap - x.gap);
+      const only = S.axes.filter(a => m.cells[a.id].st === "ok" && ms.length > 1 && ms.every(o => o === m || o.cells[a.id].st !== "ok"));
+      let line = `<b style="color:${color(k)}">●</b> <b>${esc(m.label)}</b>${t("：", ": ")}`;
+      line += wins.length ? `${t("领先在 ", "ahead on ")}${wins.map(w => `${esc(axisShort(w.a))} (+${fmt(w.gap)})`).join(t("、", ", "))}` : t("没有明显领先的能力", "no clear lead on any ability");
+      if (only.length) line += `${t("；独有能力：", "; only one with: ")}${only.map(a => esc(axisShort(a))).join(t("、", ", "))}`;
+      return `<li>${line}</li>`;
+    }).join("");
+    const q = ms.map(m => `${esc(m.label)} ${fmt(m.quality, 1)}`).join(" / ");
+    const f = ms.map(m => `${esc(m.label)} ${fmt(m.full, 1)}`).join(" / ");
+    return `<div class="panel"><b>${t("一句话结论", "In one line each")}</b><ul class="plain">${lines}</ul>
+      <div class="hint" style="margin-top:10px">${t("质量分（会的做得多好）", "Quality (how well it does what it can)")}: ${q}<br>${t("全能分（能覆盖多少场景）", "All-round (how many scenarios it covers)")}: ${f}<br>${t("领先只算差距 ≥3 分的能力；同组质量分差 1.8 以内视为同档。", "A lead counts only when the gap is ≥3 points; quality scores within 1.8 in the same group are one tier.")}</div></div>`;
+  }
+
+  function table(ms) {
+    let h = `<thead><tr><th>${t("能力（权重）", "Ability (weight)")}</th>${ms.map((m, k) => `<th><span class="dot" style="background:${color(k)}"></span>${esc(m.label)}</th>`).join("")}<th>${t("差距", "Gap")}</th></tr></thead><tbody>`;
+    const rows = [
+      {t: t("质量分", "Quality score"), v: m => m.quality, d: 1}, {t: t("全能分", "All-round score"), v: m => m.full, d: 1},
+      {t: t("外语数", "Languages"), v: m => m.langs, d: 0}, {t: t("RTF 中位数（越小越快）", "Median RTF (lower is faster)"), v: m => m.rtf, d: 2, low: true},
+    ];
+    rows.forEach(r => {
+      const vals = ms.map(r.v).filter(v => v !== null);
+      const top = r.low ? Math.min(...vals) : Math.max(...vals);
+      h += `<tr><td><b>${r.t}</b></td>${ms.map(m => `<td class="cell num ${vals.length > 1 && r.v(m) === top ? "best" : ""}">${fmt(r.v(m), r.d)}</td>`).join("")}<td class="num muted">${vals.length > 1 ? fmt(Math.abs(Math.max(...vals) - Math.min(...vals)), r.d) : "–"}</td></tr>`;
+    });
+    S.axes.forEach(a => {
+      const ok = ms.filter(m => m.cells[a.id].st === "ok").map(m => m.cells[a.id].v);
+      const top = Math.max(...ok);
+      h += `<tr><td>${esc(axisShort(a))}<span class="muted"> (${a.weight}%)</span>${a.caveat ? ` <span title="${esc(L.pick(a, "caveat"))}" class="muted">*</span>` : ""}</td>`;
+      h += ms.map(m => {
+        const c = m.cells[a.id];
+        if (c.st !== "ok") return `<td class="na">${stateText(c.st)}</td>`;
+        return `<td class="cell num ${ok.length > 1 && c.v === top ? "best" : ""}">${fmt(c.v)}<small>${rankText(c.rank, c.n)}</small><div class="meter"><i style="width:${c.v}%"></i></div></td>`;
+      }).join("");
+      h += `<td class="num muted">${ok.length > 1 ? fmt(Math.max(...ok) - Math.min(...ok)) : "–"}</td></tr>`;
+    });
+    return h + "</tbody>";
+  }
+
+  function profile(m, k) {
+    const li = (arr, cls) => arr.map(s => `<li class="${cls}">${cls === "pos" ? "＋" : "－"} ${esc(tagTitle(s))} ${s.v}<span class="muted"> (${rankText(s.rank, s.n)})</span></li>`).join("");
+    const unsup = L.zh ? m.unsupported : m.unsupported_en, pend = L.zh ? m.pending : m.pending_en;
+    return `<div class="panel profile" style="border-top:3px solid ${color(k)}">
+      <h3>${esc(m.label)}</h3><div class="hint" style="margin:0">${esc(headline(m))} · ${t(`${m.tier} 档`, `tier ${m.tier}`)}</div>
+      <ul class="plain">${li(m.strengths, "pos") || `<li class="muted">${t("没有排进前列的能力", "No ability ranks near the top")}</li>`}${li(m.weaknesses, "neg")}</ul>
+      ${unsup.length ? `<div class="hint">${t("不支持：", "Unsupported: ")}${unsup.map(esc).join(t("、", ", "))}</div>` : ""}
+      ${pend.length ? `<div class="hint">${t("未计分：", "Unscored: ")}${pend.map(esc).join(t("、", ", "))}</div>` : ""}
+      <div class="hint">${t(`RTF 中位数 ${fmt(m.rtf, 2)}（生成 1 秒音频约需 ${fmt(m.rtf, 2)} 秒）`, `Median RTF ${fmt(m.rtf, 2)} (about ${fmt(m.rtf, 2)} s to generate 1 s of audio)`)} · <a href="listen.html?model=${encodeURIComponent(m.id)}">${t("听它的全部样本", "Listen to all its samples")}</a></div>
+    </div>`;
+  }
+
+  let caseList = [];
+  function cases(ms) {
+    const ids = new Set(ms.map(m => m.id)), have = {};
+    S.samples.forEach(s => { if (ids.has(s.m) && s.a) (have[s.c] = have[s.c] || []).push(s); });
+    caseList = Object.entries(have).filter(([, arr]) => arr.length >= Math.min(2, ms.length)).map(([c, arr]) => ({c, n: arr.length}));
+    const axSel = document.getElementById("case-axis"), prevAx = axSel.value;
+    const axes = S.axes.filter(a => caseList.some(x => S.cases[x.c].axis === a.id));
+    axSel.innerHTML = axes.map(a => `<option value="${a.id}">${esc(axisShort(a))} ${t(`（${caseList.filter(x => S.cases[x.c].axis === a.id).length} 题）`, `(${caseList.filter(x => S.cases[x.c].axis === a.id).length} items)`)}</option>`).join("");
+    if (axes.some(a => a.id === prevAx)) axSel.value = prevAx;
+    axSel.onchange = () => fillCases();
+    fillCases();
+  }
+  function fillCases() {
+    const ax = document.getElementById("case-axis").value, sel = document.getElementById("case-pick"), prev = sel.value;
+    const list = caseList.filter(x => S.cases[x.c].axis === ax).sort((a, b) => b.n - a.n);
+    sel.innerHTML = list.map(x => `<option value="${x.c}">${esc(caseName(S.cases[x.c]))} ${t(`（${x.n} 个模型）`, `(${x.n} models)`)}</option>`).join("");
+    if (list.some(x => x.c === prev)) sel.value = prev;
+    sel.onchange = showCase;
+    showCase();
+  }
+  function showCase() {
+    const cid = document.getElementById("case-pick").value;
+    const box = document.getElementById("case-samples"), info = document.getElementById("case-info");
+    document.getElementById("open-listen").textContent = t("在试听页打开 →", "Open on the Listen page →");
+    if (!cid) { box.innerHTML = ""; info.innerHTML = `<span class="hint">${t("这几个模型没有共同的题。", "These models share no test item.")}</span>`; return; }
+    const c = S.cases[cid];
+    info.innerHTML = `<b>${esc(caseName(c))}</b> <span class="tag">${esc(window.SiteKit.langName(c.lang))}</span><div class="hint">${esc(c.text)}</div>${c.instr ? `<div class="hint">${t("指令：", "Instruction: ")}${esc(c.instr)}</div>` : ""}${c.ref ? `<div class="hint">${t("参考音频（被克隆的声音）：", "Reference audio (the voice being cloned):")}</div><audio controls preload="none" src="${esc(c.ref)}"></audio>` : ""}`;
+    const ss = selected.map((id, k) => ({s: S.samples.find(s => s.m === id && s.c === cid), k})).filter(x => x.s);
+    const top = Math.max(...ss.map(x => x.s.s ?? -1));
+    box.innerHTML = ss.map(x => sampleCard(x.s, {color: color(x.k), extra: x.s.s === top && ss.length > 1 ? `<span class="tag full">${t("本题最高", "Best here")}</span>` : ""})).join("");
+    document.getElementById("open-listen").href = `listen.html?case=${encodeURIComponent(cid)}&models=${selected.join(",")}`;
+  }
+
+  function render() {
+    setParams({m: selected});
+    chips();
+    const ms = selected.map(id => byModel[id]);
+    document.getElementById("body").style.display = ms.length ? "" : "none";
+    document.getElementById("empty").textContent = ms.length ? "" : t("请至少选一个模型。", "Pick at least one model.");
+    if (!ms.length) return;
+    document.getElementById("radar").innerHTML = radar(ms, S.axes);
+    document.getElementById("legend").innerHTML = legend(ms);
+    document.getElementById("radar-note").textContent = t("* 该能力的评分证据较弱，分差只能参考。不支持的能力画在圆心。", "* Weaker evidence for this ability; gaps are indicative only. Unsupported abilities are drawn at the centre.");
+    document.getElementById("summary").innerHTML = summary(ms);
+    document.getElementById("axis-table").innerHTML = table(ms);
+    document.getElementById("profiles").innerHTML = ms.map(profile).join("");
+    cases(ms);
+  }
+  document.addEventListener("langchange", () => { Object.assign(presetLabel, {full: t("全功能前 3", "Top 3 full-featured"), focused: t("轻量前 3", "Top 3 lightweight"), clone: t("克隆前 3", "Top 3 cloning"), clear: t("清空", "Clear")}); render(); });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="试听 · MLX TTS 本地横评" data-en="Listen · MLX TTS Local Benchmark">Listen · MLX TTS Local Benchmark</title>
+<link rel="stylesheet" href="site.css">
+<script src="i18n.js"></script>
+<style>
+.tabs { display:flex; gap:6px; margin:6px 0 4px; }
+.tabs button { font:inherit; font-size:14px; border:1px solid var(--line); background:var(--panel); color:var(--ink); padding:6px 14px; border-radius:8px; cursor:pointer; }
+.tabs button[aria-selected="true"] { background:var(--accent); color:var(--panel); border-color:var(--accent); font-weight:600; }
+.case-head { display:grid; grid-template-columns:1fr minmax(240px,320px); gap:14px; }
+.rank { color:var(--muted); font-size:12px; margin-right:6px; font-variant-numeric:tabular-nums; }
+.axis-block h3 { display:flex; justify-content:space-between; align-items:baseline; }
+@media (max-width:760px) { .case-head { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+<nav class="top"><b>MLX TTS Local Benchmark</b>
+  <a href="index.html"><span class="zh">总览与选型</span><span class="en">Overview &amp; picks</span></a>
+  <a href="compare.html"><span class="zh">多维对比</span><span class="en">Compare</span></a>
+  <a class="on" href="listen.html"><span class="zh">试听</span><span class="en">Listen</span></a></nav>
+<h1><span class="zh">试听</span><span class="en">Listen</span></h1>
+<p class="lead"><span class="zh">两种听法：<b>按题目</b>——同一句话，所有模型从高分到低分排开，最适合横向比；<b>按模型</b>——一个模型的全部样本，按能力分组，可以从最差的听起找短板。</span><span class="en">Two ways to listen: <b>By item</b> — the same sentence from every model, highest score first, best for side-by-side comparison; <b>By model</b> — all samples of one model grouped by ability, starting from the worst to find weak spots.</span></p>
+<div class="tabs" role="tablist"><button role="tab" data-mode="case" id="tab-case"></button><button role="tab" data-mode="model" id="tab-model"></button></div>
+
+<section id="mode-case">
+  <div class="controls">
+    <select id="axis"></select>
+    <select id="lang"></select>
+    <select id="case" style="min-width:280px"></select>
+    <select id="group"></select>
+    <span class="hint" id="picked-note"></span>
+  </div>
+  <div class="case-head">
+    <div class="panel" id="case-info"></div>
+    <div class="panel" id="case-ref"></div>
+  </div>
+  <p class="hint" id="case-stat"></p>
+  <div class="grid" id="case-grid"></div>
+</section>
+
+<section id="mode-model" hidden>
+  <div class="controls">
+    <select id="model"></select>
+    <select id="sort"></select>
+    <a class="btn" id="to-compare" href="compare.html"></a>
+  </div>
+  <div class="panel" id="model-info"></div>
+  <div id="model-blocks"></div>
+</section>
+<footer><span class="zh">分数为该条音频在其所属能力上的自动评分（0–100）。CER/WER 为 ASR 听写错误率，UTMOS 为自然度预测（1–5），声纹为与参考音频的余弦相似度，RTF 为生成耗时 ÷ 音频时长。旧版完整审核页见 <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html">试听审核报告</a>。</span><span class="en">Scores are the automatic rating (0–100) of that clip on its ability. CER/WER is the ASR transcription error rate, UTMOS predicts naturalness (1–5), speaker similarity is the cosine to the reference audio, and RTF is generation time ÷ audio duration. The full legacy review page is the <a href="reports/v02_plus_vieneu_lux_scenema_20260610_091619_audio_review.html">audio review report</a>.</span></footer>
+</main>
+<script src="site_data.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  const {S, L, t, byModel, esc, fmt, params, setParams, sampleCard, axisShort, axisName, caseName, langName,
+    groupName, groupTag, rankText, tagTitle, headline} = window.SiteKit;
+  const p = params();
+  let mode = p.get("model") ? "model" : "case";
+  const picked = (p.get("models") || "").split(",").filter(id => byModel[id]);
+  const caseIds = Object.keys(S.cases).filter(c => S.samples.some(s => s.c === c && s.a));
+  const el = id => document.getElementById(id);
+  const axisSel = el("axis"), langSel = el("lang"), caseSel = el("case"), groupSel = el("group"), modelSel = el("model"), sortSel = el("sort");
+  const startCase = S.cases[p.get("case")] ? p.get("case") : null;
+  if (startCase) axisSel.dataset.want = S.cases[startCase].axis;
+  let wantCase = startCase;
+
+  // ---- static labels and selects (rebuilt on language change, selection preserved)
+  function labels() {
+    el("tab-case").textContent = t("按题目听", "By item");
+    el("tab-model").textContent = t("按模型听", "By model");
+    const gv = groupSel.value || (picked.length ? "picked" : "all");
+    groupSel.innerHTML = [["all", t("全部模型", "All models")], ["full", t("只看全功能组", "Full-featured only")], ["focused", t("只看专用与轻量组", "Focused & lightweight only")], ["picked", t("只看指定模型", "Selected models only")]]
+      .map(([v, l]) => `<option value="${v}" ${v === "picked" && !picked.length ? "disabled" : ""}>${l}</option>`).join("");
+    groupSel.value = gv;
+    el("picked-note").textContent = picked.length ? t("指定：", "Selected: ") + picked.map(id => byModel[id].label).join(t("、", ", ")) : "";
+    const sv = sortSel.value || "low";
+    sortSel.innerHTML = [["low", t("从低分听起（找短板）", "Lowest score first (find weak spots)")], ["high", t("从高分听起", "Highest score first")], ["case", t("按题目顺序", "By item order")]].map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+    sortSel.value = sv;
+    el("to-compare").textContent = t("去对比 →", "Compare →");
+    const mv = modelSel.value;
+    modelSel.innerHTML = ["full", "focused"].map(g => `<optgroup label="${groupName(g)}">` + S.models.filter(m => m.group === g).map(m => `<option value="${m.id}">${esc(m.label)} (${fmt(m.quality, 1)})</option>`).join("") + "</optgroup>").join("");
+    modelSel.value = byModel[mv] ? mv : (byModel[p.get("model")] ? p.get("model") : S.models[0].id);
+    const av = axisSel.value || axisSel.dataset.want;
+    axisSel.innerHTML = S.axes.filter(a => caseIds.some(c => S.cases[c].axis === a.id))
+      .map(a => `<option value="${a.id}">${esc(axisShort(a))} ${t(`（${caseIds.filter(c => S.cases[c].axis === a.id).length} 题）`, `(${caseIds.filter(c => S.cases[c].axis === a.id).length} items)`)}</option>`).join("");
+    if (av && [...axisSel.options].some(o => o.value === av)) axisSel.value = av;
+    fillLang(); fillCase(wantCase || caseSel.value);
+  }
+  function fillLang() {
+    const prev = langSel.value;
+    const langs = [...new Set(caseIds.filter(c => S.cases[c].axis === axisSel.value).map(c => S.cases[c].lang))];
+    langSel.innerHTML = `<option value="">${t("全部语言", "All languages")}</option>` + langs.map(l => `<option value="${l}">${esc(langName(l))}</option>`).join("");
+    if (langs.includes(prev)) langSel.value = prev;
+    langSel.style.display = langs.length > 1 ? "" : "none";
+  }
+  function fillCase(keep) {
+    const list = caseIds.filter(c => S.cases[c].axis === axisSel.value && (!langSel.value || S.cases[c].lang === langSel.value));
+    caseSel.innerHTML = list.map(c => `<option value="${c}">${esc(caseName(S.cases[c]))} · ${esc(langName(S.cases[c].lang))}</option>`).join("");
+    if (keep && list.includes(keep)) caseSel.value = keep;
+    wantCase = null;
+  }
+  axisSel.onchange = () => { fillLang(); fillCase(); renderCase(); };
+  langSel.onchange = () => { fillCase(); renderCase(); };
+  caseSel.onchange = renderCase; groupSel.onchange = renderCase;
+  modelSel.onchange = renderModel; sortSel.onchange = renderModel;
+  document.querySelectorAll("[data-mode]").forEach(b => b.onclick = () => { mode = b.dataset.mode; show(); });
+  document.addEventListener("langchange", () => { labels(); show(); });
+
+  function show() {
+    document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-selected", b.dataset.mode === mode));
+    el("mode-case").hidden = mode !== "case";
+    el("mode-model").hidden = mode !== "model";
+    if (mode === "case") renderCase(); else renderModel();
+  }
+
+  // ---- by item
+  function renderCase() {
+    const cid = caseSel.value;
+    if (!cid) return;
+    setParams({case: cid, model: null, models: groupSel.value === "picked" ? picked : null});
+    const c = S.cases[cid];
+    el("case-info").innerHTML = `<b>${esc(caseName(c))}</b> <span class="tag">${esc(langName(c.lang))}</span> <span class="tag">${esc(axisName(c.axis))}</span>
+      <div style="margin-top:6px">${esc(c.text)}</div>${c.instr ? `<div class="hint">${t("控制要求：", "Control requirement: ")}${esc(c.instr)}</div>` : ""}`;
+    el("case-ref").innerHTML = c.ref ? `<b>${t("参考音频", "Reference audio")}</b><div class="hint" style="margin:0">${t("克隆题要模仿的声音，先听它再听下面", "The voice to clone: listen to it first, then the clips below")}</div><audio controls preload="none" src="${esc(c.ref)}"></audio>`
+      : `<b>${t("没有参考音频", "No reference audio")}</b><div class="hint">${t("这道题用模型自带或按指令设计的声音。", "This item uses the model's own voice or one designed from the instruction.")}</div>`;
+    let ss = S.samples.filter(s => s.c === cid && s.a);
+    if (groupSel.value === "full" || groupSel.value === "focused") ss = ss.filter(s => byModel[s.m] && byModel[s.m].group === groupSel.value);
+    if (groupSel.value === "picked") ss = ss.filter(s => picked.includes(s.m));
+    ss.sort((a, b) => (b.s ?? -1) - (a.s ?? -1));
+    const scored = ss.filter(s => s.s !== null).map(s => s.s).sort((a, b) => a - b);
+    el("case-stat").textContent = scored.length
+      ? t(`${ss.length} 个模型 · 最高 ${fmt(scored[scored.length - 1])} · 中位 ${fmt(scored[Math.floor(scored.length / 2)])} · 最低 ${fmt(scored[0])}。按本条得分从高到低排列。`,
+          `${ss.length} models · best ${fmt(scored[scored.length - 1])} · median ${fmt(scored[Math.floor(scored.length / 2)])} · worst ${fmt(scored[0])}. Sorted by this clip's score, highest first.`)
+      : t(`${ss.length} 个模型。`, `${ss.length} models.`);
+    el("case-grid").innerHTML = ss.map((s, i) => sampleCard(s, {extra: `<span class="rank">#${i + 1}</span>`})).join("") || `<p class="hint">${t("没有符合条件的音频。", "No clips match.")}</p>`;
+  }
+
+  // ---- by model
+  function renderModel() {
+    const m = byModel[modelSel.value];
+    setParams({model: m.id, case: null, models: null});
+    el("to-compare").href = `compare.html?m=${encodeURIComponent(m.id)}`;
+    const join = arr => arr.map(s => `${esc(tagTitle(s))} ${s.v}`).join(t("、", ", ")) || t("无", "none");
+    const unsup = L.zh ? m.unsupported : m.unsupported_en;
+    el("model-info").innerHTML = `<b>${esc(m.label)}</b> <span class="tag ${m.group === "full" ? "full" : ""}">${groupTag(m.group)}</span> <span class="muted">${esc(headline(m))} · ${t("质量分", "quality")} ${fmt(m.quality, 1)} · ${t(`${m.tier} 档`, `tier ${m.tier}`)}</span>
+      <div class="hint">${t("强项：", "Strengths: ")}${join(m.strengths)}${t("；短板：", "; weaknesses: ")}${join(m.weaknesses)}${unsup.length ? `${t("；不支持：", "; unsupported: ")}${unsup.map(esc).join(t("、", ", "))}` : ""}</div>`;
+    const ss = S.samples.filter(s => s.m === m.id && s.a);
+    const order = {low: (a, b) => (a.s ?? 999) - (b.s ?? 999), high: (a, b) => (b.s ?? -1) - (a.s ?? -1), case: (a, b) => a.c.localeCompare(b.c)}[sortSel.value];
+    el("model-blocks").innerHTML = S.axes.map(a => {
+      const list = ss.filter(s => S.cases[s.c] && S.cases[s.c].axis === a.id).sort(order);
+      if (!list.length) return "";
+      const cell = m.cells[a.id];
+      return `<div class="axis-block"><h3>${esc(axisShort(a))} <span class="hint">${t("能力分 ", "ability score ")}${cell.st === "ok" ? `${fmt(cell.v)} (${rankText(cell.rank, cell.n)})` : t("未计分", "unscored")} · ${t(`${list.length} 条`, `${list.length} clips`)}</span></h3>
+        <div class="grid">${list.map(s => sampleCard(s, {caseTitle: `${caseName(S.cases[s.c])} · ${langName(S.cases[s.c].lang)}`,
+          note: S.cases[s.c].text.slice(0, 120),
+          extra: `<a class="hint" href="listen.html?case=${encodeURIComponent(s.c)}">${t("同题对比", "Compare item")}</a>`})).join("")}</div></div>`;
+    }).join("");
+  }
+
+  labels();
+  show();
+})();
+</script>
+</body>
+</html>

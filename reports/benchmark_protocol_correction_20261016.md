@@ -1,5 +1,7 @@
 # Benchmark 评估修正 — 2026-10-16
 
+[English version / 英文版](benchmark_protocol_correction_20261016.en.md)
+
 本报告是开发集的工程验证与试听比较，当前不构成经独立测试及盲听验证的正式模型排名。
 
 ## 已修正

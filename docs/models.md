@@ -1,4 +1,4 @@
-# 参评模型能力说明（摘自各上游 README）
+# Models covered: capability notes from each upstream README · 参评模型能力说明（摘自各上游 README）
 
 The capability notes below are summarized from each model's upstream GitHub
 README, not from the benchmark score CSVs. The listening reports above show how
