@@ -1,6 +1,7 @@
 checkpoint_model_id,project_id,sample_count,median_rtf,mean_rtf,min_rtf,efficiency_tier
 mlx_supertonic3_mlx,mlx_supertonic,38,0.056,0.059,0.037,fast (<0.2)
 mlx_pocket_tts_8bit,mlx_pocket_tts,18,0.095,0.166,0.061,fast (<0.2)
+mlx_zonos3_mini_ptq,mlx_zonos3,76,0.118,0.137,0.096,fast (<0.2)
 mlx_ming3_0_5b_8bit,mlx_ming3_0.5b,32,0.455,0.497,0.367,realtime (<1.0)
 mlx_qwen3_tts_voice_design_official_int8,mlx_qwen3_tts,6,0.545,0.635,0.467,realtime (<1.0)
 mlx_qwen3_tts_official_int8,mlx_qwen3_tts,33,0.619,0.759,0.311,realtime (<1.0)
