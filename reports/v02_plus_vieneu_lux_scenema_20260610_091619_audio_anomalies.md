@@ -1,14 +1,15 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`90`
-- 性能提示样本数：`100`
+- 音频异常样本数：`98`
+- 性能提示样本数：`101`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
 
 | 模型 | 严重 | 高 | 中 | 低 | 分类计数 |
 |---|---:|---:|---:|---:|---|
+| `mlx_audio8_realistic_air_bf16` | 0 | 0 | 4 | 1 | 内容错误偏高=3；语速异常=1；生成过慢=1 |
 | `mlx_audio8_tts_8bit` | 0 | 0 | 0 | 7 | 生成过慢=7 |
 | `mlx_confucius4_tts_int8` | 0 | 0 | 4 | 6 | 生成过慢=6；内容错误偏高=3；语速异常=1 |
 | `mlx_cosyvoice3_0_5b_fp16` | 0 | 1 | 1 | 3 | 生成过慢=3；内容严重错误=1；内容错误偏高=1 |
@@ -24,10 +25,21 @@
 | `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 8 | 0 | 内容错误偏高=4；语速异常=4；内容严重错误=2 |
 | `mlx_omnivoice_8bit_trim60` | 1 | 1 | 6 | 1 | 内容错误偏高=4；语速异常=2；音频过短=1；内容严重错误=1；生成过慢=1 |
 | `mlx_pocket_tts_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
+| `mlx_pocket_tts_v4` | 0 | 1 | 3 | 0 | 内容严重错误=1；内容错误偏高=1；语速异常=1；疑似底噪/杂音=1 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 3 | 0 | 内容错误偏高=2；语速异常=1 |
 | `mlx_voxmel_0_6b_8bit` | 0 | 2 | 3 | 0 | 内容严重错误=2；内容错误偏高=2；语速异常=1 |
 | `mlx_zonos2_bf16` | 0 | 0 | 5 | 18 | 生成过慢=18；内容错误偏高=3；语速异常=2 |
 | `mlx_zonos3_mini_ptq` | 0 | 4 | 5 | 0 | 内容严重错误=3；语速异常=3；内容错误偏高=2；大段静音=1 |
+
+## mlx_audio8_realistic_air_bf16
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| medium | 内容错误偏高 | 越南语参考音色克隆 (`clone_vi_same`) | CER=0.3438，WER=0.4211。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 越南语无参考文本朗读 (`core_vi_reading`) | CER=0.28，WER=0.4667。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2675 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| low | 生成过慢 | 真实分钟级英文科技博客(连续长文本) (`real_longform_tech_en`) | RTF=3.0103，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_audio8_tts_8bit
 
@@ -253,6 +265,15 @@
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
 | medium | 内容错误偏高 | ml cs reading (`ml_cs_reading`) | CER=0.2394，WER=0.5882。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+
+## mlx_pocket_tts_v4
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| high | 内容严重错误 | ml nl reading (`ml_nl_reading`) | CER=0.9565，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
+| medium | 内容错误偏高 | 法语长句呼吸与音色稳定 (`core_fr_long_sentence`) | CER=0.3889，WER=0.5625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | ml nl reading (`ml_nl_reading`) | 语速偏慢，约 0.9615 token/s，语速分 36.15。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| medium | 疑似底噪/杂音 | ml nl reading (`ml_nl_reading`) | 噪声底约 -21.885 dBFS，语音/底噪差约 4.296 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
 
 ## mlx_voxcpm2_bf16_dit
 
