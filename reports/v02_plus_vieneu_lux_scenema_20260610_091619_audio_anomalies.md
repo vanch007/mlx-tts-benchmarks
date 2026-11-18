@@ -1,7 +1,7 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`110`
+- 音频异常样本数：`114`
 - 性能提示样本数：`102`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
@@ -28,6 +28,7 @@
 | `mlx_pocket_tts_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_pocket_tts_v4` | 0 | 1 | 3 | 0 | 内容严重错误=1；内容错误偏高=1；语速异常=1；疑似底噪/杂音=1 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 3 | 0 | 内容错误偏高=2；语速异常=1 |
+| `mlx_voxmel_0_3b_8bit` | 0 | 2 | 2 | 0 | 内容严重错误=2；内容错误偏高=1；语速异常=1 |
 | `mlx_voxmel_0_6b_8bit` | 0 | 2 | 3 | 0 | 内容严重错误=2；内容错误偏高=2；语速异常=1 |
 | `mlx_zonos2_bf16` | 0 | 0 | 5 | 18 | 生成过慢=18；内容错误偏高=3；语速异常=2 |
 | `mlx_zonos3_mini_ptq` | 0 | 4 | 5 | 0 | 内容严重错误=3；语速异常=3；内容错误偏高=2；大段静音=1 |
@@ -301,6 +302,15 @@
 | medium | 内容错误偏高 | ml el reading (`ml_el_reading`) | CER=0.15，WER=0.3636。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2907 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+
+## mlx_voxmel_0_3b_8bit
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| high | 内容严重错误 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | CER=0.974，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
+| high | 内容严重错误 | 英文参考音色说中文克隆 (`xling_en_to_zh`) | CER=1.0，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
+| medium | 内容错误偏高 | 中文日期、时间与单位朗读 (`core_zh_date_units`) | CER=0.3243，WER=0.3243。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | 英文参考音色说中文克隆 (`xling_en_to_zh`) | 语速偏慢，约 0.6665 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 
 ## mlx_voxmel_0_6b_8bit
 

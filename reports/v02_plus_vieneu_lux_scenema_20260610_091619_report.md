@@ -4,7 +4,7 @@
 - 指标 CSV：`/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
-- 已从主评分隐藏 64 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
+- 已从主评分隐藏 69 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
 
 ## 榜单
 
@@ -31,10 +31,14 @@
 | 19 | `mlx_fireredtts3` | 46 | 68.681 | 63.05 | 7/9 | 100.0 | 92.363 | 64.832 | 63.19 | 38.028 | 63.74 | 0.0 | 0.0 | 89.348 | 55.658 | no |
 | 20 | `mlx_indextts2_vietnamese` | 16 | 55.626 | 52.288 | 7/9 | 100.0 | 27.924 | 69.086 | 86.175 | 0.0 | 54.981 | 65.839 | 0.0 | 67.802 | 14.877 | no |
 | 21 | `mlx_supertonic` | 38 | 94.387 | 65.736 | 6/9 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 94.353 | 96.348 | 100.0 | no |
-| 22 | `mlx_pocket_tts` | 18 | 90.173 | 74.331 | 6/9 | 100.0 | 97.925 | 86.022 | 77.628 | 0.0 | 81.3 | 0.0 | 0.0 | 97.188 | 97.633 | no |
-| 23 | `mlx_pocket_tts_v4` | 18 | 87.863 | 73.695 | 6/9 | 100.0 | 95.323 | 83.734 | 90.293 | 0.0 | 75.217 | 0.0 | 0.0 | 96.405 | 100.0 | no |
-| 24 | `mlx_fireredaudio` | 22 | 81.406 | 66.753 | 6/9 | 100.0 | 90.32 | 69.007 | 0.0 | 0.0 | 84.153 | 92.611 | 0.0 | 90.213 | 30.455 | no |
-| 25 | `mlx_voxmel` | 20 | 66.414 | 47.818 | 5/9 | 100.0 | 74.689 | 57.982 | 0.0 | 0.0 | 62.167 | 0.0 | 0.0 | 88.674 | 46.259 | no |
+| 22 | `mlx_kitten_tts2_mini` | 22 | 94.123 | 62.105 | 5/9 | 100.0 | 98.06 | 89.754 | 86.075 | 0.0 | 0.0 | 0.0 | 0.0 | 97.167 | 88.557 | no |
+| 23 | `mlx_kitten_tts2_nano` | 14 | 93.44 | 62.279 | 5/9 | 100.0 | 97.78 | 89.466 | 89.629 | 0.0 | 0.0 | 0.0 | 0.0 | 97.183 | 84.561 | no |
+| 24 | `mlx_kitten_tts2_pico` | 14 | 90.411 | 59.912 | 5/9 | 100.0 | 96.345 | 83.894 | 84.607 | 0.0 | 0.0 | 0.0 | 0.0 | 95.871 | 80.763 | no |
+| 25 | `mlx_pocket_tts` | 18 | 90.173 | 74.331 | 6/9 | 100.0 | 97.925 | 86.022 | 77.628 | 0.0 | 81.3 | 0.0 | 0.0 | 97.188 | 97.633 | no |
+| 26 | `mlx_pocket_tts_v4` | 18 | 87.863 | 73.695 | 6/9 | 100.0 | 95.323 | 83.734 | 90.293 | 0.0 | 75.217 | 0.0 | 0.0 | 96.405 | 100.0 | no |
+| 27 | `mlx_fireredaudio` | 22 | 81.406 | 66.753 | 6/9 | 100.0 | 90.32 | 69.007 | 0.0 | 0.0 | 84.153 | 92.611 | 0.0 | 90.213 | 30.455 | no |
+| 28 | `mlx_voxmel` | 20 | 66.414 | 47.818 | 5/9 | 100.0 | 74.689 | 57.982 | 0.0 | 0.0 | 62.167 | 0.0 | 0.0 | 88.674 | 46.259 | no |
+| 29 | `mlx_voxmel_03b` | 20 | 61.18 | 44.05 | 5/9 | 100.0 | 68.035 | 56.903 | 0.0 | 0.0 | 53.841 | 0.0 | 0.0 | 85.997 | 35.653 | no |
 
 ## 样本摘要
 
@@ -961,6 +965,76 @@
 | `mlx_fireredtts3_base_bf16` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9926 | 3.6352 | 0.973 |  |
 | `mlx_fireredtts3_base_bf16` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 3.5744 | 0.996 |  |
 | `mlx_fireredtts3_base_bf16` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 3.4164 | 1.043 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.2424 | 0.9261 | 2.5879 | 1.2906 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9937 | 3.1246 | 1.208 |  |
+| `mlx_voxmel_0_3b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.2286 | 0.8917 | 2.8147 | 1.1677 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 3.3102 | 1.3576 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9198 | 2.2135 | 1.076 |  |
+| `mlx_voxmel_0_3b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7014 | 3.8857 | 1.4044 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文参考音色说中文克隆 (xling_en_to_zh) | success | qwen3_asr_1_7b_8bit | 1.0 | 0.0 | 1.3552 | 0.7916 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7927 | 2.7591 | 1.4548 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.974 | 0.0 | 1.2739 | 1.4263 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9789 | 3.2398 | 0.9234 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0238 | 0.926 | 1.7896 | 0.8572 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9857 | 2.9665 | 1.016 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文日期、时间与单位朗读 (core_zh_date_units) | success | qwen3_asr_1_7b_8bit | 0.3243 | 0.9286 | 2.2933 | 1.1294 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文多音字朗读 (core_zh_polyphone) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9396 | 1.9314 | 1.1931 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文地址与人名朗读 (core_zh_address) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9354 | 2.2014 | 1.0806 |  |
+| `mlx_voxmel_0_3b_8bit` | 中文普通长句朗读 (core_zh_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9222 | 2.1198 | 1.0615 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0952 | 0.9994 | 3.086 | 1.2285 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9928 | 3.2025 | 1.3443 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 3.0839 | 1.3782 |  |
+| `mlx_voxmel_0_3b_8bit` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 | 1.0 | 2.9561 | 1.299 |  |
+| `mlx_kitten_tts2_mini` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4952 | 1.034 |  |
+| `mlx_kitten_tts2_mini` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8025 | 0.544 |  |
+| `mlx_kitten_tts2_mini` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0364 | 0.109 |  |
+| `mlx_kitten_tts2_mini` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1488 | 0.202 |  |
+| `mlx_kitten_tts2_mini` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0319 | 0.089 |  |
+| `mlx_kitten_tts2_mini` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0224 | 0.132 |  |
+| `mlx_kitten_tts2_mini` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0417 |  | 3.5056 | 0.186 |  |
+| `mlx_kitten_tts2_mini` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4477 | 0.465 |  |
+| `mlx_kitten_tts2_mini` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4223 | 0.567 |  |
+| `mlx_kitten_tts2_mini` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.3016 | 0.133 |  |
+| `mlx_kitten_tts2_mini` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0111 |  | 3.5824 | 0.121 |  |
+| `mlx_kitten_tts2_mini` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4175 | 0.153 |  |
+| `mlx_kitten_tts2_mini` | ml tr reading (ml_tr_reading) | success | qwen3_asr_1_7b_8bit | 0.023 |  | 3.7859 | 0.193 |  |
+| `mlx_kitten_tts2_mini` | ml nl reading (ml_nl_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9117 | 0.085 |  |
+| `mlx_kitten_tts2_mini` | ml sv reading (ml_sv_reading) | success | qwen3_asr_1_7b_8bit | 0.025 |  | 4.0973 | 0.206 |  |
+| `mlx_kitten_tts2_mini` | ml da reading (ml_da_reading) | success | qwen3_asr_1_7b_8bit | 0.0533 |  | 3.7148 | 0.177 |  |
+| `mlx_kitten_tts2_mini` | ml fi reading (ml_fi_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1027 | 0.147 |  |
+| `mlx_kitten_tts2_mini` | ml sw reading (ml_sw_reading) | success | mlx_whisper | 0.0326 |  | 3.7505 | 0.07 |  |
+| `mlx_kitten_tts2_mini` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4986 | 0.738 |  |
+| `mlx_kitten_tts2_mini` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4716 | 0.977 |  |
+| `mlx_kitten_tts2_mini` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4769 | 1.213 |  |
+| `mlx_kitten_tts2_mini` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4735 | 0.887 |  |
+| `mlx_kitten_tts2_nano` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4415 | 0.902 |  |
+| `mlx_kitten_tts2_nano` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.668 | 0.177 |  |
+| `mlx_kitten_tts2_nano` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7903 | 0.087 |  |
+| `mlx_kitten_tts2_nano` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9483 | 0.138 |  |
+| `mlx_kitten_tts2_nano` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0417 |  | 3.0306 | 0.102 |  |
+| `mlx_kitten_tts2_nano` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4447 | 0.448 |  |
+| `mlx_kitten_tts2_nano` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4299 | 0.555 |  |
+| `mlx_kitten_tts2_nano` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1514 | 0.124 |  |
+| `mlx_kitten_tts2_nano` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.01 | 0.046 |  |
+| `mlx_kitten_tts2_nano` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.528 | 0.096 |  |
+| `mlx_kitten_tts2_nano` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4572 | 0.761 |  |
+| `mlx_kitten_tts2_nano` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3416 | 0.948 |  |
+| `mlx_kitten_tts2_nano` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3601 | 1.076 |  |
+| `mlx_kitten_tts2_nano` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4427 | 0.802 |  |
+| `mlx_kitten_tts2_pico` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0666 | 1.079 |  |
+| `mlx_kitten_tts2_pico` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.4059 | 0.079 |  |
+| `mlx_kitten_tts2_pico` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2278 | 0.052 |  |
+| `mlx_kitten_tts2_pico` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4462 | 0.077 |  |
+| `mlx_kitten_tts2_pico` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.125 |  | 2.8137 | 0.063 |  |
+| `mlx_kitten_tts2_pico` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2082 | 0.476 |  |
+| `mlx_kitten_tts2_pico` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1596 | 0.582 |  |
+| `mlx_kitten_tts2_pico` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8771 | 0.089 |  |
+| `mlx_kitten_tts2_pico` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1411 | 0.057 |  |
+| `mlx_kitten_tts2_pico` | ml ru reading (ml_ru_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6004 | 0.046 |  |
+| `mlx_kitten_tts2_pico` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8396 | 0.835 |  |
+| `mlx_kitten_tts2_pico` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1674 | 1.059 |  |
+| `mlx_kitten_tts2_pico` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9052 | 1.376 |  |
+| `mlx_kitten_tts2_pico` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0749 | 0.914 |  |
 | `mlx_confucius4_tts_int8` | 英文疑惑情绪参考迁移 (control_emotion_prompt_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.914 | 4.0219 | 1.6493 |  |
 | `mlx_confucius4_tts_int8` | 中文耳语参考风格迁移 (control_whisper_style) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6976 | 1.4431 | 1.7031 |  |
 | `mlx_confucius4_tts_int8` | 中文播客节奏参考迁移 (control_style_transfer) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.9727 | 2.5323 | 1.1784 |  |
@@ -1018,6 +1092,9 @@
 | `mlx_higgs_audio_v3_4b` | scored | `/Users/vanch/mlx-higgs-audio` |
 | `mlx_scenema_audio_int8_mlx_mps_service` | missing_checkpoint_or_project | `/Users/vanch/mlx-scenema-audio` |
 | `mlx_supertonic3_mlx` | scored | `/Users/vanch/mlx-supertonic` |
+| `mlx_kitten_tts2_mini` | scored | `/Users/vanch/mlx-kitten-tts2` |
+| `mlx_kitten_tts2_nano` | scored | `/Users/vanch/mlx-kitten-tts2` |
+| `mlx_kitten_tts2_pico` | scored | `/Users/vanch/mlx-kitten-tts2` |
 | `mlx_ming_omni_tts_16_8b_a3b_bf16` | scored | `/Users/vanch/mlx-Ming-omni-tts` |
 | `mlx_ming3_tiny_7_9b_8bit` | scored | `/Users/vanch/mlx-Ming-3.0-tts` |
 | `mlx_ming3_0_5b_8bit` | scored | `/Users/vanch/mlx-Ming-3.0-tts` |
@@ -1034,6 +1111,7 @@
 | `mlx_audio8_realistic_air_bf16` | scored | `/Users/vanch/mlx-audio8-tts` |
 | `mlx_fireredtts3_base_bf16` | scored | `/Users/vanch/mlx-FireRedTTS3` |
 | `mlx_drama3_4bit` | scored | `/Users/vanch/drama-3-mlx` |
+| `mlx_voxmel_0_3b_8bit` | scored | `/Users/vanch/mlx-voxmel` |
 | `mlx_voxmel_0_6b_8bit` | scored | `/Users/vanch/mlx-voxmel` |
 | `mlx_audio_multi_model` | toolkit_not_single_model | `/Users/vanch/mlx-audio` |
 | `cloudflare_edge_tts` | excluded_not_open_source_model | `/Users/vanch/cloudflare-edge-tts` |
