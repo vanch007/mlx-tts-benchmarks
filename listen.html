@@ -38,6 +38,7 @@
     <div class="panel" id="case-info"></div>
     <div class="panel" id="case-ref"></div>
   </div>
+  <div class="panel" id="case-strip-box" style="margin-top:12px"><b><span class="zh">每个模型这条音频的得分</span><span class="en">Where each model's clip scored</span> <span class="hint">· <span class="zh">悬停看是谁，蓝点＝全功能、橙点＝专用</span><span class="en">hover for the model; blue = full-featured, orange = focused</span></span></b><div id="case-strip"></div></div>
   <p class="hint" id="case-stat"></p>
   <div class="grid" id="case-grid"></div>
 </section>
@@ -55,6 +56,7 @@
 </main>
 <script src="site_data.js"></script>
 <script src="common.js"></script>
+<script src="charts.js"></script>
 <script>
 (function () {
   const {S, L, t, byModel, esc, fmt, params, setParams, sampleCard, axisShort, axisName, caseName, langName,
@@ -137,6 +139,7 @@
       ? t(`${ss.length} 个模型 · 最高 ${fmt(scored[scored.length - 1])} · 中位 ${fmt(scored[Math.floor(scored.length / 2)])} · 最低 ${fmt(scored[0])}。按本条得分从高到低排列。`,
           `${ss.length} models · best ${fmt(scored[scored.length - 1])} · median ${fmt(scored[Math.floor(scored.length / 2)])} · worst ${fmt(scored[0])}. Sorted by this clip's score, highest first.`)
       : t(`${ss.length} 个模型。`, `${ss.length} models.`);
+    if (window.Charts) window.Charts.strip(el("case-strip"), ss, null);
     el("case-grid").innerHTML = ss.map((s, i) => sampleCard(s, {extra: `<span class="rank">#${i + 1}</span>`})).join("") || `<p class="hint">${t("没有符合条件的音频。", "No clips match.")}</p>`;
   }
 
