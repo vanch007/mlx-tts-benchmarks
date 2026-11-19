@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="公开口径评测 · MLX TTS 本地横评" data-en="Public-metric benchmarks · MLX TTS Local Benchmark">Public-metric benchmarks · MLX TTS Local Benchmark</title>
+<link rel="stylesheet" href="site.css">
+<script src="i18n.js"></script>
+<style>
+.bsec { margin-top:34px; }
+.two { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
+.two .panel { overflow-x:auto; }
+@media (max-width:860px) { .two { grid-template-columns:minmax(0,1fr); } }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+th.sortable { cursor:pointer; user-select:none; }
+th.sortable.on { color:var(--accent); }
+.bar { display:inline-block; height:6px; border-radius:3px; background:var(--bar); vertical-align:middle; margin-left:6px; }
+.eh { display:grid; grid-template-columns:150px repeat(7, minmax(54px,1fr)); gap:3px; min-width:620px; margin-bottom:3px; align-items:stretch; }
+.eh .h { font-size:12px; font-weight:600; color:var(--muted); text-align:center; align-self:end; padding-bottom:3px; }
+.eh .nm { font-size:13px; align-self:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.eh .c { border-radius:6px; text-align:center; padding:7px 2px; font-size:12.5px; font-variant-numeric:tabular-nums; border:1px solid var(--line); }
+.callout { border-left:3px solid var(--accent); padding:8px 14px; background:var(--soft); border-radius:0 10px 10px 0; margin:12px 0; }
+svg text { font-family:inherit; }
+</style>
+</head>
+<body>
+<main>
+<nav class="top"><b>MLX TTS Local Benchmark</b>
+  <a href="index.html"><span class="zh">总览与选型</span><span class="en">Overview &amp; picks</span></a>
+  <a href="compare.html"><span class="zh">多维对比</span><span class="en">Compare</span></a>
+  <a href="listen.html"><span class="zh">试听</span><span class="en">Listen</span></a>
+  <a class="on" href="benchmarks.html"><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></a></nav>
+
+<h1><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></h1>
+<p class="lead"><span class="zh">总榜用的是我们自建的 84 道题。这里补两套和公开论文、Hugging Face Open TTS Leaderboard 同口径的评测：Seed-TTS-Eval 的官方提示音频抽样，以及仿照 IndexTTS2 论文的情感克隆测试。</span><span class="en">The main leaderboard uses our own 84 items. These two add evaluations on the same footing as public papers and the Hugging Face Open TTS Leaderboard: a sample of the official Seed-TTS-Eval prompts, and an emotion-cloning test modelled on the IndexTTS2 paper.</span></p>
+<p class="hint"><a href="#seedtts"><span class="zh">① Seed-TTS-Eval 抽样</span><span class="en">① Seed-TTS-Eval sample</span></a> · <a href="#emotion"><span class="zh">② 情感克隆集</span><span class="en">② Emotion-cloning set</span></a></p>
+
+<section class="bsec" id="seedtts">
+<h2><span class="zh">① Seed-TTS-Eval 抽样（英文 / 中文）</span><span class="en">① Seed-TTS-Eval sample (English / Chinese)</span></h2>
+<p class="lead"><span class="zh">用官方提示音频克隆官方目标文本。指标与 HF 榜单一致：英文 WER、中文 CER（Qwen3-ASR 1.7B），SIM 是 Seed-TTS-Eval 官方 WavLM-Large + ECAPA-TDNN 的余弦相似度，UTMOS 只报英文（UTMOS22 只在英文上训练）。</span><span class="en">Clone the official prompt clip and say the official target text. Same metrics as the HF leaderboard: WER (English) / CER (Chinese) from Qwen3-ASR 1.7B, SIM = cosine of the official Seed-TTS-Eval WavLM-Large + ECAPA-TDNN embeddings, UTMOS for English only (UTMOS22 is English-trained).</span></p>
+<div class="callout"><span class="zh"><b>抽样很小：</b>全集英文 1000 条、中文 2000 条，本地模型跑不动，每语言固定种子随机抽 30 条（Pocket 与 IndexTTS2 越南语版只有英文）。名次相近的模型差距不显著，只能看量级，和论文数值对照时要带上这个前提。</span><span class="en"><b>Small sample:</b> the full sets have 1000 (English) and 2000 (Chinese) lines, too many for local models, so each language is a fixed-seed random sample of 30 (Pocket and IndexTTS2-Vietnamese are English only). Models close in rank are not significantly different; read orders of magnitude, and keep this in mind when comparing with paper numbers.</span></div>
+<div class="two" id="seed-plots"></div>
+<div class="hint" id="seed-legend"></div>
+<div class="scroll" style="margin-top:12px"><table id="seed-table"></table></div>
+<p class="hint"><span class="zh">表头可点击排序；🥇🥈🥉 是该列前三名。数据：</span><span class="en">Click a header to sort; 🥇🥈🥉 mark the top three in a column. Data: </span><a href="reports/seedtts_sample_20261119.csv">CSV</a> · <a href="reports/seedtts_sample_20261119.md">report</a></p>
+</section>
+
+<section class="bsec" id="emotion">
+<h2><span class="zh">② 情感克隆集（RAVDESS，12 人 × 7 情绪 × 3 句）</span><span class="en">② Emotion-cloning set (RAVDESS, 12 actors × 7 emotions × 3 sentences)</span></h2>
+<p class="lead"><span class="zh">IndexTTS2 论文用自己招人录的情感集，没有公开，所以用 RAVDESS 做等价集（CC BY-NC-SA，仅限非商业；不在 IndexTTS 论文的训练数据里）。参考音频是演员的情绪录音，目标是一句中性内容的新句子，情绪只能来自参考音频，命令里没有情绪标签。只测能接收情感参考音频的 5 个模型，每个 252 条。</span><span class="en">The IndexTTS2 paper uses an emotion set it recorded itself and did not release, so we built an equivalent from RAVDESS (CC BY-NC-SA, non-commercial; not in the IndexTTS paper's training data). The reference is an actor's emotional clip and the target is a new, emotionally neutral sentence, so any emotion must come from the reference; no emotion label is given. Only the 5 models that accept an emotion reference audio are run, 252 clips each.</span></p>
+<div class="panel" id="emo-defs" style="margin-bottom:12px"></div>
+<div class="scroll"><table id="emo-table"></table></div>
+<h3 style="margin:22px 0 6px"><span class="zh">分情绪表现</span><span class="en">By emotion</span></h3>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+  <span class="seg" id="emo-metric"></span><span class="hint" id="emo-metric-hint" style="margin:0"></span>
+</div>
+<div class="hmwrap"><div id="emo-heat"></div></div>
+<div class="callout" id="emo-findings"></div>
+<h3 style="margin:22px 0 6px"><span class="zh">标定与对照</span><span class="en">Calibration and controls</span></h3>
+<div class="two" id="emo-calib"></div>
+<p class="hint"><span class="zh">数据：</span><span class="en">Data: </span><a href="reports/emotion_set_ravdess_20261118.csv">CSV</a> · <a href="reports/emotion_set_ravdess_20261118_by_emotion.csv">by emotion CSV</a> · <a href="reports/emotion_set_ravdess_20261118.md">report</a></p>
+</section>
+
+<footer><span class="zh">这两套评测独立于总榜分数，暂未并入总分。</span><span class="en">These two evaluations are separate from the main scores and are not yet part of the total.</span> <a href="index.html">←</a></footer>
+</main>
+<script src="site_data.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  const K = window.SiteKit, t = K.t, esc = K.esc, fmt = K.fmt;
+  const B = (window.SITE && window.SITE.bench) || {};
+  const $ = id => document.getElementById(id);
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const MEDALS = ["🥇", "🥈", "🥉"];
+  const EMO = {neutral: ["中性", "neutral"], happy: ["开心", "happy"], sad: ["悲伤", "sad"], angry: ["愤怒", "angry"], fearful: ["恐惧", "fearful"], disgust: ["厌恶", "disgust"], surprised: ["惊讶", "surprised"]};
+
+  // medals for the best three non-null values (better = "max" | "min")
+  function medals(rows, key, better) {
+    const idx = rows.map((r, i) => [r[key], i]).filter(x => x[0] !== null && x[0] !== "" && x[0] !== undefined);
+    idx.sort((a, b) => better === "max" ? b[0] - a[0] : a[0] - b[0]);
+    const out = {}; idx.slice(0, 3).forEach((x, k) => { out[x[1]] = MEDALS[k]; }); return out;
+  }
+  function sortableTable(el, cols, rows, state, rerender) {
+    const meds = {}; cols.forEach(c => { if (c.better) meds[c.key] = medals(rows, c.key, c.better); });
+    const sorted = [...rows].sort((a, b) => {
+      const c = cols.find(c => c.key === state.key) || cols[0], av = a[c.key], bv = b[c.key];
+      if (av === null || av === "" || av === undefined) return 1; if (bv === null || bv === "" || bv === undefined) return -1;
+      return (c.better === "min" ? av - bv : bv - av) * (typeof av === "string" ? 0 : 1);
+    });
+    el.innerHTML = "<thead><tr><th>" + t("模型", "Model") + "</th>" + cols.map(c => `<th class="num sortable${state.key === c.key ? " on" : ""}" data-k="${c.key}" title="${esc(c.tip || "")}">${c.title}${state.key === c.key ? " ▾" : ""}</th>`).join("") + "</tr></thead><tbody>" +
+      sorted.map(r => { const i = rows.indexOf(r); return `<tr><td><b>${esc(r.label)}</b></td>` + cols.map(c => `<td class="num">${meds[c.key] && meds[c.key][i] ? meds[c.key][i] + " " : ""}${r[c.key] === null || r[c.key] === "" || r[c.key] === undefined ? "–" : fmt(r[c.key], c.d)}</td>`).join("") + "</tr>"; }).join("") + "</tbody>";
+    el.querySelectorAll("th.sortable").forEach(th => th.onclick = () => { state.key = th.dataset.k; rerender(); });
+  }
+
+  // ---------- Seed-TTS
+  const seedState = {key: "sim_en"};
+  function seedPlot(rows, lang) {
+    const simK = lang === "en" ? "sim_en" : "sim_zh", errK = lang === "en" ? "wer_en" : "cer_zh";
+    const data = rows.filter(r => r[simK] !== null && r[simK] !== "").sort((a, b) => b[simK] - a[simK]);
+    const W = 520, rowH = 22, m = {l: 150, r: 20, t: 34, b: 28}, H = m.t + m.b + data.length * rowH;
+    const lo = 0.35, hi = 0.85, X = v => m.l + (Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo) * (W - m.l - m.r);
+    const gt = B.seedtts.gt[lang];
+    let g = `<text x="${m.l}" y="16" font-size="13" font-weight="600" fill="var(--ink)">${lang === "en" ? t("英文 · 说话人相似度 SIM", "English · speaker similarity SIM") : t("中文 · 说话人相似度 SIM", "Chinese · speaker similarity SIM")}</text>`;
+    for (let v = 0.4; v <= 0.8001; v += 0.1) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${m.t - 6}" y2="${H - m.b}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="var(--muted)">${v.toFixed(1)}</text>`;
+    g += `<line x1="${X(gt)}" x2="${X(gt)}" y1="${m.t - 6}" y2="${H - m.b}" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4"/><text x="${X(gt) + 4}" y="${m.t - 9}" font-size="11" fill="var(--accent)">${t("真人 ", "real speech ")}${gt}</text>`;
+    data.forEach((r, i) => {
+      const y = m.t + i * rowH + rowH / 2, bad = r[errK] !== null && r[errK] > 5;
+      const col = css("--s1"), flag = css("--s2");
+      g += `<text x="${m.l - 8}" y="${y + 4}" text-anchor="end" font-size="12" fill="var(--ink)">${esc(r.label)}</text>`;
+      g += `<line x1="${X(lo)}" x2="${X(r[simK])}" y1="${y}" y2="${y}" stroke="var(--line)" stroke-width="1.5"/>`;
+      g += `<g class="dot" data-i="${r.id}"><circle cx="${X(r[simK])}" cy="${y}" r="${bad ? 6 : 5.5}" fill="${bad ? "var(--panel)" : col}" stroke="${bad ? flag : "var(--panel)"}" stroke-width="${bad ? 2.2 : 1.5}"/><circle cx="${X(r[simK])}" cy="${y}" r="12" fill="transparent"><title>${esc(r.label)} · SIM ${r[simK]} · ${lang === "en" ? "WER" : "CER"} ${fmt(r[errK], 2)}%</title></circle></g>`;
+    });
+    return `<div class="panel"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${lang === "en" ? "English SIM" : "Chinese SIM"}">${g}</svg></div>`;
+  }
+  function seedtts() {
+    if (!B.seedtts) { $("seedtts").style.display = "none"; return; }
+    const rows = B.seedtts.rows;
+    $("seed-plots").innerHTML = seedPlot(rows, "en") + seedPlot(rows, "zh");
+    $("seed-legend").innerHTML = `<svg width="14" height="14" style="vertical-align:-2px"><circle cx="7" cy="7" r="5.5" fill="${css("--s1")}"/></svg> ${t("错误率 ≤ 5%", "error rate ≤ 5%")} &nbsp; <svg width="14" height="14" style="vertical-align:-2px"><circle cx="7" cy="7" r="5.5" fill="var(--panel)" stroke="${css("--s2")}" stroke-width="2.2"/></svg> ${t("错误率 > 5%（读不准，SIM 高也不能用）", "error rate > 5% (misreads; a high SIM does not help)")} &nbsp; <span style="color:var(--accent)">- - -</span> ${t("真人目标音频对提示音频的 SIM（100 条）", "real target-vs-prompt SIM (100 pairs)")}`;
+    const cols = [
+      {key: "wer_en", title: "WER % (en)", better: "min", d: 2, tip: t("英文词错误率，越低越好", "English word error rate; lower is better")},
+      {key: "sim_en", title: "SIM (en)", better: "max", d: 3, tip: t("英文说话人相似度，越高越好", "English speaker similarity; higher is better")},
+      {key: "utmos_en", title: "UTMOS (en)", better: "max", d: 2, tip: t("英文预测自然度（1–5）", "English predicted MOS (1-5)")},
+      {key: "cer_zh", title: "CER % (zh)", better: "min", d: 2, tip: t("中文字错误率，越低越好", "Chinese character error rate; lower is better")},
+      {key: "sim_zh", title: "SIM (zh)", better: "max", d: 3, tip: t("中文说话人相似度，越高越好", "Chinese speaker similarity; higher is better")}];
+    sortableTable($("seed-table"), cols, rows, seedState, seedtts);
+  }
+
+  // ---------- Emotion set
+  const emoState = {key: "emotion_lift"}, emoView = {m: "lift"};
+  function emotion() {
+    if (!B.emotion) { $("emotion").style.display = "none"; return; }
+    const E = B.emotion, rows = E.rows;
+    $("emo-defs").innerHTML = `<div class="hint" style="margin:0"><b>ES</b> ${t("= 生成音频与情感参考的 emotion2vec 情感向量余弦相似度（IndexTTS2 论文指标）。", "= cosine of the emotion2vec embeddings of the generated audio and the emotion reference (the IndexTTS2 paper's metric).")}<br><b>${t("情绪提升", "Emotion lift")}</b> ${t("= ES 减去生成音频与同一演员中性录音的 ES，扣掉单纯“像同一个人”带来的相似度；为负表示输出更像普通说话。", "= ES minus the ES to the same actor's neutral recording, which removes similarity that comes only from being the same person; negative means the output sounds more like plain speech.")}<br><b>${t("分类准确率", "Class accuracy")}</b> ${t("= emotion2vec 预测情绪与参考情绪一致的比例（分类器在真人录音上准确率 ", "= how often emotion2vec predicts the reference emotion (the classifier is ")}${E.classifier_acc_real}%${t("）。", " accurate on real recordings).")}</div>`;
+    const cols = [
+      {key: "wer_pct", title: "WER %", better: "min", d: 2}, {key: "ss_ecapa", title: "SIM ECAPA", better: "max", d: 3}, {key: "ss_campplus", title: "SIM CAM++", better: "max", d: 3},
+      {key: "es", title: "ES", better: "max", d: 3}, {key: "emotion_lift", title: t("情绪提升", "Emotion lift"), better: "max", d: 3},
+      {key: "class_acc_pct", title: t("分类准确率 %", "Class acc. %"), better: "max", d: 1}, {key: "utmos", title: "UTMOS", better: "max", d: 2}];
+    sortableTable($("emo-table"), cols, rows, emoState, emotion);
+
+    const M = {lift: {label: t("情绪提升", "Emotion lift"), hint: t("正 = 比同演员中性录音更像情感参考", "positive = closer to the emotion reference than to the same actor's neutral clip"), f: c => c.lift, lo: -0.3, hi: 0.45, d: 2},
+               acc: {label: t("分类准确率 %", "Class accuracy %"), hint: t("emotion2vec 判对情绪的比例", "share of clips emotion2vec labels with the reference emotion"), f: c => c.acc, lo: 0, hi: 100, d: 0},
+               es: {label: "ES", hint: t("与情感参考的情感相似度", "emotion similarity to the reference"), f: c => c.es, lo: 0.5, hi: 1, d: 2}};
+    const mm = M[emoView.m];
+    $("emo-metric").innerHTML = Object.keys(M).map(k => `<button data-m="${k}" aria-pressed="${emoView.m === k}">${M[k].label}</button>`).join("");
+    $("emo-metric").querySelectorAll("button").forEach(b => b.onclick = () => { emoView.m = b.dataset.m; emotion(); });
+    $("emo-metric-hint").textContent = mm.hint;
+    const order = [...rows].sort((a, b) => b.emotion_lift - a.emotion_lift);
+    const cell = v => {
+      if (v === undefined) return `<div class="c">–</div>`;
+      const p = Math.min(1, Math.max(0, (v - mm.lo) / (mm.hi - mm.lo)));
+      if (emoView.m === "lift") {
+        const zero = (0 - mm.lo) / (mm.hi - mm.lo);
+        if (v >= 0) { const a = Math.round(8 + 78 * Math.min(1, v / mm.hi)); return `<div class="c" style="background:color-mix(in srgb, var(--accent) ${a}%, var(--panel));${a > 52 ? "color:var(--panel);font-weight:600;" : ""}">${(v >= 0 ? "+" : "") + v.toFixed(mm.d)}</div>`; }
+        const a = Math.round(8 + 70 * Math.min(1, -v / -mm.lo)); return `<div class="c" style="background:color-mix(in srgb, var(--s2) ${a}%, var(--panel));${a > 52 ? "color:var(--panel);font-weight:600;" : ""}">${v.toFixed(mm.d)}</div>`;
+      }
+      const a = Math.round(6 + 80 * p); return `<div class="c" style="background:color-mix(in srgb, var(--accent) ${a}%, var(--panel));${a > 52 ? "color:var(--panel);font-weight:600;" : ""}">${v.toFixed(mm.d)}</div>`;
+    };
+    $("emo-heat").innerHTML = `<div class="eh"><div></div>${E.emotions.map(e => `<div class="h">${t(EMO[e][0], EMO[e][1])}</div>`).join("")}</div>` +
+      order.map(r => `<div class="eh"><div class="nm" title="${esc(r.label)}">${esc(r.label)}</div>${E.emotions.map(e => (emoView.m === "lift" && e === "neutral") ? `<div class="c" style="color:var(--na)" title="${esc(t("中性就是对照本身，没有提升可言", "neutral is the baseline itself; no lift to measure"))}">—</div>` : cell(E.by[r.id][e] ? mm.f(E.by[r.id][e]) : undefined)).join("")}</div>`).join("");
+
+    const best = order[0];
+    $("emo-findings").innerHTML = `<b>${t("怎么读", "How to read")}</b><br>` +
+      t(`${esc(best.label)} 在 ES、情绪提升、CAM++ 音色相似度和词错误率上都是 5 个模型里最好的；其余 4 个的情绪提升几乎全为负（愤怒除外），输出更像该演员的普通说话。所有模型的厌恶都基本复刻不出来。`,
+        `${esc(best.label)} is the best of the five on ES, emotion lift, CAM++ speaker similarity and word error rate; the other four have a negative lift almost everywhere (anger aside), sounding more like the actor's plain speech. Disgust is essentially not reproduced by any model.`);
+
+    const c = E.calib, a = E.alpha;
+    $("emo-calib").innerHTML = `<div class="panel"><b>${t("ES 的量程（真人录音标定）", "ES scale (real recordings)")}</b><div class="hint">${t("同一演员、同一情绪、不同台词：", "Same actor, same emotion, different line: ")}<b>${c.same_actor_same_emotion.mean}</b> ${t("（第 10 百分位 ", "(10th percentile ")}${c.same_actor_same_emotion.p10})<br>${t("同一演员、不同情绪：", "Same actor, different emotion: ")}<b>${c.same_actor_different_emotion.mean}</b> ${t("（第 90 百分位 ", "(90th percentile ")}${c.same_actor_different_emotion.p90})<br>${t("所以 0.9 以上才算复刻到了情绪，0.5 附近只是同一个人。论文里 IndexTTS2 在自己的集上是 0.887，不同的集合不能直接比。", "So 0.9 and above means the emotion was reproduced, around 0.5 is just the same person. The paper reports 0.887 for IndexTTS2 on its own set; different sets cannot be compared directly.")}</div></div>` +
+      `<div class="panel"><b>${t("IndexTTS 2.5：情感强度 emo_alpha 对照", "IndexTTS 2.5: emo_alpha control")}</b><table style="margin-top:6px"><thead><tr><th>emo_alpha</th><th class="num">ES</th><th class="num">${t("情绪提升", "Lift")}</th><th class="num">${t("准确率 %", "Acc. %")}</th><th class="num">WER %</th></tr></thead><tbody>${a.map(x => `<tr><td>${x.alpha}${x.alpha === 0.6 ? " " + t("（默认）", "(default)") : ""}</td><td class="num">${x.es}</td><td class="num">${x.lift > 0 ? "+" : ""}${x.lift}</td><td class="num">${x.acc}</td><td class="num">${x.wer}</td></tr>`).join("")}</tbody></table><div class="hint">${t("强度从 0.6 提到 1.0 几乎没有变化，所以情绪偏弱不是默认参数造成的。", "Raising the strength from 0.6 to 1.0 changes almost nothing, so weak emotion is not caused by the default setting.")}</div></div>` +
+      `<div class="panel" style="grid-column:1/-1"><b>${t("局限", "Limits")}</b><div class="hint">${t("音色参考与情感参考是同一段录音（所有模型同一条件）；IndexTTS 的“音色/情感分离”模式没有单独测。只有英文、单个种子、没有人评 EMOS；RAVDESS 是北美英语演员表演出来的情绪。", "The timbre and emotion references are the same recording (the same condition for every model); IndexTTS's separate timbre/emotion mode was not tested on its own. English only, one seed, no human EMOS rating; RAVDESS emotions are acted by North American English speakers.")}</div></div>`;
+  }
+
+  function render() { seedtts(); emotion(); }
+  document.addEventListener("langchange", render);
+  render();
+})();
+</script>
+</body>
+</html>

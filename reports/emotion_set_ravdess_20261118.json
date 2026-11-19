@@ -1,0 +1,456 @@
+{
+ "summary": {
+  "mlx_confucius4_tts_int8": {
+   "n": 252,
+   "wer_pct": 1.13,
+   "ss_ecapa": 0.586,
+   "ss_campplus": 0.639,
+   "es": 0.734,
+   "es_vs_neutral": 0.752,
+   "emotion_lift": -0.018,
+   "class_acc_pct": 44.4,
+   "utmos": 3.33
+  },
+  "mlx_dots_tts_full_int8_g64": {
+   "n": 252,
+   "wer_pct": 7.54,
+   "ss_ecapa": 0.572,
+   "ss_campplus": 0.569,
+   "es": 0.712,
+   "es_vs_neutral": 0.805,
+   "emotion_lift": -0.093,
+   "class_acc_pct": 33.7,
+   "utmos": 2.76
+  },
+  "mlx_higgs_audio_v3_4b": {
+   "n": 252,
+   "wer_pct": 0.0,
+   "ss_ecapa": 0.455,
+   "ss_campplus": 0.548,
+   "es": 0.693,
+   "es_vs_neutral": 0.793,
+   "emotion_lift": -0.1,
+   "class_acc_pct": 31.3,
+   "utmos": 4.22
+  },
+  "mlx_indextts2_v25_8bit": {
+   "n": 252,
+   "wer_pct": 0.04,
+   "ss_ecapa": 0.553,
+   "ss_campplus": 0.759,
+   "es": 0.757,
+   "es_vs_neutral": 0.674,
+   "emotion_lift": 0.083,
+   "class_acc_pct": 43.3,
+   "utmos": 3.44
+  },
+  "mlx_voxcpm2_bf16_dit": {
+   "n": 252,
+   "wer_pct": 0.11,
+   "ss_ecapa": 0.489,
+   "ss_campplus": 0.596,
+   "es": 0.703,
+   "es_vs_neutral": 0.771,
+   "emotion_lift": -0.067,
+   "class_acc_pct": 37.3,
+   "utmos": 3.77
+  }
+ },
+ "by_emotion": {
+  "mlx_confucius4_tts_int8": {
+   "neutral": {
+    "n": 36,
+    "wer_pct": 2.73,
+    "ss_ecapa": 0.64,
+    "ss_campplus": 0.584,
+    "es": 0.937,
+    "es_vs_neutral": 0.937,
+    "emotion_lift": 0.0,
+    "class_acc_pct": 94.4,
+    "utmos": 4.04
+   },
+   "happy": {
+    "n": 36,
+    "wer_pct": 0.53,
+    "ss_ecapa": 0.587,
+    "ss_campplus": 0.628,
+    "es": 0.643,
+    "es_vs_neutral": 0.674,
+    "emotion_lift": -0.031,
+    "class_acc_pct": 27.8,
+    "utmos": 3.43
+   },
+   "sad": {
+    "n": 36,
+    "wer_pct": 2.02,
+    "ss_ecapa": 0.594,
+    "ss_campplus": 0.631,
+    "es": 0.81,
+    "es_vs_neutral": 0.867,
+    "emotion_lift": -0.058,
+    "class_acc_pct": 38.9,
+    "utmos": 3.36
+   },
+   "angry": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.599,
+    "ss_campplus": 0.705,
+    "es": 0.901,
+    "es_vs_neutral": 0.64,
+    "emotion_lift": 0.261,
+    "class_acc_pct": 86.1,
+    "utmos": 2.47
+   },
+   "fearful": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.541,
+    "ss_campplus": 0.646,
+    "es": 0.671,
+    "es_vs_neutral": 0.628,
+    "emotion_lift": 0.043,
+    "class_acc_pct": 33.3,
+    "utmos": 2.6
+   },
+   "disgust": {
+    "n": 36,
+    "wer_pct": 1.54,
+    "ss_ecapa": 0.574,
+    "ss_campplus": 0.643,
+    "es": 0.616,
+    "es_vs_neutral": 0.813,
+    "emotion_lift": -0.197,
+    "class_acc_pct": 5.6,
+    "utmos": 3.69
+   },
+   "surprised": {
+    "n": 36,
+    "wer_pct": 1.06,
+    "ss_ecapa": 0.567,
+    "ss_campplus": 0.633,
+    "es": 0.563,
+    "es_vs_neutral": 0.707,
+    "emotion_lift": -0.144,
+    "class_acc_pct": 25.0,
+    "utmos": 3.7
+   }
+  },
+  "mlx_dots_tts_full_int8_g64": {
+   "neutral": {
+    "n": 36,
+    "wer_pct": 9.55,
+    "ss_ecapa": 0.635,
+    "ss_campplus": 0.52,
+    "es": 0.922,
+    "es_vs_neutral": 0.922,
+    "emotion_lift": 0.0,
+    "class_acc_pct": 66.7,
+    "utmos": 3.7
+   },
+   "happy": {
+    "n": 36,
+    "wer_pct": 9.27,
+    "ss_ecapa": 0.548,
+    "ss_campplus": 0.567,
+    "es": 0.776,
+    "es_vs_neutral": 0.752,
+    "emotion_lift": 0.024,
+    "class_acc_pct": 58.3,
+    "utmos": 2.5
+   },
+   "sad": {
+    "n": 36,
+    "wer_pct": 11.72,
+    "ss_ecapa": 0.575,
+    "ss_campplus": 0.532,
+    "es": 0.754,
+    "es_vs_neutral": 0.851,
+    "emotion_lift": -0.097,
+    "class_acc_pct": 2.8,
+    "utmos": 2.68
+   },
+   "angry": {
+    "n": 36,
+    "wer_pct": 5.93,
+    "ss_ecapa": 0.534,
+    "ss_campplus": 0.582,
+    "es": 0.724,
+    "es_vs_neutral": 0.769,
+    "emotion_lift": -0.045,
+    "class_acc_pct": 55.6,
+    "utmos": 2.07
+   },
+   "fearful": {
+    "n": 36,
+    "wer_pct": 7.32,
+    "ss_ecapa": 0.498,
+    "ss_campplus": 0.569,
+    "es": 0.564,
+    "es_vs_neutral": 0.765,
+    "emotion_lift": -0.202,
+    "class_acc_pct": 8.3,
+    "utmos": 2.26
+   },
+   "disgust": {
+    "n": 36,
+    "wer_pct": 4.39,
+    "ss_ecapa": 0.616,
+    "ss_campplus": 0.625,
+    "es": 0.647,
+    "es_vs_neutral": 0.86,
+    "emotion_lift": -0.213,
+    "class_acc_pct": 5.6,
+    "utmos": 3.04
+   },
+   "surprised": {
+    "n": 36,
+    "wer_pct": 4.57,
+    "ss_ecapa": 0.599,
+    "ss_campplus": 0.592,
+    "es": 0.599,
+    "es_vs_neutral": 0.717,
+    "emotion_lift": -0.119,
+    "class_acc_pct": 38.9,
+    "utmos": 3.1
+   }
+  },
+  "mlx_higgs_audio_v3_4b": {
+   "neutral": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.518,
+    "ss_campplus": 0.496,
+    "es": 0.921,
+    "es_vs_neutral": 0.921,
+    "emotion_lift": 0.0,
+    "class_acc_pct": 77.8,
+    "utmos": 4.36
+   },
+   "happy": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.469,
+    "ss_campplus": 0.534,
+    "es": 0.63,
+    "es_vs_neutral": 0.808,
+    "emotion_lift": -0.179,
+    "class_acc_pct": 11.1,
+    "utmos": 4.37
+   },
+   "sad": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.428,
+    "ss_campplus": 0.512,
+    "es": 0.71,
+    "es_vs_neutral": 0.845,
+    "emotion_lift": -0.135,
+    "class_acc_pct": 8.3,
+    "utmos": 4.25
+   },
+   "angry": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.469,
+    "ss_campplus": 0.61,
+    "es": 0.845,
+    "es_vs_neutral": 0.629,
+    "emotion_lift": 0.216,
+    "class_acc_pct": 69.4,
+    "utmos": 3.86
+   },
+   "fearful": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.395,
+    "ss_campplus": 0.531,
+    "es": 0.535,
+    "es_vs_neutral": 0.753,
+    "emotion_lift": -0.218,
+    "class_acc_pct": 2.8,
+    "utmos": 4.13
+   },
+   "disgust": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.442,
+    "ss_campplus": 0.586,
+    "es": 0.591,
+    "es_vs_neutral": 0.853,
+    "emotion_lift": -0.262,
+    "class_acc_pct": 5.6,
+    "utmos": 4.29
+   },
+   "surprised": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.466,
+    "ss_campplus": 0.57,
+    "es": 0.622,
+    "es_vs_neutral": 0.74,
+    "emotion_lift": -0.118,
+    "class_acc_pct": 44.4,
+    "utmos": 4.3
+   }
+  },
+  "mlx_indextts2_v25_8bit": {
+   "neutral": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.57,
+    "ss_campplus": 0.676,
+    "es": 0.898,
+    "es_vs_neutral": 0.898,
+    "emotion_lift": 0.0,
+    "class_acc_pct": 83.3,
+    "utmos": 4.11
+   },
+   "happy": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.556,
+    "ss_campplus": 0.756,
+    "es": 0.68,
+    "es_vs_neutral": 0.587,
+    "emotion_lift": 0.093,
+    "class_acc_pct": 36.1,
+    "utmos": 3.41
+   },
+   "sad": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.553,
+    "ss_campplus": 0.773,
+    "es": 0.786,
+    "es_vs_neutral": 0.811,
+    "emotion_lift": -0.025,
+    "class_acc_pct": 25.0,
+    "utmos": 3.28
+   },
+   "angry": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.547,
+    "ss_campplus": 0.794,
+    "es": 0.951,
+    "es_vs_neutral": 0.528,
+    "emotion_lift": 0.423,
+    "class_acc_pct": 94.4,
+    "utmos": 3.03
+   },
+   "fearful": {
+    "n": 36,
+    "wer_pct": 0.28,
+    "ss_ecapa": 0.561,
+    "ss_campplus": 0.792,
+    "es": 0.668,
+    "es_vs_neutral": 0.594,
+    "emotion_lift": 0.074,
+    "class_acc_pct": 16.7,
+    "utmos": 2.83
+   },
+   "disgust": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.553,
+    "ss_campplus": 0.767,
+    "es": 0.64,
+    "es_vs_neutral": 0.641,
+    "emotion_lift": -0.002,
+    "class_acc_pct": 5.6,
+    "utmos": 3.79
+   },
+   "surprised": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.535,
+    "ss_campplus": 0.756,
+    "es": 0.675,
+    "es_vs_neutral": 0.659,
+    "emotion_lift": 0.016,
+    "class_acc_pct": 41.7,
+    "utmos": 3.63
+   }
+  },
+  "mlx_voxcpm2_bf16_dit": {
+   "neutral": {
+    "n": 36,
+    "wer_pct": 0.25,
+    "ss_ecapa": 0.553,
+    "ss_campplus": 0.568,
+    "es": 0.925,
+    "es_vs_neutral": 0.925,
+    "emotion_lift": 0.0,
+    "class_acc_pct": 91.7,
+    "utmos": 4.18
+   },
+   "happy": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.52,
+    "ss_campplus": 0.602,
+    "es": 0.645,
+    "es_vs_neutral": 0.762,
+    "emotion_lift": -0.118,
+    "class_acc_pct": 25.0,
+    "utmos": 3.86
+   },
+   "sad": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.498,
+    "ss_campplus": 0.593,
+    "es": 0.778,
+    "es_vs_neutral": 0.838,
+    "emotion_lift": -0.06,
+    "class_acc_pct": 33.3,
+    "utmos": 3.78
+   },
+   "angry": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.474,
+    "ss_campplus": 0.611,
+    "es": 0.906,
+    "es_vs_neutral": 0.593,
+    "emotion_lift": 0.313,
+    "class_acc_pct": 86.1,
+    "utmos": 3.32
+   },
+   "fearful": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.423,
+    "ss_campplus": 0.575,
+    "es": 0.575,
+    "es_vs_neutral": 0.747,
+    "emotion_lift": -0.172,
+    "class_acc_pct": 2.8,
+    "utmos": 3.34
+   },
+   "disgust": {
+    "n": 36,
+    "wer_pct": 0.51,
+    "ss_ecapa": 0.483,
+    "ss_campplus": 0.631,
+    "es": 0.571,
+    "es_vs_neutral": 0.798,
+    "emotion_lift": -0.227,
+    "class_acc_pct": 2.8,
+    "utmos": 3.95
+   },
+   "surprised": {
+    "n": 36,
+    "wer_pct": 0.0,
+    "ss_ecapa": 0.474,
+    "ss_campplus": 0.594,
+    "es": 0.522,
+    "es_vs_neutral": 0.73,
+    "emotion_lift": -0.208,
+    "class_acc_pct": 19.4,
+    "utmos": 3.94
+   }
+  }
+ }
+}

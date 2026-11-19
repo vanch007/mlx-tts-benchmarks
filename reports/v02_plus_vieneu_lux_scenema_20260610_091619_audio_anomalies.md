@@ -1,8 +1,8 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`114`
-- 性能提示样本数：`103`
+- 音频异常样本数：`108`
+- 性能提示样本数：`78`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
@@ -10,7 +10,6 @@
 | 模型 | 严重 | 高 | 中 | 低 | 分类计数 |
 |---|---:|---:|---:|---:|---|
 | `mlx_audio8_realistic_air_bf16` | 0 | 0 | 4 | 1 | 内容错误偏高=3；语速异常=1；生成过慢=1 |
-| `mlx_audio8_tts_8bit` | 0 | 0 | 0 | 7 | 生成过慢=7 |
 | `mlx_confucius4_tts_int8` | 0 | 0 | 4 | 6 | 生成过慢=6；内容错误偏高=3；语速异常=1 |
 | `mlx_cosyvoice3_0_5b_fp16` | 0 | 1 | 1 | 3 | 生成过慢=3；内容严重错误=1；内容错误偏高=1 |
 | `mlx_dots_tts_full_int8_g64` | 0 | 0 | 2 | 0 | 内容错误偏高=1；语速异常=1 |
@@ -22,15 +21,14 @@
 | `mlx_indextts2_vietnamese_8bit` | 0 | 0 | 7 | 11 | 生成过慢=11；内容错误偏高=7 |
 | `mlx_ming3_0_5b_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_ming3_tiny_7_9b_8bit` | 2 | 5 | 2 | 7 | 生成过慢=7；内容严重错误=4；音频过短=2；语速异常=2；大段静音=1 |
-| `mlx_ming_omni_tts_16_8b_a3b_bf16` | 0 | 0 | 0 | 2 | 生成过慢=2 |
 | `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 8 | 0 | 内容错误偏高=4；语速异常=4；内容严重错误=2 |
 | `mlx_omnivoice_8bit_trim60` | 1 | 1 | 6 | 1 | 内容错误偏高=4；语速异常=2；音频过短=1；内容严重错误=1；生成过慢=1 |
-| `mlx_pocket_tts_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_pocket_tts_v4` | 0 | 1 | 3 | 0 | 内容严重错误=1；内容错误偏高=1；语速异常=1；疑似底噪/杂音=1 |
+| `mlx_qwen3_tts_custom_voice_official_int8` | 0 | 0 | 0 | 1 | 生成过慢=1 |
+| `mlx_qwen3_tts_voice_design_official_int8` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_voxcpm2_bf16_dit` | 0 | 0 | 3 | 0 | 内容错误偏高=2；语速异常=1 |
 | `mlx_voxmel_0_3b_8bit` | 0 | 2 | 2 | 0 | 内容严重错误=2；内容错误偏高=1；语速异常=1 |
 | `mlx_voxmel_0_6b_8bit` | 0 | 2 | 3 | 0 | 内容严重错误=2；内容错误偏高=2；语速异常=1 |
-| `mlx_zonos2_bf16` | 0 | 0 | 5 | 18 | 生成过慢=18；内容错误偏高=3；语速异常=2 |
 | `mlx_zonos3_mini_ptq` | 0 | 4 | 5 | 0 | 内容严重错误=3；语速异常=3；内容错误偏高=2；大段静音=1 |
 
 ## mlx_audio8_realistic_air_bf16
@@ -42,18 +40,6 @@
 | medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2675 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | low | 生成过慢 | 真实分钟级英文科技博客(连续长文本) (`real_longform_tech_en`) | RTF=3.0103，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-
-## mlx_audio8_tts_8bit
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| low | 生成过慢 | 粤语科普播客方言能力 (`core_yue_dialect`) | RTF=2.2552，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | RTF=2.2838，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 英文长文本角色连续性 (`scenema_longform_en`) | RTF=2.9172，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 英文参考音色说西语克隆 (`scenema_polyglot_obama_es`) | RTF=2.4346，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 英文长文本连续稳定性 (`stress_long_en`) | RTF=3.3103，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文长文本连续稳定性 (`stress_long_zh`) | RTF=3.5584，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文参考音色说英文克隆 (`xling_zh_to_en`) | RTF=2.2271，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_confucius4_tts_int8
 
@@ -245,13 +231,6 @@
 | low | 生成过慢 | 中文普通长句朗读 (`core_zh_plain_long`) | RTF=2.165，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 | low | 生成过慢 | 中文多音字朗读 (`core_zh_polyphone`) | RTF=2.26，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
-## mlx_ming_omni_tts_16_8b_a3b_bf16
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| low | 生成过慢 | 中文开心情绪标签控制 (`control_emotion_happy`) | RTF=3.1698，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文日期、时间与单位朗读 (`core_zh_date_units`) | RTF=2.4478，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-
 ## mlx_moss_tts_local_transformer_v1_5
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
@@ -281,12 +260,6 @@
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.4089 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | low | 生成过慢 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | RTF=9.4112，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
-## mlx_pocket_tts_8bit
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| medium | 内容错误偏高 | ml cs reading (`ml_cs_reading`) | CER=0.2394，WER=0.5882。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-
 ## mlx_pocket_tts_v4
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
@@ -295,6 +268,18 @@
 | medium | 内容错误偏高 | 法语长句呼吸与音色稳定 (`core_fr_long_sentence`) | CER=0.3889，WER=0.5625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | ml nl reading (`ml_nl_reading`) | 语速偏慢，约 0.9615 token/s，语速分 36.15。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 疑似底噪/杂音 | ml nl reading (`ml_nl_reading`) | 噪声底约 -21.885 dBFS，语音/底噪差约 4.296 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
+
+## mlx_qwen3_tts_custom_voice_official_int8
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| low | 生成过慢 | 英文情绪控制：愤怒 (`control_emotion_en_angry`) | RTF=2.1621，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+
+## mlx_qwen3_tts_voice_design_official_int8
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| low | 生成过慢 | 英文情绪控制：开心 (`control_emotion_en_happy`) | RTF=3.5291，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_voxcpm2_bf16_dit
 
@@ -322,34 +307,6 @@
 | medium | 内容错误偏高 | 真实分钟级中文长叙事(故事有声书) (`real_longform_story_zh`) | CER=0.4229，WER=0.4229。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | 真实分钟级英文科技博客(连续长文本) (`real_longform_tech_en`) | CER=0.2667，WER=0.2927。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 语速异常 | 真实分钟级中文长叙事(故事有声书) (`real_longform_story_zh`) | 语速偏快，约 7.4337 token/s，语速分 22.652。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-
-## mlx_zonos2_bf16
-
-| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
-|---|---|---|---|---|
-| medium | 内容错误偏高 | ml fi reading (`ml_fi_reading`) | CER=0.1463，WER=0.5。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 内容错误偏高 | ml te reading (`ml_te_reading`) | CER=0.1618，WER=0.8182。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 语速异常 | ml ta reading (`ml_ta_reading`) | 语速偏慢，约 1.0094 token/s，语速分 40.94。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.3391 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| low | 生成过慢 | 中文地址与人名朗读 (`core_zh_address`) | RTF=2.4108，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文日期、时间与单位朗读 (`core_zh_date_units`) | RTF=2.7275，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文普通长句朗读 (`core_zh_plain_long`) | RTF=2.2407，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | 中文多音字朗读 (`core_zh_polyphone`) | RTF=2.0228，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml da reading (`ml_da_reading`) | RTF=3.1662，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml fi reading (`ml_fi_reading`) | RTF=2.8699，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml he reading (`ml_he_reading`) | RTF=2.3806，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml it reading (`ml_it_reading`) | RTF=2.5205，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml nl reading (`ml_nl_reading`) | RTF=2.3256，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml no reading (`ml_no_reading`) | RTF=2.6993，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml pl reading (`ml_pl_reading`) | RTF=2.2728，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml ru reading (`ml_ru_reading`) | RTF=2.0053，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml sv reading (`ml_sv_reading`) | RTF=2.6988，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml ta reading (`ml_ta_reading`) | RTF=2.5044，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml te reading (`ml_te_reading`) | RTF=2.3089，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml th reading (`ml_th_reading`) | RTF=2.213，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml tr reading (`ml_tr_reading`) | RTF=2.21，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
-| low | 生成过慢 | ml uk reading (`ml_uk_reading`) | RTF=2.7332，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_zonos3_mini_ptq
 
