@@ -33,7 +33,7 @@ svg text { font-family:inherit; }
 
 <h1><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></h1>
 <p class="lead"><span class="zh">总榜用的是我们自建的 84 道题。这里补两套和公开论文、Hugging Face Open TTS Leaderboard 同口径的评测：Seed-TTS-Eval 的官方提示音频抽样，以及仿照 IndexTTS2 论文的情感克隆测试。</span><span class="en">The main leaderboard uses our own 84 items. These two add evaluations on the same footing as public papers and the Hugging Face Open TTS Leaderboard: a sample of the official Seed-TTS-Eval prompts, and an emotion-cloning test modelled on the IndexTTS2 paper.</span></p>
-<p class="hint"><a href="#seedtts"><span class="zh">① Seed-TTS-Eval 抽样</span><span class="en">① Seed-TTS-Eval sample</span></a> · <a href="#emotion"><span class="zh">② 情感克隆集</span><span class="en">② Emotion-cloning set</span></a></p>
+<p class="hint"><a href="#seedtts"><span class="zh">① Seed-TTS-Eval 抽样</span><span class="en">① Seed-TTS-Eval sample</span></a> · <a href="#emotion"><span class="zh">② 情感克隆集</span><span class="en">② Emotion-cloning set</span></a> · <a href="#streaming"><span class="zh">③ 流式首包延迟</span><span class="en">③ Streaming latency</span></a></p>
 
 <section class="bsec" id="seedtts">
 <h2><span class="zh">① Seed-TTS-Eval 抽样（英文 / 中文）</span><span class="en">① Seed-TTS-Eval sample (English / Chinese)</span></h2>
@@ -59,6 +59,15 @@ svg text { font-family:inherit; }
 <h3 style="margin:22px 0 6px"><span class="zh">标定与对照</span><span class="en">Calibration and controls</span></h3>
 <div class="two" id="emo-calib"></div>
 <p class="hint"><span class="zh">数据：</span><span class="en">Data: </span><a href="reports/emotion_set_ravdess_20261118.csv">CSV</a> · <a href="reports/emotion_set_ravdess_20261118_by_emotion.csv">by emotion CSV</a> · <a href="reports/emotion_set_ravdess_20261118.md">report</a></p>
+</section>
+
+<section class="bsec" id="streaming">
+<h2><span class="zh">③ 流式首包延迟（TTFA）</span><span class="en">③ Streaming latency (TTFA)</span></h2>
+<p class="lead"><span class="zh">从发出请求到收到第一个非空音频块的毫秒数，模型已加载并预热，批大小 1，用 Seed-TTS 英文提示音频克隆，3 次不计时预热后计时 20 次；参考音频的预处理计入（它是请求的一部分），模型加载不计。只测有流式接口的模型。</span><span class="en">Milliseconds from issuing a request to the first non-empty audio chunk, with the model loaded and warmed up, batch size 1, cloning from the Seed-TTS English prompt: 3 untimed warm-up requests, then 20 timed. Reference preprocessing counts (it is part of the request); model loading does not. Only models with a streaming interface are measured.</span></p>
+<div class="callout"><span class="zh"><b>怎么读：</b>这是在本机（Apple Silicon）上测的，不是 HF 榜单的 H200/A100/CPU，只能和本榜单内部比。各项目的流式粒度不同：Qwen3、VoxCPM2、Pocket、Audio8、MOSS、Breeze 是按固定时长的音频块（interval 列），IndexTTS 是按完成的文本段（不是逐 token），短句只有一段，所以它的首包就是整句生成完的时间。首块越长，延迟里包含的音频越多，不能只看毫秒数。</span><span class="en"><b>How to read:</b> measured on this Mac (Apple Silicon), not the HF leaderboard's H200/A100/CPU, so compare only within this board. Streaming granularity differs by project: Qwen3, VoxCPM2, Pocket, Audio8, MOSS and Breeze stream fixed-length audio chunks (interval column); IndexTTS streams completed text segments (not tokens), and a short sentence is one segment, so its first chunk is the whole sentence. A longer first chunk holds more audio, so do not read milliseconds alone.</span></div>
+<div class="panel" id="ttfa-plot"></div>
+<div class="scroll" style="margin-top:12px"><table id="ttfa-table"></table></div>
+<p class="hint"><span class="zh">数据：</span><span class="en">Data: </span><a href="reports/ttfa_20261119.csv">CSV</a></p>
 </section>
 
 <footer><span class="zh">这两套评测独立于总榜分数，暂未并入总分。</span><span class="en">These two evaluations are separate from the main scores and are not yet part of the total.</span> <a href="index.html">←</a></footer>
@@ -170,7 +179,35 @@ svg text { font-family:inherit; }
       `<div class="panel" style="grid-column:1/-1"><b>${t("局限", "Limits")}</b><div class="hint">${t("音色参考与情感参考是同一段录音（所有模型同一条件）；IndexTTS 的“音色/情感分离”模式没有单独测。只有英文、单个种子、没有人评 EMOS；RAVDESS 是北美英语演员表演出来的情绪。", "The timbre and emotion references are the same recording (the same condition for every model); IndexTTS's separate timbre/emotion mode was not tested on its own. English only, one seed, no human EMOS rating; RAVDESS emotions are acted by North American English speakers.")}</div></div>`;
   }
 
-  function render() { seedtts(); emotion(); }
+
+  // ---------- Streaming latency
+  const ttfaState = {key: "p50"};
+  function ttfa() {
+    if (!B.ttfa) { $("streaming").style.display = "none"; return; }
+    const rows = B.ttfa.rows;
+    const data = [...rows].sort((a, b) => a.p50 - b.p50);
+    const W = 640, rowH = 30, m = {l: 150, r: 24, t: 14, b: 34}, H = m.t + m.b + data.length * rowH;
+    const maxv = Math.max(...data.map(r => r.p95)) * 1.05, X = v => m.l + v / maxv * (W - m.l - m.r);
+    let g = "";
+    const step = maxv > 2000 ? 1000 : 500;
+    for (let v = 0; v <= maxv; v += step) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 14}" text-anchor="middle" font-size="11" fill="var(--muted)">${v >= 1000 ? (v / 1000) + " s" : v + " ms"}</text>`;
+    data.forEach((r, i) => {
+      const y = m.t + i * rowH + rowH / 2;
+      g += `<text x="${m.l - 8}" y="${y + 4}" text-anchor="end" font-size="12.5" fill="var(--ink)">${esc(r.label)}</text>`;
+      g += `<rect x="${X(0)}" y="${y - 7}" width="${X(r.p50) - X(0)}" height="14" rx="3" fill="${css("--s1")}"><title>${esc(r.label)} · p50 ${r.p50} ms · p95 ${r.p95} ms</title></rect>`;
+      g += `<line x1="${X(r.p95)}" x2="${X(r.p95)}" y1="${y - 8}" y2="${y + 8}" stroke="var(--ink)" stroke-width="2"/><line x1="${X(r.p50)}" x2="${X(r.p95)}" y1="${y}" y2="${y}" stroke="var(--ink)" stroke-width="1.5"/>`;
+      g += `<text x="${X(r.p95) + 6}" y="${y + 4}" font-size="11.5" fill="var(--muted)">${r.p50 >= 1000 ? (r.p50 / 1000).toFixed(2) + " s" : Math.round(r.p50) + " ms"}</text>`;
+    });
+    $("ttfa-plot").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${t("首包延迟", "Time to first audio")}">${g}</svg><div class="hint">${t("柱是中位数（p50），竖线是 p95，越短越好。", "Bars are the median (p50), the tick is p95; shorter is better.")}</div>`;
+    const cols = [
+      {key: "p50", title: "p50 ms", better: "min", d: 0, tip: t("首包延迟中位数", "median time to first audio")},
+      {key: "p95", title: "p95 ms", better: "min", d: 0, tip: t("95 分位，慢的那一端", "95th percentile, the slow tail")},
+      {key: "first_chunk_s", title: t("首块音频 s", "First chunk s"), better: null, d: 2, tip: t("第一块音频的时长", "length of the first audio chunk")},
+      {key: "rtfx", title: t("流式 RTFx", "Streaming RTFx"), better: "max", d: 2, tip: t("音频时长 ÷ 整个请求耗时，大于 1 才跟得上实时", "audio duration ÷ whole-request time; above 1 keeps up with real time")}];
+    sortableTable($("ttfa-table"), cols, rows, ttfaState, ttfa);
+  }
+
+  function render() { seedtts(); emotion(); ttfa(); }
   document.addEventListener("langchange", render);
   render();
 })();

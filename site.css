@@ -147,3 +147,11 @@ body { background:var(--bg); }
 .prof ul.plain li { font-size:13px; } .prof ul.plain b { font-variant-numeric:tabular-nums; }
 @media (max-width:900px) { .hero { grid-template-columns:1fr; padding:18px; } .hero h1 { font-size:28px; } }
 @media (max-width:760px) { .mapbox { overflow-x:auto; } #scatter svg { min-width:640px; } }
+
+/* interactive leaderboard + Pareto */
+#lb-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0 12px; }
+th.sortable { cursor:pointer; user-select:none; } th.sortable.on { color:var(--accent); }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+.pareto-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
+.pareto-grid .panel { overflow-x:auto; }
+@media (max-width:860px) { .pareto-grid { grid-template-columns:minmax(0,1fr); } }

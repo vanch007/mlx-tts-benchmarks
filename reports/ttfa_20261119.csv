@@ -1,0 +1,8 @@
+project,model_id,n,ttfa_ms_p50,ttfa_ms_p95,rtfx_stream,first_chunk_s,mode,granularity,interval,device
+mlx_pocket_tts_v4,mlx_pocket_tts_v4,20,47.2,63.8,13.63,0.4,voice clone (prompt wav),,0.4,Apple Silicon (this Mac)
+mlx_audio8_air,mlx_audio8_realistic_air_bf16,20,205.1,270.0,0.92,0.09,voice clone (ref audio + text),,2,Apple Silicon (this Mac)
+mlx_voxcpm2,mlx_voxcpm2_bf16_dit,20,221.8,279.5,1.45,0.16,voice clone (reference wav),,4,Apple Silicon (this Mac)
+mlx_qwen3_tts,mlx_qwen3_tts_official_int8,20,296.9,349.3,3.59,0.96,voice clone (ICL ref audio + text),,1.0,Apple Silicon (this Mac)
+mlx_moss_tts,mlx_moss_tts_local_transformer_v1_5,20,1001.7,1954.4,1.53,0.64,voice clone (ref audio + text),,2.0,Apple Silicon (this Mac)
+mlx_indextts2.5,mlx_indextts2_v25_8bit,20,2600.0,3183.0,1.43,3.85,voice clone (ref audio),completed text segments (not tokens),,Apple Silicon (this Mac)
+mlx_breeze_tts2,mlx_breeze_tts2_8bit,20,3223.2,3868.7,0.64,2.0,voice clone (ref audio + text),,2.0,Apple Silicon (this Mac)
