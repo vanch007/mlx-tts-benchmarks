@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="关于 · MLX TTS 本地横评" data-en="About · MLX TTS Local Benchmark">About · MLX TTS Local Benchmark</title>
+<link rel="stylesheet" href="site.css">
+<script src="i18n.js"></script>
+<style>
+.cl { list-style:none; padding:0; margin:0; }
+.cl li { display:grid; grid-template-columns:96px 1fr; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); }
+.cl time { color:var(--muted); font-variant-numeric:tabular-nums; font-size:13px; }
+.cl b { display:block; margin-bottom:2px; }
+pre.cite { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; overflow-x:auto; font-size:12.5px; }
+td.dir, th.dir { text-align:center; white-space:nowrap; }
+@media (max-width:640px) { .cl li { grid-template-columns:1fr; gap:2px; } }
+</style>
+</head>
+<body>
+<main>
+<nav class="top"><b>MLX TTS Local Benchmark</b>
+  <a href="index.html"><span class="zh">总览与选型</span><span class="en">Overview &amp; picks</span></a>
+  <a href="languages.html"><span class="zh">按语言查看</span><span class="en">By language</span></a>
+  <a href="compare.html"><span class="zh">多维对比</span><span class="en">Compare</span></a>
+  <a href="listen.html"><span class="zh">试听</span><span class="en">Listen</span></a>
+  <a href="benchmarks.html"><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></a>
+  <a class="on" href="about.html"><span class="zh">关于</span><span class="en">About</span></a></nav>
+
+<h1><span class="zh">关于这个榜单</span><span class="en">About this leaderboard</span></h1>
+<p class="lead"><span class="zh">在一台 Apple Silicon Mac 上，用 MLX 本地运行开源 TTS 模型，按统一的题目和自动指标横向比较。结构和指标定义参考了 Hugging Face 的 Open TTS Leaderboard；差别在于我们是本地 MLX 推理、模型是各自的 MLX 移植版，并且额外测了克隆、情感、方言等能力。</span><span class="en">Open-source TTS models run locally with MLX on one Apple Silicon Mac and compared on the same items with automatic metrics. The structure and metric definitions follow the Hugging Face Open TTS Leaderboard; the differences are that everything runs locally as MLX ports and that cloning, emotion and dialect abilities are measured as well.</span></p>
+
+<h2><span class="zh">指标</span><span class="en">Metrics</span></h2>
+<div class="scroll"><table>
+<thead><tr><th><span class="zh">指标</span><span class="en">Metric</span></th><th class="dir">↕</th><th><span class="zh">含义</span><span class="en">What it is</span></th></tr></thead>
+<tbody>
+<tr><td><b><span class="zh">质量分</span><span class="en">Quality score</span></b></td><td class="dir">⬆</td><td><span class="zh">只统计该模型已测能力的加权分（9 个能力、权重见首页），同组内差 3 分以内视为同档。</span><span class="en">Weighted score over the abilities the model was actually tested on (9 abilities, weights on the overview); a gap within 3 points inside a group counts as the same tier.</span></td></tr>
+<tr><td><b><span class="zh">全能分</span><span class="en">All-round score</span></b></td><td class="dir">⬆</td><td><span class="zh">不支持、未测的能力按 0 计入，所以同时反映质量和能力广度。</span><span class="en">Unsupported and untested abilities count as 0, so it reflects breadth as well as quality.</span></td></tr>
+<tr><td><b>WER / CER</b></td><td class="dir">⬇</td><td><span class="zh">Qwen3-ASR 1.7B 转写后与目标文本比：中日韩泰等按字（CER），其余按词（WER）。与 HF 榜单同一个 ASR；文本归一化不完全相同，不要和论文数字逐位对比。</span><span class="en">Qwen3-ASR 1.7B transcript vs the target text: per character (CER) for Chinese, Japanese, Korean, Thai and similar, per word (WER) otherwise. The same ASR as the HF leaderboard; text normalisation is not identical, so do not compare digits with papers.</span></td></tr>
+<tr><td><b>SIM</b></td><td class="dir">⬆</td><td><span class="zh">说话人相似度。克隆分取 ECAPA、CAM++ 与 Seed-TTS-Eval 官方 WavLM-Large 三个声纹模型的平均，ECAPA 或 CAM++ 判“不是同一人”、或没念出目标文本时封顶。公开口径评测页单独报官方 WavLM 的 SIM，能和论文、HF 榜单直接对照。</span><span class="en">Speaker similarity. The clone score averages three speaker models (ECAPA, CAM++ and the official Seed-TTS-Eval WavLM-Large) and is capped if ECAPA or CAM++ says it is a different person or the target text was not spoken. The public-metric page reports the official WavLM SIM on its own, comparable with papers and the HF leaderboard.</span></td></tr>
+<tr><td><b>UTMOS</b></td><td class="dir">⬆</td><td><span class="zh">预测自然度（1–5）。克隆出的声音会继承参考音频的音质，所以参考音质低于 4.0 的样本按“相对参考有没有变差”折算，上限 4.0。UTMOS 只在英文上训练，HF 榜单只报英文；我们也对其他语言计分，但其他语言的 UTMOS 只能当粗略参考。</span><span class="en">Predicted naturalness (1–5). A cloned voice inherits its reference's recording quality, so for references below 4.0 the score is rescaled by how much the output lost relative to the reference, capped at 4.0. UTMOS is English-trained and the HF leaderboard reports English only; we also score other languages, but there UTMOS is only a rough guide.</span></td></tr>
+<tr><td><b>ES, <span class="zh">情绪提升</span><span class="en">emotion lift</span></b></td><td class="dir">⬆</td><td><span class="zh">emotion2vec 情感向量与情感参考音频的余弦相似度（IndexTTS2 论文的指标），以及扣掉“同一个人”影响后的提升。</span><span class="en">Cosine of the emotion2vec embeddings of the output and the emotion reference (the IndexTTS2 paper's metric), and the lift after removing the effect of being the same person.</span></td></tr>
+<tr><td><b>RTF</b></td><td class="dir">⬇</td><td><span class="zh">生成耗时 ÷ 音频时长。各模型的历史 RTF 计时范围不完全一致，只能看量级；HF 榜单用的是同一块 H200 上的批量 RTFx，我们是单机单条。</span><span class="en">Generation time ÷ audio duration. Historical RTF timings do not all cover the same scope, so read orders of magnitude; the HF leaderboard uses batched RTFx on one H200, ours is one clip at a time on one Mac.</span></td></tr>
+<tr><td><b>TTFA</b></td><td class="dir">⬇</td><td><span class="zh">流式首包延迟：从请求到第一个非空音频块的毫秒数，批大小 1，模型已加载。只测了有流式接口的模型。</span><span class="en">Time to first audio: milliseconds from the request to the first non-empty audio chunk, batch size 1, model already loaded. Measured only for models with a streaming interface.</span></td></tr>
+<tr><td><b><span class="zh">参数量、许可证</span><span class="en">Size, licence</span></b></td><td class="dir">–</td><td><span class="zh">读自上游 Hugging Face 模型卡，卡片没写参数量的留空，不估计。MoE 报总参数。许可证按模型卡标注，商用前请读原文。</span><span class="en">Read from the upstream Hugging Face model card; where a card states no size it is left blank, never estimated. MoE shows total parameters. Licences are as labelled on the cards; read the text before commercial use.</span></td></tr>
+</tbody></table></div>
+
+<h2><span class="zh">数据集</span><span class="en">Datasets</span></h2>
+<div class="scroll"><table>
+<thead><tr><th><span class="zh">数据集</span><span class="en">Dataset</span></th><th><span class="zh">内容</span><span class="en">What</span></th><th><span class="zh">在哪里看</span><span class="en">Where</span></th></tr></thead>
+<tbody>
+<tr><td><b><span class="zh">自建题库</span><span class="en">Own item set</span></b></td><td><span class="zh">84 道题、9 个能力，朗读覆盖 40 多种语言，是总榜分数的来源。</span><span class="en">84 items and 9 abilities, with reading in over 40 languages; the source of the main scores.</span></td><td><a href="index.html"><span class="zh">总览</span><span class="en">Overview</span></a></td></tr>
+<tr><td><b>Seed-TTS-Eval</b></td><td><span class="zh">官方提示音频克隆官方目标文本，英文、中文各抽样 30 条（全集 1000 / 2000 条）。</span><span class="en">Official prompt cloned on the official target text; a 30-line sample per language (full sets: 1000 / 2000).</span></td><td><a href="benchmarks.html#seedtts"><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></a></td></tr>
+<tr><td><b>RAVDESS</b></td><td><span class="zh">仿 IndexTTS2 论文：12 位演员 × 7 种情绪 × 3 句，共 252 条/模型，只测能接收情感参考音频的 5 个模型。</span><span class="en">Modelled on the IndexTTS2 paper: 12 actors × 7 emotions × 3 sentences, 252 clips per model, only the 5 models that accept an emotion reference.</span></td><td><a href="benchmarks.html#emotion"><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></a></td></tr>
+</tbody></table></div>
+<p class="hint"><span class="zh">HF 榜单还用了 CV3-Eval（9 种语言）、MiniMax 多语言集（24 种语言）和 Neyshekar（波斯语），我们没有跑，那些语言用自建题库的朗读题代替，见首页的“按语言比较”。</span><span class="en">The HF leaderboard also uses CV3-Eval (9 languages), MiniMax Multilingual (24 languages) and Neyshekar (Persian). We did not run those; those languages are covered by our own reading items, see “Compare by language” on the overview.</span></p>
+
+<h2><span class="zh">和 HF Open TTS Leaderboard 的区别</span><span class="en">How this differs from the HF Open TTS Leaderboard</span></h2>
+<div class="scroll"><table>
+<thead><tr><th></th><th><span class="zh">HF 榜单</span><span class="en">HF leaderboard</span></th><th><span class="zh">本榜单</span><span class="en">This board</span></th></tr></thead>
+<tbody>
+<tr><td><span class="zh">推理环境</span><span class="en">Runtime</span></td><td><span class="zh">官方 PyTorch 等，H200 批量</span><span class="en">Upstream PyTorch etc., batched on an H200</span></td><td><span class="zh">MLX 移植版，Apple Silicon，单条</span><span class="en">MLX ports, Apple Silicon, one clip at a time</span></td></tr>
+<tr><td><span class="zh">模型精度</span><span class="en">Precision</span></td><td><span class="zh">官方权重</span><span class="en">Upstream weights</span></td><td><span class="zh">不少是量化后的 MLX 权重（8-bit 等），可能与官方权重略有差异</span><span class="en">Many are quantised MLX weights (8-bit and others), which can differ slightly from upstream</span></td></tr>
+<tr><td><span class="zh">测试集规模</span><span class="en">Test-set size</span></td><td><span class="zh">全集（数千条）</span><span class="en">Full sets (thousands of clips)</span></td><td><span class="zh">自建 84 题 + 公开集小抽样，没有独立测试集和盲听</span><span class="en">Own 84 items plus small public-set samples; no held-out set or blind listening</span></td></tr>
+<tr><td><span class="zh">能力范围</span><span class="en">Abilities</span></td><td><span class="zh">可懂度、速度、SIM、UTMOS（英文）</span><span class="en">Intelligibility, speed, SIM, UTMOS (English)</span></td><td><span class="zh">另加情绪、方言、副语言、长段、多语种等 9 个能力</span><span class="en">Plus emotion, dialect, paralinguistics, long text and multilingual: 9 abilities</span></td></tr>
+<tr><td><span class="zh">排名规则</span><span class="en">Ranking rule</span></td><td><span class="zh">覆盖所选全部语言的模型才有名次</span><span class="en">Ranked only if it covers every selected language</span></td><td><span class="zh">同样（首页“按语言比较”）；另按能力广度分“全功能”与“专用 / 轻量”两组</span><span class="en">The same (“Compare by language” on the overview), plus two groups by breadth: full-featured and focused / lightweight</span></td></tr>
+</tbody></table></div>
+
+<h2><span class="zh">更新日志</span><span class="en">Changelog</span></h2>
+<p class="hint"><span class="zh">评分口径改动会让旧数字和新数字不能直接比，所以这里把每次口径改动列出来。</span><span class="en">A scoring-method change makes old and new numbers incomparable, so every such change is listed here.</span></p>
+<ul class="cl">
+<li><time>2026-11-20</time><div><b><span class="zh">按语言查看；本页</span><span class="en">By-language page; this page</span></b><span class="zh">新增“按语言查看”页：选一种语言，看哪个模型最好，以及它在这种语言上朗读、克隆、方言等各方面的分数、朗读错误率、自然度、速度，并标出该语言的题数。榜单里也加了“按语言比较”，并列共享奖牌。新增关于页。</span><span class="en">Added the “By language” page: pick a language to see the best model and its scores on reading, cloning, dialect and the other aspects, plus reading error, naturalness and speed, with the number of items stated. The leaderboard also got “Compare by language”, and ties share a medal. Added this page.</span></div></li>
+<li><time>2026-11-19</time><div><b><span class="zh">界面与公开口径指标</span><span class="en">Interface and public-metric benchmarks</span></b><span class="zh">交互榜单（搜索、筛选、奖牌）、帕累托前沿图、参数量与许可证列、7 个模型的 TTFA；新增 Seed-TTS-Eval 抽样与 RAVDESS 情感集。修复 Pages 部署：此前新站点的样式、脚本和子页面没有发布。</span><span class="en">Interactive leaderboard (search, filters, medals), Pareto frontiers, size and licence columns, TTFA for 7 models; added the Seed-TTS-Eval sample and the RAVDESS emotion set. Fixed the Pages deploy: the new site's styles, scripts and sub-pages had not been published.</span></div></li>
+<li><time>2026-11-19</time><div><b><span class="zh">克隆分口径变更</span><span class="en">Clone score change</span></b><span class="zh">加入官方 WavLM SIM，克隆分取三个声纹模型的平均。IndexTTS 2.5 的克隆轴从 87.3 降到 77.4。</span><span class="en">Added the official WavLM SIM; the clone score averages three speaker models. IndexTTS 2.5's clone axis went from 87.3 to 77.4.</span></div></li>
+<li><time>2026-11-19</time><div><b><span class="zh">移除被新版取代的老模型</span><span class="en">Retired models superseded by newer versions</span></b><span class="zh">ZONOS2（→ZONOS3）、Audio8 Preview（→Realistic-Air）、Ming-omni（→Ming 3.0）、Pocket-TTS 旧版（→v4）。样本行已归档，没有销毁。Qwen3 的 VoiceDesign 与 CustomVoice 重新下载并补测。</span><span class="en">ZONOS2 (→ ZONOS3), Audio8 Preview (→ Realistic-Air), Ming-omni (→ Ming 3.0), the old Pocket-TTS (→ v4). Their rows are archived, not destroyed. Qwen3 VoiceDesign and CustomVoice were re-downloaded and re-run.</span></div></li>
+<li><time>2026-11-18</time><div><b><span class="zh">克隆分与自然度口径变更</span><span class="en">Clone and naturalness changes</span></b><span class="zh">克隆分只看声纹相似度并加内容门，不再混入 UTMOS（部分参考音频本身 UTMOS 很低）；自然度去掉克隆题，并按参考音质折算 UTMOS。新增 ES 指标，补测 IndexTTS 的情感参考克隆。</span><span class="en">The clone score uses speaker similarity only, with a content gate, and no longer mixes in UTMOS (some references are themselves low-UTMOS recordings); naturalness drops the cloning items and rescales UTMOS by reference quality. Added ES and ran IndexTTS's emotion-reference cloning.</span></div></li>
+<li><time>2026-11-18</time><div><b><span class="zh">站点重做</span><span class="en">Site redesign</span></b><span class="zh">按需求选模型、能力热力图、模型档案、多维对比、试听；所有页面中英双语，默认英文。</span><span class="en">Pick-by-need, ability heatmap, model profiles, compare and listen pages; every page bilingual, English by default.</span></div></li>
+</ul>
+
+<h2><span class="zh">引用</span><span class="en">Citation</span></h2>
+<pre class="cite">@misc{mlx_tts_benchmarks,
+    title={MLX TTS Local Benchmark},
+    author={vanch007},
+    year={2026},
+    url={https://vanch007.github.io/mlx-tts-benchmarks/},
+}</pre>
+
+<footer><span class="zh">报告、音频和数据在</span><span class="en">Reports, audio and data are in</span> <a href="https://github.com/vanch007/mlx-tts-benchmarks">github.com/vanch007/mlx-tts-benchmarks</a>。 <a href="index.html">←</a></footer>
+</main>
+<script src="site_data.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

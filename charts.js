@@ -172,7 +172,7 @@
   }
 
   // ---------- 6. interactive leaderboard (search, filters, sortable columns, top-3 medals)
-  const LB = {q: "", grp: "all", clone: false, size: "any", lic: "any", key: "rank", dir: 1};
+  const LB = {q: "", grp: "all", clone: false, size: "any", lic: "any", key: "rank", dir: 1, langs: [], langOpen: false};
   const MEDAL = ["🥇", "🥈", "🥉"];
   const LICNAME = {permissive: ["开放许可", "Permissive"], noncommercial: ["非商用", "Non-commercial"], custom: ["自定义许可", "Custom licence"], restricted: ["有使用限制", "Use-restricted"]};
   const LICCOL = {permissive: "--good", noncommercial: "--bad", custom: "--pend", restricted: "--pend"};
@@ -181,56 +181,102 @@
     ["full", "focused"].forEach(g => S.models.filter(m => m.group === g).sort((a, b) => b.quality - a.quality).forEach((m, i) => { r[m.id] = i + 1; }));
     return r;
   }
+  // per-language content error (reading items only), aggregated from the published samples: lang -> model -> {sum, n}
+  let LANGSTAT = null;
+  function langStat() {
+    if (LANGSTAT) return LANGSTAT;
+    const st = {};
+    S.samples.forEach(sm => {
+      const c = S.cases[sm.c]; if (!c || sm.err === null || sm.err === undefined) return;
+      if (c.axis !== "content_accuracy" && c.axis !== "multilingual") return;
+      const lang = (c.lang || "").split("_")[0]; if (!lang || (c.lang || "").includes("_")) return;
+      ((st[lang] = st[lang] || {})[sm.m] = st[lang][sm.m] || {sum: 0, n: 0});
+      st[lang][sm.m].sum += sm.err; st[lang][sm.m].n += 1;
+    });
+    LANGSTAT = st; return st;
+  }
+  const langsOffered = () => Object.entries(langStat()).map(([l, mm]) => [l, Object.keys(mm).length]).filter(x => x[1] >= 6).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+  const langErr = (m, l) => { const e = (langStat()[l] || {})[m.id]; return e ? 100 * e.sum / e.n : null; };
+  const CERL = new Set(["zh", "ja", "ko", "yue", "th", "wuu", "nan"]);
+
   function leaderboard() {
     const box = $("lb"); if (!box) return;
     const ranks = lbRanks();
     const ctl = $("lb-controls");
     const opt = (v, zh, en, cur) => `<option value="${v}"${cur === v ? " selected" : ""}>${t(zh, en)}</option>`;
+    const offered = langsOffered();
     ctl.innerHTML = `<input type="search" id="lb-q" value="${esc(LB.q)}" placeholder="${t("搜索模型…", "Search models…")}" aria-label="${t("搜索模型", "Search models")}" style="min-width:180px">` +
       `<select id="lb-grp" aria-label="${t("分组", "Group")}">${opt("all", "全部分组", "All groups", LB.grp)}${opt("full", "全功能组", "Full-featured", LB.grp)}${opt("focused", "专用与轻量组", "Focused & lightweight", LB.grp)}</select>` +
       `<select id="lb-size" aria-label="${t("参数量", "Size")}">${opt("any", "任意参数量", "Any size", LB.size)}${opt("1", "≤ 1B", "≤ 1B", LB.size)}${opt("3", "≤ 3B", "≤ 3B", LB.size)}${opt("10", "≤ 10B", "≤ 10B", LB.size)}</select>` +
       `<select id="lb-lic" aria-label="${t("许可证", "Licence")}">${opt("any", "任意许可", "Any licence", LB.lic)}${opt("permissive", "仅开放许可（Apache/MIT/CC-BY）", "Permissive only (Apache/MIT/CC-BY)", LB.lic)}</select>` +
-      `<label class="chip" style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" id="lb-clone"${LB.clone ? " checked" : ""}> ${t("支持克隆", "Voice cloning")}</label>`;
+      `<label class="chip" style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" id="lb-clone"${LB.clone ? " checked" : ""}> ${t("支持克隆", "Voice cloning")}</label>` +
+      `<details id="lb-langs" style="flex-basis:100%"${LB.langs.length || LB.langOpen ? " open" : ""}><summary>${t("按语言比较", "Compare by language")}${LB.langs.length ? ` · ${LB.langs.length} ${t("种已选", "selected")}` : ""}</summary>` +
+      `<div class="hint" style="margin:6px 0">${t("选一种或几种语言，榜单改按所选语言的朗读错误率（中日韩泰等为 CER，其余为 WER）排序；只有覆盖全部所选语言的模型才有名次，其余仍显示，排在后面。", "Pick one or more languages and the board ranks by reading error on those languages (CER for Chinese, Japanese, Korean, Thai and similar; WER otherwise). Only models covering every selected language get a rank; the others are still listed below.")}</div>` +
+      `<div class="chips">${offered.map(l => `<button class="chip" data-lang="${l}" aria-pressed="${LB.langs.includes(l)}" style="${LB.langs.includes(l) ? "background:var(--accent);color:var(--panel);border-color:var(--accent)" : ""}">${esc(K.langName(l))} <small class="muted" style="${LB.langs.includes(l) ? "color:inherit;opacity:.8" : ""}">${Object.keys(langStat()[l]).length}</small></button>`).join("")}${LB.langs.length ? `<button class="chip" id="lb-langs-clear">${t("清除", "Clear")}</button>` : ""}</div></details>`;
     $("lb-q").oninput = e => { LB.q = e.target.value; leaderboard(); $("lb-q").focus(); const v = $("lb-q").value; $("lb-q").setSelectionRange(v.length, v.length); };
     $("lb-grp").onchange = e => { LB.grp = e.target.value; leaderboard(); };
     $("lb-size").onchange = e => { LB.size = e.target.value; leaderboard(); };
     $("lb-lic").onchange = e => { LB.lic = e.target.value; leaderboard(); };
     $("lb-clone").onchange = e => { LB.clone = e.target.checked; leaderboard(); };
+    $("lb-langs").addEventListener("toggle", e => { LB.langOpen = e.target.open; });
+    ctl.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => {
+      const l = b.dataset.lang; LB.langs = LB.langs.includes(l) ? LB.langs.filter(x => x !== l) : [...LB.langs, l]; LB.langOpen = true;
+      if (LB.langs.length && LB.key === "rank") { LB.key = "langmean"; LB.dir = 1; } if (!LB.langs.length && LB.key === "langmean") { LB.key = "rank"; LB.dir = 1; }
+      leaderboard();
+    });
+    if ($("lb-langs-clear")) $("lb-langs-clear").onclick = () => { LB.langs = []; if (LB.key === "langmean") { LB.key = "rank"; LB.dir = 1; } leaderboard(); };
 
+    const nsel = LB.langs.length;
+    const covered = m => LB.langs.filter(l => langErr(m, l) !== null).length;
+    const complete = m => nsel > 0 && covered(m) === nsel;
+    const langMean = m => { const v = LB.langs.map(l => langErr(m, l)).filter(x => x !== null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
     const val = {
       rank: m => (m.group === "full" ? 0 : 1000) + ranks[m.id], quality: m => m.quality, full: m => m.full, langs: m => (m.langs ? m.langs : null), rtf: m => m.rtf, ttfa: m => (m.ttfa ? m.ttfa.p50 : null),
       size: m => (m.meta && m.meta.params_b !== null && m.meta.params_b !== undefined) ? m.meta.params_b : null,
+      langmean: m => langMean(m), cov: m => covered(m),
     };
+    LB.langs.forEach(l => { val["L:" + l] = m => langErr(m, l); });
     let rows = S.models.filter(m => {
       if (LB.q && !(m.label + " " + m.id).toLowerCase().includes(LB.q.toLowerCase())) return false;
       if (LB.grp !== "all" && m.group !== LB.grp) return false;
       if (LB.clone && !m.clone) return false;
       if (LB.lic === "permissive" && !(m.meta && m.meta.license_class === "permissive")) return false;
       if (LB.size !== "any") { const sz = val.size(m); if (sz === null || sz > Number(LB.size)) return false; }
+      if (nsel && covered(m) === 0) return false;
       return true;
     });
-    const medals = (key, better) => {
-      const ok = rows.filter(m => val[key](m) !== null && val[key](m) !== undefined).sort((a, b) => better === "max" ? val[key](b) - val[key](a) : val[key](a) - val[key](b));
-      const out = {}; ok.slice(0, 3).forEach((m, i) => { out[m.id] = MEDAL[i]; }); return out;
+    const medals = (key, better, only) => {
+      const ok = rows.filter(m => (!only || only(m)) && val[key](m) !== null && val[key](m) !== undefined).sort((a, b) => better === "max" ? val[key](b) - val[key](a) : val[key](a) - val[key](b));
+      // ties share a medal (three models at 0.00 error are all first), then the next distinct value is second
+      const out = {}; let tier = -1, prev = null;
+      ok.forEach(m => { const v = Math.round(val[key](m) * 1e4); if (prev === null || v !== prev) { tier++; prev = v; } if (tier < 3) out[m.id] = MEDAL[tier]; });
+      return out;
     };
-    const med = {quality: medals("quality", "max"), full: medals("full", "max"), langs: medals("langs", "max"), rtf: medals("rtf", "min"), ttfa: medals("ttfa", "min")};
+    const med = {quality: medals("quality", "max"), full: medals("full", "max"), langs: medals("langs", "max"), rtf: medals("rtf", "min"), ttfa: medals("ttfa", "min"), langmean: medals("langmean", "min", complete)};
+    LB.langs.forEach(l => { med["L:" + l] = medals("L:" + l, "min"); });  // a model missing other languages can still medal on the one it is best at
+    // with languages selected, models covering all of them come first (rank = position among them)
     rows.sort((a, b) => {
+      if (nsel) { const ca = complete(a), cb = complete(b); if (ca !== cb) return ca ? -1 : 1; if (!ca) { const d = covered(b) - covered(a); if (d) return d; } }
       const av = val[LB.key](a), bv = val[LB.key](b);
       if (av === null || av === undefined) return 1; if (bv === null || bv === undefined) return -1;
-      return (av - bv) * LB.dir;
+      return (Math.round(av * 1e4) - Math.round(bv * 1e4)) * LB.dir || b.quality - a.quality;  // ties: higher quality first
     });
+    let langRank = 0; const lrank = {}; if (nsel) rows.filter(complete).sort((a, b) => (Math.round(langMean(a) * 1e4) - Math.round(langMean(b) * 1e4)) || b.quality - a.quality).forEach(m => { lrank[m.id] = ++langRank; });
     const th = (k, zh, en, tip) => `<th class="num sortable${LB.key === k ? " on" : ""}" data-k="${k}" title="${esc(t(tip[0], tip[1]))}">${t(zh, en)}${LB.key === k ? (LB.dir < 0 ? " ▾" : " ▴") : ""}</th>`;
     const cell = (m, k, d) => { const v = val[k](m); const none = v === null || v === undefined || (k === "langs" && v === 0); return `<td class="num">${med[k] && med[k][m.id] ? med[k][m.id] + " " : ""}${none ? "–" : fmt(v, d)}</td>`; };
     const lic = m => { const c = m.meta && m.meta.license_class; if (!c) return "–"; return `<span class="tag" style="border-color:var(${LICCOL[c]});color:var(${LICCOL[c]})" title="${esc(m.meta.license)}">${t(LICNAME[c][0], LICNAME[c][1])}</span>`; };
     const sizeCell = m => { const v = val.size(m); const note = m.meta && m.meta.params_note ? m.meta.params_note : ""; return `<td class="num" title="${esc(note)}">${v === null ? "–" : (v < 0.1 ? (v * 1000).toFixed(v < 0.01 ? 1 : 0) + "M" : fmt(v, v < 10 ? 2 : 1) + "B")}</td>`; };
-    box.innerHTML = `<div class="scroll"><table><thead><tr>${th("rank", "#", "#", ["组内名次（按质量分）", "Rank within its group (by quality)"])}<th>${t("模型", "Model")}</th>` +
-      th("quality", "质量分", "Quality", ["只统计已测能力的加权分", "Weighted score over the abilities that were measured"]) + th("full", "全能分", "All-round", ["不支持的能力计 0", "Unsupported abilities count as 0"]) +
+    const langHead = nsel ? th("cov", "覆盖", "Coverage", ["覆盖了几种所选语言", "How many of the selected languages the model was evaluated on"]) + th("langmean", "平均错误率 %", "Mean error %", ["所选语言错误率的平均，越低越好；只统计有数据的语言", "Mean reading error over the selected languages; lower is better; counts only languages with data"]) +
+      LB.langs.map(l => th("L:" + l, `${K.langName(l)} ${CERL.has(l) ? "CER" : "WER"} %`, `${K.langName(l)} ${CERL.has(l) ? "CER" : "WER"} %`, ["该语言朗读错误率，越低越好", "Reading error on this language; lower is better"])).join("") : "";
+    const langCells = m => nsel ? `<td class="num">${covered(m)}/${nsel}</td>${cell(m, "langmean", 2)}${LB.langs.map(l => cell(m, "L:" + l, 2)).join("")}` : "";
+    box.innerHTML = `<div class="scroll"><table><thead><tr>${th("rank", "#", "#", ["组内名次（按质量分）；选了语言则为所选语言平均错误率的名次", "Rank within its group (by quality); with languages selected, rank by mean error on them"])}<th>${t("模型", "Model")}</th>` +
+      th("quality", "质量分", "Quality", ["只统计已测能力的加权分", "Weighted score over the abilities that were measured"]) + th("full", "全能分", "All-round", ["不支持的能力计 0", "Unsupported abilities count as 0"]) + langHead +
       `<th>${t("克隆", "Clone")}</th>` + th("langs", "语种", "Languages", ["评测过的语种数", "Languages evaluated"]) + th("rtf", "RTF", "RTF", ["生成耗时÷音频时长，越低越快", "Generation time ÷ audio duration; lower is faster"]) + th("ttfa", "首包 ms", "TTFA ms", ["流式首包延迟中位数（毫秒，批大小 1，克隆）；– 表示没有测过流式", "Median time to first audio chunk (ms, batch 1, cloning); – means streaming was not measured"]) +
       th("size", "参数量", "Size", ["上游模型卡的参数量；空白表示卡片没写", "Parameters from the upstream model card; – means the card gives none"]) + `<th>${t("许可", "Licence")}</th></tr></thead><tbody>` +
-      rows.map(m => `<tr><td class="num">${ranks[m.id]}</td><td><a href="compare.html?m=${encodeURIComponent(m.id)}"><b>${esc(m.label)}</b></a> <span class="tag ${m.group === "full" ? "full" : ""}">${esc(groupTag(m.group))}</span></td>` +
-        `<td class="num">${med.quality[m.id] ? med.quality[m.id] + " " : ""}${fmt(m.quality, 1)}${m.sd !== null && m.sd !== undefined ? ` <small class="muted">±${fmt(m.sd, 1)}</small>` : ""}</td>${cell(m, "full", 1)}<td>${m.clone ? "✓" : "–"}</td>${cell(m, "langs", 0)}${cell(m, "rtf", 2)}${cell(m, "ttfa", 0)}${sizeCell(m)}<td>${lic(m)}</td></tr>`).join("") + "</tbody></table></div>" +
-      `<div class="hint">${t(`显示 ${rows.length} / ${S.models.length} 个模型。🥇🥈🥉 是当前筛选结果里该列的前三名。首包延迟只测了 7 个有流式接口的模型，其余显示 –。参数量取自上游模型卡（MoE 报总参数），4 个模型卡片没写则留空；许可是模型卡上的标注，商用前请读原文。`, `Showing ${rows.length} of ${S.models.length} models. 🥇🥈🥉 mark the top three in a column among the current results. TTFA was measured only for the 7 models with a streaming interface; others show –. Sizes come from the upstream model cards (MoE shows total parameters); four cards state none, shown as –. Licences are as labelled on the cards; read the text before commercial use.`)}</div>`;
-    box.querySelectorAll("th.sortable").forEach(h => h.onclick = () => { const k = h.dataset.k; if (LB.key === k) LB.dir = -LB.dir; else { LB.key = k; LB.dir = (k === "rtf" || k === "ttfa" || k === "size" || k === "rank") ? 1 : -1; } leaderboard(); });
+      rows.map(m => `<tr><td class="num">${nsel ? (lrank[m.id] || "–") : ranks[m.id]}</td><td><a href="compare.html?m=${encodeURIComponent(m.id)}"><b>${esc(m.label)}</b></a> <span class="tag ${m.group === "full" ? "full" : ""}">${esc(groupTag(m.group))}</span></td>` +
+        `<td class="num">${med.quality[m.id] ? med.quality[m.id] + " " : ""}${fmt(m.quality, 1)}${m.sd !== null && m.sd !== undefined ? ` <small class="muted">±${fmt(m.sd, 1)}</small>` : ""}</td>${cell(m, "full", 1)}${langCells(m)}<td>${m.clone ? "✓" : "–"}</td>${cell(m, "langs", 0)}${cell(m, "rtf", 2)}${cell(m, "ttfa", 0)}${sizeCell(m)}<td>${lic(m)}</td></tr>`).join("") + "</tbody></table></div>" +
+      `<div class="hint">${t(`显示 ${rows.length} / ${S.models.length} 个模型。🥇🥈🥉 是当前筛选结果里该列的前三名。`, `Showing ${rows.length} of ${S.models.length} models. 🥇🥈🥉 mark the top three in a column among the current results.`)}${nsel ? " " + t("语言列的奖牌不限覆盖：只缺别的语言的模型，也可能在这一种语言上最好；“平均错误率”的奖牌和名次只给覆盖全部所选语言的模型。", "Language-column medals ignore coverage: a model missing other languages can still be best at one; medals and ranks on Mean error go only to models covering every selected language.") : ""} ${t("首包延迟只测了 7 个有流式接口的模型，其余显示 –。参数量取自上游模型卡（MoE 报总参数），4 个模型卡片没写则留空；许可是模型卡上的标注，商用前请读原文。", "TTFA was measured only for the 7 models with a streaming interface; others show –. Sizes come from the upstream model cards (MoE shows total parameters); four cards state none, shown as –. Licences are as labelled on the cards; read the text before commercial use.")}</div>`;
+    box.querySelectorAll("th.sortable").forEach(h => h.onclick = () => { const k = h.dataset.k; if (LB.key === k) LB.dir = -LB.dir; else { LB.key = k; LB.dir = (k === "rtf" || k === "ttfa" || k === "size" || k === "rank" || k === "langmean" || k.startsWith("L:")) ? 1 : -1; } leaderboard(); });
   }
 
   // ---------- 7. Pareto frontiers: quality vs speed, quality vs size

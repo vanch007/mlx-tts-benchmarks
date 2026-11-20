@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="按语言查看 · MLX TTS 本地横评" data-en="By language · MLX TTS Local Benchmark">By language · MLX TTS Local Benchmark</title>
+<link rel="stylesheet" href="site.css">
+<script src="i18n.js"></script>
+<style>
+.lbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:6px 0 12px; }
+.lbar select { min-width:260px; font-size:15px; }
+.podium { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:14px 0; }
+.podium .panel b.big { display:block; font-size:19px; margin:2px 0 2px; }
+.podium .score { font-size:28px; font-weight:700; color:var(--accent); font-variant-numeric:tabular-nums; line-height:1.1; }
+.podium .medal { font-size:22px; }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+th.sortable { cursor:pointer; user-select:none; } th.sortable.on { color:var(--accent); }
+.callout { border-left:3px solid var(--accent); padding:8px 14px; background:var(--soft); border-radius:0 10px 10px 0; margin:12px 0; }
+.callout.warn { border-left-color:var(--pend); background:var(--pend-bg); }
+.items { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+.items a { text-decoration:none; }
+tr.unranked td { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<nav class="top"><b>MLX TTS Local Benchmark</b>
+  <a href="index.html"><span class="zh">总览与选型</span><span class="en">Overview &amp; picks</span></a>
+  <a class="on" href="languages.html"><span class="zh">按语言查看</span><span class="en">By language</span></a>
+  <a href="compare.html"><span class="zh">多维对比</span><span class="en">Compare</span></a>
+  <a href="listen.html"><span class="zh">试听</span><span class="en">Listen</span></a>
+  <a href="benchmarks.html"><span class="zh">公开口径评测</span><span class="en">Public-metric benchmarks</span></a>
+  <a href="about.html"><span class="zh">关于</span><span class="en">About</span></a></nav>
+
+<h1><span class="zh">按语言查看</span><span class="en">By language</span></h1>
+<p class="lead"><span class="zh">选一种语言，看哪个模型在这种语言上最好，以及它在这种语言上各方面的分数：朗读、克隆、方言等（该语言实际有题的能力）、朗读错误率、自然度、速度。</span><span class="en">Pick a language to see which model is best at it and how each scores on every aspect that language has items for: reading, cloning, dialect and so on, plus reading error, naturalness and speed.</span></p>
+
+<div class="lbar"><select id="lang" aria-label="language"></select><span class="chips" id="quick"></span></div>
+<div id="headline"></div>
+<div id="evidence"></div>
+<div class="scroll"><table id="tbl"></table></div>
+<div class="hint" id="notes"></div>
+<h2 style="margin-top:26px"><span class="zh">这种语言有哪些题</span><span class="en">Items for this language</span></h2>
+<div class="items" id="items"></div>
+
+<footer><span class="zh">分数是各题在其所属能力上的 0–100 分，与总榜同一套打分；这里只取该语言的题。</span><span class="en">Scores are each item's 0–100 score on its own ability, the same scoring as the main board; only this language's items are used.</span> <a href="index.html">←</a></footer>
+</main>
+<script src="site_data.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  const K = window.SiteKit, S = K.S, t = K.t, esc = K.esc, fmt = K.fmt, byModel = K.byModel;
+  const $ = id => document.getElementById(id);
+  const MEDAL = ["🥇", "🥈", "🥉"];
+  const READ = new Set(["content_accuracy", "multilingual"]);
+  const CER = new Set(["zh", "ja", "ko", "yue", "th", "wuu", "nan"]);
+  const state = {lang: K.params().get("lang") || "", key: "score", dir: -1};
+
+  // language -> case ids (a mixed "zh_en" item belongs to neither language)
+  const byLang = {};
+  Object.entries(S.cases).forEach(([id, c]) => { const l = c.lang || ""; if (l && !l.includes("_")) (byLang[l] = byLang[l] || []).push(id); });
+  const samplesByCase = {};
+  S.samples.forEach(s => { (samplesByCase[s.c] = samplesByCase[s.c] || []).push(s); });
+  const modelsOf = l => { const set = new Set(); (byLang[l] || []).forEach(c => (samplesByCase[c] || []).forEach(s => { if (s.s !== null) set.add(s.m); })); return set; };
+  const langs = Object.keys(byLang).filter(l => modelsOf(l).size > 0).sort((a, b) => modelsOf(b).size - modelsOf(a).size || a.localeCompare(b));
+  if (!state.lang || !byLang[state.lang]) state.lang = langs.includes("vi") ? "vi" : langs[0];
+  const axisOrder = S.axes.map(a => a.id);
+
+  const mean = a => { const v = a.filter(x => x !== null && x !== undefined && !Number.isNaN(x)); return v.length ? v.reduce((x, y) => x + y, 0) / v.length : null; };
+  function compute(lang) {
+    const cs = byLang[lang] || [];
+    const axes = [...new Set(cs.map(c => S.cases[c].axis))].sort((a, b) => axisOrder.indexOf(a) - axisOrder.indexOf(b));
+    const rows = [...modelsOf(lang)].map(mid => {
+      const per = {}; let covered = 0;
+      axes.forEach(ax => {
+        const sc = []; cs.filter(c => S.cases[c].axis === ax).forEach(c => { const s = (samplesByCase[c] || []).find(x => x.m === mid); if (s) sc.push(s.mean !== null && s.mean !== undefined ? s.mean : s.s); });
+        per[ax] = mean(sc); if (per[ax] !== null) covered++;
+      });
+      const mine = cs.flatMap(c => (samplesByCase[c] || []).filter(s => s.m === mid));
+      const reading = mine.filter(s => READ.has(S.cases[s.c].axis));
+      const itemsCovered = new Set(mine.filter(s => s.s !== null).map(s => s.c)).size;
+      return {id: mid, m: byModel[mid], per, covered, complete: covered === axes.length, score: mean(axes.map(a => per[a])),
+        err: mean(reading.map(s => s.err)), utmos: mean(mine.map(s => s.utmos)), rtf: mean(mine.map(s => s.rtf)), items: itemsCovered, nItems: cs.length};
+    });
+    return {cs, axes, rows};
+  }
+
+  function medals(rows, key, better, only) {
+    const ok = rows.filter(r => (!only || only(r)) && r[key] !== null && r[key] !== undefined).sort((a, b) => better === "max" ? b[key] - a[key] : a[key] - b[key]);
+    const out = {}; let tier = -1, prev = null;
+    ok.forEach(r => { const v = Math.round(r[key] * 1e4); if (prev === null || v !== prev) { tier++; prev = v; } if (tier < 3) out[r.id] = MEDAL[tier]; });
+    return out;
+  }
+
+  function render() {
+    const lang = state.lang, name = K.langName(lang);
+    // selector
+    $("lang").innerHTML = langs.map(l => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(K.langName(l))} · ${modelsOf(l).size} ${t("个模型", "models")} · ${byLang[l].length} ${t("道题", "items")}</option>`).join("");
+    $("lang").onchange = e => { state.lang = e.target.value; state.key = "score"; state.dir = -1; K.setParams({lang: state.lang}); render(); };
+    $("quick").innerHTML = langs.slice(0, 10).map(l => `<button class="chip" data-l="${l}" style="${l === lang ? "background:var(--accent);color:var(--panel);border-color:var(--accent)" : ""}">${esc(K.langName(l))}</button>`).join("");
+    $("quick").querySelectorAll("button").forEach(b => b.onclick = () => { state.lang = b.dataset.l; state.key = "score"; state.dir = -1; K.setParams({lang: state.lang}); render(); });
+
+    const {cs, axes, rows} = compute(lang);
+    const ranked = rows.filter(r => r.complete).sort((a, b) => (Math.round(b.score * 1e4) - Math.round(a.score * 1e4)) || (b.m.quality - a.m.quality));
+    const rankOf = {}; ranked.forEach((r, i) => { rankOf[r.id] = i + 1; });
+
+    // headline podium
+    const top = ranked.slice(0, 3);
+    $("headline").innerHTML = top.length ? `<div class="podium">` + top.map((r, i) => `<div class="panel"><span class="medal">${MEDAL[i]}</span> <span class="muted">${i === 0 ? t(`${name}最好`, `Best for ${name}`) : t(`第 ${i + 1} 名`, `#${i + 1}`)}</span><b class="big"><a href="compare.html?m=${encodeURIComponent(r.id)}">${esc(r.m.label)}</a></b><div class="score">${fmt(r.score, 1)}</div><div class="hint" style="margin:2px 0 0">${axes.map(a => `${esc(K.axisName(a))} ${fmt(r.per[a], 0)}`).join(" · ")}</div></div>`).join("") + `</div>` : `<div class="callout warn">${t("没有模型同时覆盖这种语言的全部能力，下表按覆盖情况列出。", "No model covers every ability this language has items for; the table lists models by coverage.")}</div>`;
+
+    // evidence warning
+    const nAxes = axes.length, nItems = cs.length;
+    $("evidence").innerHTML = `<div class="callout${nItems < 3 ? " warn" : ""}"><b>${t("证据有多少：", "How much evidence: ")}</b>${t(`${name}共 ${nItems} 道题（${axes.map(a => K.axisName(a)).join("、")}），${modelsOf(lang).size} 个模型有数据。`, `${name} has ${nItems} item${nItems === 1 ? "" : "s"} (${axes.map(a => K.axisName(a)).join(", ")}) and ${modelsOf(lang).size} models with data.`)} ${nItems < 3 ? t("题少，每个能力只有一道题的一次生成（克隆类取 3 次平均），分差只能看大致；", "With so few items each ability rests on one prompt (cloning averages 3 takes), so gaps are indicative only; ") : ""}${t("“语言分”是各能力分数的简单平均，只有覆盖全部这些能力的模型才有名次。", "The language score is the plain mean of the ability scores, and only models covering all of them get a rank.")}</div>`;
+
+    // table
+    const cols = [{k: "score", z: "语言分", e: "Language score", b: "max", d: 1, tip: t("各能力分数的平均", "mean of the ability scores")}]
+      .concat(axes.map(a => ({k: "ax:" + a, z: K.axisName(a), e: K.axisName(a), b: "max", d: 1, ax: a, tip: t("该能力在这种语言上的分数", "score on this ability in this language")})))
+      .concat([{k: "err", z: `朗读错误率 % (${CER.has(lang) ? "CER" : "WER"})`, e: `Reading error % (${CER.has(lang) ? "CER" : "WER"})`, b: "min", d: 1, tip: t("朗读题的 ASR 错误率，越低越好", "ASR error on reading items; lower is better"), scale: 100},
+               {k: "utmos", z: "UTMOS", e: "UTMOS", b: "max", d: 2, tip: t("预测自然度（1–5，未做参考音质折算）；UTMOS 只在英文上训练，其他语言只能粗略参考", "predicted naturalness (1-5, not reference-corrected); UTMOS is English-trained, so rough elsewhere")},
+               {k: "rtf", z: "RTF", e: "RTF", b: "min", d: 2, tip: t("生成耗时÷音频时长，越低越快", "generation time ÷ audio duration; lower is faster")}]);
+    const val = (r, c) => c.k === "score" ? r.score : c.k.startsWith("ax:") ? r.per[c.ax] : (c.scale ? (r[c.k] === null ? null : r[c.k] * c.scale) : r[c.k]);
+    const view = rows.map(r => Object.assign({}, r));
+    const med = {}; cols.forEach(c => { const tmp = view.map(r => ({id: r.id, v: val(r, c), complete: r.complete})); med[c.k] = medals(tmp, "v", c.b, c.k === "score" ? r => r.complete : null); });
+    const sortCol = cols.find(c => c.k === state.key) || cols[0];
+    view.sort((a, b) => {
+      if (a.complete !== b.complete && state.key === "score") return a.complete ? -1 : 1;
+      const av = val(a, sortCol), bv = val(b, sortCol);
+      if (av === null || av === undefined) return 1; if (bv === null || bv === undefined) return -1;
+      return (Math.round(av * 1e4) - Math.round(bv * 1e4)) * state.dir || (b.m.quality - a.m.quality);  // ties: higher overall quality first
+    });
+    $("tbl").innerHTML = `<thead><tr><th class="num">#</th><th>${t("模型", "Model")}</th>` + cols.map(c => `<th class="num sortable${state.key === c.k ? " on" : ""}" data-k="${c.k}" title="${esc(c.tip)}">${t(c.z, c.e)}${state.key === c.k ? (state.dir < 0 ? " ▾" : " ▴") : ""}</th>`).join("") + `<th class="num">${t("覆盖", "Items")}</th></tr></thead><tbody>` +
+      view.map(r => `<tr class="${r.complete ? "" : "unranked"}"><td class="num">${rankOf[r.id] || "–"}</td><td><a href="compare.html?m=${encodeURIComponent(r.id)}"><b>${esc(r.m.label)}</b></a> <span class="tag ${r.m.group === "full" ? "full" : ""}">${esc(K.groupTag(r.m.group))}</span></td>` +
+        cols.map(c => { const v = val(r, c); return `<td class="num">${med[c.k][r.id] ? med[c.k][r.id] + " " : ""}${v === null || v === undefined ? "–" : fmt(v, c.d)}</td>`; }).join("") + `<td class="num">${r.items}/${r.nItems}</td></tr>`).join("") + "</tbody>";
+    $("tbl").querySelectorAll("th.sortable").forEach(h => h.onclick = () => { const k = h.dataset.k; if (state.key === k) state.dir = -state.dir; else { state.key = k; state.dir = (k === "err" || k === "rtf") ? 1 : -1; } render(); });
+    $("notes").innerHTML = t("🥇🥈🥉 是该列前三名，并列共享；“语言分”的奖牌和名次只给覆盖全部能力的模型，灰色行是只覆盖部分能力的模型，排在后面。点模型名进入多维对比。", "🥇🥈🥉 mark the top three in a column and ties share; medals and ranks on the language score go only to models covering every ability, greyed rows cover only some and are listed after. Click a model for the full comparison.");
+
+    // items with listen links
+    $("items").innerHTML = cs.map(c => `<a class="btn" href="listen.html?case=${encodeURIComponent(c)}">▶ ${esc(K.caseName(c))} <span class="muted">· ${esc(K.axisName(S.cases[c].axis))}</span></a>`).join("");
+  }
+  document.addEventListener("langchange", render);
+  render();
+})();
+</script>
+</body>
+</html>
