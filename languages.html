@@ -20,6 +20,11 @@ th.sortable { cursor:pointer; user-select:none; } th.sortable.on { color:var(--a
 .items { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
 .items a { text-decoration:none; }
 tr.unranked td { color:var(--muted); }
+.pcase { border:1px solid var(--line); border-radius:10px; padding:6px 12px; margin:8px 0; }
+.pcase summary { cursor:pointer; font-weight:600; padding:4px 0; }
+.pgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:10px; margin:8px 0; }
+.pgrid audio, .pcase .refa { width:100%; height:34px; }
+.pgrid .hint { margin:2px 0; }
 </style>
 </head>
 <body>
@@ -42,6 +47,7 @@ tr.unranked td { color:var(--muted); }
 <div class="hint" id="notes"></div>
 <h2 style="margin-top:26px"><span class="zh">这种语言有哪些题</span><span class="en">Items for this language</span></h2>
 <div class="items" id="items"></div>
+<section id="pilot" hidden></section>
 
 <footer><span class="zh">分数是各题在其所属能力上的 0–100 分，与总榜同一套打分；这里只取该语言的题。</span><span class="en">Scores are each item's 0–100 score on its own ability, the same scoring as the main board; only this language's items are used.</span> <a href="index.html">←</a></footer>
 </main>
@@ -136,6 +142,44 @@ tr.unranked td { color:var(--muted); }
 
     // items with listen links
     $("items").innerHTML = cs.map(c => `<a class="btn" href="listen.html?case=${encodeURIComponent(c)}">▶ ${esc(K.caseName(c))} <span class="muted">· ${esc(K.axisName(S.cases[c].axis))}</span></a>`).join("");
+    renderPilot(lang, name);
+  }
+
+  // vi / id / th pilot: 8 items per language, its own measurement, not part of the language score above.
+  const pstate = {key: "err", dir: 1};
+  function renderPilot(lang, name) {
+    const box = $("pilot"), P = S.pilot, L = P && P.langs[lang];
+    if (!L) { box.hidden = true; box.innerHTML = ""; return; }
+    box.hidden = false;
+    const pct = v => v === null || v === undefined ? null : v * 100;
+    const cols = [
+      {k: "err", z: `朗读错误率 % (${L.metric})`, e: `Reading error % (${L.metric})`, b: "min", d: 1, v: r => pct(r.err), tip: t("8 道题的平均，每题封顶 100%", "mean of the 8 items, each capped at 100%")},
+      {k: "num_err", z: "数字题错误率 %", e: "Numbers item error %", b: "min", d: 1, v: r => pct(r.num_err), tip: t("订单号、时间、日期、金额那道题", "the order-number / time / date / amount item")},
+      {k: "digits", z: "数字读对 %", e: "Numbers read right %", b: "max", d: 0, v: r => pct(r.digits), tip: t("数字题里每组数字是否被原样读出", "share of number groups in the numbers item read back exactly")},
+      {k: "clone_native", z: "克隆·同语种参考", e: "Clone, same-language ref", b: "max", d: 1, v: r => r.clone_native, tip: t("0–100，与总榜同一套克隆分", "0-100, same clone score as the main board")},
+      {k: "clone_cross", z: "克隆·中文参考", e: "Clone, Chinese ref", b: "max", d: 1, v: r => r.clone_cross, tip: t("中文参考音说这种语言", "Chinese reference speaking this language")},
+      {k: "clone", z: "克隆分", e: "Clone score", b: "max", d: 1, v: r => r.clone, tip: t("两道克隆题的平均", "mean of the two clone items")},
+      {k: "rtf", z: "RTF", e: "RTF", b: "min", d: 2, v: r => r.rtf, tip: t("生成耗时÷音频时长，空闲机器重测的中位数；含每次加载模型（* 为常驻进程，不含加载）", "generation time ÷ audio duration, median of an idle-machine rerun; includes model load each call (* resident process, no load)")},
+    ];
+    const rows = L.models.map(r => Object.assign({m: byModel[r.id]}, r));
+    const med = {}; cols.forEach(c => { med[c.k] = medals(rows.map(r => ({id: r.id, v: c.v(r)})), "v", c.b, null); });
+    const sc = cols.find(c => c.k === pstate.key) || cols[0];
+    rows.sort((a, b) => { const av = sc.v(a), bv = sc.v(b); if (av === null || av === undefined) return 1; if (bv === null || bv === undefined) return -1; return (av - bv) * pstate.dir; });
+    const flagText = f => f.map(x => { const [cs, fl] = x.split(":"); const c = P.cases[`pilot_${lang}_${cs}`]; return `${c ? t(c.name, c.name_en) : cs}: ${fl.split("+").map(k => ({silent: t("无声", "silent"), long_trail: t("尾部长静音", "long trailing silence"), dur_outlier: t("时长异常", "odd duration"), asr_loop: t("重复/卡住", "repeats"), overlong: t("多读", "extra speech")}[k] || k)).join("、")}`; }).join("；");
+    const floor = L.floor;
+    box.innerHTML = `<h2 style="margin-top:30px">${t(`${name}深度试点：8 道题`, `${name} deep-dive pilot: 8 items`)}</h2>
+      <div class="callout warn"><b>${t("单独测量，不计入上面的语言分。", "Measured separately; not part of the language score above.")}</b> ${t(
+        `${P.date} 的试点：4 道朗读（短句、数字、夹英文、长段）、2 道自然表达、2 道克隆，${L.models.length} 个模型各生成一次。朗读错误率用 ${P.asr} 听写，与总榜的 Qwen3-ASR 不同；同一套 ASR 听真人录音（FLEURS，${floor.n} 条）的错误率是 ${fmt(floor.mean * 100, 1)}%（中位数 ${fmt(floor.median * 100, 1)}%），低于这个数的差距多半是 ASR 噪声。克隆分与总榜同一公式（ECAPA、CAM++、WavLM 平均，声纹判不像或读错太多会封顶）。自然度没有放：单条打分的评审几乎给所有音频满分，分不出高低。`,
+        `Pilot of ${P.date}: 4 reading items (short, numbers, English brand names, long), 2 expressive items and 2 clone items, one take per model for ${L.models.length} models. Reading error is ${P.asr} read-back, not the main board's Qwen3-ASR; the same ASR on human recordings (FLEURS, ${floor.n} clips) scores ${fmt(floor.mean * 100, 1)}% (median ${fmt(floor.median * 100, 1)}%), so gaps below that are mostly ASR noise. The clone score uses the main board's formula (mean of ECAPA, CAM++ and WavLM, capped when a voiceprint model says no match or the text is misread). Naturalness is left out: the single-clip judge gave almost every clip full marks.`)}</div>
+      <div class="scroll"><table><thead><tr><th>${t("模型", "Model")}</th>` + cols.map(c => `<th class="num sortable${pstate.key === c.k ? " on" : ""}" data-pk="${c.k}" title="${esc(c.tip)}">${t(c.z, c.e)}${pstate.key === c.k ? (pstate.dir < 0 ? " ▾" : " ▴") : ""}</th>`).join("") + `<th>${t("异常", "Flags")}</th></tr></thead><tbody>` +
+      rows.map(r => `<tr><td><a href="compare.html?m=${encodeURIComponent(r.id)}"><b>${esc(r.label)}</b></a></td>` + cols.map(c => { const v = c.v(r); return `<td class="num">${med[c.k][r.id] ? med[c.k][r.id] + " " : ""}${v === null || v === undefined ? (c.k.startsWith("clone") ? `<span class="muted" title="${esc(t("不支持参考音克隆", "no reference cloning"))}">–</span>` : "–") : fmt(v, c.d)}${c.k === "rtf" && r.resident ? "*" : ""}</td>`; }).join("") + `<td class="hint" style="margin:0">${esc(flagText(r.flags))}</td></tr>`).join("") + `</tbody></table></div>
+      <div class="hint">${t("点表头排序。🥇🥈🥉 是该列前三名。克隆分被封顶的原因见下方各题试听。", "Click a header to sort. 🥇🥈🥉 mark each column's top three. Why a clone score was capped is shown per clip below.")}</div>
+      <h3 style="margin-top:18px">${t("逐题试听", "Listen item by item")}</h3>` +
+      L.cases.map(cid => { const c = P.cases[cid]; const ss = P.samples.filter(s => s.c === cid).sort((a, b) => c.clone ? (b.clone ?? -1) - (a.clone ?? -1) : (a.err ?? 9) - (b.err ?? 9));
+        return `<details class="pcase"><summary>${esc(t(c.name, c.name_en))} <span class="muted">· ${ss.length} ${t("条", "clips")}</span></summary><p lang="${lang}">${esc(c.text)}</p>` +
+          (c.ref ? `<div class="hint">${t("参考音：", "Reference: ")}</div><audio class="refa" controls preload="none" src="${esc(c.ref)}"></audio>` : "") +
+          `<div class="pgrid">` + ss.map(s => `<div><b>${esc(byModel[s.m] ? byModel[s.m].label : s.m)}</b><audio controls preload="none" src="${esc(s.a)}"></audio><div class="hint">${t("错误率", "Error")} ${fmt(pct(s.err), 1)}%${s.clone !== null ? ` · ${t("克隆分", "Clone")} ${fmt(s.clone, 1)}` : ""} · RTF ${fmt(s.rtf, 2)}</div>${s.cap ? `<div class="hint">${t("封顶：", "Capped: ")}${esc(s.cap.split(";").map(x => x.startsWith("content") ? t("读错太多", "too many misread words") : x.replace("ecapa", "ECAPA").replace("campplus", "CAM++").replace(":not_usable", t(" 判不像", " says no match")).replace(":borderline", t(" 判边缘", " borderline"))).join("、"))}</div>` : ""}${s.asr ? `<details><summary style="font-size:12px;font-weight:500">${t("ASR 听写", "ASR transcript")}</summary><div class="hint" lang="${lang}">${esc(s.asr)}</div></details>` : ""}</div>`).join("") + `</div></details>`; }).join("");
+    box.querySelectorAll("th.sortable").forEach(h => h.onclick = () => { const k = h.dataset.pk; if (pstate.key === k) pstate.dir = -pstate.dir; else { pstate.key = k; pstate.dir = cols.find(c => c.k === k).b === "min" ? 1 : -1; } renderPilot(lang, name); });
   }
   document.addEventListener("langchange", render);
   render();
