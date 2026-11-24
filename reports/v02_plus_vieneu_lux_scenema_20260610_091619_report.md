@@ -23,9 +23,9 @@
 | 11 | `mlx_indextts2.5` | 32 | 83.783 | 77.012 | 7/9 | 100.0 | 88.288 | 77.527 | 86.203 | 0.0 | 77.402 | 86.681 | 0.0 | 92.806 | 35.78 | no |
 | 12 | `mlx_voxcpm2` | 64 | 83.246 | 80.898 | 9/9 | 100.0 | 91.097 | 73.219 | 84.421 | 87.882 | 64.839 | 91.922 | 84.549 | 93.869 | 60.115 | no |
 | 13 | `mlx_dots_tts` | 48 | 80.777 | 76.442 | 8/9 | 100.0 | 87.442 | 65.861 | 85.377 | 79.181 | 70.412 | 90.786 | 0.0 | 90.211 | 63.735 | no |
-| 14 | `mlx_fireredtts3` | 46 | 79.404 | 67.978 | 7/9 | 100.0 | 96.15 | 77.489 | 66.246 | 42.495 | 66.861 | 0.0 | 0.0 | 92.656 | 55.658 | no |
-| 15 | `mlx_ming3_0.5b` | 32 | 78.754 | 78.755 | 9/9 | 100.0 | 90.301 | 79.097 | 71.029 | 24.243 | 61.727 | 92.339 | 88.694 | 89.483 | 88.824 | no |
-| 16 | `mlx_ming3_tiny_7.9b` | 32 | 66.836 | 66.836 | 9/9 | 100.0 | 75.239 | 71.427 | 80.398 | 39.125 | 22.82 | 94.66 | 88.986 | 91.659 | 29.761 | no |
+| 14 | `mlx_ming3_0.5b` | 32 | 80.445 | 80.445 | 9/9 | 100.0 | 90.301 | 79.097 | 71.029 | 24.243 | 71.658 | 92.339 | 88.694 | 89.483 | 88.885 | no |
+| 15 | `mlx_fireredtts3` | 46 | 79.404 | 67.978 | 7/9 | 100.0 | 96.15 | 77.489 | 66.246 | 42.495 | 66.861 | 0.0 | 0.0 | 92.656 | 55.658 | no |
+| 16 | `mlx_ming3_tiny_7.9b` | 32 | 70.092 | 70.091 | 9/9 | 100.0 | 75.239 | 71.427 | 80.398 | 39.125 | 42.144 | 94.66 | 88.986 | 91.659 | 28.775 | no |
 | 17 | `mlx_indextts2_vietnamese` | 16 | 57.12 | 54.079 | 7/9 | 100.0 | 29.93 | 76.502 | 95.0 | 0.0 | 44.827 | 67.781 | 0.0 | 70.418 | 14.877 | no |
 | 18 | `mlx_supertonic` | 38 | 94.387 | 65.736 | 6/9 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 94.353 | 96.348 | 100.0 | no |
 | 19 | `mlx_kitten_tts2_mini` | 22 | 94.123 | 62.105 | 5/9 | 100.0 | 98.06 | 89.754 | 86.075 | 0.0 | 0.0 | 0.0 | 0.0 | 97.167 | 88.557 | no |
@@ -313,7 +313,7 @@
 | `mlx_ming3_0_5b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6306 | 4.056 | 0.5024 |  |
 | `mlx_ming3_0_5b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5507 | 0.4666 |  |
 | `mlx_ming3_0_5b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.9498 | 0.4194 |  |
-| `mlx_ming3_0_5b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.0 | 4.3619 | 0.5176 |  |
+| `mlx_ming3_0_5b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.4916 | 4.2612 | 0.4329 |  |
 | `mlx_ming3_0_5b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.08 |  | 3.8501 | 0.4398 |  |
 | `mlx_ming3_0_5b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8363 | 0.4699 |  |
 | `mlx_ming3_0_5b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.225 | 0.4424 |  |
@@ -333,7 +333,7 @@
 | `mlx_ming3_tiny_7_9b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.963 |  | 2.5861 | 19.8499 | sim:insufficient voiced audio: 0.200s < 0.750s (/Users/vanch/tts-test-project/results/generated/20261021_231459/mlx_ming3_tiny_7_9b_8bit/clone_3s_en.wav) |
 | `mlx_ming3_tiny_7_9b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2182 | 1.4259 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0898 | 1.3244 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.0128 | 4.1885 | 1.4703 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7779 | 4.0886 | 2.2428 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4155 | 1.2861 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1536 | 1.8012 |  |
 | `mlx_ming3_tiny_7_9b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0921 | 1.3262 |  |
