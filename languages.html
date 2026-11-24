@@ -45,7 +45,7 @@ tr.unranked td { color:var(--muted); }
 <div id="evidence"></div>
 <div class="scroll"><table id="tbl"></table></div>
 <div class="hint" id="notes"></div>
-<h2 style="margin-top:26px"><span class="zh">这种语言有哪些题</span><span class="en">Items for this language</span></h2>
+<h2 id="itemsH" style="margin-top:26px"><span class="zh">这种语言有哪些题</span><span class="en">Items for this language</span></h2>
 <div class="items" id="items"></div>
 <section id="pilot" hidden></section>
 
@@ -68,8 +68,11 @@ tr.unranked td { color:var(--muted); }
   const samplesByCase = {};
   S.samples.forEach(s => { (samplesByCase[s.c] = samplesByCase[s.c] || []).push(s); });
   const modelsOf = l => { const set = new Set(); (byLang[l] || []).forEach(c => (samplesByCase[c] || []).forEach(s => { if (s.s !== null) set.add(s.m); })); return set; };
-  const langs = Object.keys(byLang).filter(l => modelsOf(l).size > 0).sort((a, b) => modelsOf(b).size - modelsOf(a).size || a.localeCompare(b));
-  if (!state.lang || !byLang[state.lang]) state.lang = langs.includes("vi") ? "vi" : langs[0];
+  const mainLangs = Object.keys(byLang).filter(l => modelsOf(l).size > 0).sort((a, b) => modelsOf(b).size - modelsOf(a).size || a.localeCompare(b));
+  // languages that exist only in the deep-dive pilot (not on the main board): listed after the board languages
+  const pilotOnly = Object.keys((S.pilot && S.pilot.langs) || {}).filter(l => !mainLangs.includes(l)).sort();
+  const langs = mainLangs.concat(pilotOnly);
+  if (!state.lang || !langs.includes(state.lang)) state.lang = langs.includes("vi") ? "vi" : langs[0];
   const axisOrder = S.axes.map(a => a.id);
 
   const mean = a => { const v = a.filter(x => x !== null && x !== undefined && !Number.isNaN(x)); return v.length ? v.reduce((x, y) => x + y, 0) / v.length : null; };
@@ -101,11 +104,18 @@ tr.unranked td { color:var(--muted); }
   function render() {
     const lang = state.lang, name = K.langName(lang);
     // selector
-    $("lang").innerHTML = langs.map(l => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(K.langName(l))} · ${modelsOf(l).size} ${t("个模型", "models")} · ${byLang[l].length} ${t("道题", "items")}</option>`).join("");
+    $("lang").innerHTML = langs.map(l => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(K.langName(l))} · ${pilotOnly.includes(l) ? t("深度试点", "pilot only") : `${modelsOf(l).size} ${t("个模型", "models")} · ${byLang[l].length} ${t("道题", "items")}`}</option>`).join("");
     $("lang").onchange = e => { state.lang = e.target.value; state.key = "score"; state.dir = -1; K.setParams({lang: state.lang}); render(); };
     $("quick").innerHTML = langs.slice(0, 10).map(l => `<button class="chip" data-l="${l}" style="${l === lang ? "background:var(--accent);color:var(--panel);border-color:var(--accent)" : ""}">${esc(K.langName(l))}</button>`).join("");
     $("quick").querySelectorAll("button").forEach(b => b.onclick = () => { state.lang = b.dataset.l; state.key = "score"; state.dir = -1; K.setParams({lang: state.lang}); render(); });
 
+    if (pilotOnly.includes(lang)) {  // no board data: only the deep-dive pilot block
+      ["headline", "evidence", "tbl", "notes", "items"].forEach(i => { $(i).innerHTML = ""; });
+      $("itemsH").hidden = true;
+      renderPilot(lang, name);
+      return;
+    }
+    $("itemsH").hidden = false;
     const {cs, axes, rows} = compute(lang);
     const ranked = rows.filter(r => r.complete).sort((a, b) => (Math.round(b.score * 1e4) - Math.round(a.score * 1e4)) || (b.m.quality - a.m.quality));
     const rankOf = {}; ranked.forEach((r, i) => { rankOf[r.id] = i + 1; });
@@ -169,10 +179,18 @@ tr.unranked td { color:var(--muted); }
     rows.sort((a, b) => { const av = sc.v(a), bv = sc.v(b); if (av === null || av === undefined) return 1; if (bv === null || bv === undefined) return -1; return (av - bv) * pstate.dir; });
     const flagText = f => f.map(x => { const [cs, fl] = x.split(":"); const c = P.cases[`pilot_${lang}_${cs}`]; return `${c ? t(c.name, c.name_en) : cs}: ${fl.split("+").map(k => ({silent: t("无声", "silent"), long_trail: t("尾部长静音", "long trailing silence"), dur_outlier: t("时长异常", "odd duration"), asr_loop: t("重复/卡住", "repeats"), overlong: t("多读", "extra speech")}[k] || k)).join("、")}`; }).join("；");
     const floor = L.floor;
+    if (L.unscorable) {  // the ASR cannot read back even human speech here, so no model scores are published
+      box.innerHTML = `<h2 style="margin-top:30px">${t(`${name}：暂无法评分`, `${name}: cannot be scored yet`)}</h2>
+        <div class="callout warn">${t(
+          `${L.date} 我们用 OmniVoice 和 ZONOS3 生成过这种语言的 8 道题，但没有发布分数：用来听写的 ${L.asr || P.asr} 听真人录音（FLEURS，${floor.n} 条）的错误率就有 ${fmt(floor.mean * 100, 0)}%（中位数 ${fmt(floor.median * 100, 0)}%），模型生成的音频错多少已经分不清是模型错还是听写错；克隆分里“读错太多就封顶”的规则也会被这个噪声压低。等有更准的听写方式再评。`,
+          `On ${L.date} we generated the 8 items in this language with OmniVoice and ZONOS3 but publish no scores: the ASR used for read-back (${L.asr || P.asr}) already errs on ${fmt(floor.mean * 100, 0)}% of human recordings (FLEURS, ${floor.n} clips; median ${fmt(floor.median * 100, 0)}%), so a model's error cannot be told apart from the ASR's, and the clone score's "misread too much, cap it" rule would be driven by that noise. We will score it once there is a more reliable transcription route.`)}</div>
+        ${L.human ? `<h3 style="margin-top:18px">${t("真人朗读", "Human reading")}</h3><div class="hint">${t("FLEURS 真人录音（CC-BY-4.0）。", "A FLEURS human recording (CC-BY-4.0).")}</div><p lang="${lang}">${esc(L.human.text)}</p><audio class="refa" controls preload="none" src="${esc(L.human.a)}"></audio>` : ""}`;
+      return;
+    }
     box.innerHTML = `<h2 style="margin-top:30px">${t(`${name}深度试点：8 道题`, `${name} deep-dive pilot: 8 items`)}</h2>
       <div class="callout warn"><b>${t("单独测量，不计入上面的语言分。", "Measured separately; not part of the language score above.")}</b> ${t(
-        `${L.date} 的试点：4 道朗读（短句、数字、夹英文、长段）、2 道自然表达、2 道克隆，${L.models.length} 个模型各生成一次。朗读错误率用 ${P.asr} 听写，与总榜的 Qwen3-ASR 不同；同一套 ASR 听真人录音（FLEURS，${floor.n} 条）的错误率是 ${fmt(floor.mean * 100, 1)}%（中位数 ${fmt(floor.median * 100, 1)}%），低于这个数的差距多半是 ASR 噪声。${floor.mean > 0.2 ? `这个语言的 ASR 本身就不准（真人也错 ${fmt(floor.mean * 100, 0)}%），错误率只能看相对高低。` : ""}克隆分与总榜同一公式（ECAPA、CAM++、WavLM 平均，声纹判不像或读错太多会封顶）。自然度没有放：单条打分的评审几乎给所有音频满分，分不出高低。${hasRtf ? "" : "速度也没放：这批在机器忙碌时生成，计时不可比。"}`,
-        `Pilot of ${L.date}: 4 reading items (short, numbers, English brand names, long), 2 expressive items and 2 clone items, one take per model for ${L.models.length} models. Reading error is ${P.asr} read-back, not the main board's Qwen3-ASR; the same ASR on human recordings (FLEURS, ${floor.n} clips) scores ${fmt(floor.mean * 100, 1)}% (median ${fmt(floor.median * 100, 1)}%), so gaps below that are mostly ASR noise.${floor.mean > 0.2 ? ` This language is hard for the ASR itself (humans score ${fmt(floor.mean * 100, 0)}% too), so read the error rates as relative only.` : ""} The clone score uses the main board's formula (mean of ECAPA, CAM++ and WavLM, capped when a voiceprint model says no match or the text is misread). Naturalness is left out: the single-clip judge gave almost every clip full marks.${hasRtf ? "" : " Speed is left out too: this batch was generated on a busy machine, so timings are not comparable."}`)}</div>
+        `${L.date} 的试点：4 道朗读（短句、数字、夹英文、长段）、2 道自然表达、2 道克隆，${L.models.length} 个模型各生成一次。朗读错误率用 ${L.asr || P.asr} 听写，与总榜的 Qwen3-ASR 不同；同一套 ASR 听真人录音（FLEURS，${floor.n} 条）的错误率是 ${fmt(floor.mean * 100, 1)}%（中位数 ${fmt(floor.median * 100, 1)}%），低于这个数的差距多半是 ASR 噪声。${floor.mean > 0.2 ? `这个语言的 ASR 本身就不准（真人也错 ${fmt(floor.mean * 100, 0)}%），错误率只能看相对高低。` : ""}克隆分与总榜同一公式（ECAPA、CAM++、WavLM 平均，声纹判不像或读错太多会封顶）。自然度没有放：单条打分的评审几乎给所有音频满分，分不出高低。${hasRtf ? "" : "速度也没放：这批在机器忙碌时生成，计时不可比。"}`,
+        `Pilot of ${L.date}: 4 reading items (short, numbers, English brand names, long), 2 expressive items and 2 clone items, one take per model for ${L.models.length} models. Reading error is ${L.asr || P.asr} read-back, not the main board's Qwen3-ASR; the same ASR on human recordings (FLEURS, ${floor.n} clips) scores ${fmt(floor.mean * 100, 1)}% (median ${fmt(floor.median * 100, 1)}%), so gaps below that are mostly ASR noise.${floor.mean > 0.2 ? ` This language is hard for the ASR itself (humans score ${fmt(floor.mean * 100, 0)}% too), so read the error rates as relative only.` : ""} The clone score uses the main board's formula (mean of ECAPA, CAM++ and WavLM, capped when a voiceprint model says no match or the text is misread). Naturalness is left out: the single-clip judge gave almost every clip full marks.${hasRtf ? "" : " Speed is left out too: this batch was generated on a busy machine, so timings are not comparable."}`)}</div>
       <div class="scroll"><table><thead><tr><th>${t("模型", "Model")}</th>` + cols.map(c => `<th class="num sortable${pstate.key === c.k ? " on" : ""}" data-pk="${c.k}" title="${esc(c.tip)}">${t(c.z, c.e)}${pstate.key === c.k ? (pstate.dir < 0 ? " ▾" : " ▴") : ""}</th>`).join("") + `<th>${t("异常", "Flags")}</th></tr></thead><tbody>` +
       rows.map(r => `<tr><td><a href="compare.html?m=${encodeURIComponent(r.id)}"><b>${esc(r.label)}</b></a></td>` + cols.map(c => { const v = c.v(r); return `<td class="num">${med[c.k][r.id] ? med[c.k][r.id] + " " : ""}${v === null || v === undefined ? (c.k.startsWith("clone") ? `<span class="muted" title="${esc(t("不支持参考音克隆", "no reference cloning"))}">–</span>` : "–") : fmt(v, c.d)}${c.k === "rtf" && r.resident ? "*" : ""}</td>`; }).join("") + `<td class="hint" style="margin:0">${esc(flagText(r.flags))}</td></tr>`).join("") + `</tbody></table></div>
       <div class="hint">${t("点表头排序。🥇🥈🥉 是该列前三名。克隆分被封顶的原因见下方各题试听。", "Click a header to sort. 🥇🥈🥉 mark each column's top three. Why a clone score was capped is shown per clip below.")}</div>
