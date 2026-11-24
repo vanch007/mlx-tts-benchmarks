@@ -74,6 +74,10 @@ tr.unranked td { color:var(--muted); }
   const langs = mainLangs.concat(pilotOnly);
   if (!state.lang || !langs.includes(state.lang)) state.lang = langs.includes("vi") ? "vi" : langs[0];
   const axisOrder = S.axes.map(a => a.id);
+  // on a single-language page the "multilingual" items are simply this language's reading items
+  const axName = a => a === "multilingual" ? t("朗读", "Reading") : K.axisName(a);
+  // ties broken within this language only (reading error, then name), never by a cross-language score
+  const tie = (a, b) => ((a.err ?? 9) - (b.err ?? 9)) || a.m.label.localeCompare(b.m.label);
 
   const mean = a => { const v = a.filter(x => x !== null && x !== undefined && !Number.isNaN(x)); return v.length ? v.reduce((x, y) => x + y, 0) / v.length : null; };
   function compute(lang) {
@@ -117,20 +121,20 @@ tr.unranked td { color:var(--muted); }
     }
     $("itemsH").hidden = false;
     const {cs, axes, rows} = compute(lang);
-    const ranked = rows.filter(r => r.complete).sort((a, b) => (Math.round(b.score * 1e4) - Math.round(a.score * 1e4)) || (b.m.quality - a.m.quality));
+    const ranked = rows.filter(r => r.complete).sort((a, b) => (Math.round(b.score * 1e4) - Math.round(a.score * 1e4)) || tie(a, b));
     const rankOf = {}; ranked.forEach((r, i) => { rankOf[r.id] = i + 1; });
 
     // headline podium
     const top = ranked.slice(0, 3);
-    $("headline").innerHTML = top.length ? `<div class="podium">` + top.map((r, i) => `<div class="panel"><span class="medal">${MEDAL[i]}</span> <span class="muted">${i === 0 ? t(`${name}最好`, `Best for ${name}`) : t(`第 ${i + 1} 名`, `#${i + 1}`)}</span><b class="big"><a href="compare.html?m=${encodeURIComponent(r.id)}">${esc(r.m.label)}</a></b><div class="score">${fmt(r.score, 1)}</div><div class="hint" style="margin:2px 0 0">${axes.map(a => `${esc(K.axisName(a))} ${fmt(r.per[a], 0)}`).join(" · ")}</div></div>`).join("") + `</div>` : `<div class="callout warn">${t("没有模型同时覆盖这种语言的全部能力，下表按覆盖情况列出。", "No model covers every ability this language has items for; the table lists models by coverage.")}</div>`;
+    $("headline").innerHTML = top.length ? `<div class="podium">` + top.map((r, i) => `<div class="panel"><span class="medal">${MEDAL[i]}</span> <span class="muted">${i === 0 ? t(`${name}最好`, `Best for ${name}`) : t(`第 ${i + 1} 名`, `#${i + 1}`)}</span><b class="big"><a href="compare.html?m=${encodeURIComponent(r.id)}">${esc(r.m.label)}</a></b><div class="score">${fmt(r.score, 1)}</div><div class="hint" style="margin:2px 0 0">${axes.map(a => `${esc(axName(a))} ${fmt(r.per[a], 0)}`).join(" · ")}</div></div>`).join("") + `</div>` : `<div class="callout warn">${t("没有模型同时覆盖这种语言的全部能力，下表按覆盖情况列出。", "No model covers every ability this language has items for; the table lists models by coverage.")}</div>`;
 
     // evidence warning
     const nAxes = axes.length, nItems = cs.length;
-    $("evidence").innerHTML = `<div class="callout${nItems < 3 ? " warn" : ""}"><b>${t("证据有多少：", "How much evidence: ")}</b>${t(`${name}共 ${nItems} 道题（${axes.map(a => K.axisName(a)).join("、")}），${modelsOf(lang).size} 个模型有数据。`, `${name} has ${nItems} item${nItems === 1 ? "" : "s"} (${axes.map(a => K.axisName(a)).join(", ")}) and ${modelsOf(lang).size} models with data.`)} ${nItems < 3 ? t("题少，每个能力只有一道题的一次生成（克隆类取 3 次平均），分差只能看大致；", "With so few items each ability rests on one prompt (cloning averages 3 takes), so gaps are indicative only; ") : ""}${t("“语言分”是各能力分数的简单平均，只有覆盖全部这些能力的模型才有名次。", "The language score is the plain mean of the ability scores, and only models covering all of them get a rank.")}</div>`;
+    $("evidence").innerHTML = `<div class="callout${nItems < 3 ? " warn" : ""}"><b>${t("证据有多少：", "How much evidence: ")}</b>${t(`${name}共 ${nItems} 道题（${axes.map(a => axName(a)).join("、")}），${modelsOf(lang).size} 个模型有数据。`, `${name} has ${nItems} item${nItems === 1 ? "" : "s"} (${axes.map(a => axName(a)).join(", ")}) and ${modelsOf(lang).size} models with data.`)} ${nItems < 3 ? t("题少，每个能力只有一道题的一次生成（克隆类取 3 次平均），分差只能看大致；", "With so few items each ability rests on one prompt (cloning averages 3 takes), so gaps are indicative only; ") : ""}${t("“语言分”是各能力分数的简单平均，只有覆盖全部这些能力的模型才有名次。", "The language score is the plain mean of the ability scores, and only models covering all of them get a rank.")}</div>`;
 
     // table
     const cols = [{k: "score", z: "语言分", e: "Language score", b: "max", d: 1, tip: t("各能力分数的平均", "mean of the ability scores")}]
-      .concat(axes.map(a => ({k: "ax:" + a, z: K.axisName(a), e: K.axisName(a), b: "max", d: 1, ax: a, tip: t("该能力在这种语言上的分数", "score on this ability in this language")})))
+      .concat(axes.map(a => ({k: "ax:" + a, z: axName(a), e: axName(a), b: "max", d: 1, ax: a, tip: t("该能力在这种语言上的分数", "score on this ability in this language")})))
       .concat([{k: "err", z: `朗读错误率 % (${CER.has(lang) ? "CER" : "WER"})`, e: `Reading error % (${CER.has(lang) ? "CER" : "WER"})`, b: "min", d: 1, tip: t("朗读题的 ASR 错误率，越低越好", "ASR error on reading items; lower is better"), scale: 100},
                {k: "utmos", z: "UTMOS", e: "UTMOS", b: "max", d: 2, tip: t("预测自然度（1–5，未做参考音质折算）；UTMOS 只在英文上训练，其他语言只能粗略参考", "predicted naturalness (1-5, not reference-corrected); UTMOS is English-trained, so rough elsewhere")},
                {k: "rtf", z: "RTF", e: "RTF", b: "min", d: 2, tip: t("生成耗时÷音频时长，越低越快", "generation time ÷ audio duration; lower is faster")}]);
@@ -142,16 +146,16 @@ tr.unranked td { color:var(--muted); }
       if (a.complete !== b.complete && state.key === "score") return a.complete ? -1 : 1;
       const av = val(a, sortCol), bv = val(b, sortCol);
       if (av === null || av === undefined) return 1; if (bv === null || bv === undefined) return -1;
-      return (Math.round(av * 1e4) - Math.round(bv * 1e4)) * state.dir || (b.m.quality - a.m.quality);  // ties: higher overall quality first
+      return (Math.round(av * 1e4) - Math.round(bv * 1e4)) * state.dir || tie(a, b);
     });
     $("tbl").innerHTML = `<thead><tr><th class="num">#</th><th>${t("模型", "Model")}</th>` + cols.map(c => `<th class="num sortable${state.key === c.k ? " on" : ""}" data-k="${c.k}" title="${esc(c.tip)}">${t(c.z, c.e)}${state.key === c.k ? (state.dir < 0 ? " ▾" : " ▴") : ""}</th>`).join("") + `<th class="num">${t("覆盖", "Items")}</th></tr></thead><tbody>` +
-      view.map(r => `<tr class="${r.complete ? "" : "unranked"}"><td class="num">${rankOf[r.id] || "–"}</td><td><a href="compare.html?m=${encodeURIComponent(r.id)}"><b>${esc(r.m.label)}</b></a> <span class="tag ${r.m.group === "full" ? "full" : ""}">${esc(K.groupTag(r.m.group))}</span></td>` +
+      view.map(r => `<tr class="${r.complete ? "" : "unranked"}"><td class="num">${rankOf[r.id] || "–"}</td><td><a href="compare.html?m=${encodeURIComponent(r.id)}"><b>${esc(r.m.label)}</b></a></td>` +
         cols.map(c => { const v = val(r, c); return `<td class="num">${med[c.k][r.id] ? med[c.k][r.id] + " " : ""}${v === null || v === undefined ? "–" : fmt(v, c.d)}</td>`; }).join("") + `<td class="num">${r.items}/${r.nItems}</td></tr>`).join("") + "</tbody>";
     $("tbl").querySelectorAll("th.sortable").forEach(h => h.onclick = () => { const k = h.dataset.k; if (state.key === k) state.dir = -state.dir; else { state.key = k; state.dir = (k === "err" || k === "rtf") ? 1 : -1; } render(); });
-    $("notes").innerHTML = t("🥇🥈🥉 是该列前三名，并列共享；“语言分”的奖牌和名次只给覆盖全部能力的模型，灰色行是只覆盖部分能力的模型，排在后面。点模型名进入多维对比。", "🥇🥈🥉 mark the top three in a column and ties share; medals and ranks on the language score go only to models covering every ability, greyed rows cover only some and are listed after. Click a model for the full comparison.");
+    $("notes").innerHTML = t("表中所有分数只来自这种语言的题，不含模型在其他语言上的成绩；“朗读”是这种语言的朗读题分数。🥇🥈🥉 是该列前三名，并列共享；“语言分”的奖牌和名次只给覆盖全部能力的模型，灰色行是只覆盖部分能力的模型，排在后面。点模型名进入多维对比。", "Every score here comes only from this language's items, never from the model's results in other languages; “Reading” is the score on this language's reading items. 🥇🥈🥉 mark the top three in a column and ties share; medals and ranks on the language score go only to models covering every ability, greyed rows cover only some and are listed after. Click a model for the full comparison.");
 
     // items with listen links
-    $("items").innerHTML = cs.map(c => `<a class="btn" href="listen.html?case=${encodeURIComponent(c)}">▶ ${esc(K.caseName(c))} <span class="muted">· ${esc(K.axisName(S.cases[c].axis))}</span></a>`).join("");
+    $("items").innerHTML = cs.map(c => `<a class="btn" href="listen.html?case=${encodeURIComponent(c)}">▶ ${esc(K.caseName(c))} <span class="muted">· ${esc(axName(S.cases[c].axis))}</span></a>`).join("");
     renderPilot(lang, name);
   }
 
