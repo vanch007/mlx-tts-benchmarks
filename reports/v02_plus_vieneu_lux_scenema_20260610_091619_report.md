@@ -24,8 +24,8 @@
 | 12 | `mlx_voxcpm2` | 64 | 83.246 | 80.898 | 9/9 | 100.0 | 91.097 | 73.219 | 84.421 | 87.882 | 64.839 | 91.922 | 84.549 | 93.869 | 60.115 | no |
 | 13 | `mlx_ming3_0.5b` | 32 | 81.44 | 81.44 | 9/9 | 100.0 | 90.301 | 79.097 | 71.029 | 24.243 | 77.82 | 92.339 | 88.694 | 89.483 | 87.138 | no |
 | 14 | `mlx_dots_tts` | 48 | 80.777 | 76.442 | 8/9 | 100.0 | 87.442 | 65.861 | 85.377 | 79.181 | 70.412 | 90.786 | 0.0 | 90.211 | 63.735 | no |
-| 15 | `mlx_fireredtts3` | 46 | 79.404 | 67.978 | 7/9 | 100.0 | 96.15 | 77.489 | 66.246 | 42.495 | 66.861 | 0.0 | 0.0 | 92.656 | 55.658 | no |
-| 16 | `mlx_ming3_tiny_7.9b` | 32 | 70.123 | 70.123 | 9/9 | 100.0 | 75.239 | 71.427 | 80.398 | 39.125 | 42.332 | 94.66 | 88.986 | 91.659 | 28.775 | no |
+| 15 | `mlx_ming3_tiny_7.9b` | 32 | 79.71 | 79.71 | 9/9 | 100.0 | 86.103 | 74.876 | 81.387 | 47.88 | 80.914 | 91.789 | 95.332 | 94.073 | 0.369 | no |
+| 16 | `mlx_fireredtts3` | 46 | 79.404 | 67.978 | 7/9 | 100.0 | 96.15 | 77.489 | 66.246 | 42.495 | 66.861 | 0.0 | 0.0 | 92.656 | 55.658 | no |
 | 17 | `mlx_indextts2_vietnamese` | 16 | 57.12 | 54.079 | 7/9 | 100.0 | 29.93 | 76.502 | 95.0 | 0.0 | 44.827 | 67.781 | 0.0 | 70.418 | 14.877 | no |
 | 18 | `mlx_supertonic` | 38 | 94.387 | 65.736 | 6/9 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 94.353 | 96.348 | 100.0 | no |
 | 19 | `mlx_kitten_tts2_mini` | 22 | 94.123 | 62.105 | 5/9 | 100.0 | 98.06 | 89.754 | 86.075 | 0.0 | 0.0 | 0.0 | 0.0 | 97.167 | 88.557 | no |
@@ -320,26 +320,26 @@
 | `mlx_ming3_0_5b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6526 | 0.4339 |  |
 | `mlx_ming3_0_5b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.5469 | 1.0616 |  |
 | `mlx_ming3_0_5b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.1069 |  | 4.4155 | 0.4185 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 1.5429 |  | 3.2198 | 1.0998 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0189 |  | 4.5051 | 1.2402 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0857 |  | 3.7743 | 1.3712 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.125 |  | 3.4954 | 1.376 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0714 | 1.5542 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2116 | 1.2754 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0455 |  | 2.6519 | 1.5348 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6631 | 1.3553 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.9744 |  | 1.5494 | 26.5518 | sim:insufficient voiced audio: 0.160s < 0.750s (/Users/vanch/tts-test-project/results/generated/20261021_231459/mlx_ming3_tiny_7_9b_8bit/clone_en_same.wav) |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8564 | 3.0104 | 1.7576 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.963 |  | 2.5861 | 19.8499 | sim:insufficient voiced audio: 0.200s < 0.750s (/Users/vanch/tts-test-project/results/generated/20261021_231459/mlx_ming3_tiny_7_9b_8bit/clone_3s_en.wav) |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2182 | 1.4259 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0898 | 1.3244 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7779 | 4.0886 | 2.2428 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.4155 | 1.2861 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.1536 | 1.8012 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0921 | 1.3262 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.16 | 1.4417 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.7749 | 1.2452 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4417 | 1.2866 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0571 |  | 3.3517 | 1.9861 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0189 |  | 4.2994 | 2.4665 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.0286 |  | 2.9562 | 2.244 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.1562 |  | 3.128 | 2.6714 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 韩语客服确认话术朗读 (core_ko_customer) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2492 | 2.4872 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1226 | 2.3953 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 粤语科普播客方言能力 (core_yue_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1519 | 2.426 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 四川话日常沟通方言能力 (core_sichuan_dialect) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6926 | 2.6898 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8516 | 3.9881 | 2.8292 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文参考音色克隆 (clone_zh_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8525 | 2.9906 | 2.1844 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7973 | 4.3317 | 2.3218 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文儿童故事女声音色设计 (control_voice_design_child) | success | qwen3_asr_1_7b_8bit | 0.0471 |  | 4.034 | 2.7678 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文近讲 ASMR 女声音色设计 (control_voice_design_asmr) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6259 | 3.0809 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7243 | 4.0852 | 2.4484 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.065 |  | 4.1442 | 2.3097 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文开心情绪标签控制 (control_emotion_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7887 | 4.0764 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文悲伤情绪标签控制 (control_emotion_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7193 | 2.3573 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文愤怒情绪标签控制 (control_emotion_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 1.4894 | 2.7164 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0087 | 1.8323 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4794 | 2.0312 |  |
 | `mlx_voxmel_0_6b_8bit` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.0909 |  | 2.5469 | 0.8414 |  |
 | `mlx_voxmel_0_6b_8bit` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0359 | 0.8402 |  |
 | `mlx_voxmel_0_6b_8bit` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.2286 |  | 2.5294 | 0.8291 |  |
@@ -574,14 +574,14 @@
 | `mlx_qwen3_tts_official_int8` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4262 | 1.2718 |  |
 | `mlx_qwen3_tts_official_int8` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2209 | 1.7783 |  |
 | `mlx_qwen3_tts_official_int8` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9711 | 1.1516 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文日期、时间与单位朗读 (core_zh_date_units) | success | qwen3_asr_1_7b_8bit | 1.6486 |  | 3.7935 | 1.4833 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文多音字朗读 (core_zh_polyphone) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5205 | 2.26 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文地址与人名朗读 (core_zh_address) | success | qwen3_asr_1_7b_8bit | 0.2121 |  | 3.7431 | 2.8122 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 中文普通长句朗读 (core_zh_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6671 | 2.165 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0952 |  | 4.5116 | 1.7864 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.0057 | 1.6054 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0462 |  | 3.3042 | 2.0852 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5644 | 2.0733 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文日期、时间与单位朗读 (core_zh_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.791 | 2.5926 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文多音字朗读 (core_zh_polyphone) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2838 | 2.6247 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文地址与人名朗读 (core_zh_address) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.2043 | 2.2752 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 中文普通长句朗读 (core_zh_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.014 | 2.3519 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0923 |  | 4.4762 | 2.4594 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4824 | 2.7626 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4818 | 3.2971 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4821 | 2.8278 |  |
 | `mlx_fireredaudio_8bit` | 中文日期、时间与单位朗读 (core_zh_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.6679 | 1.3089 |  |
 | `mlx_fireredaudio_8bit` | 中文多音字朗读 (core_zh_polyphone) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.7932 | 1.3162 |  |
 | `mlx_fireredaudio_8bit` | 中文地址与人名朗读 (core_zh_address) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.27 | 1.3081 |  |
@@ -931,10 +931,10 @@
 | `mlx_indextts2_v25_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7949 | 2.9208 | 1.4211 |  |
 | `mlx_indextts2_v25_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.791 | 3.0268 | 1.2961 |  |
 | `mlx_indextts2_v25_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8014 | 3.2432 | 1.4776 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5178 | 1.5838 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.539 | 1.515 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4772 | 1.5836 |  |
-| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4843 | 1.6365 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5331 | 3.4891 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.329 | 3.3033 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4857 | 2.9638 |  |
+| `mlx_ming3_tiny_7_9b_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8828 | 3.8801 |  |
 | `mlx_ming3_0_5b_8bit` | 英文笑声副语言控制 (control_token_laugh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.471 | 0.4158 |  |
 | `mlx_ming3_0_5b_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 2.8882 | 0.3985 |  |
 | `mlx_ming3_0_5b_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.5533 | 0.4182 |  |
