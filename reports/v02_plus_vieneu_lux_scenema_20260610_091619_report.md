@@ -4,7 +4,7 @@
 - 指标 CSV：`/Users/vanch/tts-test-project/results/v02_plus_vieneu_lux_scenema_20260610_091619/metrics.csv`。
 - 标准：`configs/capability_radar_research_zh.json`，9 项研究版 TTS 能力雷达评分；逐样本客观指标仍保留在 metrics/scored CSV。
 - 口径：优先使用新 run 的 manifest/metrics；缺少 `--run-id` 或新 metrics 不存在时回退历史 pilot8/full64。
-- 已从主评分隐藏 70 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
+- 已从主评分隐藏 73 条能力边界外、诊断或专项记录；这些项目不进入主榜和样本摘要，边界内专项可在试听页按层级查看。
 
 ## 榜单
 
@@ -31,11 +31,13 @@
 | 19 | `mlx_supertonic` | 38 | 94.387 | 65.736 | 6/9 | 100.0 | 97.034 | 90.486 | 91.021 | 0.0 | 0.0 | 0.0 | 94.353 | 96.348 | 100.0 | no |
 | 20 | `mlx_kitten_tts2_mini` | 22 | 94.123 | 62.105 | 5/9 | 100.0 | 98.06 | 89.754 | 86.075 | 0.0 | 0.0 | 0.0 | 0.0 | 97.167 | 88.557 | no |
 | 21 | `mlx_kitten_tts2_nano` | 14 | 93.44 | 62.279 | 5/9 | 100.0 | 97.78 | 89.466 | 89.629 | 0.0 | 0.0 | 0.0 | 0.0 | 97.183 | 84.561 | no |
-| 22 | `mlx_kitten_tts2_pico` | 14 | 90.411 | 59.912 | 5/9 | 100.0 | 96.345 | 83.894 | 84.607 | 0.0 | 0.0 | 0.0 | 0.0 | 95.871 | 80.763 | no |
-| 23 | `mlx_pocket_tts_v4` | 18 | 86.946 | 71.283 | 6/9 | 100.0 | 95.323 | 87.22 | 90.293 | 0.0 | 56.523 | 0.0 | 0.0 | 96.405 | 100.0 | no |
-| 24 | `mlx_fireredaudio` | 22 | 85.773 | 69.354 | 6/9 | 100.0 | 93.313 | 78.679 | 0.0 | 0.0 | 80.541 | 94.289 | 0.0 | 93.629 | 30.455 | no |
-| 25 | `mlx_voxmel` | 20 | 75.437 | 52.722 | 5/9 | 100.0 | 78.509 | 74.982 | 0.0 | 0.0 | 62.242 | 0.0 | 0.0 | 92.594 | 46.259 | no |
-| 26 | `mlx_voxmel_03b` | 20 | 70.644 | 49.183 | 5/9 | 100.0 | 71.606 | 74.153 | 0.0 | 0.0 | 55.407 | 0.0 | 0.0 | 89.572 | 35.653 | no |
+| 22 | `mlx_reverb` | 18 | 92.533 | 75.852 | 6/9 | 100.0 | 97.972 | 90.614 | 95.587 | 0.0 | 74.589 | 0.0 | 0.0 | 97.454 | 80.029 | no |
+| 23 | `mlx_kitten_tts2_pico` | 14 | 90.411 | 59.912 | 5/9 | 100.0 | 96.345 | 83.894 | 84.607 | 0.0 | 0.0 | 0.0 | 0.0 | 95.871 | 80.763 | no |
+| 24 | `mlx_kokoro` | 20 | 87.235 | 58.05 | 5/9 | 100.0 | 85.916 | 83.38 | 90.525 | 0.0 | 0.0 | 0.0 | 0.0 | 95.671 | 86.024 | no |
+| 25 | `mlx_pocket_tts_v4` | 18 | 86.946 | 71.283 | 6/9 | 100.0 | 95.323 | 87.22 | 90.293 | 0.0 | 56.523 | 0.0 | 0.0 | 96.405 | 100.0 | no |
+| 26 | `mlx_fireredaudio` | 22 | 85.773 | 69.354 | 6/9 | 100.0 | 93.313 | 78.679 | 0.0 | 0.0 | 80.541 | 94.289 | 0.0 | 93.629 | 30.455 | no |
+| 27 | `mlx_voxmel` | 20 | 75.437 | 52.722 | 5/9 | 100.0 | 78.509 | 74.982 | 0.0 | 0.0 | 62.242 | 0.0 | 0.0 | 92.594 | 46.259 | no |
+| 28 | `mlx_voxmel_03b` | 20 | 70.644 | 49.183 | 5/9 | 100.0 | 71.606 | 74.153 | 0.0 | 0.0 | 55.407 | 0.0 | 0.0 | 89.572 | 35.653 | no |
 
 ## 样本摘要
 
@@ -989,6 +991,44 @@
 | `mlx_drama3_ja_8bit` | 英文情绪控制：开心 (control_emotion_en_happy) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7866 | 4.1114 | 9.3239 |  |
 | `mlx_drama3_ja_8bit` | 英文情绪控制：悲伤 (control_emotion_en_sad) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8819 | 3.8374 | 8.025 |  |
 | `mlx_drama3_ja_8bit` | 英文情绪控制：愤怒 (control_emotion_en_angry) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.7034 | 3.9448 | 5.3849 |  |
+| `mlx_kokoro_82m_bf16` | 中文数字、时间与订单号朗读 (core_zh_numbers) | success | qwen3_asr_1_7b_8bit | 0.1143 |  | 3.9879 | 0.1946 |  |
+| `mlx_kokoro_82m_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5147 | 0.8981 |  |
+| `mlx_kokoro_82m_bf16` | 中英混读品牌与订单号朗读 (core_zh_en_codeswitch) | success | qwen3_asr_1_7b_8bit | 0.4 |  | 3.7743 | 0.198 |  |
+| `mlx_kokoro_82m_bf16` | 日语汇率新闻朗读 (core_ja_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9122 | 0.168 |  |
+| `mlx_kokoro_82m_bf16` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.9068 | 0.3108 |  |
+| `mlx_kokoro_82m_bf16` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.492 | 0.2084 |  |
+| `mlx_kokoro_82m_bf16` | 印地语金额、日期和姓名朗读 (core_hi_amount) | success | qwen3_asr_1_7b_8bit | 0.0417 |  | 4.2976 | 0.2701 |  |
+| `mlx_kokoro_82m_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5434 | 0.307 |  |
+| `mlx_kokoro_82m_bf16` | 中文长文本连续稳定性 (stress_long_zh) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.307 | 0.0851 |  |
+| `mlx_kokoro_82m_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.546 | 0.38 |  |
+| `mlx_kokoro_82m_bf16` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0852 | 0.1929 |  |
+| `mlx_kokoro_82m_bf16` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6037 | 0.2199 |  |
+| `mlx_kokoro_82m_bf16` | 中文日期、时间与单位朗读 (core_zh_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.6199 | 0.1695 |  |
+| `mlx_kokoro_82m_bf16` | 中文多音字朗读 (core_zh_polyphone) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.8336 | 0.1884 |  |
+| `mlx_kokoro_82m_bf16` | 中文地址与人名朗读 (core_zh_address) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7491 | 0.1708 |  |
+| `mlx_kokoro_82m_bf16` | 中文普通长句朗读 (core_zh_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.513 | 0.158 |  |
+| `mlx_kokoro_82m_bf16` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5069 | 0.5539 |  |
+| `mlx_kokoro_82m_bf16` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5332 | 0.6777 |  |
+| `mlx_kokoro_82m_bf16` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5105 | 0.8754 |  |
+| `mlx_kokoro_82m_bf16` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5202 | 0.6195 |  |
+| `mlx_reverb_tts_bf16` | 英文数字、时间与价格朗读 (core_en_numbers) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.5168 | 0.6323 |  |
+| `mlx_reverb_tts_bf16` | 西语疑问句语调与停顿 (core_es_question) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3159 | 0.3897 |  |
+| `mlx_reverb_tts_bf16` | 法语长句呼吸与音色稳定 (core_fr_long_sentence) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 3.7436 | 0.2906 |  |
+| `mlx_reverb_tts_bf16` | 德语清晰友好指令朗读 (core_de_instruction) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.2746 | 0.3548 |  |
+| `mlx_reverb_tts_bf16` | 英文参考音色克隆 (clone_en_same) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8536 | 3.7631 | 0.5238 |  |
+| `mlx_reverb_tts_bf16` | 三秒英文短参考音色克隆 (clone_3s_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.6057 | 4.1088 | 0.2354 |  |
+| `mlx_reverb_tts_bf16` | 中文参考音色说英文克隆 (xling_zh_to_en) | success | qwen3_asr_1_7b_8bit | 0.3194 | 0.8303 | 2.971 | 0.4503 |  |
+| `mlx_reverb_tts_bf16` | 英文表演式参考音色克隆 (scenema_clone_tarkin_en) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8549 | 4.0536 | 0.4975 |  |
+| `mlx_reverb_tts_bf16` | 英文参考音色说西语克隆 (scenema_polyglot_obama_es) | success | qwen3_asr_1_7b_8bit | 0.0 | 0.8044 | 3.2084 | 0.9184 |  |
+| `mlx_reverb_tts_bf16` | 英文长文本角色连续性 (scenema_longform_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4818 | 0.1939 |  |
+| `mlx_reverb_tts_bf16` | 英文长文本连续稳定性 (stress_long_en) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4997 | 0.578 |  |
+| `mlx_reverb_tts_bf16` | ml it reading (ml_it_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0926 | 1.1806 |  |
+| `mlx_reverb_tts_bf16` | ml pt reading (ml_pt_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.0809 | 0.6455 |  |
+| `mlx_reverb_tts_bf16` | ml pl reading (ml_pl_reading) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.1972 | 0.8657 |  |
+| `mlx_reverb_tts_bf16` | 英文日期、时间与单位朗读 (core_en_date_units) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.459 | 0.505 |  |
+| `mlx_reverb_tts_bf16` | 英文缩写词朗读 (core_en_acronyms) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.4964 | 0.883 |  |
+| `mlx_reverb_tts_bf16` | 英文同形异音词朗读 (core_en_homographs) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.429 | 0.7995 |  |
+| `mlx_reverb_tts_bf16` | 英文普通长句朗读 (core_en_plain_long) | success | qwen3_asr_1_7b_8bit | 0.0 |  | 4.3953 | 0.6854 |  |
 
 ## 本地 TTS 覆盖状态
 
@@ -1007,6 +1047,8 @@
 | `mlx_higgs_audio_v3_4b` | scored | `/Users/vanch/mlx-higgs-audio` |
 | `mlx_scenema_audio_int8_mlx_mps_service` | missing_checkpoint_or_project | `/Users/vanch/mlx-scenema-audio` |
 | `mlx_supertonic3_mlx` | scored | `/Users/vanch/mlx-supertonic` |
+| `mlx_kokoro_82m_bf16` | scored | `/Users/vanch/mlx-kokoro-tts` |
+| `mlx_reverb_tts_bf16` | scored | `/Users/vanch/mlx-reverb-tts` |
 | `mlx_kitten_tts2_mini` | scored | `/Users/vanch/mlx-kitten-tts2` |
 | `mlx_kitten_tts2_nano` | scored | `/Users/vanch/mlx-kitten-tts2` |
 | `mlx_kitten_tts2_pico` | scored | `/Users/vanch/mlx-kitten-tts2` |

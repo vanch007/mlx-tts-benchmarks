@@ -1,12 +1,12 @@
 {
   "status": "pass",
-  "rows": 1084,
+  "rows": 1125,
   "asr_backends": {
-    "qwen3_asr_1_7b_8bit": 1029,
+    "qwen3_asr_1_7b_8bit": 1070,
     "mlx_whisper": 55
   },
   "regenerated_rows": 2,
-  "audio_references_checked": 2092,
+  "audio_references_checked": 2174,
   "missing_audio_paths": [],
   "excluded_records": [
     {
@@ -45,5 +45,5 @@
     "held-out evaluation, multi-seed trials, blinded listening, minute-scale longform pending",
     "legacy timing and generation revision evidence incomplete"
   ],
-  "metrics_sha256": "6b6edcd01848b83e3d69a0e2c7c990a0d3492605ee2b12672f33cb60f5a2ddc0"
+  "metrics_sha256": "e5135ba662ff329ec7ab2a932a3a5a3ddd12fdb9bd1d80cb9c213ae2bd0ac5e1"
 }
