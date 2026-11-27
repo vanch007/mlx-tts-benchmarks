@@ -1,4 +1,5 @@
 model_id,n_en,wer_en_pct,sim_en,utmos_en,n_zh,cer_zh_pct,sim_zh
+mlx_auk_base_bf16,30,0.61,0.744,3.98,30,1.27,0.798
 mlx_fireredtts3_base_bf16,30,1.15,0.732,3.76,30,0.32,0.799
 mlx_omnivoice_8bit_trim60,30,0.61,0.696,3.95,30,0.46,0.766
 mlx_qwen3_tts_official_int8,30,0.83,0.671,4.18,30,0.62,0.767

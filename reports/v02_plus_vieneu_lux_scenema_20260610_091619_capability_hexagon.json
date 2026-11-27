@@ -1943,6 +1943,103 @@
       "weakest_axis": "自然度与音频质量"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "run_id": "v02_plus_vieneu_lux_scenema_20260610_091619",
+      "content_accuracy_score": 74.496,
+      "content_accuracy_coverage_pct": 100.0,
+      "content_accuracy_evidence_coverage_pct": 100.0,
+      "content_accuracy_success_cases": 11,
+      "content_accuracy_evaluated_cases": 11,
+      "content_accuracy_comparable_score": "",
+      "content_accuracy_comparable_cases": 0,
+      "content_accuracy_supported": "yes",
+      "content_accuracy_expected_cases": 11,
+      "naturalness_audio_quality_score": 81.25,
+      "naturalness_audio_quality_coverage_pct": 100.0,
+      "naturalness_audio_quality_evidence_coverage_pct": 100.0,
+      "naturalness_audio_quality_success_cases": 6,
+      "naturalness_audio_quality_evaluated_cases": 6,
+      "naturalness_audio_quality_comparable_score": "",
+      "naturalness_audio_quality_comparable_cases": 0,
+      "naturalness_audio_quality_supported": "yes",
+      "naturalness_audio_quality_expected_cases": 6,
+      "multilingual_score": 0.0,
+      "multilingual_coverage_pct": 0.0,
+      "multilingual_evidence_coverage_pct": 0.0,
+      "multilingual_success_cases": 0,
+      "multilingual_evaluated_cases": 0,
+      "multilingual_comparable_score": "",
+      "multilingual_comparable_cases": 0,
+      "multilingual_supported": "no",
+      "multilingual_expected_cases": 0,
+      "dialect_score": 0.0,
+      "dialect_coverage_pct": 0.0,
+      "dialect_evidence_coverage_pct": 0.0,
+      "dialect_success_cases": 0,
+      "dialect_evaluated_cases": 0,
+      "dialect_comparable_score": "",
+      "dialect_comparable_cases": 0,
+      "dialect_supported": "no",
+      "dialect_expected_cases": 0,
+      "speaker_clone_robustness_score": 87.13,
+      "speaker_clone_robustness_coverage_pct": 100.0,
+      "speaker_clone_robustness_evidence_coverage_pct": 100.0,
+      "speaker_clone_robustness_success_cases": 6,
+      "speaker_clone_robustness_evaluated_cases": 6,
+      "speaker_clone_robustness_comparable_score": 90.505,
+      "speaker_clone_robustness_comparable_cases": 4,
+      "speaker_clone_robustness_supported": "yes",
+      "speaker_clone_robustness_expected_cases": 6,
+      "expressive_control_score": 87.545,
+      "expressive_control_coverage_pct": 100.0,
+      "expressive_control_evidence_coverage_pct": 100.0,
+      "expressive_control_success_cases": 2,
+      "expressive_control_evaluated_cases": 2,
+      "expressive_control_comparable_score": "",
+      "expressive_control_comparable_cases": 0,
+      "expressive_control_supported": "yes",
+      "expressive_control_expected_cases": 2,
+      "complex_paralinguistic_score": 0.0,
+      "complex_paralinguistic_coverage_pct": 0.0,
+      "complex_paralinguistic_evidence_coverage_pct": 0.0,
+      "complex_paralinguistic_success_cases": 0,
+      "complex_paralinguistic_evaluated_cases": 0,
+      "complex_paralinguistic_comparable_score": "",
+      "complex_paralinguistic_comparable_cases": 0,
+      "complex_paralinguistic_supported": "no",
+      "complex_paralinguistic_expected_cases": 0,
+      "longform_stability_score": 95.0,
+      "longform_stability_coverage_pct": 100.0,
+      "longform_stability_evidence_coverage_pct": 100.0,
+      "longform_stability_success_cases": 3,
+      "longform_stability_evaluated_cases": 3,
+      "longform_stability_comparable_score": "",
+      "longform_stability_comparable_cases": 0,
+      "longform_stability_supported": "yes",
+      "longform_stability_expected_cases": 3,
+      "rtf_efficiency_score": 1.504,
+      "rtf_efficiency_coverage_pct": 100.0,
+      "rtf_efficiency_evidence_coverage_pct": 100.0,
+      "rtf_efficiency_success_cases": 22,
+      "rtf_efficiency_evaluated_cases": 22,
+      "rtf_efficiency_comparable_score": "",
+      "rtf_efficiency_comparable_cases": 0,
+      "rtf_efficiency_supported": "yes",
+      "rtf_efficiency_expected_cases": 22,
+      "quality_index": 79.798,
+      "quality_index_takes": 3,
+      "quality_index_sd": 0.024,
+      "quality_index_by_take": "79.82;79.78;79.79",
+      "tested_axis_count": 6,
+      "supported_axis_count": 6,
+      "claimed_untested_axes": "",
+      "hexagon_score": 64.861,
+      "radar_score": 64.861,
+      "strongest_axis": "短段落连续性（分钟级长文待测）",
+      "weakest_axis": "RTF 生成效率"
+    },
+    {
       "model_id": "mlx_kitten_tts2_nano",
       "model_version": "project_rollup",
       "run_id": "v02_plus_vieneu_lux_scenema_20260610_091619",
@@ -2925,6 +3022,213 @@
       "comparable_quality_score": "",
       "comparable_case_count": 0,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;core_ar_names;core_de_instruction;core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_es_question;core_fr_long_sentence;core_hi_amount;core_ja_reading;core_ko_customer;core_vi_reading;core_yue_dialect;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone;ml_fi_reading;ml_id_reading;ml_it_reading;ml_ms_reading;ml_nl_reading;ml_no_reading;ml_pl_reading;ml_pt_reading;ml_ru_reading;ml_sv_reading;ml_th_reading;ml_tr_reading;scenema_clone_tarkin_en;scenema_longform_en;scenema_polyglot_obama_es;stress_long_en;stress_long_zh;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "content_accuracy",
+      "axis_title": "内容准确与可懂度",
+      "axis_short_title": "内容准确",
+      "axis_score": 74.496,
+      "quality_score": 74.496,
+      "evaluated_case_count": 11,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 11,
+      "tested_case_count": 11,
+      "success_case_count": 11,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 74.496,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "naturalness_audio_quality",
+      "axis_title": "自然度与音频质量",
+      "axis_short_title": "自然音质",
+      "axis_score": 81.25,
+      "quality_score": 81.25,
+      "evaluated_case_count": 6,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 6,
+      "tested_case_count": 6,
+      "success_case_count": 6,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 81.25,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "multilingual",
+      "axis_title": "多语种能力",
+      "axis_short_title": "多语种",
+      "axis_score": 0.0,
+      "quality_score": 0.0,
+      "evaluated_case_count": 0,
+      "evidence_coverage_pct": 0.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 0.0,
+      "expected_case_count": 0,
+      "tested_case_count": 0,
+      "success_case_count": 0,
+      "status": "无官方能力",
+      "claim_status": "unsupported",
+      "attempted_quality_score": 0.0,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "dialect",
+      "axis_title": "方言能力",
+      "axis_short_title": "方言",
+      "axis_score": 0.0,
+      "quality_score": 0.0,
+      "evaluated_case_count": 0,
+      "evidence_coverage_pct": 0.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 0.0,
+      "expected_case_count": 0,
+      "tested_case_count": 0,
+      "success_case_count": 0,
+      "status": "无官方能力",
+      "claim_status": "unsupported",
+      "attempted_quality_score": 0.0,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "speaker_clone_robustness",
+      "axis_title": "音色克隆与鲁棒性",
+      "axis_short_title": "音色克隆",
+      "axis_score": 87.13,
+      "quality_score": 87.13,
+      "evaluated_case_count": 6,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 6,
+      "tested_case_count": 6,
+      "success_case_count": 6,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 90.505,
+      "comparable_quality_score": 90.505,
+      "comparable_case_count": 4,
+      "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "expressive_control",
+      "axis_title": "情绪、风格与韵律控制",
+      "axis_short_title": "表达控制",
+      "axis_score": 87.545,
+      "quality_score": 87.545,
+      "evaluated_case_count": 2,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 2,
+      "tested_case_count": 2,
+      "success_case_count": 2,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 87.545,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "control_voice_design_asmr;control_voice_design_child",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "complex_paralinguistic",
+      "axis_title": "复杂文本与副语言能力",
+      "axis_short_title": "复杂副语",
+      "axis_score": 0.0,
+      "quality_score": 0.0,
+      "evaluated_case_count": 0,
+      "evidence_coverage_pct": 0.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 0.0,
+      "expected_case_count": 0,
+      "tested_case_count": 0,
+      "success_case_count": 0,
+      "status": "无官方能力",
+      "claim_status": "unsupported",
+      "attempted_quality_score": 0.0,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "longform_stability",
+      "axis_title": "短段落连续性（分钟级长文待测）",
+      "axis_short_title": "段落连续性",
+      "axis_score": 95.0,
+      "quality_score": 95.0,
+      "evaluated_case_count": 3,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 3,
+      "tested_case_count": 3,
+      "success_case_count": 3,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 95.0,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
+      "missing_cases": ""
+    },
+    {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "rtf_efficiency",
+      "axis_title": "RTF 生成效率",
+      "axis_short_title": "RTF效率",
+      "axis_score": 1.504,
+      "quality_score": 1.504,
+      "evaluated_case_count": 22,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 22,
+      "tested_case_count": 22,
+      "success_case_count": 22,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 1.504,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;control_voice_design_asmr;control_voice_design_child;core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone;scenema_clone_tarkin_en;scenema_longform_en;stress_long_en;stress_long_zh;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": ""
     },
     {
@@ -8535,8 +8839,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8556,8 +8860,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8577,8 +8881,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8598,8 +8902,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8619,8 +8923,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8640,8 +8944,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8661,8 +8965,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8682,8 +8986,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8703,8 +9007,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8724,8 +9028,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -8745,8 +9049,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9648,8 +9952,8 @@
       "evidence_id": "dots",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 23,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 24,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9669,8 +9973,8 @@
       "evidence_id": "dots",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 20,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 21,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9690,8 +9994,8 @@
       "evidence_id": "qwen3",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 23,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 24,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9732,8 +10036,8 @@
       "evidence_id": "scenema_official_voice_cloning",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 23,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 24,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9753,8 +10057,8 @@
       "evidence_id": "voxcpm2;dots;omnivoice",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 17,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_moss_tts;mlx_omnivoice;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 18,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_moss_tts;mlx_omnivoice;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9795,8 +10099,8 @@
       "evidence_id": "voxcpm2;omnivoice",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 20,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 21,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_reverb;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -9837,8 +10141,8 @@
       "evidence_id": "omnivoice;qwen3;voxcpm2",
       "human_review_required": "yes",
       "control_claim_status": "proxy_plus_human_review",
-      "expected_model_count": 8,
-      "expected_models": "mlx_breeze_tts2;mlx_drama3_ja;mlx_fireredaudio;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2",
+      "expected_model_count": 9,
+      "expected_models": "mlx_auk;mlx_breeze_tts2;mlx_drama3_ja;mlx_fireredaudio;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2",
       "source_demo": ""
     },
     {
@@ -9858,8 +10162,8 @@
       "evidence_id": "voxcpm2;qwen3;omnivoice",
       "human_review_required": "yes",
       "control_claim_status": "proxy_plus_human_review",
-      "expected_model_count": 8,
-      "expected_models": "mlx_breeze_tts2;mlx_drama3_ja;mlx_fireredaudio;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2",
+      "expected_model_count": 9,
+      "expected_models": "mlx_auk;mlx_breeze_tts2;mlx_drama3_ja;mlx_fireredaudio;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2",
       "source_demo": ""
     },
     {
@@ -10236,8 +10540,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 21,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 22,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_qwen3_tts;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -10257,8 +10561,8 @@
       "evidence_id": "baseline",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     },
     {
@@ -10278,8 +10582,8 @@
       "evidence_id": "scenema_official_longform",
       "human_review_required": "no",
       "control_claim_status": "objective_proxy",
-      "expected_model_count": 28,
-      "expected_models": "mlx_audio8_air;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
+      "expected_model_count": 29,
+      "expected_models": "mlx_audio8_air;mlx_auk;mlx_breeze_tts2;mlx_confucius4_tts;mlx_cosyvoice3;mlx_dots_tts;mlx_drama3;mlx_drama3_ja;mlx_fireredaudio;mlx_fireredtts3;mlx_higgs_audio;mlx_indextts2.5;mlx_indextts2_vietnamese;mlx_kitten_tts2_mini;mlx_kitten_tts2_nano;mlx_kitten_tts2_pico;mlx_kokoro;mlx_ming3_0.5b;mlx_ming3_tiny_7.9b;mlx_moss_tts;mlx_omnivoice;mlx_pocket_tts_v4;mlx_qwen3_tts;mlx_reverb;mlx_supertonic;mlx_voxcpm2;mlx_voxmel;mlx_voxmel_03b;mlx_zonos3",
       "source_demo": ""
     }
   ],
@@ -10910,6 +11214,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "content_accuracy",
+      "axis_title": "内容准确与可懂度",
+      "axis_short_title": "内容准确",
+      "axis_score": 74.496,
+      "quality_score": 74.496,
+      "evaluated_case_count": 11,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 11,
+      "tested_case_count": 11,
+      "success_case_count": 11,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 74.496,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone",
+      "missing_cases": "",
+      "axis_rank": 26,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_voxmel_03b",
       "model_version": "project_rollup",
       "axis_id": "content_accuracy",
@@ -10931,7 +11260,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone",
       "missing_cases": "",
-      "axis_rank": 26,
+      "axis_rank": 27,
       "specialty_rank_ready": "no"
     },
     {
@@ -10956,7 +11285,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone",
       "missing_cases": "",
-      "axis_rank": 27,
+      "axis_rank": 28,
       "specialty_rank_ready": "no"
     },
     {
@@ -10981,7 +11310,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long",
       "missing_cases": "",
-      "axis_rank": 28,
+      "axis_rank": 29,
       "specialty_rank_ready": "no"
     },
     {
@@ -11285,6 +11614,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "naturalness_audio_quality",
+      "axis_title": "自然度与音频质量",
+      "axis_short_title": "自然音质",
+      "axis_score": 81.25,
+      "quality_score": 81.25,
+      "evaluated_case_count": 6,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 6,
+      "tested_case_count": 6,
+      "success_case_count": 6,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 81.25,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
+      "missing_cases": "",
+      "axis_rank": 13,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_breeze_tts2",
       "model_version": "project_rollup",
       "axis_id": "naturalness_audio_quality",
@@ -11306,7 +11660,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 13,
+      "axis_rank": 14,
       "specialty_rank_ready": "no"
     },
     {
@@ -11331,7 +11685,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 14,
+      "axis_rank": 15,
       "specialty_rank_ready": "no"
     },
     {
@@ -11356,7 +11710,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 15,
+      "axis_rank": 16,
       "specialty_rank_ready": "no"
     },
     {
@@ -11381,7 +11735,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 16,
+      "axis_rank": 17,
       "specialty_rank_ready": "no"
     },
     {
@@ -11406,7 +11760,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 17,
+      "axis_rank": 18,
       "specialty_rank_ready": "no"
     },
     {
@@ -11431,7 +11785,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 18,
+      "axis_rank": 19,
       "specialty_rank_ready": "no"
     },
     {
@@ -11456,7 +11810,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 19,
+      "axis_rank": 20,
       "specialty_rank_ready": "no"
     },
     {
@@ -11481,7 +11835,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 20,
+      "axis_rank": 21,
       "specialty_rank_ready": "no"
     },
     {
@@ -11506,7 +11860,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;scenema_longform_en;stress_long_en",
       "missing_cases": "",
-      "axis_rank": 21,
+      "axis_rank": 22,
       "specialty_rank_ready": "no"
     },
     {
@@ -11531,7 +11885,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 22,
+      "axis_rank": 23,
       "specialty_rank_ready": "no"
     },
     {
@@ -11556,7 +11910,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 23,
+      "axis_rank": 24,
       "specialty_rank_ready": "no"
     },
     {
@@ -11581,7 +11935,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 24,
+      "axis_rank": 25,
       "specialty_rank_ready": "no"
     },
     {
@@ -11606,7 +11960,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 25,
+      "axis_rank": 26,
       "specialty_rank_ready": "no"
     },
     {
@@ -11631,7 +11985,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 26,
+      "axis_rank": 27,
       "specialty_rank_ready": "no"
     },
     {
@@ -11656,7 +12010,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 27,
+      "axis_rank": 28,
       "specialty_rank_ready": "no"
     },
     {
@@ -11681,7 +12035,7 @@
       "comparable_case_count": 0,
       "success_cases": "core_en_numbers;core_zh_en_codeswitch;core_zh_numbers;scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 28,
+      "axis_rank": 29,
       "specialty_rank_ready": "no"
     },
     {
@@ -12585,6 +12939,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "speaker_clone_robustness",
+      "axis_title": "音色克隆与鲁棒性",
+      "axis_short_title": "音色克隆",
+      "axis_score": 87.13,
+      "quality_score": 87.13,
+      "evaluated_case_count": 6,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 6,
+      "tested_case_count": 6,
+      "success_case_count": 6,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 90.505,
+      "comparable_quality_score": 90.505,
+      "comparable_case_count": 4,
+      "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
+      "missing_cases": "",
+      "axis_rank": 2,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_breeze_tts2",
       "model_version": "project_rollup",
       "axis_id": "speaker_clone_robustness",
@@ -12606,7 +12985,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 2,
+      "axis_rank": 3,
       "specialty_rank_ready": "no"
     },
     {
@@ -12631,7 +13010,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en",
       "missing_cases": "",
-      "axis_rank": 3,
+      "axis_rank": 4,
       "specialty_rank_ready": "no"
     },
     {
@@ -12656,7 +13035,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 4,
+      "axis_rank": 5,
       "specialty_rank_ready": "no"
     },
     {
@@ -12681,7 +13060,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en",
       "missing_cases": "",
-      "axis_rank": 5,
+      "axis_rank": 6,
       "specialty_rank_ready": "no"
     },
     {
@@ -12706,7 +13085,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 6,
+      "axis_rank": 7,
       "specialty_rank_ready": "no"
     },
     {
@@ -12731,7 +13110,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 7,
+      "axis_rank": 8,
       "specialty_rank_ready": "no"
     },
     {
@@ -12756,7 +13135,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 8,
+      "axis_rank": 9,
       "specialty_rank_ready": "no"
     },
     {
@@ -12781,7 +13160,7 @@
       "comparable_case_count": 3,
       "success_cases": "clone_3s_en;clone_en_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 9,
+      "axis_rank": 10,
       "specialty_rank_ready": "no"
     },
     {
@@ -12806,7 +13185,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 10,
+      "axis_rank": 11,
       "specialty_rank_ready": "no"
     },
     {
@@ -12831,7 +13210,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 11,
+      "axis_rank": 12,
       "specialty_rank_ready": "no"
     },
     {
@@ -12856,7 +13235,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 12,
+      "axis_rank": 13,
       "specialty_rank_ready": "no"
     },
     {
@@ -12881,7 +13260,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 13,
+      "axis_rank": 14,
       "specialty_rank_ready": "no"
     },
     {
@@ -12906,7 +13285,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 14,
+      "axis_rank": 15,
       "specialty_rank_ready": "no"
     },
     {
@@ -12931,7 +13310,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 15,
+      "axis_rank": 16,
       "specialty_rank_ready": "no"
     },
     {
@@ -12956,7 +13335,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 16,
+      "axis_rank": 17,
       "specialty_rank_ready": "no"
     },
     {
@@ -12981,7 +13360,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 17,
+      "axis_rank": 18,
       "specialty_rank_ready": "no"
     },
     {
@@ -13006,7 +13385,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 18,
+      "axis_rank": 19,
       "specialty_rank_ready": "no"
     },
     {
@@ -13031,7 +13410,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 19,
+      "axis_rank": 20,
       "specialty_rank_ready": "no"
     },
     {
@@ -13056,7 +13435,7 @@
       "comparable_case_count": 3,
       "success_cases": "clone_3s_en;clone_en_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 20,
+      "axis_rank": 21,
       "specialty_rank_ready": "no"
     },
     {
@@ -13081,7 +13460,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 21,
+      "axis_rank": 22,
       "specialty_rank_ready": "no"
     },
     {
@@ -13106,7 +13485,7 @@
       "comparable_case_count": 4,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;scenema_clone_tarkin_en;scenema_polyglot_obama_es;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 22,
+      "axis_rank": 23,
       "specialty_rank_ready": "no"
     },
     {
@@ -13131,7 +13510,7 @@
       "comparable_case_count": 3,
       "success_cases": "clone_3s_en;clone_en_same;clone_vi_same;scenema_clone_tarkin_en;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 23,
+      "axis_rank": 24,
       "specialty_rank_ready": "no"
     },
     {
@@ -13460,6 +13839,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "expressive_control",
+      "axis_title": "情绪、风格与韵律控制",
+      "axis_short_title": "表达控制",
+      "axis_score": 87.545,
+      "quality_score": 87.545,
+      "evaluated_case_count": 2,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 2,
+      "tested_case_count": 2,
+      "success_case_count": 2,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 87.545,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "control_voice_design_asmr;control_voice_design_child",
+      "missing_cases": "",
+      "axis_rank": 14,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_indextts2.5",
       "model_version": "project_rollup",
       "axis_id": "expressive_control",
@@ -13481,7 +13885,7 @@
       "comparable_case_count": 0,
       "success_cases": "control_emotion_angry;control_emotion_en_angry;control_emotion_en_happy;control_emotion_en_sad;control_emotion_happy;control_emotion_prompt_en;control_emotion_sad",
       "missing_cases": "",
-      "axis_rank": 14,
+      "axis_rank": 15,
       "specialty_rank_ready": "no"
     },
     {
@@ -13506,7 +13910,7 @@
       "comparable_case_count": 0,
       "success_cases": "control_emotion_angry;control_emotion_en_angry;control_emotion_en_happy;control_emotion_en_sad;control_emotion_happy;control_emotion_sad;control_voice_design_asmr;control_voice_design_child;control_voice_design_sports;control_whisper_style",
       "missing_cases": "",
-      "axis_rank": 15,
+      "axis_rank": 16,
       "specialty_rank_ready": "no"
     },
     {
@@ -13531,7 +13935,7 @@
       "comparable_case_count": 0,
       "success_cases": "control_emotion_en_angry;control_emotion_en_happy;control_emotion_en_sad",
       "missing_cases": "",
-      "axis_rank": 16,
+      "axis_rank": 17,
       "specialty_rank_ready": "no"
     },
     {
@@ -13556,7 +13960,7 @@
       "comparable_case_count": 0,
       "success_cases": "control_duration_10s;control_duration_20s;control_duration_3s",
       "missing_cases": "",
-      "axis_rank": 17,
+      "axis_rank": 18,
       "specialty_rank_ready": "no"
     },
     {
@@ -14060,7 +14464,7 @@
       "specialty_rank_ready": "no"
     },
     {
-      "model_id": "mlx_breeze_tts2",
+      "model_id": "mlx_auk",
       "model_version": "project_rollup",
       "axis_id": "longform_stability",
       "axis_title": "短段落连续性（分钟级长文待测）",
@@ -14085,6 +14489,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_breeze_tts2",
+      "model_version": "project_rollup",
+      "axis_id": "longform_stability",
+      "axis_title": "短段落连续性（分钟级长文待测）",
+      "axis_short_title": "段落连续性",
+      "axis_score": 95.0,
+      "quality_score": 95.0,
+      "evaluated_case_count": 3,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 3,
+      "tested_case_count": 3,
+      "success_case_count": 3,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 95.0,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
+      "missing_cases": "",
+      "axis_rank": 12,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_cosyvoice3",
       "model_version": "project_rollup",
       "axis_id": "longform_stability",
@@ -14106,7 +14535,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 12,
+      "axis_rank": 13,
       "specialty_rank_ready": "no"
     },
     {
@@ -14131,7 +14560,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 13,
+      "axis_rank": 14,
       "specialty_rank_ready": "no"
     },
     {
@@ -14156,7 +14585,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 14,
+      "axis_rank": 15,
       "specialty_rank_ready": "no"
     },
     {
@@ -14181,7 +14610,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 15,
+      "axis_rank": 16,
       "specialty_rank_ready": "no"
     },
     {
@@ -14206,7 +14635,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 16,
+      "axis_rank": 17,
       "specialty_rank_ready": "no"
     },
     {
@@ -14231,7 +14660,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 17,
+      "axis_rank": 18,
       "specialty_rank_ready": "no"
     },
     {
@@ -14256,7 +14685,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 18,
+      "axis_rank": 19,
       "specialty_rank_ready": "no"
     },
     {
@@ -14281,7 +14710,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 19,
+      "axis_rank": 20,
       "specialty_rank_ready": "no"
     },
     {
@@ -14306,7 +14735,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 20,
+      "axis_rank": 21,
       "specialty_rank_ready": "no"
     },
     {
@@ -14331,7 +14760,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 21,
+      "axis_rank": 22,
       "specialty_rank_ready": "no"
     },
     {
@@ -14356,7 +14785,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 22,
+      "axis_rank": 23,
       "specialty_rank_ready": "no"
     },
     {
@@ -14381,7 +14810,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 23,
+      "axis_rank": 24,
       "specialty_rank_ready": "no"
     },
     {
@@ -14406,7 +14835,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 24,
+      "axis_rank": 25,
       "specialty_rank_ready": "no"
     },
     {
@@ -14431,7 +14860,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 25,
+      "axis_rank": 26,
       "specialty_rank_ready": "no"
     },
     {
@@ -14456,7 +14885,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 26,
+      "axis_rank": 27,
       "specialty_rank_ready": "no"
     },
     {
@@ -14481,7 +14910,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en;stress_long_zh",
       "missing_cases": "",
-      "axis_rank": 27,
+      "axis_rank": 28,
       "specialty_rank_ready": "no"
     },
     {
@@ -14506,7 +14935,7 @@
       "comparable_case_count": 0,
       "success_cases": "scenema_longform_en;stress_long_en",
       "missing_cases": "",
-      "axis_rank": 28,
+      "axis_rank": 29,
       "specialty_rank_ready": "no"
     },
     {
@@ -15160,6 +15589,31 @@
       "specialty_rank_ready": "no"
     },
     {
+      "model_id": "mlx_auk",
+      "model_version": "project_rollup",
+      "axis_id": "rtf_efficiency",
+      "axis_title": "RTF 生成效率",
+      "axis_short_title": "RTF效率",
+      "axis_score": 1.504,
+      "quality_score": 1.504,
+      "evaluated_case_count": 22,
+      "evidence_coverage_pct": 100.0,
+      "evidence_status": "proxy_only",
+      "coverage_pct": 100.0,
+      "expected_case_count": 22,
+      "tested_case_count": 22,
+      "success_case_count": 22,
+      "status": "已覆盖",
+      "claim_status": "tested",
+      "attempted_quality_score": 1.504,
+      "comparable_quality_score": "",
+      "comparable_case_count": 0,
+      "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;control_voice_design_asmr;control_voice_design_child;core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone;scenema_clone_tarkin_en;scenema_longform_en;stress_long_en;stress_long_zh;xling_en_to_zh;xling_zh_to_en",
+      "missing_cases": "",
+      "axis_rank": 27,
+      "specialty_rank_ready": "no"
+    },
+    {
       "model_id": "mlx_drama3_ja",
       "model_version": "project_rollup",
       "axis_id": "rtf_efficiency",
@@ -15181,7 +15635,7 @@
       "comparable_case_count": 0,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;control_emotion_angry;control_emotion_en_angry;control_emotion_en_happy;control_emotion_en_sad;control_emotion_happy;control_emotion_sad;control_token_laugh;control_voice_design_asmr;control_voice_design_child;control_voice_design_sports;control_whisper_style;core_de_instruction;core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_es_question;core_fr_long_sentence;core_ja_reading;core_ko_customer;core_yue_dialect;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone;ml_it_reading;ml_pt_reading;ml_ru_reading;scenema_clone_tarkin_en;scenema_longform_en;scenema_polyglot_obama_es;stress_long_en;stress_long_zh;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "",
-      "axis_rank": 27,
+      "axis_rank": 28,
       "specialty_rank_ready": "no"
     },
     {
@@ -15206,7 +15660,7 @@
       "comparable_case_count": 0,
       "success_cases": "clone_3s_en;clone_en_same;clone_zh_same;control_emotion_angry;control_emotion_en_angry;control_token_laugh;control_whisper_style;core_de_instruction;core_en_acronyms;core_en_date_units;core_en_homographs;core_en_numbers;core_en_plain_long;core_es_question;core_fr_long_sentence;core_ja_reading;core_ko_customer;core_yue_dialect;core_zh_address;core_zh_date_units;core_zh_en_codeswitch;core_zh_numbers;core_zh_plain_long;core_zh_polyphone;scenema_clone_tarkin_en;scenema_longform_en;scenema_polyglot_obama_es;stress_long_en;stress_long_zh;xling_en_to_ja;xling_en_to_zh;xling_zh_to_en",
       "missing_cases": "ml_it_reading;ml_pt_reading;ml_ru_reading",
-      "axis_rank": 28,
+      "axis_rank": 29,
       "specialty_rank_ready": "no"
     }
   ]
