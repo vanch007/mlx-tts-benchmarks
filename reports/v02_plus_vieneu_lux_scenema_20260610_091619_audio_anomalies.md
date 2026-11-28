@@ -1,8 +1,8 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`139`
-- 性能提示样本数：`139`
+- 音频异常样本数：`150`
+- 性能提示样本数：`151`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
@@ -22,9 +22,11 @@
 | `mlx_indextts2_v25_8bit` | 0 | 1 | 1 | 4 | 生成过慢=4；内容严重错误=1；疑似底噪/杂音=1 |
 | `mlx_indextts2_vietnamese_8bit` | 0 | 0 | 7 | 11 | 生成过慢=11；内容错误偏高=7 |
 | `mlx_kokoro_82m_bf16` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
+| `mlx_magpie_tts_357m` | 0 | 0 | 3 | 0 | 内容错误偏高=3 |
 | `mlx_ming3_0_5b_8bit` | 0 | 0 | 1 | 0 | 内容错误偏高=1 |
 | `mlx_ming3_tiny_7_9b_8bit` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 8 | 0 | 内容错误偏高=4；语速异常=4；内容严重错误=2 |
+| `mlx_moss_tts_v15_8b_8bit` | 0 | 0 | 8 | 12 | 生成过慢=12；内容错误偏高=5；语速异常=2；疑似底噪/杂音=1 |
 | `mlx_omnivoice_8bit_trim60` | 1 | 1 | 6 | 1 | 内容错误偏高=4；语速异常=2；音频过短=1；内容严重错误=1；生成过慢=1 |
 | `mlx_pocket_tts_v4` | 0 | 1 | 3 | 0 | 内容严重错误=1；内容错误偏高=1；语速异常=1；疑似底噪/杂音=1 |
 | `mlx_qwen3_tts_custom_voice_official_int8` | 0 | 0 | 0 | 1 | 生成过慢=1 |
@@ -329,6 +331,14 @@
 |---|---|---|---|---|
 | medium | 内容错误偏高 | 中英混读品牌与订单号朗读 (`core_zh_en_codeswitch`) | CER=0.4，WER=0.2222。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 
+## mlx_magpie_tts_357m
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| medium | 内容错误偏高 | 英文日期、时间与单位朗读 (`core_en_date_units`) | CER=0.2462，WER=0.3684。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 中文日期、时间与单位朗读 (`core_zh_date_units`) | CER=0.3611，WER=0.2333。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 中文数字、时间与订单号朗读 (`core_zh_numbers`) | CER=0.303，WER=0.1538。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+
 ## mlx_ming3_0_5b_8bit
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
@@ -355,6 +365,31 @@
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2232 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.1295 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 | medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.3378 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+
+## mlx_moss_tts_v15_8b_8bit
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| medium | 内容错误偏高 | ml fa reading (`ml_fa_reading`) | CER=0.1429，WER=0.3684。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml mk reading (`ml_mk_reading`) | CER=0.2048，WER=0.5。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml sv reading (`ml_sv_reading`) | CER=0.15，WER=0.4706。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml sw reading (`ml_sw_reading`) | CER=0.0761，WER=0.625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.2577 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| medium | 语速异常 | ml tr reading (`ml_tr_reading`) | 语速偏慢，约 1.0031 token/s，语速分 40.31。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| medium | 疑似底噪/杂音 | ml nl reading (`ml_nl_reading`) | 噪声底约 -31.686 dBFS，语音/底噪差约 16.241 dB。 | 优先试听确认是否有持续底噪、嗡声或电流声；若确认，检查 vocoder、参考音频清洗和后处理增益。 |
+| low | 生成过慢 | 三秒英文短参考音色克隆 (`clone_3s_en`) | RTF=2.2954，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文参考音色克隆 (`clone_en_same`) | RTF=2.5565，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 中文参考音色克隆 (`clone_zh_same`) | RTF=2.2234，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 阿拉伯语城市名与数字朗读 (`core_ar_names`) | RTF=2.0659，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 西语疑问句语调与停顿 (`core_es_question`) | RTF=2.0189，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 中文数字、时间与订单号朗读 (`core_zh_numbers`) | RTF=4.0733，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | ml it reading (`ml_it_reading`) | RTF=3.2181，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | RTF=2.8318，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文参考音色说西语克隆 (`scenema_polyglot_obama_es`) | RTF=2.5489，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文参考音色说日语克隆 (`xling_en_to_ja`) | RTF=2.414，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文参考音色说中文克隆 (`xling_en_to_zh`) | RTF=2.648，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 中文参考音色说英文克隆 (`xling_zh_to_en`) | RTF=2.6725，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
 
 ## mlx_omnivoice_8bit_trim60
 
