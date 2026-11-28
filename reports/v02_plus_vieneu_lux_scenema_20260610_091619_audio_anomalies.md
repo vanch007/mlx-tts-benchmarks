@@ -1,8 +1,8 @@
 # mlx-tts-benchmark - 音频异常分类报告
 
 - Run ID：`v02_plus_vieneu_lux_scenema_20260610_091619`
-- 音频异常样本数：`150`
-- 性能提示样本数：`151`
+- 音频异常样本数：`158`
+- 性能提示样本数：`152`
 - 说明：`slow_generation` 只表示生成慢，不计入音频听感/内容异常；`high_content_error` 需要结合试听和 ASR 复核。
 
 ## 模型汇总
@@ -27,7 +27,8 @@
 | `mlx_ming3_tiny_7_9b_8bit` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_moss_tts_local_transformer_v1_5` | 0 | 2 | 8 | 0 | 内容错误偏高=4；语速异常=4；内容严重错误=2 |
 | `mlx_moss_tts_v15_8b_8bit` | 0 | 0 | 8 | 12 | 生成过慢=12；内容错误偏高=5；语速异常=2；疑似底噪/杂音=1 |
-| `mlx_omnivoice_8bit_trim60` | 1 | 1 | 6 | 1 | 内容错误偏高=4；语速异常=2；音频过短=1；内容严重错误=1；生成过慢=1 |
+| `mlx_omnivoice_8bit_trim60` | 0 | 0 | 9 | 2 | 内容错误偏高=8；生成过慢=2；语速异常=1 |
+| `mlx_omnivoice_vietnamese_8bit` | 0 | 1 | 6 | 0 | 内容错误偏高=5；内容严重错误=1；语速异常=1 |
 | `mlx_pocket_tts_v4` | 0 | 1 | 3 | 0 | 内容严重错误=1；内容错误偏高=1；语速异常=1；疑似底噪/杂音=1 |
 | `mlx_qwen3_tts_custom_voice_official_int8` | 0 | 0 | 0 | 1 | 生成过慢=1 |
 | `mlx_qwen3_tts_voice_design_official_int8` | 0 | 0 | 0 | 1 | 生成过慢=1 |
@@ -395,15 +396,29 @@
 
 | 严重度 | 分类 | 测试项 | 诊断 | 建议 |
 |---|---|---|---|---|
-| critical | 音频过短 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | 时长 0.2095s，疑似空输出或提前终止。 | 重跑并检查模型 stderr；必要时提高 max tokens/输出长度。 |
-| high | 内容严重错误 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | CER=0.9792，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
-| medium | 内容错误偏高 | ml fil reading (`ml_fil_reading`) | CER=0.4，WER=0.5。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 内容错误偏高 | ml sw reading (`ml_sw_reading`) | CER=0.0435，WER=0.4375。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 内容错误偏高 | ml te reading (`ml_te_reading`) | CER=0.1618，WER=0.7273。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml fil reading (`ml_fil_reading`) | CER=0.42，WER=0.5455。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml hu reading (`ml_hu_reading`) | CER=0.0506，WER=0.4286。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml sw reading (`ml_sw_reading`) | CER=0.0652，WER=0.5625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml te reading (`ml_te_reading`) | CER=0.1324，WER=0.6364。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
 | medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
-| medium | 语速异常 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | 语速偏快，约 57.2792 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.4089 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
-| low | 生成过慢 | 印地语金额、日期和姓名朗读 (`core_hi_amount`) | RTF=9.4112，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| medium | 内容错误偏高 | 英文长文本角色连续性 (`scenema_longform_en`) | CER=0.5，WER=0.5526。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 英文参考音色说西语克隆 (`scenema_polyglot_obama_es`) | CER=0.3182，WER=0.6364。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | 英文参考音色说日语克隆 (`xling_en_to_ja`) | CER=0.6，WER=0.6。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.424 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
+| low | 生成过慢 | 英文表演式参考音色克隆 (`scenema_clone_tarkin_en`) | RTF=2.5296，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+| low | 生成过慢 | 英文参考音色说西语克隆 (`scenema_polyglot_obama_es`) | RTF=3.2823，生成慢于实时 2 倍以上。 | 优先作为性能优化项，不一定代表音频内容异常。 |
+
+## mlx_omnivoice_vietnamese_8bit
+
+| 严重度 | 分类 | 测试项 | 诊断 | 建议 |
+|---|---|---|---|---|
+| high | 内容严重错误 | 中文近讲 ASMR 女声音色设计 (`control_voice_design_asmr`) | CER=1.0，内容几乎不可对齐。 | 优先人工试听；若确认异常，修正语言/提示词/参考文本或从该模型能力边界移除。 |
+| medium | 内容错误偏高 | 中文二十秒目标时长控制 (`control_duration_20s`) | CER=0.5，WER=0.5。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml fi reading (`ml_fi_reading`) | CER=0.061，WER=0.3571。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml sw reading (`ml_sw_reading`) | CER=0.0543，WER=0.5625。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml te reading (`ml_te_reading`) | CER=0.1176，WER=0.6364。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 内容错误偏高 | ml th reading (`ml_th_reading`) | CER=0.0，WER=1.0。 | 复核 ASR 转写与音频；若音频确实错读，调整 prompt、语言参数或模型筛选。 |
+| medium | 语速异常 | ml th reading (`ml_th_reading`) | 语速偏慢，约 0.4154 token/s，语速分 0.0。 | 复核音频是否过快/过慢；若确认，调整 speed/length/max-token 参数或把该样本标为模型语速控制缺陷。 |
 
 ## mlx_pocket_tts_v4
 

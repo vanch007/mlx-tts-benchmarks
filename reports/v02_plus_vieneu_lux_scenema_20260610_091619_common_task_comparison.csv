@@ -18,13 +18,9 @@ mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,core_zh_numbers,0.0,,,4.241,1.0
 mlx_qwen3_tts_official_int8,mlx_qwen3_tts,core_en_numbers,0.0,,,4.4808,0.4712,legacy_command_only
 mlx_qwen3_tts_official_int8,mlx_qwen3_tts,clone_en_same,0.0,0.9624,0.9622,4.2431,0.4931,legacy_command_only
 mlx_qwen3_tts_official_int8,mlx_qwen3_tts,clone_zh_same,0.0,0.9028,0.9185,3.6374,0.4503,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,clone_en_same,0.0,0.9135,0.9379,3.733,1.7616,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,clone_zh_same,0.0,0.9311,0.9482,2.9833,0.9219,legacy_command_only
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,core_zh_numbers,0.0,,,3.7824,1.461,legacy_command_only
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,clone_en_same,0.0,0.9456,0.9305,4.0959,1.3245,legacy_command_only
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,clone_zh_same,0.0,0.8868,0.8858,3.7147,1.0862,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_zh_numbers,0.0,,,3.1099,1.3335,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_en_numbers,0.0,,,3.5193,1.1371,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,clone_en_same,0.0,0.8353,0.9023,4.1416,0.8821,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,clone_zh_same,0.0,0.8643,0.8606,3.1723,1.1528,legacy_command_only
 mlx_supertonic3_mlx,mlx_supertonic,core_en_numbers,0.0,,,4.427,0.0646,legacy_command_only
@@ -32,8 +28,6 @@ mlx_higgs_audio_v3_4b,mlx_higgs_audio,core_en_numbers,0.0,,,4.5532,1.0808,legacy
 mlx_higgs_audio_v3_4b,mlx_higgs_audio,core_zh_numbers,0.0286,,,3.4709,1.2213,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,core_en_numbers,0.0,,,4.4739,1.0838,legacy_command_only
 mlx_moss_tts_local_transformer_v1_5,mlx_moss_tts,core_zh_numbers,0.0,,,4.241,0.9805,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_en_numbers,0.0,,,3.5182,1.0485,legacy_command_only
-mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_zh_numbers,0.0,,,3.1132,1.1089,legacy_command_only
 mlx_fireredaudio_8bit,mlx_fireredaudio,core_zh_numbers,0.0286,0.8416,0.9115,2.5904,1.4373,legacy_command_only
 mlx_fireredaudio_8bit,mlx_fireredaudio,core_en_numbers,0.0,0.9379,0.9325,3.6831,1.4596,legacy_command_only
 mlx_fireredaudio_8bit,mlx_fireredaudio,clone_en_same,0.0,0.9215,0.8962,3.6676,1.5813,legacy_command_only
@@ -113,3 +107,11 @@ mlx_vieneu_v3_turbo,mlx_vieneu,core_en_numbers,0.0,,,4.3283,0.451,
 mlx_vieneu_v3_turbo,mlx_vieneu,clone_en_same,0.0256,0.8685,0.8991,3.5435,0.6131,
 mlx_magpie_tts_357m,mlx_magpie,core_zh_numbers,0.303,,,3.6727,1.5633,
 mlx_magpie_tts_357m,mlx_magpie,core_en_numbers,0.1132,,,4.3818,1.2149,
+mlx_omnivoice_8bit_trim60,mlx_omnivoice,clone_en_same,0.0,0.8932,0.9009,3.8869,0.6783,
+mlx_omnivoice_8bit_trim60,mlx_omnivoice,clone_zh_same,0.0,0.9498,0.9647,3.0284,0.6536,
+mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_zh_numbers,0.0,,,3.0467,0.7206,
+mlx_omnivoice_8bit_trim60,mlx_omnivoice,core_en_numbers,0.0,,,3.84,0.7185,
+mlx_omnivoice_vietnamese_8bit,mlx_omnivoice_vietnamese,clone_en_same,0.0,0.8777,0.9017,4.1261,0.8272,
+mlx_omnivoice_vietnamese_8bit,mlx_omnivoice_vietnamese,clone_zh_same,0.0,0.896,0.8844,3.4056,0.6299,
+mlx_omnivoice_vietnamese_8bit,mlx_omnivoice_vietnamese,core_zh_numbers,0.0857,,,3.0747,0.4181,
+mlx_omnivoice_vietnamese_8bit,mlx_omnivoice_vietnamese,core_en_numbers,0.0,,,4.4316,0.441,
